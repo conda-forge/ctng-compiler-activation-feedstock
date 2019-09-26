@@ -5,10 +5,10 @@ channel_targets:
 ctng_binutils:
 - 2.31.1
 ctng_gcc:
-- 7.3.0
+- 8.2.0
 ctng_gcc_activation_build_num:
 - '9'
 ctng_target_platform:
-- linux-64
+- linux-ppc64le
 docker_image:
-- condaforge/linux-anvil-comp7
+- condaforge/linux-anvil-ppc64le
