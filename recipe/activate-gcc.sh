@@ -81,8 +81,7 @@ function _tc_activation() {
   return 0
 }
 
-# When people are using conda-build, assume that adding rpath during build, and pointing at
-#    the host env's includes and libs is helpful default behavior
+# The compiler adds $PREFIX/lib to rpath, so it's better to add -L and -I as well.
 if [ "${CONDA_BUILD:-0}" = "1" ]; then
   CFLAGS_USED="@CFLAGS@ -I${PREFIX}/include -fdebug-prefix-map=${SRC_DIR}=/usr/local/src/conda/${PKG_NAME}-${PKG_VERSION} -fdebug-prefix-map=${PREFIX}=/usr/local/src/conda-prefix"
   DEBUG_CFLAGS_USED="@DEBUG_CFLAGS@ -I${PREFIX}/include -fdebug-prefix-map=${SRC_DIR}=/usr/local/src/conda/${PKG_NAME}-${PKG_VERSION} -fdebug-prefix-map=${PREFIX}=/usr/local/src/conda-prefix"
@@ -91,11 +90,12 @@ if [ "${CONDA_BUILD:-0}" = "1" ]; then
   DEBUG_CPPFLAGS_USED="@DEBUG_CPPFLAGS@ -I${PREFIX}/include"
   CMAKE_PREFIX_PATH_USED="${CMAKE_PREFIX_PATH}:${PREFIX}:${BUILD_PREFIX}/${HOST}/sysroot/usr"
 else
-  CFLAGS_USED="@CFLAGS@"
-  DEBUG_CFLAGS_USED="@DEBUG_CFLAGS@"
-  CPPFLAGS_USED="@CPPFLAGS@"
-  DEBUG_CPPFLAGS_USED="@DEBUG_CPPFLAGS@"
-  LDFLAGS_USED="@LDFLAGS@"
+  CFLAGS_USED="@CFLAGS@ -I${CONDA_PREFIX}/include"
+  DEBUG_CFLAGS_USED="@DEBUG_CFLAGS@ -I${CONDA_PREFIX}/include"
+  CPPFLAGS_USED="@CPPFLAGS@ -I${CONDA_PREFIX}/include"
+  DEBUG_CPPFLAGS_USED="@DEBUG_CPPFLAGS@ -I${CONDA_PREFIX}/include"
+  LDFLAGS_USED="@LDFLAGS@ -Wl,-rpath,${CONDA_PREFIX}/lib -Wl,-rpath-link,${CONDA_PREFIX}/lib -L${CONDA_PREFIX}/lib"
+  CMAKE_PREFIX_PATH_USED="${CMAKE_PREFIX_PATH}:${CONDA_PREFIX}:${CONDA_PREFIX}/@CHOST@/sysroot/usr"
 fi
 
 if [ "${CONDA_BUILD:-0}" = "1" ]; then
