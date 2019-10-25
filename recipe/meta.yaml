@@ -112,6 +112,32 @@ outputs:
       license: BSD-3-Clause
       license_file: LICENSE
 
+  - name: gcc_bootstrap_{{ ctng_target_platform }}
+    version: "{{ ctng_gcc }}"
+    requirements:
+      host:
+        - {{ pin_subpackage("gcc_" ~ ctng_target_platform) }}
+        - {{ pin_subpackage("gxx_" ~ ctng_target_platform) }}
+        - {{ pin_subpackage("gfortran_" ~ ctng_target_platform) }}
+        - {{ pin_subpackage("binutils_" ~ ctng_target_platform) }}
+    build:
+      always_include_files:
+        - bin/
+        - etc/
+        - lib64/
+        - lib/
+        - libexec/
+        - share/
+        - {{ ctng_cpu_arch }}-{{ ctng_vendor }}-linux-gnu/
+    test:
+      commands:
+        - test -f $PREFIX/bin/{{ ctng_cpu_arch }}-{{ ctng_vendor }}-linux-gnu-cc
+    about:
+      summary: GCC bootstrap compilers for building deps
+      home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+      license: GPL
+      license_file: GPL_LICENSE
+
 about:
   summary: Activation scripts for gcc, g++, gfortran and binutils
   home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
