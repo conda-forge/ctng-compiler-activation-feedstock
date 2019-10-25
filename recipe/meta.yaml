@@ -116,10 +116,10 @@ outputs:
     version: "{{ ctng_gcc }}"
     requirements:
       host:
-        - {{ pin_subpackage("gcc_" + ctng_target_platform) }}
-        - {{ pin_subpackage("gxx_" + ctng_target_platform) }}
-        - {{ pin_subpackage("gfortran_" + ctng_target_platform) }}
-        - {{ pin_subpackage("binutils_" + ctng_target_platform) }}
+        - {{ pin_subpackage("gcc_" ~ ctng_target_platform) }}
+        - {{ pin_subpackage("gxx_" ~ ctng_target_platform) }}
+        - {{ pin_subpackage("gfortran_" ~ ctng_target_platform) }}
+        - {{ pin_subpackage("binutils_" ~ ctng_target_platform) }}
     build:
       always_include_files:
         - bin/
