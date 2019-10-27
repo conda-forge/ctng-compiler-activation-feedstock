@@ -30,7 +30,7 @@ outputs:
       files:
         - tests
       commands:
-        - ${CC} ${CFLAGS} -Wall tests/aligned_alloc.c -o c_aligned
+        - ${CC} ${CFLAGS} -Wall tests/aligned_alloc.c -o c_aligned -v
         - ./c_aligned
     about:
       summary: GNU C Compiler (activation scripts)
