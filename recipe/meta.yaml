@@ -32,6 +32,9 @@ outputs:
       commands:
         - ${CC} ${CFLAGS} -Wall tests/aligned_alloc.c -o c_aligned
         - ./c_aligned
+        # CONDA_BUILD_SYSROOT is defined for clang++ to find correct C++ headers, see issue 8
+        - test -z "${CONDA_BUILD_SYSROOT+x}" && echo "CONDA_BUILD_SYSROOT is not set" && exit 1
+        - test -d ${CONDA_BUILD_SYSROOT} || exit 1
     about:
       summary: GNU C Compiler (activation scripts)
       home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
@@ -53,6 +56,8 @@ outputs:
       commands:
         - ${CXX} ${CXXFLAGS} -Wall tests/aligned_alloc.cpp -o cpp_aligned
         - ./cpp_aligned
+        - test -z "${CONDA_BUILD_SYSROOT+x}" && echo "CONDA_BUILD_SYSROOT is not set" && exit 1
+        - test -d ${CONDA_BUILD_SYSROOT} || exit 1
     run_exports:
       strong:
         - libstdcxx-ng >={{ ctng_gcc }}
