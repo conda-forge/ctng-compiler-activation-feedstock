@@ -5,7 +5,7 @@ ctng_gcc:
 ctng_binutils:
   - 2.33.1
 ctng_gcc_activation_build_num:
-  - 14
+  - 15
 ctng_target_platform:
   - linux-64                # [linux64]
   - linux-32                # [linux32]
