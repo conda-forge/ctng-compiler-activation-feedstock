@@ -1,5 +1,5 @@
 package:
-  name: ctng-compiler-activation
+  name: lizzy
   version: {{ ctng_gcc }}
 
 source:
@@ -7,8 +7,7 @@ source:
 
 build:
   # defined in conda_build_config.yaml so that we can keep it associated with a particular GCC version number
-  number: "{{ ctng_gcc_activation_build_num }}"
-  skip: True  # [not linux]
+  number: {{ ctng_gcc_activation_build_num }}
 
 requirements:
   build:
@@ -30,16 +29,12 @@ outputs:
       files:
         - tests
       commands:
-        - ${CC} ${CFLAGS} -Wall tests/aligned_alloc.c -o c_aligned -v
+        - ${CC} ${CFLAGS} -Wall tests/aligned_alloc.c -o c_aligned
         - ./c_aligned
-        # CONDA_BUILD_SYSROOT is defined for clang++ to find correct C++ headers, see issue 8
-        - test -z "${CONDA_BUILD_SYSROOT+x}" && echo "CONDA_BUILD_SYSROOT is not set" && exit 1
-        - test -d ${CONDA_BUILD_SYSROOT} || exit 1
     about:
       summary: GNU C Compiler (activation scripts)
-      home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-      license: BSD-3-Clause
-      license_file: LICENSE
+      home: https://gcc.gnu.org/
+      license: GPL
 
   - name: gxx_{{ ctng_target_platform }}
     script: install-g++.sh
@@ -56,8 +51,6 @@ outputs:
       commands:
         - ${CXX} ${CXXFLAGS} -Wall tests/aligned_alloc.cpp -o cpp_aligned
         - ./cpp_aligned
-        - test -z "${CONDA_BUILD_SYSROOT+x}" && echo "CONDA_BUILD_SYSROOT is not set" && exit 1
-        - test -d ${CONDA_BUILD_SYSROOT} || exit 1
     run_exports:
       strong:
         - libstdcxx-ng >={{ ctng_gcc }}
@@ -65,9 +58,8 @@ outputs:
         - libgcc-ng >={{ ctng_gcc }}
     about:
       summary: GNU C++ Compiler (activation scripts)
-      home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-      license: BSD-3-Clause
-      license_file: LICENSE
+      home: https://gcc.gnu.org/
+      license: GPL
 
   - name: gfortran_{{ ctng_target_platform }}
     script: install-gfortran.sh
@@ -98,9 +90,8 @@ outputs:
         - tests/fortomp/*
     about:
       summary: GNU Fortran Compiler (activation scripts)
-      home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-      license: BSD-3-Clause
-      license_file: LICENSE
+      home: https://gcc.gnu.org/
+      license: GPL
 
   - name: binutils_{{ ctng_target_platform }}
     version: "{{ ctng_binutils }}"
@@ -108,47 +99,7 @@ outputs:
     requirements:
       run:
         - binutils_impl_{{ ctng_target_platform }} {{ ctng_binutils }}.*
-    test:
-      commands:
-        - test -f $LD
     about:
       summary: The GNU Binutils are a collection of binary tools (activation scripts)
-      home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-      license: BSD-3-Clause
-      license_file: LICENSE
-
-  - name: gcc_bootstrap_{{ ctng_target_platform }}
-    version: "{{ ctng_gcc }}"
-    requirements:
-      host:
-        - {{ pin_subpackage("gcc_" ~ ctng_target_platform) }}
-        - {{ pin_subpackage("gxx_" ~ ctng_target_platform) }}
-        - {{ pin_subpackage("gfortran_" ~ ctng_target_platform) }}
-        - {{ pin_subpackage("binutils_" ~ ctng_target_platform) }}
-    build:
-      always_include_files:
-        - bin/
-        - etc/
-        - lib64/
-        - lib/
-        - libexec/
-        - share/
-        - {{ ctng_cpu_arch }}-{{ ctng_vendor }}-linux-gnu/
-    test:
-      commands:
-        - test -f $PREFIX/bin/{{ ctng_cpu_arch }}-{{ ctng_vendor }}-linux-gnu-cc
-    about:
-      summary: GCC bootstrap compilers for building deps
-      home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+      home: https://www.gnu.org/software/binutils/
       license: GPL
-      license_file: GPL_LICENSE
-
-about:
-  summary: Activation scripts for gcc, g++, gfortran and binutils
-  home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-  license: BSD-3-Clause
-  license_file: LICENSE
-
-extra:
-  recipe-maintainers:
-    - isuruf

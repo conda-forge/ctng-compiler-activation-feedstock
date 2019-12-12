@@ -81,21 +81,21 @@ function _tc_activation() {
   return 0
 }
 
-# The compiler adds $PREFIX/lib to rpath, so it's better to add -L and -isystem  as well.
+# When people are using conda-build, assume that adding rpath during build, and pointing at
+#    the host env's includes and libs is helpful default behavior
 if [ "${CONDA_BUILD:-0}" = "1" ]; then
-  CFLAGS_USED="@CFLAGS@ -isystem ${PREFIX}/include -fdebug-prefix-map=${SRC_DIR}=/usr/local/src/conda/${PKG_NAME}-${PKG_VERSION} -fdebug-prefix-map=${PREFIX}=/usr/local/src/conda-prefix"
-  DEBUG_CFLAGS_USED="@DEBUG_CFLAGS@ -isystem ${PREFIX}/include -fdebug-prefix-map=${SRC_DIR}=/usr/local/src/conda/${PKG_NAME}-${PKG_VERSION} -fdebug-prefix-map=${PREFIX}=/usr/local/src/conda-prefix"
+  CFLAGS_USED="@CFLAGS@ -I${PREFIX}/include -fdebug-prefix-map=${SRC_DIR}=/usr/local/src/conda/${PKG_NAME}-${PKG_VERSION} -fdebug-prefix-map=${PREFIX}=/usr/local/src/conda-prefix"
+  DEBUG_CFLAGS_USED="@DEBUG_CFLAGS@ -I${PREFIX}/include -fdebug-prefix-map=${SRC_DIR}=/usr/local/src/conda/${PKG_NAME}-${PKG_VERSION} -fdebug-prefix-map=${PREFIX}=/usr/local/src/conda-prefix"
   LDFLAGS_USED="@LDFLAGS@ -Wl,-rpath,${PREFIX}/lib -Wl,-rpath-link,${PREFIX}/lib -L${PREFIX}/lib"
-  CPPFLAGS_USED="@CPPFLAGS@ -isystem ${PREFIX}/include"
-  DEBUG_CPPFLAGS_USED="@DEBUG_CPPFLAGS@ -isystem ${PREFIX}/include"
-  CMAKE_PREFIX_PATH_USED="${PREFIX}:${CONDA_PREFIX}/@CHOST@/sysroot/usr"
+  CPPFLAGS_USED="@CPPFLAGS@ -I${PREFIX}/include"
+  DEBUG_CPPFLAGS_USED="@DEBUG_CPPFLAGS@ -I${PREFIX}/include"
+  CMAKE_PREFIX_PATH_USED="${CMAKE_PREFIX_PATH}:${PREFIX}:${BUILD_PREFIX}/${HOST}/sysroot/usr"
 else
-  CFLAGS_USED="@CFLAGS@ -isystem ${CONDA_PREFIX}/include"
-  DEBUG_CFLAGS_USED="@DEBUG_CFLAGS@ -isystem ${CONDA_PREFIX}/include"
-  CPPFLAGS_USED="@CPPFLAGS@ -isystem ${CONDA_PREFIX}/include"
-  DEBUG_CPPFLAGS_USED="@DEBUG_CPPFLAGS@ -isystem ${CONDA_PREFIX}/include"
-  LDFLAGS_USED="@LDFLAGS@ -Wl,-rpath,${CONDA_PREFIX}/lib -Wl,-rpath-link,${CONDA_PREFIX}/lib -L${CONDA_PREFIX}/lib"
-  CMAKE_PREFIX_PATH_USED="${CONDA_PREFIX}:${CONDA_PREFIX}/@CHOST@/sysroot/usr"
+  CFLAGS_USED="@CFLAGS@"
+  DEBUG_CFLAGS_USED="@DEBUG_CFLAGS@"
+  CPPFLAGS_USED="@CPPFLAGS@"
+  DEBUG_CPPFLAGS_USED="@DEBUG_CPPFLAGS@"
+  LDFLAGS_USED="@LDFLAGS@"
 fi
 
 if [ "${CONDA_BUILD:-0}" = "1" ]; then
@@ -144,9 +144,8 @@ _tc_activation \
   "LDFLAGS,${LDFLAGS:-${LDFLAGS_USED}}" \
   "DEBUG_CPPFLAGS,${DEBUG_CPPFLAGS:-${DEBUG_CPPFLAGS_USED}}" \
   "DEBUG_CFLAGS,${DEBUG_CFLAGS:-${DEBUG_CFLAGS_USED}}" \
-  "CMAKE_PREFIX_PATH,${CMAKE_PREFIX_PATH_USED}" \
-  "_CONDA_PYTHON_SYSCONFIGDATA_NAME,${_CONDA_PYTHON_SYSCONFIGDATA_NAME_USED}" \
-  "CONDA_BUILD_SYSROOT,${CONDA_PREFIX}/@CHOST@/sysroot"
+  "CMAKE_PREFIX_PATH,${CMAKE_PREFIX_PATH:-${CMAKE_PREFIX_PATH_USED}}" \
+  "_CONDA_PYTHON_SYSCONFIGDATA_NAME,${_CONDA_PYTHON_SYSCONFIGDATA_NAME_USED}"
 
 if [ $? -ne 0 ]; then
   echo "ERROR: $(_get_sourced_filename) failed, see above for details"
