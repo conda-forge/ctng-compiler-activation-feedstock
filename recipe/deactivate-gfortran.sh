@@ -84,7 +84,8 @@ function _tc_activation() {
 # When people are using conda-build, assume that adding rpath during build, and pointing at
 #    the host env's includes and libs is helpful default behavior
 if [ "${CONDA_BUILD:-0}" = "1" ]; then
-  FFLAGS_USED="@FFLAGS@ -I${PREFIX}/include -fdebug-prefix-map=${SRC_DIR}=/usr/local/src/conda/${PKG_NAME}-${PKG_VERSION} -fdebug-prefix-map=${PREFIX}=/usr/local/src/conda-prefix"
+  FFLAGS_USED="@FFLAGS@ -isystem ${PREFIX}/include -fdebug-prefix-map=${SRC_DIR}=/usr/local/src/conda/${PKG_NAME}-${PKG_VERSION} -fdebug-prefix-map=${PREFIX}=/usr/local/src/conda-prefix"
+  LDFLAGS_USED="@LDFLAGS@ -Wl,-rpath,${PREFIX}/lib -L${PREFIX}/lib"
 else
   FFLAGS_USED="@FFLAGS@"
 fi
@@ -101,6 +102,7 @@ _tc_activation \
   gfortran f95 \
   "FFLAGS,${FFLAGS:-${FFLAGS_USED}}" \
   "FORTRANFLAGS,${FORTRANFLAGS:-${FFLAGS_USED}}" \
+  "LDFLAGS,${LDFLAGS:-${LDFLAGS_USED}}" \
   "DEBUG_FFLAGS,${FFLAGS:-${FFLAGS_USED} @DEBUG_FFLAGS@}" \
   "DEBUG_FORTRANFLAGS,${FORTRANFLAGS:-${FFLAGS_USED} @DEBUG_FFLAGS@}" \
 
