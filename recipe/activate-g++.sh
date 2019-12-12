@@ -87,8 +87,8 @@ if [ "${CONDA_BUILD:-0}" = "1" ]; then
   CXXFLAGS_USED="@CXXFLAGS@ -isystem ${PREFIX}/include -fdebug-prefix-map=${SRC_DIR}=/usr/local/src/conda/${PKG_NAME}-${PKG_VERSION} -fdebug-prefix-map=${PREFIX}=/usr/local/src/conda-prefix"
   DEBUG_CXXFLAGS_USED="@DEBUG_CXXFLAGS@ -isystem ${PREFIX}/include -fdebug-prefix-map=${SRC_DIR}=/usr/local/src/conda/${PKG_NAME}-${PKG_VERSION} -fdebug-prefix-map=${PREFIX}=/usr/local/src/conda-prefix"
 else
-  CXXFLAGS_USED="@CXXFLAGS@"
-  DEBUG_CXXFLAGS_USED="@DEBUG_CXXFLAGS@"
+  CXXFLAGS_USED="@CXXFLAGS@ -isystem ${CONDA_PREFIX}/include"
+  DEBUG_CXXFLAGS_USED="@DEBUG_CXXFLAGS@ -isystem ${CONDA_PREFIX}/include"
 fi
 
 if [ "${CONDA_BUILD:-0}" = "1" ]; then
