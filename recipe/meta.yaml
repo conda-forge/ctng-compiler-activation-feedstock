@@ -1,5 +1,5 @@
 package:
-  name: lizzy
+  name: ctng-compiler-activation
   version: {{ ctng_gcc }}
 
 source:
@@ -7,7 +7,8 @@ source:
 
 build:
   # defined in conda_build_config.yaml so that we can keep it associated with a particular GCC version number
-  number: {{ ctng_gcc_activation_build_num }}
+  number: "{{ ctng_gcc_activation_build_num }}"
+  skip: True  # [not linux]
 
 requirements:
   build:
