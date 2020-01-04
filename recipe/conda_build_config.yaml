@@ -6,7 +6,7 @@ ctng_binutils:
   - 2.33.1  # [not aarch64]
   - 2.29.1  # [aarch64]
 ctng_gcc_activation_build_num:
-  - 15
+  - 16
 ctng_target_platform:
   - linux-64                # [linux64]
   - linux-32                # [linux32]
@@ -25,7 +25,7 @@ FINAL_CPPFLAGS:
 FINAL_CFLAGS:
   - -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe  # [linux64]
   - -march=prescott -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -pipe                    # [linux32]
-  - -mcpu=power8 -mtune=power8 -mpower8-fusion -mpower8-vector -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O3 -pipe  # [ppc64le]
+  - -mcpu=power8 -mtune=power8 -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O3 -pipe  # [ppc64le]
   - -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O3 -pipe  # [aarch64]
 FINAL_CXXFLAGS:
   - -fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe  # [linux64]
