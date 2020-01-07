@@ -26,6 +26,7 @@ outputs:
     run_exports:
       strong:
         - libgcc-ng >={{ ctng_gcc }}
+        - openmp_impl >={{ openmp_ver }}
     test:
       files:
         - tests
@@ -63,6 +64,7 @@ outputs:
         - libstdcxx-ng >={{ ctng_gcc }}
         # Because transitive run_exports do not work:
         - libgcc-ng >={{ ctng_gcc }}
+        - openmp_impl >={{ openmp_ver }}
     about:
       summary: GNU C++ Compiler (activation scripts)
       home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
@@ -87,6 +89,7 @@ outputs:
         - {{ pin_compatible("libgfortran-ng", min_pin="x") }}
         # Because transitive run_exports do not work:
         - libgcc-ng >={{ ctng_gcc }}
+        - openmp_impl >={{ openmp_ver }}
     test:
       requires:
         - cmake >=3.11
@@ -152,3 +155,4 @@ about:
 extra:
   recipe-maintainers:
     - isuruf
+    - beckermr
