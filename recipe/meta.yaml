@@ -23,10 +23,11 @@ outputs:
         - gcc_impl_{{ ctng_target_platform }} {{ ctng_gcc }}.*
         # for activation of binutils env vars
         - {{ pin_subpackage("binutils_" ~ ctng_target_platform, exact=True) }}
+        - _openmp_mutex >={{ openmp_ver }} *gnu
     run_exports:
       strong:
         - libgcc-ng >={{ ctng_gcc }}
-        - openmp_impl >={{ openmp_ver }}
+        - _openmp_mutex >={{ openmp_ver }}
     test:
       files:
         - tests
@@ -51,6 +52,7 @@ outputs:
         - {{ pin_subpackage("gcc_" ~ ctng_target_platform, exact=True) }}
         # for activation of binutils env vars
         - {{ pin_subpackage("binutils_" ~ ctng_target_platform, exact=True) }}
+        - _openmp_mutex >={{ openmp_ver }} *gnu
     test:
       files:
         - tests
@@ -64,7 +66,7 @@ outputs:
         - libstdcxx-ng >={{ ctng_gcc }}
         # Because transitive run_exports do not work:
         - libgcc-ng >={{ ctng_gcc }}
-        - openmp_impl >={{ openmp_ver }}
+        - _openmp_mutex >={{ openmp_ver }}
     about:
       summary: GNU C++ Compiler (activation scripts)
       home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
@@ -83,13 +85,14 @@ outputs:
         - {{ pin_subpackage("gcc_" ~ ctng_target_platform, exact=True) }}
         # for activation of binutils env vars:
         - {{ pin_subpackage("binutils_" ~ ctng_target_platform, exact=True) }}
+        - _openmp_mutex >={{ openmp_ver }} *gnu
     run_exports:
       strong:
         # The SONAME changes at major releases.
         - {{ pin_compatible("libgfortran-ng", min_pin="x") }}
         # Because transitive run_exports do not work:
         - libgcc-ng >={{ ctng_gcc }}
-        - openmp_impl >={{ openmp_ver }}
+        - _openmp_mutex >={{ openmp_ver }}
     test:
       requires:
         - cmake >=3.11
@@ -142,6 +145,65 @@ outputs:
         - test -f $PREFIX/bin/{{ ctng_cpu_arch }}-{{ ctng_vendor }}-linux-gnu-cc
     about:
       summary: GCC bootstrap compilers for building deps
+      home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+      license: GPL
+      license_file: GPL_LICENSE
+
+  - name: gcc_bootstrap_noopenmp_{{ ctng_target_platform }}
+    version: "{{ ctng_gcc }}"
+    script: install-gcc_bootstrap_noopenmp.sh
+    requirements:
+      host:
+        # So that pin_compatible has something to work with:
+        - libgfortran-ng {{ ctng_gcc }}.*
+      run:
+        - binutils_impl_{{ ctng_target_platform }} {{ ctng_binutils }}.*
+        - gcc_impl_{{ ctng_target_platform }} {{ ctng_gcc }}.*
+        - gxx_impl_{{ ctng_target_platform }} {{ ctng_gcc }}.*
+        - gfortran_impl_{{ ctng_target_platform }} {{ ctng_gcc }}.*
+    build:
+      run_exports:
+        strong:
+        # The SONAME changes at major releases.
+        - {{ pin_compatible("libgfortran-ng", min_pin="x") }}
+        # Because transitive run_exports do not work:
+        - libgcc-ng >={{ ctng_gcc }}
+        - libstdcxx-ng >={{ ctng_gcc }}
+      always_include_files:
+        - bin/
+        - etc/
+        - lib64/
+        - lib/
+        - libexec/
+        - share/
+        - {{ ctng_cpu_arch }}-{{ ctng_vendor }}-linux-gnu/
+    test:
+      requires:
+        - cmake >=3.11
+        - make
+      files:
+        - tests
+        - tests/fortomp/*
+      commands:
+        - test -f $PREFIX/bin/{{ ctng_cpu_arch }}-{{ ctng_vendor }}-linux-gnu-cc
+        - test -f $LD
+        # C
+        - ${CC} ${CFLAGS} -Wall tests/aligned_alloc.c -o c_aligned -v
+        - ./c_aligned
+        # CONDA_BUILD_SYSROOT is defined for clang++ to find correct C++ headers, see issue 8
+        - test -z "${CONDA_BUILD_SYSROOT+x}" && echo "CONDA_BUILD_SYSROOT is not set" && exit 1
+        - test -d ${CONDA_BUILD_SYSROOT} || exit 1
+        # CXX
+        - ${CXX} ${CXXFLAGS} -Wall tests/aligned_alloc.cpp -o cpp_aligned
+        - ./cpp_aligned
+        - test -z "${CONDA_BUILD_SYSROOT+x}" && echo "CONDA_BUILD_SYSROOT is not set" && exit 1
+        - test -d ${CONDA_BUILD_SYSROOT} || exit 1
+        # FORTRAN
+        - pushd tests/fortomp
+        - sh test_fort.sh
+        - popd
+    about:
+      summary: GCC bootstrap compilers for building deps w/o openmp included
       home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
       license: GPL
       license_file: GPL_LICENSE
