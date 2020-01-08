@@ -173,22 +173,6 @@ fi
 
 
 ###############################
-## binutils
-###############################
-
-# gold has not been (cannot be?) built for powerpc
-if echo @CHOST@ | grep powerpc > /dev/null; then
-  GOLD_USED=
-else
-  GOLD_USED=ld.gold
-fi
-
-_tc_activation \
-  activate host @CHOST@ @CHOST@- \
-  addr2line ar as c++filt elfedit gprof ld ${GOLD_USED} nm objcopy objdump ranlib readelf size strings strip
-
-
-###############################
 ## gcc
 ###############################
 

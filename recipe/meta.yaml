@@ -156,7 +156,7 @@ outputs:
       host:
         # So that pin_compatible has something to work with:
         - libgfortran-ng {{ ctng_gcc }}.*
-        - binutils_impl_{{ ctng_target_platform }} {{ ctng_binutils }}.*
+        - {{ pin_subpackage("binutils_" ~ ctng_target_platform) }}
         - gcc_impl_{{ ctng_target_platform }} {{ ctng_gcc }}.*
         - gxx_impl_{{ ctng_target_platform }} {{ ctng_gcc }}.*
         - gfortran_impl_{{ ctng_target_platform }} {{ ctng_gcc }}.*
