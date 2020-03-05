@@ -6,7 +6,7 @@ ctng_binutils:
   - 2.33.1  # [not aarch64]
   - 2.29.1  # [aarch64]
 ctng_gcc_activation_build_num:
-  - 16
+  - 17
 ctng_target_platform:
   - linux-64                # [linux64]
   - linux-32                # [linux32]

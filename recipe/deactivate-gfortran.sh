@@ -85,10 +85,8 @@ function _tc_activation() {
 #    the host env's includes and libs is helpful default behavior
 if [ "${CONDA_BUILD:-0}" = "1" ]; then
   FFLAGS_USED="@FFLAGS@ -isystem ${PREFIX}/include -fdebug-prefix-map=${SRC_DIR}=/usr/local/src/conda/${PKG_NAME}-${PKG_VERSION} -fdebug-prefix-map=${PREFIX}=/usr/local/src/conda-prefix"
-  LDFLAGS_USED="@LDFLAGS@ -Wl,-rpath,${PREFIX}/lib -L${PREFIX}/lib"
 else
   FFLAGS_USED="@FFLAGS@ -isystem ${CONDA_PREFIX}/include"
-  LDFLAGS_USED="@LDFLAGS@ -Wl,-rpath,${CONDA_PREFIX}/lib -L${CONDA_PREFIX}/lib"
 fi
 
 if [ "${CONDA_BUILD:-0}" = "1" ]; then
@@ -103,7 +101,6 @@ _tc_activation \
   gfortran f95 \
   "FFLAGS,${FFLAGS:-${FFLAGS_USED}}" \
   "FORTRANFLAGS,${FORTRANFLAGS:-${FFLAGS_USED}}" \
-  "LDFLAGS,${LDFLAGS:-${LDFLAGS_USED}}" \
   "DEBUG_FFLAGS,${FFLAGS:-${FFLAGS_USED} @DEBUG_FFLAGS@}" \
   "DEBUG_FORTRANFLAGS,${FORTRANFLAGS:-${FFLAGS_USED} @DEBUG_FFLAGS@}" \
 
@@ -111,11 +108,11 @@ _tc_activation \
 _tc_activation \
   deactivate host @CHOST@ @CHOST@- \
   "FC,${FC:-${GFORTRAN}}" \
-  "F77,${F77:-${GFORTRAN}}"
+  "F77,${F77:-${GFORTRAN}}" \
+  "F90,${F90:-${GFORTRAN}}"
 
 if [ $? -ne 0 ]; then
   echo "ERROR: $(_get_sourced_filename) failed, see above for details"
-#exit 1
 else
   if [ "${CONDA_BUILD:-0}" = "1" ]; then
     if [ -f /tmp/new-env-$$.txt ]; then
