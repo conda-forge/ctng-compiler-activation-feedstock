@@ -3,13 +3,13 @@ channel_sources:
 channel_targets:
 - conda-forge main
 ctng_binutils:
-- 2.33.1
+- '2.34'
 ctng_cpu_arch:
 - x86_64
 ctng_gcc:
 - 7.3.0
 ctng_gcc_activation_build_num:
-- '17'
+- '18'
 ctng_target_platform:
 - linux-64
 ctng_vendor:
