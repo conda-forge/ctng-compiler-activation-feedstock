@@ -5,17 +5,17 @@ cdt_arch:
 cdt_name:
 - cos7
 channel_sources:
-- conda-forge,c4aarch64,defaults
+- conda-forge
 channel_targets:
 - conda-forge main
 ctng_binutils:
-- 2.29.1
+- '2.34'
 ctng_cpu_arch:
 - aarch64
 ctng_gcc:
 - 7.3.0
 ctng_gcc_activation_build_num:
-- '17'
+- '18'
 ctng_target_platform:
 - linux-aarch64
 ctng_vendor:
