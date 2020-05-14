@@ -9,7 +9,7 @@ ctng_cpu_arch:
 ctng_gcc:
 - 8.2.0
 ctng_gcc_activation_build_num:
-- '18'
+- '19'
 ctng_target_platform:
 - linux-ppc64le
 ctng_vendor:
