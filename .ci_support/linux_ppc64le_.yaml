@@ -7,9 +7,9 @@ ctng_binutils:
 ctng_cpu_arch:
 - powerpc64le
 ctng_gcc:
-- 8.2.0
+- 8.4.0
 ctng_gcc_activation_build_num:
-- '19'
+- '20'
 ctng_target_platform:
 - linux-ppc64le
 ctng_vendor:
