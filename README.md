@@ -88,11 +88,11 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-binutils_linux--64-green.svg)](https://anaconda.org/conda-forge/binutils_linux-64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/binutils_linux-64.svg)](https://anaconda.org/conda-forge/binutils_linux-64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/binutils_linux-64.svg)](https://anaconda.org/conda-forge/binutils_linux-64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/binutils_linux-64.svg)](https://anaconda.org/conda-forge/binutils_linux-64) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-gcc_bootstrap_linux--64-green.svg)](https://anaconda.org/conda-forge/gcc_bootstrap_linux-64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gcc_bootstrap_linux-64.svg)](https://anaconda.org/conda-forge/gcc_bootstrap_linux-64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gcc_bootstrap_linux-64.svg)](https://anaconda.org/conda-forge/gcc_bootstrap_linux-64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gcc_bootstrap_linux-64.svg)](https://anaconda.org/conda-forge/gcc_bootstrap_linux-64) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-gcc_linux--64-green.svg)](https://anaconda.org/conda-forge/gcc_linux-64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gcc_linux-64.svg)](https://anaconda.org/conda-forge/gcc_linux-64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gcc_linux-64.svg)](https://anaconda.org/conda-forge/gcc_linux-64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gcc_linux-64.svg)](https://anaconda.org/conda-forge/gcc_linux-64) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-gfortran_linux--64-green.svg)](https://anaconda.org/conda-forge/gfortran_linux-64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gfortran_linux-64.svg)](https://anaconda.org/conda-forge/gfortran_linux-64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gfortran_linux-64.svg)](https://anaconda.org/conda-forge/gfortran_linux-64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gfortran_linux-64.svg)](https://anaconda.org/conda-forge/gfortran_linux-64) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-gxx_linux--64-green.svg)](https://anaconda.org/conda-forge/gxx_linux-64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gxx_linux-64.svg)](https://anaconda.org/conda-forge/gxx_linux-64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gxx_linux-64.svg)](https://anaconda.org/conda-forge/gxx_linux-64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gxx_linux-64.svg)](https://anaconda.org/conda-forge/gxx_linux-64) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-binutils_linux--ppc64le-green.svg)](https://anaconda.org/conda-forge/binutils_linux-ppc64le) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/binutils_linux-ppc64le.svg)](https://anaconda.org/conda-forge/binutils_linux-ppc64le) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/binutils_linux-ppc64le.svg)](https://anaconda.org/conda-forge/binutils_linux-ppc64le) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/binutils_linux-ppc64le.svg)](https://anaconda.org/conda-forge/binutils_linux-ppc64le) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-gcc_bootstrap_linux--ppc64le-green.svg)](https://anaconda.org/conda-forge/gcc_bootstrap_linux-ppc64le) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gcc_bootstrap_linux-ppc64le.svg)](https://anaconda.org/conda-forge/gcc_bootstrap_linux-ppc64le) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gcc_bootstrap_linux-ppc64le.svg)](https://anaconda.org/conda-forge/gcc_bootstrap_linux-ppc64le) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gcc_bootstrap_linux-ppc64le.svg)](https://anaconda.org/conda-forge/gcc_bootstrap_linux-ppc64le) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-gcc_linux--ppc64le-green.svg)](https://anaconda.org/conda-forge/gcc_linux-ppc64le) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gcc_linux-ppc64le.svg)](https://anaconda.org/conda-forge/gcc_linux-ppc64le) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gcc_linux-ppc64le.svg)](https://anaconda.org/conda-forge/gcc_linux-ppc64le) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gcc_linux-ppc64le.svg)](https://anaconda.org/conda-forge/gcc_linux-ppc64le) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-gfortran_linux--ppc64le-green.svg)](https://anaconda.org/conda-forge/gfortran_linux-ppc64le) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gfortran_linux-ppc64le.svg)](https://anaconda.org/conda-forge/gfortran_linux-ppc64le) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gfortran_linux-ppc64le.svg)](https://anaconda.org/conda-forge/gfortran_linux-ppc64le) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gfortran_linux-ppc64le.svg)](https://anaconda.org/conda-forge/gfortran_linux-ppc64le) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-gxx_linux--ppc64le-green.svg)](https://anaconda.org/conda-forge/gxx_linux-ppc64le) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gxx_linux-ppc64le.svg)](https://anaconda.org/conda-forge/gxx_linux-ppc64le) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gxx_linux-ppc64le.svg)](https://anaconda.org/conda-forge/gxx_linux-ppc64le) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gxx_linux-ppc64le.svg)](https://anaconda.org/conda-forge/gxx_linux-ppc64le) |
 
 Installing ctng-compiler-activation
 ===================================
@@ -103,16 +103,16 @@ Installing `ctng-compiler-activation` from the `conda-forge` channel can be achi
 conda config --add channels conda-forge
 ```
 
-Once the `conda-forge` channel has been enabled, `binutils_linux-64, gcc_bootstrap_linux-64, gcc_linux-64, gfortran_linux-64, gxx_linux-64` can be installed with:
+Once the `conda-forge` channel has been enabled, `binutils_linux-ppc64le, gcc_bootstrap_linux-ppc64le, gcc_linux-ppc64le, gfortran_linux-ppc64le, gxx_linux-ppc64le` can be installed with:
 
 ```
-conda install binutils_linux-64 gcc_bootstrap_linux-64 gcc_linux-64 gfortran_linux-64 gxx_linux-64
+conda install binutils_linux-ppc64le gcc_bootstrap_linux-ppc64le gcc_linux-ppc64le gfortran_linux-ppc64le gxx_linux-ppc64le
 ```
 
-It is possible to list all of the versions of `binutils_linux-64` available on your platform with:
+It is possible to list all of the versions of `binutils_linux-ppc64le` available on your platform with:
 
 ```
-conda search binutils_linux-64 --channel conda-forge
+conda search binutils_linux-ppc64le --channel conda-forge
 ```
 
 
