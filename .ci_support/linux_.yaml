@@ -9,10 +9,10 @@ ctng_cpu_arch:
 ctng_gcc:
 - 7.5.0
 ctng_gcc_activation_build_num:
-- '20'
+- '21'
 ctng_target_platform:
 - linux-64
 ctng_vendor:
-- conda_cos6
+- conda
 docker_image:
 - condaforge/linux-anvil-comp7
