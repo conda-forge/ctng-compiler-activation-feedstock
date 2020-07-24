@@ -23,6 +23,7 @@ outputs:
         - gcc_impl_{{ ctng_target_platform }} {{ ctng_gcc }}.*
         # for activation of binutils env vars
         - {{ pin_subpackage("binutils_" ~ ctng_target_platform, exact=True) }}
+        - sysroot_{{ ctng_target_platform }}
     run_exports:
       strong:
         - libgcc-ng >={{ ctng_gcc }}
@@ -50,6 +51,7 @@ outputs:
         - {{ pin_subpackage("gcc_" ~ ctng_target_platform, exact=True) }}
         # for activation of binutils env vars
         - {{ pin_subpackage("binutils_" ~ ctng_target_platform, exact=True) }}
+        - sysroot_{{ ctng_target_platform }}
     test:
       files:
         - tests
@@ -81,6 +83,7 @@ outputs:
         - {{ pin_subpackage("gcc_" ~ ctng_target_platform, exact=True) }}
         # for activation of binutils env vars:
         - {{ pin_subpackage("binutils_" ~ ctng_target_platform, exact=True) }}
+        - sysroot_{{ ctng_target_platform }}
     run_exports:
       strong:
         # The SONAME changes at major releases.
@@ -108,6 +111,7 @@ outputs:
     requirements:
       run:
         - binutils_impl_{{ ctng_target_platform }} {{ ctng_binutils }}.*
+        - sysroot_{{ ctng_target_platform }}
     test:
       commands:
         - test -f $LD
@@ -125,6 +129,8 @@ outputs:
         - {{ pin_subpackage("gxx_" ~ ctng_target_platform) }}
         - {{ pin_subpackage("gfortran_" ~ ctng_target_platform) }}
         - {{ pin_subpackage("binutils_" ~ ctng_target_platform) }}
+      run:
+        - sysroot_{{ ctng_target_platform }}
     build:
       always_include_files:
         - bin/
@@ -152,3 +158,4 @@ about:
 extra:
   recipe-maintainers:
     - isuruf
+    - beckermr

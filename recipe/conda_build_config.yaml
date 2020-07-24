@@ -17,8 +17,7 @@ ctng_cpu_arch:
   - powerpc64le  # [ppc64le]
   - aarch64  # [aarch64]
 ctng_vendor:
-  - conda_cos6  # [linux32 or linux64]
-  - conda_cos7  # [aarch64 or ppc64le]
+  - conda
 FINAL_CPPFLAGS:
   - -DNDEBUG -D_FORTIFY_SOURCE=2 -O2
 FINAL_CFLAGS:
