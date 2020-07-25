@@ -129,8 +129,6 @@ outputs:
         - {{ pin_subpackage("gxx_" ~ ctng_target_platform) }}
         - {{ pin_subpackage("gfortran_" ~ ctng_target_platform) }}
         - {{ pin_subpackage("binutils_" ~ ctng_target_platform) }}
-      run:
-        - sysroot_{{ ctng_target_platform }}
     build:
       always_include_files:
         - bin/
