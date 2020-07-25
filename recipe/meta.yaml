@@ -28,6 +28,8 @@ outputs:
       strong:
         - libgcc-ng >={{ ctng_gcc }}
     test:
+      requires:
+        - sysroot_{{ ctng_target_platform }} {{ conda_glibc_ver }}
       files:
         - tests
       commands:
@@ -53,6 +55,8 @@ outputs:
         - {{ pin_subpackage("binutils_" ~ ctng_target_platform, exact=True) }}
         - sysroot_{{ ctng_target_platform }}
     test:
+      requires:
+        - sysroot_{{ ctng_target_platform }} {{ conda_glibc_ver }}
       files:
         - tests
       commands:
@@ -94,6 +98,7 @@ outputs:
       requires:
         - cmake >=3.11
         - make
+        - sysroot_{{ ctng_target_platform }} {{ conda_glibc_ver }}
       commands:
         - pushd tests/fortomp
         - sh test_fort.sh
@@ -113,6 +118,8 @@ outputs:
         - binutils_impl_{{ ctng_target_platform }} {{ ctng_binutils }}.*
         - sysroot_{{ ctng_target_platform }}
     test:
+      requires:
+        - sysroot_{{ ctng_target_platform }} {{ conda_glibc_ver }}      
       commands:
         - test -f $LD
     about:

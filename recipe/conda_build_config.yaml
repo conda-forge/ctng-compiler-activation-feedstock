@@ -60,3 +60,6 @@ FINAL_CONDA_PYTHON_SYSCONFIGDATA_NAME:
   - _sysconfigdata_i686_conda_cos6_linux_gnu   # [linux32]
   - _sysconfigdata_powerpc64le_conda_cos7_linux_gnu  # [ppc64le]
   - _sysconfigdata_aarch64_conda_cos7_linux_gnu  # [aarch64]
+conda_glibc_ver:
+  - 2.17    # [ppc64le or aarch64]
+  - 2.12    # [linux32 or linux64]
