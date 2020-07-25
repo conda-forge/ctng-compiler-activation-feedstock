@@ -23,10 +23,13 @@ outputs:
         - gcc_impl_{{ ctng_target_platform }} {{ ctng_gcc }}.*
         # for activation of binutils env vars
         - {{ pin_subpackage("binutils_" ~ ctng_target_platform, exact=True) }}
+        - sysroot_{{ ctng_target_platform }}
     run_exports:
       strong:
         - libgcc-ng >={{ ctng_gcc }}
     test:
+      requires:
+        - sysroot_{{ ctng_target_platform }} {{ conda_glibc_ver }}
       files:
         - tests
       commands:
@@ -50,7 +53,10 @@ outputs:
         - {{ pin_subpackage("gcc_" ~ ctng_target_platform, exact=True) }}
         # for activation of binutils env vars
         - {{ pin_subpackage("binutils_" ~ ctng_target_platform, exact=True) }}
+        - sysroot_{{ ctng_target_platform }}
     test:
+      requires:
+        - sysroot_{{ ctng_target_platform }} {{ conda_glibc_ver }}
       files:
         - tests
       commands:
@@ -81,6 +87,7 @@ outputs:
         - {{ pin_subpackage("gcc_" ~ ctng_target_platform, exact=True) }}
         # for activation of binutils env vars:
         - {{ pin_subpackage("binutils_" ~ ctng_target_platform, exact=True) }}
+        - sysroot_{{ ctng_target_platform }}
     run_exports:
       strong:
         # The SONAME changes at major releases.
@@ -91,6 +98,7 @@ outputs:
       requires:
         - cmake >=3.11
         - make
+        - sysroot_{{ ctng_target_platform }} {{ conda_glibc_ver }}
       commands:
         - pushd tests/fortomp
         - sh test_fort.sh
@@ -108,7 +116,10 @@ outputs:
     requirements:
       run:
         - binutils_impl_{{ ctng_target_platform }} {{ ctng_binutils }}.*
+        - sysroot_{{ ctng_target_platform }}
     test:
+      requires:
+        - sysroot_{{ ctng_target_platform }} {{ conda_glibc_ver }}      
       commands:
         - test -f $LD
     about:
@@ -152,3 +163,4 @@ about:
 extra:
   recipe-maintainers:
     - isuruf
+    - beckermr
