@@ -88,6 +88,16 @@ if [ "${CONDA_BUILD:-0}" = "1" ]; then
   env > /tmp/old-env-$$.txt
 fi
 
+# figure out the build system
+BUILD_PLATFORM=$(conda info  | grep "platform :" | cut -f 2 -d ":" | tr -d '[:space:]')
+if [[ ${BUILD_PLATFORM} == "linux-64" ]]; then
+  BUILD="x86_64-conda-linux-gnu"
+elif [[ ${BUILD_PLATFORM} == "linux-ppc64le" ]]; then
+  BUILD="powerpc64le-conda-linux-gnu"
+elif [[ ${BUILD_PLATFORM} == "linux-aarch64" ]]; then
+  BUILD="aarch64-conda-linux-gnu"
+fi
+
 # gold has not been (cannot be?) built for powerpc
 if echo @CHOST@ | grep powerpc > /dev/null; then
   GOLD_USED=
@@ -97,7 +107,8 @@ fi
 
 _tc_activation \
   deactivate host @CHOST@ @CHOST@- \
-  addr2line ar as c++filt elfedit gprof ld ${GOLD_USED} nm objcopy objdump ranlib readelf size strings strip
+  addr2line ar as c++filt elfedit gprof ld ${GOLD_USED} nm objcopy objdump ranlib readelf size strings strip \
+  BUILD,${BUILD}
 
 if [ $? -ne 0 ]; then
   echo "ERROR: $(_get_sourced_filename) failed, see above for details"
