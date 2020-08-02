@@ -1,36 +1,5 @@
 ---
 kind: pipeline
-name: linux_aarch64_ctng_gcc7.5.0ctng_tar_h15eb662d5b
-
-platform:
-  os: linux
-  arch: arm64
-
-steps:
-- name: Install and build
-  image: condaforge/linux-anvil-aarch64
-  environment:
-    CONFIG: linux_aarch64_ctng_gcc7.5.0ctng_target_platformlinux-64
-    UPLOAD_PACKAGES: True
-    PLATFORM: linux-aarch64
-    BINSTAR_TOKEN:
-      from_secret: BINSTAR_TOKEN
-    FEEDSTOCK_TOKEN:
-      from_secret: FEEDSTOCK_TOKEN
-    STAGING_BINSTAR_TOKEN:
-      from_secret: STAGING_BINSTAR_TOKEN
-  commands:
-    - export FEEDSTOCK_ROOT="$DRONE_WORKSPACE"
-    - export RECIPE_ROOT="$FEEDSTOCK_ROOT/recipe"
-    - export CI=drone
-    - export GIT_BRANCH="$DRONE_BRANCH"
-    - export FEEDSTOCK_NAME=$(basename ${DRONE_REPO_NAME})
-    - sed -i '$ichown -R conda:conda "$FEEDSTOCK_ROOT"' /opt/docker/bin/entrypoint
-    - /opt/docker/bin/entrypoint $FEEDSTOCK_ROOT/.scripts/build_steps.sh
-    - echo "Done building"
-
----
-kind: pipeline
 name: linux_aarch64_ctng_gcc7.5.0ctng_tar_h8b035aac0a
 
 platform:
@@ -42,68 +11,6 @@ steps:
   image: condaforge/linux-anvil-aarch64
   environment:
     CONFIG: linux_aarch64_ctng_gcc7.5.0ctng_target_platformlinux-aarch64
-    UPLOAD_PACKAGES: True
-    PLATFORM: linux-aarch64
-    BINSTAR_TOKEN:
-      from_secret: BINSTAR_TOKEN
-    FEEDSTOCK_TOKEN:
-      from_secret: FEEDSTOCK_TOKEN
-    STAGING_BINSTAR_TOKEN:
-      from_secret: STAGING_BINSTAR_TOKEN
-  commands:
-    - export FEEDSTOCK_ROOT="$DRONE_WORKSPACE"
-    - export RECIPE_ROOT="$FEEDSTOCK_ROOT/recipe"
-    - export CI=drone
-    - export GIT_BRANCH="$DRONE_BRANCH"
-    - export FEEDSTOCK_NAME=$(basename ${DRONE_REPO_NAME})
-    - sed -i '$ichown -R conda:conda "$FEEDSTOCK_ROOT"' /opt/docker/bin/entrypoint
-    - /opt/docker/bin/entrypoint $FEEDSTOCK_ROOT/.scripts/build_steps.sh
-    - echo "Done building"
-
----
-kind: pipeline
-name: linux_aarch64_ctng_gcc7.5.0ctng_tar_hbf2f92cd6a
-
-platform:
-  os: linux
-  arch: arm64
-
-steps:
-- name: Install and build
-  image: condaforge/linux-anvil-aarch64
-  environment:
-    CONFIG: linux_aarch64_ctng_gcc7.5.0ctng_target_platformlinux-ppc64le
-    UPLOAD_PACKAGES: True
-    PLATFORM: linux-aarch64
-    BINSTAR_TOKEN:
-      from_secret: BINSTAR_TOKEN
-    FEEDSTOCK_TOKEN:
-      from_secret: FEEDSTOCK_TOKEN
-    STAGING_BINSTAR_TOKEN:
-      from_secret: STAGING_BINSTAR_TOKEN
-  commands:
-    - export FEEDSTOCK_ROOT="$DRONE_WORKSPACE"
-    - export RECIPE_ROOT="$FEEDSTOCK_ROOT/recipe"
-    - export CI=drone
-    - export GIT_BRANCH="$DRONE_BRANCH"
-    - export FEEDSTOCK_NAME=$(basename ${DRONE_REPO_NAME})
-    - sed -i '$ichown -R conda:conda "$FEEDSTOCK_ROOT"' /opt/docker/bin/entrypoint
-    - /opt/docker/bin/entrypoint $FEEDSTOCK_ROOT/.scripts/build_steps.sh
-    - echo "Done building"
-
----
-kind: pipeline
-name: linux_aarch64_ctng_gcc8.4.0ctng_tar_h48a301304a
-
-platform:
-  os: linux
-  arch: arm64
-
-steps:
-- name: Install and build
-  image: condaforge/linux-anvil-aarch64
-  environment:
-    CONFIG: linux_aarch64_ctng_gcc8.4.0ctng_target_platformlinux-64
     UPLOAD_PACKAGES: True
     PLATFORM: linux-aarch64
     BINSTAR_TOKEN:
@@ -155,68 +62,6 @@ steps:
 
 ---
 kind: pipeline
-name: linux_aarch64_ctng_gcc8.4.0ctng_tar_ha881b52835
-
-platform:
-  os: linux
-  arch: arm64
-
-steps:
-- name: Install and build
-  image: condaforge/linux-anvil-aarch64
-  environment:
-    CONFIG: linux_aarch64_ctng_gcc8.4.0ctng_target_platformlinux-ppc64le
-    UPLOAD_PACKAGES: True
-    PLATFORM: linux-aarch64
-    BINSTAR_TOKEN:
-      from_secret: BINSTAR_TOKEN
-    FEEDSTOCK_TOKEN:
-      from_secret: FEEDSTOCK_TOKEN
-    STAGING_BINSTAR_TOKEN:
-      from_secret: STAGING_BINSTAR_TOKEN
-  commands:
-    - export FEEDSTOCK_ROOT="$DRONE_WORKSPACE"
-    - export RECIPE_ROOT="$FEEDSTOCK_ROOT/recipe"
-    - export CI=drone
-    - export GIT_BRANCH="$DRONE_BRANCH"
-    - export FEEDSTOCK_NAME=$(basename ${DRONE_REPO_NAME})
-    - sed -i '$ichown -R conda:conda "$FEEDSTOCK_ROOT"' /opt/docker/bin/entrypoint
-    - /opt/docker/bin/entrypoint $FEEDSTOCK_ROOT/.scripts/build_steps.sh
-    - echo "Done building"
-
----
-kind: pipeline
-name: linux_aarch64_ctng_gcc9.3.0ctng_tar_h68146e266a
-
-platform:
-  os: linux
-  arch: arm64
-
-steps:
-- name: Install and build
-  image: condaforge/linux-anvil-aarch64
-  environment:
-    CONFIG: linux_aarch64_ctng_gcc9.3.0ctng_target_platformlinux-64
-    UPLOAD_PACKAGES: True
-    PLATFORM: linux-aarch64
-    BINSTAR_TOKEN:
-      from_secret: BINSTAR_TOKEN
-    FEEDSTOCK_TOKEN:
-      from_secret: FEEDSTOCK_TOKEN
-    STAGING_BINSTAR_TOKEN:
-      from_secret: STAGING_BINSTAR_TOKEN
-  commands:
-    - export FEEDSTOCK_ROOT="$DRONE_WORKSPACE"
-    - export RECIPE_ROOT="$FEEDSTOCK_ROOT/recipe"
-    - export CI=drone
-    - export GIT_BRANCH="$DRONE_BRANCH"
-    - export FEEDSTOCK_NAME=$(basename ${DRONE_REPO_NAME})
-    - sed -i '$ichown -R conda:conda "$FEEDSTOCK_ROOT"' /opt/docker/bin/entrypoint
-    - /opt/docker/bin/entrypoint $FEEDSTOCK_ROOT/.scripts/build_steps.sh
-    - echo "Done building"
-
----
-kind: pipeline
 name: linux_aarch64_ctng_gcc9.3.0ctng_tar_hfbb68bb591
 
 platform:
@@ -228,37 +73,6 @@ steps:
   image: condaforge/linux-anvil-aarch64
   environment:
     CONFIG: linux_aarch64_ctng_gcc9.3.0ctng_target_platformlinux-aarch64
-    UPLOAD_PACKAGES: True
-    PLATFORM: linux-aarch64
-    BINSTAR_TOKEN:
-      from_secret: BINSTAR_TOKEN
-    FEEDSTOCK_TOKEN:
-      from_secret: FEEDSTOCK_TOKEN
-    STAGING_BINSTAR_TOKEN:
-      from_secret: STAGING_BINSTAR_TOKEN
-  commands:
-    - export FEEDSTOCK_ROOT="$DRONE_WORKSPACE"
-    - export RECIPE_ROOT="$FEEDSTOCK_ROOT/recipe"
-    - export CI=drone
-    - export GIT_BRANCH="$DRONE_BRANCH"
-    - export FEEDSTOCK_NAME=$(basename ${DRONE_REPO_NAME})
-    - sed -i '$ichown -R conda:conda "$FEEDSTOCK_ROOT"' /opt/docker/bin/entrypoint
-    - /opt/docker/bin/entrypoint $FEEDSTOCK_ROOT/.scripts/build_steps.sh
-    - echo "Done building"
-
----
-kind: pipeline
-name: linux_aarch64_ctng_gcc9.3.0ctng_tar_h3673f33c4e
-
-platform:
-  os: linux
-  arch: arm64
-
-steps:
-- name: Install and build
-  image: condaforge/linux-anvil-aarch64
-  environment:
-    CONFIG: linux_aarch64_ctng_gcc9.3.0ctng_target_platformlinux-ppc64le
     UPLOAD_PACKAGES: True
     PLATFORM: linux-aarch64
     BINSTAR_TOKEN:
