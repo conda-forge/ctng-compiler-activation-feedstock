@@ -1,0 +1,23 @@
+channel_sources:
+- conda-forge,defaults
+channel_targets:
+- conda-forge main
+ctng_binutils:
+- '2.34'
+ctng_cpu_arch:
+- powerpc64le
+ctng_gcc:
+- 7.5.0
+ctng_gcc_activation_build_num:
+- '23'
+ctng_target_platform:
+- linux-ppc64le
+ctng_vendor:
+- conda
+docker_image:
+- condaforge/linux-anvil-ppc64le
+target_platform:
+- linux-ppc64le
+zip_keys:
+- - ctng_target_platform
+  - ctng_cpu_arch

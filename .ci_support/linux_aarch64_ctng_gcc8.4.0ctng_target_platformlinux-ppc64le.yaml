@@ -8,21 +8,22 @@ channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
-conda_glibc_ver:
-- '2.17'
 ctng_binutils:
 - '2.34'
 ctng_cpu_arch:
-- aarch64
+- powerpc64le
 ctng_gcc:
-- 7.5.0
+- 8.4.0
 ctng_gcc_activation_build_num:
 - '23'
 ctng_target_platform:
-- linux-aarch64
+- linux-ppc64le
 ctng_vendor:
 - conda
 docker_image:
 - condaforge/linux-anvil-aarch64
 target_platform:
 - linux-aarch64
+zip_keys:
+- - ctng_target_platform
+  - ctng_cpu_arch
