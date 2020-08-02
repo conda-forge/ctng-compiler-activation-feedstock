@@ -56,6 +56,7 @@ function _tc_activation() {
           ;;
         *)
           newval="${CONDA_PREFIX}/bin/${tc_prefix}${thing}"
+          thing=$(echo ${thing} | tr 'a-z+-' 'A-ZX_')
           if [ ! -x "${newval}" -a "${pass}" = "check" ]; then
             echo "ERROR: This cross-compiler package contains no program ${newval}"
             return 1
@@ -63,7 +64,6 @@ function _tc_activation() {
           ;;
       esac
       if [ "${pass}" = "apply" ]; then
-        thing=$(echo ${thing} | tr 'a-z+-' 'A-ZX_')
         eval oldval="\$${from}$thing"
         if [ -n "${oldval}" ]; then
           eval export "${to}'${thing}'=\"${oldval}\""
@@ -105,7 +105,7 @@ if [ "${CONDA_BUILD:-0}" = "1" ]; then
 fi
 
 _tc_activation \
-  deactivate host @CHOST@ @CHOST@- \
+  deactivate HOST @CHOST@ @CHOST@- \
   cc cpp gcc gcc-ar gcc-nm gcc-ranlib \
   "CPPFLAGS,${CPPFLAGS:-${CPPFLAGS_USED}}" \
   "CFLAGS,${CFLAGS:-${CFLAGS_USED}}" \
@@ -114,7 +114,8 @@ _tc_activation \
   "DEBUG_CFLAGS,${DEBUG_CFLAGS:-${DEBUG_CFLAGS_USED}}" \
   "CMAKE_PREFIX_PATH,${CMAKE_PREFIX_PATH_USED}" \
   "_CONDA_PYTHON_SYSCONFIGDATA_NAME,${_CONDA_PYTHON_SYSCONFIGDATA_NAME_USED}" \
-  "CONDA_BUILD_SYSROOT,${CONDA_PREFIX}/@CHOST@/sysroot"
+  "CONDA_BUILD_SYSROOT,${CONDA_PREFIX}/@CHOST@/sysroot" \
+  "host_alias,@CHOST@"
 
 if [ $? -ne 0 ]; then
   echo "ERROR: $(_get_sourced_filename) failed, see above for details"
