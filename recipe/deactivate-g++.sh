@@ -102,7 +102,8 @@ _tc_activation \
   deactivate host @CHOST@ @CHOST@- \
   c++ g++ \
   "CXXFLAGS,${CXXFLAGS:-${CXXFLAGS_USED}}" \
-  "DEBUG_CXXFLAGS,${DEBUG_CXXFLAGS:-${DEBUG_CXXFLAGS_USED}}"
+  "DEBUG_CXXFLAGS,${DEBUG_CXXFLAGS:-${DEBUG_CXXFLAGS_USED}}" \
+  "CXX_FOR_BUILD,${CONDA_PREFIX}/bin/@CBUILD@-c++"
 
 if [ $? -ne 0 ]; then
   echo "ERROR: $(_get_sourced_filename) failed, see above for details"

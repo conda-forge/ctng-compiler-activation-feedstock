@@ -1,4 +1,6 @@
-CHOST=$(${PREFIX}/bin/*-gcc -dumpmachine)
+
+CBUILD=$(${PREFIX}/bin/*-gcc -dumpmachine)
+CHOST=${ctng_cpu_arch}-${ctng_vendor}-linux-gnu
 
 FINAL_CFLAGS=FINAL_CFLAGS_${ctng_target_platform_u}
 FINAL_DEBUG_CFLAGS=FINAL_DEBUG_CFLAGS_${ctng_target_platform_u}
@@ -20,6 +22,7 @@ else
   export CONDA_BUILD_CROSS_COMPILATION="1"
 fi
 
+find . -name "*activate*.sh" -exec sed -i.bak "s|@CBUILD@|${CBUILD}|g"                                                              "{}" \;
 find . -name "*activate*.sh" -exec sed -i.bak "s|@CHOST@|${CHOST}|g"                                                                "{}" \;
 find . -name "*activate*.sh" -exec sed -i.bak "s|@CPPFLAGS@|${FINAL_CPPFLAGS}|g"                                                    "{}" \;
 find . -name "*activate*.sh" -exec sed -i.bak "s|@DEBUG_CPPFLAGS@|${FINAL_DEBUG_CPPFLAGS}|g"                                        "{}" \;
