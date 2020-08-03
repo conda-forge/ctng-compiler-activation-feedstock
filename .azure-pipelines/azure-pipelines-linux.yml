@@ -8,40 +8,40 @@ jobs:
     vmImage: ubuntu-16.04
   strategy:
     matrix:
-      linux_64_conda_glibc_ver2.12ctng_gcc7.5.0ctng_target_platformlinux-64:
-        CONFIG: linux_64_conda_glibc_ver2.12ctng_gcc7.5.0ctng_target_platformlinux-64
+      linux_64_conda_glibc_ver2.12ctng_gcc7.5.0ctng_target_platformlinux-64target_platformlinux-64:
+        CONFIG: linux_64_conda_glibc_ver2.12ctng_gcc7.5.0ctng_target_platformlinux-64target_platformlinux-64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
-      linux_64_conda_glibc_ver2.12ctng_gcc8.4.0ctng_target_platformlinux-64:
-        CONFIG: linux_64_conda_glibc_ver2.12ctng_gcc8.4.0ctng_target_platformlinux-64
+      linux_64_conda_glibc_ver2.12ctng_gcc8.4.0ctng_target_platformlinux-64target_platformlinux-64:
+        CONFIG: linux_64_conda_glibc_ver2.12ctng_gcc8.4.0ctng_target_platformlinux-64target_platformlinux-64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
-      linux_64_conda_glibc_ver2.12ctng_gcc9.3.0ctng_target_platformlinux-64:
-        CONFIG: linux_64_conda_glibc_ver2.12ctng_gcc9.3.0ctng_target_platformlinux-64
+      linux_64_conda_glibc_ver2.12ctng_gcc9.3.0ctng_target_platformlinux-64target_platformlinux-64:
+        CONFIG: linux_64_conda_glibc_ver2.12ctng_gcc9.3.0ctng_target_platformlinux-64target_platformlinux-64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
-      linux_64_conda_glibc_ver2.17ctng_gcc7.5.0ctng_target_platformlinux-aarch64:
-        CONFIG: linux_64_conda_glibc_ver2.17ctng_gcc7.5.0ctng_target_platformlinux-aarch64
+      linux_64_conda_glibc_ver2.17ctng_gcc7.5.0ctng_target_platformlinux-aarch64target_platformlinux-64:
+        CONFIG: linux_64_conda_glibc_ver2.17ctng_gcc7.5.0ctng_target_platformlinux-aarch64target_platformlinux-64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
-      linux_64_conda_glibc_ver2.17ctng_gcc7.5.0ctng_target_platformlinux-ppc64le:
-        CONFIG: linux_64_conda_glibc_ver2.17ctng_gcc7.5.0ctng_target_platformlinux-ppc64le
+      linux_64_conda_glibc_ver2.17ctng_gcc7.5.0ctng_target_platformlinux-ppc64letarget_platformlinux-64:
+        CONFIG: linux_64_conda_glibc_ver2.17ctng_gcc7.5.0ctng_target_platformlinux-ppc64letarget_platformlinux-64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
-      linux_64_conda_glibc_ver2.17ctng_gcc8.4.0ctng_target_platformlinux-aarch64:
-        CONFIG: linux_64_conda_glibc_ver2.17ctng_gcc8.4.0ctng_target_platformlinux-aarch64
+      linux_64_conda_glibc_ver2.17ctng_gcc8.4.0ctng_target_platformlinux-aarch64target_platformlinux-64:
+        CONFIG: linux_64_conda_glibc_ver2.17ctng_gcc8.4.0ctng_target_platformlinux-aarch64target_platformlinux-64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
-      linux_64_conda_glibc_ver2.17ctng_gcc8.4.0ctng_target_platformlinux-ppc64le:
-        CONFIG: linux_64_conda_glibc_ver2.17ctng_gcc8.4.0ctng_target_platformlinux-ppc64le
+      linux_64_conda_glibc_ver2.17ctng_gcc8.4.0ctng_target_platformlinux-ppc64letarget_platformlinux-64:
+        CONFIG: linux_64_conda_glibc_ver2.17ctng_gcc8.4.0ctng_target_platformlinux-ppc64letarget_platformlinux-64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
-      linux_64_conda_glibc_ver2.17ctng_gcc9.3.0ctng_target_platformlinux-aarch64:
-        CONFIG: linux_64_conda_glibc_ver2.17ctng_gcc9.3.0ctng_target_platformlinux-aarch64
+      linux_64_conda_glibc_ver2.17ctng_gcc9.3.0ctng_target_platformlinux-aarch64target_platformlinux-64:
+        CONFIG: linux_64_conda_glibc_ver2.17ctng_gcc9.3.0ctng_target_platformlinux-aarch64target_platformlinux-64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
-      linux_64_conda_glibc_ver2.17ctng_gcc9.3.0ctng_target_platformlinux-ppc64le:
-        CONFIG: linux_64_conda_glibc_ver2.17ctng_gcc9.3.0ctng_target_platformlinux-ppc64le
+      linux_64_conda_glibc_ver2.17ctng_gcc9.3.0ctng_target_platformlinux-ppc64letarget_platformlinux-64:
+        CONFIG: linux_64_conda_glibc_ver2.17ctng_gcc9.3.0ctng_target_platformlinux-ppc64letarget_platformlinux-64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
     maxParallel: 8
