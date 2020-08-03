@@ -120,6 +120,12 @@ _tc_activation \
   "build_alias,@CBUILD@" \
   "host_alias,@CHOST@"
 
+if [ "@CONDA_BUILD_CROSS_COMPILATION@" = "1" ]; then
+_tc_activation \
+  deactivate HOST @CHOST@ @CHOST@- \
+  "QEMU_LD_PREFIX,${QEMU_LD_PREFIX:-${CONDA_BUILD_SYSROOT}}"
+fi
+
 if [ $? -ne 0 ]; then
   echo "ERROR: $(_get_sourced_filename) failed, see above for details"
 else
