@@ -1,6 +1,6 @@
 ---
 kind: pipeline
-name: linux_aarch64_ctng_gcc7.5.0ctng_tar_h8b035aac0a
+name: linux_aarch64_conda_glibc_ver2.17ct_h9013dd4b19
 
 platform:
   os: linux
@@ -10,7 +10,7 @@ steps:
 - name: Install and build
   image: condaforge/linux-anvil-aarch64
   environment:
-    CONFIG: linux_aarch64_ctng_gcc7.5.0ctng_target_platformlinux-aarch64
+    CONFIG: linux_aarch64_conda_glibc_ver2.17ctng_gcc7.5.0ctng_target_platformlinux-aarch64
     UPLOAD_PACKAGES: True
     PLATFORM: linux-aarch64
     BINSTAR_TOKEN:
@@ -31,7 +31,7 @@ steps:
 
 ---
 kind: pipeline
-name: linux_aarch64_ctng_gcc8.4.0ctng_tar_h6b64be49b4
+name: linux_aarch64_conda_glibc_ver2.17ct_h6f7b6290a7
 
 platform:
   os: linux
@@ -41,7 +41,7 @@ steps:
 - name: Install and build
   image: condaforge/linux-anvil-aarch64
   environment:
-    CONFIG: linux_aarch64_ctng_gcc8.4.0ctng_target_platformlinux-aarch64
+    CONFIG: linux_aarch64_conda_glibc_ver2.17ctng_gcc8.4.0ctng_target_platformlinux-aarch64
     UPLOAD_PACKAGES: True
     PLATFORM: linux-aarch64
     BINSTAR_TOKEN:
@@ -62,7 +62,7 @@ steps:
 
 ---
 kind: pipeline
-name: linux_aarch64_ctng_gcc9.3.0ctng_tar_hfbb68bb591
+name: linux_aarch64_conda_glibc_ver2.17ct_he933cb50ff
 
 platform:
   os: linux
@@ -72,7 +72,7 @@ steps:
 - name: Install and build
   image: condaforge/linux-anvil-aarch64
   environment:
-    CONFIG: linux_aarch64_ctng_gcc9.3.0ctng_target_platformlinux-aarch64
+    CONFIG: linux_aarch64_conda_glibc_ver2.17ctng_gcc9.3.0ctng_target_platformlinux-aarch64
     UPLOAD_PACKAGES: True
     PLATFORM: linux-aarch64
     BINSTAR_TOKEN:
