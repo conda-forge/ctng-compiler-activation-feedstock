@@ -34,8 +34,9 @@ outputs:
         - tests
       commands:
         - echo {{ ctng_target_platform_u }} 
-        - ${CC} ${CFLAGS} -Wall tests/aligned_alloc.c -o c_aligned -v
-        - ./c_aligned
+        - ${CC} ${CFLAGS} -Wall tests/aligned_alloc.c -c -o c_aligned.o -v
+        - ${CC} ${LDFLAGS} c_aligned.o -o c_aligned     # [target_platform == ctng_target_platform]
+        - ./c_aligned                                   # [target_platform == ctng_target_platform]
         # CONDA_BUILD_SYSROOT is defined for clang++ to find correct C++ headers, see issue 8
         - test -z "${CONDA_BUILD_SYSROOT+x}" && echo "CONDA_BUILD_SYSROOT is not set" && exit 1
         - test -d ${CONDA_BUILD_SYSROOT} || exit 1
@@ -61,8 +62,9 @@ outputs:
       files:
         - tests
       commands:
-        - ${CXX} ${CXXFLAGS} -Wall tests/aligned_alloc.cpp -o cpp_aligned
-        - ./cpp_aligned
+        - ${CXX} ${CXXFLAGS} -Wall tests/aligned_alloc.cpp -c -o cpp_aligned.o
+        - ${CXX} ${LDFLAGS} cpp_aligned.o -o cpp_aligned    # [target_platform == ctng_target_platform]
+        - ./cpp_aligned                                     # [target_platform == ctng_target_platform]
         - test -z "${CONDA_BUILD_SYSROOT+x}" && echo "CONDA_BUILD_SYSROOT is not set" && exit 1
         - test -d ${CONDA_BUILD_SYSROOT} || exit 1
     run_exports:
@@ -101,8 +103,9 @@ outputs:
         - make
         - sysroot_{{ ctng_target_platform }} {{ conda_glibc_ver }}
       commands:
+        - ${FC} --version
         - pushd tests/fortomp
-        - sh test_fort.sh
+        - sh test_fort.sh       # [target_platform == ctng_target_platform]
       files:
         - tests/fortomp/*
     about:
