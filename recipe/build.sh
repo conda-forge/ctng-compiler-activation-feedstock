@@ -5,6 +5,12 @@ if [ -z "${FINAL_CFLAGS}" ]; then
     exit 1
 fi
 
+if [[ "$target_platform" == "$cross_target_platform" ]]; then
+  export CONDA_BUILD_CROSS_COMPILATION=""
+else
+  export CONDA_BUILD_CROSS_COMPILATION="1"
+fi
+
 find . -name "*activate*.sh" -exec sed -i.bak "s|@CHOST@|${CHOST}|g"                                                "{}" \;
 find . -name "*activate*.sh" -exec sed -i.bak "s|@CPPFLAGS@|${FINAL_CPPFLAGS}|g"                                    "{}" \;
 find . -name "*activate*.sh" -exec sed -i.bak "s|@DEBUG_CPPFLAGS@|${FINAL_DEBUG_CPPFLAGS}|g"                        "{}" \;
@@ -16,5 +22,6 @@ find . -name "*activate*.sh" -exec sed -i.bak "s|@FFLAGS@|${FINAL_FFLAGS_${ctng_
 find . -name "*activate*.sh" -exec sed -i.bak "s|@DEBUG_FFLAGS@|${FINAL_DEBUG_FFLAGS_${ctng_target_platform_u}}|g"                            "{}" \;
 find . -name "*activate*.sh" -exec sed -i.bak "s|@LDFLAGS@|${FINAL_LDFLAGS_${ctng_target_platform_u}}|g"                                      "{}" \;
 find . -name "*activate*.sh" -exec sed -i.bak "s|@_CONDA_PYTHON_SYSCONFIGDATA_NAME@|${FINAL_CONDA_PYTHON_SYSCONFIGDATA_NAME_${ctng_target_platform_u}}|g" "{}" \;
+find . -name "*activate*.sh" -exec sed -i.bak "s|@CONDA_BUILD_CROSS_COMPILATION@|${CONDA_BUILD_CROSS_COMPILATION}|g"         "{}" \;
 
 find . -name "*activate*.sh.bak" -exec rm "{}" \;
