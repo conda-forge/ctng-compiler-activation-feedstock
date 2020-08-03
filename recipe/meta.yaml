@@ -33,6 +33,7 @@ outputs:
       files:
         - tests
       commands:
+        - echo {{ ctng_target_platform_u }} 
         - ${CC} ${CFLAGS} -Wall tests/aligned_alloc.c -o c_aligned -v
         - ./c_aligned
         # CONDA_BUILD_SYSROOT is defined for clang++ to find correct C++ headers, see issue 8
