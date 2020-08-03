@@ -1,16 +1,5 @@
 CHOST=$(${PREFIX}/bin/*-gcc -dumpmachine)
 
-if [ -z "${FINAL_CFLAGS_${ctng_target_platform_u}}" ]; then
-    echo "FINAL_CFLAGS_${ctng_target_platform_u} not set.  Did you pass in a flags variant config file?"
-    exit 1
-fi
-
-if [[ "$target_platform" == "$cross_target_platform" ]]; then
-  export CONDA_BUILD_CROSS_COMPILATION=""
-else
-  export CONDA_BUILD_CROSS_COMPILATION="1"
-fi
-
 FINAL_CFLAGS=FINAL_CFLAGS_${ctng_target_platform_u}
 FINAL_DEBUG_CFLAGS=FINAL_DEBUG_CFLAGS_${ctng_target_platform_u}
 FINAL_CXXFLAGS=FINAL_CXXFLAGS_${ctng_target_platform_u}
@@ -19,6 +8,17 @@ FINAL_FFLAGS=FINAL_FFLAGS_${ctng_target_platform_u}
 FINAL_DEBUG_FFLAGS=FINAL_DEBUG_FFLAGS_${ctng_target_platform_u}
 FINAL_LDFLAGS=FINAL_LDFLAGS_${ctng_target_platform_u}
 FINAL_CONDA_PYTHON_SYSCONFIGDATA_NAME=FINAL_CONDA_PYTHON_SYSCONFIGDATA_NAME_${ctng_target_platform_u}
+
+if [ -z "${!FINAL_CFLAGS}" ]; then
+    echo "FINAL_CFLAGS not set.  Did you pass in a flags variant config file?"
+    exit 1
+fi
+
+if [[ "$target_platform" == "$cross_target_platform" ]]; then
+  export CONDA_BUILD_CROSS_COMPILATION=""
+else
+  export CONDA_BUILD_CROSS_COMPILATION="1"
+fi
 
 find . -name "*activate*.sh" -exec sed -i.bak "s|@CHOST@|${CHOST}|g"                                                                "{}" \;
 find . -name "*activate*.sh" -exec sed -i.bak "s|@CPPFLAGS@|${FINAL_CPPFLAGS}|g"                                                    "{}" \;
