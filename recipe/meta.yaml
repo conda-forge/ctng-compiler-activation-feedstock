@@ -141,6 +141,7 @@ outputs:
         - {{ pin_subpackage("gfortran_" ~ ctng_target_platform) }}
         - {{ pin_subpackage("binutils_" ~ ctng_target_platform) }}
     build:
+      skip: True  # [target_platform != ctng_target_platform]
       always_include_files:
         - bin/
         - etc/
