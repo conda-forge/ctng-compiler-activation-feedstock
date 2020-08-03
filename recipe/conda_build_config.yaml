@@ -19,6 +19,10 @@ ctng_cpu_arch:
   - x86_64
   - powerpc64le
   - aarch64
+conda_glibc_ver:
+  - 2.12
+  - 2.17
+  - 2.17
 ctng_vendor:
   - conda
 
@@ -26,6 +30,7 @@ zip_keys:
   - - ctng_target_platform
     - ctng_target_platform_u
     - ctng_cpu_arch
+    - conda_glibc_ver
 
 FINAL_CPPFLAGS:
   - -DNDEBUG -D_FORTIFY_SOURCE=2 -O2
