@@ -11,7 +11,7 @@ ctng_cpu_arch:
 ctng_gcc:
 - 9.3.0
 ctng_gcc_activation_build_num:
-- '23'
+- '25'
 ctng_target_platform:
 - linux-ppc64le
 ctng_target_platform_u:
@@ -19,9 +19,9 @@ ctng_target_platform_u:
 ctng_vendor:
 - conda
 docker_image:
-- condaforge/linux-anvil-ppc64le
+- condaforge/linux-anvil-comp7
 target_platform:
-- linux-ppc64le
+- linux-64
 zip_keys:
 - - ctng_target_platform
   - ctng_target_platform_u

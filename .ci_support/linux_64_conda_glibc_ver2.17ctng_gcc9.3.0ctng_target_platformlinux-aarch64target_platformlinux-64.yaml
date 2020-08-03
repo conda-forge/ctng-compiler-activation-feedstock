@@ -7,15 +7,15 @@ conda_glibc_ver:
 ctng_binutils:
 - '2.34'
 ctng_cpu_arch:
-- powerpc64le
+- aarch64
 ctng_gcc:
-- 8.4.0
+- 9.3.0
 ctng_gcc_activation_build_num:
-- '23'
+- '25'
 ctng_target_platform:
-- linux-ppc64le
+- linux-aarch64
 ctng_target_platform_u:
-- linux_ppc64le
+- linux_aarch64
 ctng_vendor:
 - conda
 docker_image:

@@ -10,15 +10,15 @@ env:
 
 matrix:
   include:
-    - env: CONFIG=linux_ppc64le_conda_glibc_ver2.17ctng_gcc7.5.0ctng_target_platformlinux-ppc64le UPLOAD_PACKAGES=True PLATFORM=linux-ppc64le DOCKER_IMAGE=condaforge/linux-anvil-ppc64le
+    - env: CONFIG=linux_ppc64le_conda_glibc_ver2.17ctng_gcc7.5.0ctng_target_platformlinux-ppc64letarget_platformlinux-ppc64le UPLOAD_PACKAGES=True PLATFORM=linux-ppc64le DOCKER_IMAGE=condaforge/linux-anvil-ppc64le
       os: linux
       arch: ppc64le
 
-    - env: CONFIG=linux_ppc64le_conda_glibc_ver2.17ctng_gcc8.4.0ctng_target_platformlinux-ppc64le UPLOAD_PACKAGES=True PLATFORM=linux-ppc64le DOCKER_IMAGE=condaforge/linux-anvil-ppc64le
+    - env: CONFIG=linux_ppc64le_conda_glibc_ver2.17ctng_gcc8.4.0ctng_target_platformlinux-ppc64letarget_platformlinux-ppc64le UPLOAD_PACKAGES=True PLATFORM=linux-ppc64le DOCKER_IMAGE=condaforge/linux-anvil-ppc64le
       os: linux
       arch: ppc64le
 
-    - env: CONFIG=linux_ppc64le_conda_glibc_ver2.17ctng_gcc9.3.0ctng_target_platformlinux-ppc64le UPLOAD_PACKAGES=True PLATFORM=linux-ppc64le DOCKER_IMAGE=condaforge/linux-anvil-ppc64le
+    - env: CONFIG=linux_ppc64le_conda_glibc_ver2.17ctng_gcc9.3.0ctng_target_platformlinux-ppc64letarget_platformlinux-ppc64le UPLOAD_PACKAGES=True PLATFORM=linux-ppc64le DOCKER_IMAGE=condaforge/linux-anvil-ppc64le
       os: linux
       arch: ppc64le
 
