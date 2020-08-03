@@ -1,7 +1,7 @@
 CHOST=$(${PREFIX}/bin/*-gcc -dumpmachine)
 
-if [ -z "${FINAL_CFLAGS}" ]; then
-    echo "FINAL_CFLAGS not set.  Did you pass in a flags variant config file?"
+if [ -z "${FINAL_CFLAGS_${ctng_target_platform_u}}" ]; then
+    echo "FINAL_CFLAGS_${ctng_target_platform_u} not set.  Did you pass in a flags variant config file?"
     exit 1
 fi
 
