@@ -12,6 +12,8 @@ ctng_gcc_activation_build_num:
 - '23'
 ctng_target_platform:
 - linux-aarch64
+ctng_target_platform_u:
+- linux_aarch64
 ctng_vendor:
 - conda
 docker_image:
@@ -20,4 +22,5 @@ target_platform:
 - linux-64
 zip_keys:
 - - ctng_target_platform
+  - ctng_target_platform_u
   - ctng_cpu_arch
