@@ -102,6 +102,12 @@ if [ "${CONDA_BUILD:-0}" = "1" ]; then
   env > /tmp/old-env-$$.txt
 fi
 
+if [ "@CONDA_BUILD_CROSS_COMPILATION@" = "1" ]; then
+_tc_activation \
+  deactivate @CHOST@- \
+  "QEMU_LD_PREFIX,${QEMU_LD_PREFIX:-${CONDA_BUILD_SYSROOT}}"
+fi
+
 _tc_activation \
   deactivate @CHOST@- "HOST,@CHOST@" "BUILD,@CBUILD@" \
   cc cpp gcc gcc-ar gcc-nm gcc-ranlib \
@@ -118,12 +124,6 @@ _tc_activation \
   "build_alias,@CBUILD@" \
   "host_alias,@CHOST@" \
   "CMAKE_ARGS,${_CMAKE_ARGS:-}"
-
-if [ "@CONDA_BUILD_CROSS_COMPILATION@" = "1" ]; then
-_tc_activation \
-  deactivate @CHOST@- \
-  "QEMU_LD_PREFIX,${QEMU_LD_PREFIX:-${CONDA_BUILD_SYSROOT}}"
-fi
 
 if [ $? -ne 0 ]; then
   echo "ERROR: $(_get_sourced_filename) failed, see above for details"
