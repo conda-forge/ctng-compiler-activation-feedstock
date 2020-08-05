@@ -30,8 +30,6 @@ function _get_sourced_filename() {
 #  a fatal error if a program is identified but not present.
 function _tc_activation() {
   local act_nature=$1; shift
-  local tc_nature=$1; shift
-  local tc_machine=$1; shift
   local tc_prefix=$1; shift
   local thing
   local newval
@@ -48,7 +46,7 @@ function _tc_activation() {
   fi
 
   for pass in check apply; do
-    for thing in $tc_nature,$tc_machine "$@"; do
+    for thing in "$@"; do
       case "${thing}" in
         *,*)
           newval=$(echo "${thing}" | sed "s,^[^\,]*\,\(.*\),\1,")
@@ -105,7 +103,7 @@ if [ "${CONDA_BUILD:-0}" = "1" ]; then
 fi
 
 _tc_activation \
-  deactivate HOST @CHOST@ @CHOST@- \
+  deactivate @CHOST@- "HOST,@CHOST@" "BUILD,@CBUILD@" \
   cc cpp gcc gcc-ar gcc-nm gcc-ranlib \
   "CPPFLAGS,${CPPFLAGS:-${CPPFLAGS_USED}}" \
   "CFLAGS,${CFLAGS:-${CFLAGS_USED}}" \
@@ -122,7 +120,7 @@ _tc_activation \
 
 if [ "@CONDA_BUILD_CROSS_COMPILATION@" = "1" ]; then
 _tc_activation \
-  deactivate HOST @CHOST@ @CHOST@- \
+  deactivate @CHOST@- \
   "QEMU_LD_PREFIX,${QEMU_LD_PREFIX:-${CONDA_BUILD_SYSROOT}}"
 fi
 

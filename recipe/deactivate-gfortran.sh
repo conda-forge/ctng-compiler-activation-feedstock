@@ -30,8 +30,6 @@ function _get_sourced_filename() {
 #  a fatal error if a program is identified but not present.
 function _tc_activation() {
   local act_nature=$1; shift
-  local tc_nature=$1; shift
-  local tc_machine=$1; shift
   local tc_prefix=$1; shift
   local thing
   local newval
@@ -48,7 +46,7 @@ function _tc_activation() {
   fi
 
   for pass in check apply; do
-    for thing in $tc_nature,$tc_machine "$@"; do
+    for thing in "$@"; do
       case "${thing}" in
         *,*)
           newval=$(echo "${thing}" | sed "s,^[^\,]*\,\(.*\),\1,")
@@ -97,7 +95,7 @@ if [ "${CONDA_BUILD:-0}" = "1" ]; then
 fi
 
 _tc_activation \
-  deactivate host @CHOST@ @CHOST@- \
+  deactivate @CHOST@- \
   gfortran f95 \
   "FFLAGS,${FFLAGS:-${FFLAGS_USED}}" \
   "FORTRANFLAGS,${FORTRANFLAGS:-${FFLAGS_USED}}" \
@@ -106,7 +104,7 @@ _tc_activation \
 
 # extra ones - have a dependency on the previous ones, so done after.
 _tc_activation \
-  deactivate host @CHOST@ @CHOST@- \
+  deactivate @CHOST@- \
   "FC,${FC:-${GFORTRAN}}" \
   "F77,${F77:-${GFORTRAN}}" \
   "F90,${F90:-${GFORTRAN}}"
