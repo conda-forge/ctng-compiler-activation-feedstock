@@ -116,7 +116,8 @@ _tc_activation \
   "CONDA_BUILD_CROSS_COMPILATION,@CONDA_BUILD_CROSS_COMPILATION@" \
   "CC_FOR_BUILD,${CONDA_PREFIX}/bin/@CBUILD@-cc" \
   "build_alias,@CBUILD@" \
-  "host_alias,@CHOST@"
+  "host_alias,@CHOST@" \
+  "CMAKE_ARGS,${_CMAKE_ARGS:-}"
 
 if [ "@CONDA_BUILD_CROSS_COMPILATION@" = "1" ]; then
 _tc_activation \

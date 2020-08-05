@@ -35,6 +35,7 @@ outputs:
         - tests
       commands:
         - echo {{ ctng_target_platform_u }} 
+        - echo {{ linux_machine }}
         - ${CC} ${CFLAGS} -Wall tests/aligned_alloc.c -c -o c_aligned.o -v
         - ${CC} ${LDFLAGS} c_aligned.o -o c_aligned     # [target_platform == ctng_target_platform]
         - ./c_aligned                                   # [target_platform == ctng_target_platform]
