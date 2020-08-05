@@ -24,6 +24,7 @@ outputs:
         - gcc_impl_{{ ctng_target_platform }} {{ ctng_gcc }}.*
         # for activation of binutils env vars
         - {{ pin_subpackage("binutils_" ~ ctng_target_platform, exact=True) }}
+        - sysroot_{{ target_platform }}
         - sysroot_{{ ctng_target_platform }}
     run_exports:
       strong:
@@ -123,6 +124,7 @@ outputs:
     requirements:
       run:
         - binutils_impl_{{ ctng_target_platform }} {{ ctng_binutils }}.*
+        - sysroot_{{ target_platform }}
         - sysroot_{{ ctng_target_platform }}
     test:
       requires:
