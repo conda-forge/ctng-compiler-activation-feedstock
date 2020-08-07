@@ -11,7 +11,7 @@ ctng_cpu_arch:
 ctng_gcc:
 - 7.5.0
 ctng_gcc_activation_build_num:
-- '26'
+- '27'
 ctng_target_platform:
 - linux-ppc64le
 ctng_target_platform_u:
