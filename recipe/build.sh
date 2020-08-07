@@ -16,7 +16,7 @@ if [ -z "${!FINAL_CFLAGS}" ]; then
     exit 1
 fi
 
-if [[ "$target_platform" == "$cross_target_platform" ]]; then
+if [[ "$target_platform" == "$ctng_target_platform" ]]; then
   export CONDA_BUILD_CROSS_COMPILATION=""
 else
   export CONDA_BUILD_CROSS_COMPILATION="1"
