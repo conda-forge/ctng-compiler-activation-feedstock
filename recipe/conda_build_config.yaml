@@ -4,9 +4,9 @@ ctng_gcc:
   - 8.4.0
   - 9.3.0
 ctng_binutils:
-  - 2.34
+  - 2.35
 ctng_gcc_activation_build_num:
-  - 27
+  - 28
 ctng_target_platform:
   - linux-64
   - linux-ppc64le
