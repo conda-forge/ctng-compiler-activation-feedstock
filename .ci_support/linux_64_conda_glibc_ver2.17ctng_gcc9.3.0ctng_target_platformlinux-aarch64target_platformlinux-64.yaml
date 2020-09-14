@@ -5,13 +5,13 @@ channel_targets:
 conda_glibc_ver:
 - '2.17'
 ctng_binutils:
-- '2.34'
+- '2.35'
 ctng_cpu_arch:
 - aarch64
 ctng_gcc:
 - 9.3.0
 ctng_gcc_activation_build_num:
-- '27'
+- '28'
 ctng_target_platform:
 - linux-aarch64
 ctng_target_platform_u:
