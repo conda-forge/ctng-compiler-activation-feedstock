@@ -35,7 +35,7 @@ outputs:
       files:
         - tests
       commands:
-        - echo {{ ctng_target_platform_u }} 
+        - echo {{ ctng_target_platform_u }}
         - echo {{ linux_machine }}
         - ${CC} ${CFLAGS} -Wall tests/aligned_alloc.c -c -o c_aligned.o -v
         - ${CC} ${LDFLAGS} c_aligned.o -o c_aligned     # [target_platform == ctng_target_platform]
@@ -87,7 +87,7 @@ outputs:
     requirements:
       host:
         # So that pin_compatible has something to work with:
-        - libgfortran-ng {{ ctng_gcc }}.*
+        - libgfortran{{ libgfortran_soname }}-ng {{ ctng_gcc }}.*
       run:
         - gfortran_impl_{{ ctng_target_platform }} {{ ctng_gcc }}.*
         # for activation of gcc env vars:
@@ -97,8 +97,7 @@ outputs:
         - sysroot_{{ ctng_target_platform }}
     run_exports:
       strong:
-        # The SONAME changes at major releases.
-        - {{ pin_compatible("libgfortran-ng", min_pin="x") }}
+        - libgfortran{{ libgfortran_soname }}-ng >={{ ctng_gcc }}
         # Because transitive run_exports do not work:
         - libgcc-ng >={{ ctng_gcc }}
     test:
@@ -128,7 +127,7 @@ outputs:
         - sysroot_{{ ctng_target_platform }}
     test:
       requires:
-        - sysroot_{{ ctng_target_platform }} {{ conda_glibc_ver }}      
+        - sysroot_{{ ctng_target_platform }} {{ conda_glibc_ver }}
       commands:
         - test -f $LD
     about:
