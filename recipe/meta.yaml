@@ -87,7 +87,7 @@ outputs:
     requirements:
       host:
         # So that pin_compatible has something to work with:
-        - libgfortran{{ libgfortran_soname }}-ng {{ ctng_gcc }}.*
+        - libgfortran{{ libgfortran_soname }} {{ ctng_gcc }}.*
       run:
         - gfortran_impl_{{ ctng_target_platform }} {{ ctng_gcc }}.*
         # for activation of gcc env vars:
@@ -97,7 +97,7 @@ outputs:
         - sysroot_{{ ctng_target_platform }}
     run_exports:
       strong:
-        - libgfortran{{ libgfortran_soname }}-ng >={{ ctng_gcc }}
+        - libgfortran{{ libgfortran_soname }} >={{ ctng_gcc }}
         # Because transitive run_exports do not work:
         - libgcc-ng >={{ ctng_gcc }}
     test:
