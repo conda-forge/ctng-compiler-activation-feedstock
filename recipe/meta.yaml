@@ -98,6 +98,7 @@ outputs:
     run_exports:
       strong:
         - libgfortran{{ libgfortran_soname }} >={{ ctng_gcc }}
+        - libgfortran-ng
         # Because transitive run_exports do not work:
         - libgcc-ng >={{ ctng_gcc }}
     test:
