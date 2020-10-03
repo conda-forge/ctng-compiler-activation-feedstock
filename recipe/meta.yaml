@@ -88,6 +88,7 @@ outputs:
       host:
         # So that pin_compatible has something to work with:
         - libgfortran{{ libgfortran_soname }} {{ ctng_gcc }}.*
+        - libgfortran-ng
       run:
         - gfortran_impl_{{ ctng_target_platform }} {{ ctng_gcc }}.*
         # for activation of gcc env vars:
