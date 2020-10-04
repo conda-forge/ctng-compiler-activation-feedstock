@@ -3,10 +3,14 @@ ctng_gcc:
   - 7.5.0
   - 8.4.0
   - 9.3.0
+libgfortran_soname:
+  - 4
+  - 5
+  - 5
 ctng_binutils:
   - 2.35
 ctng_gcc_activation_build_num:
-  - 28
+  - 29
 ctng_target_platform:
   - linux-64
   - linux-ppc64le
@@ -36,6 +40,8 @@ zip_keys:
     - ctng_cpu_arch
     - conda_glibc_ver
     - linux_machine
+  - - ctng_gcc
+    - libgfortran_soname
 
 FINAL_CPPFLAGS:
   - -DNDEBUG -D_FORTIFY_SOURCE=2 -O2
