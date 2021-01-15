@@ -110,6 +110,8 @@ fi
 
 _tc_activation \
   deactivate @CHOST@- "HOST,@CHOST@" "BUILD,@CBUILD@" \
+  "CONDA_TOOLCHAIN_HOST,@CHOST@" \
+  "CONDA_TOOLCHAIN_BUILD,@CBUILD@" \
   cc cpp gcc gcc-ar gcc-nm gcc-ranlib \
   "CPPFLAGS,${CPPFLAGS:-${CPPFLAGS_USED}}" \
   "CFLAGS,${CFLAGS:-${CFLAGS_USED}}" \
@@ -137,5 +139,11 @@ else
     echo "INFO: $(_get_sourced_filename) made the following environmental changes:"
     diff -U 0 -rN /tmp/old-env-$$.txt /tmp/new-env-$$.txt | tail -n +4 | grep "^-.*\|^+.*" | grep -v "CONDA_BACKUP_" | sort
     rm -f /tmp/old-env-$$.txt /tmp/new-env-$$.txt || true
+  fi
+
+  # unfix prompt for zsh
+  if [[ -n "${ZSH_NAME}" ]]; then
+    precmd_functions=(${precmd_functions:#_conda_clang_precmd})
+    preexec_functions=(${preexec_functions:#_conda_clang_preexec})
   fi
 fi
