@@ -189,19 +189,17 @@ else
   fi
 
   # fix prompt for zsh
-  if [[ -n "${ZSH_NAME}" ]]; then
+  if [[ -n "${ZSH_NAME:-}" ]]; then
+    autoload -Uz add-zsh-hook
+
     _conda_clang_precmd() {
       HOST="${CONDA_BACKUP_HOST}"
     }
-
-    [[ -z \$precmd_functions ]] && precmd_functions=()
-    precmd_functions=(\$precmd_functions _conda_clang_precmd)
+    add-zsh-hook -Uz precmd _conda_clang_precmd
 
     _conda_clang_preexec() {
       HOST="${CONDA_TOOLCHAIN_HOST}"
     }
-
-    [[ -z \$preexec_functions ]] && preexec_functions=()
-    preexec_functions=(\$preexec_functions _conda_clang_preexec)
-  fi  
+    add-zsh-hook -Uz preexec _conda_clang_preexec
+  fi
 fi
