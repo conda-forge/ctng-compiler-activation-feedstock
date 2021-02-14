@@ -1,11 +1,7 @@
-BUILD:
-- aarch64-conda_cos7-linux-gnu
-cdt_arch:
-- aarch64
 cdt_name:
 - cos7
 channel_sources:
-- conda-forge
+- conda-forge,defaults
 channel_targets:
 - conda-forge main
 conda_glibc_ver:
@@ -13,25 +9,25 @@ conda_glibc_ver:
 ctng_binutils:
 - '2.35'
 ctng_cpu_arch:
-- aarch64
+- powerpc64le
 ctng_gcc:
-- 8.4.0
+- 9.3.0
 ctng_gcc_activation_build_num:
-- '29'
+- '30'
 ctng_target_platform:
-- linux-aarch64
+- linux-ppc64le
 ctng_target_platform_u:
-- linux_aarch64
+- linux_ppc64le
 ctng_vendor:
 - conda
 docker_image:
-- condaforge/linux-anvil-aarch64
+- quay.io/condaforge/linux-anvil-ppc64le
 libgfortran_soname:
 - '5'
 linux_machine:
-- aarch64
+- ppc64le
 target_platform:
-- linux-aarch64
+- linux-ppc64le
 zip_keys:
 - - ctng_gcc
   - libgfortran_soname
