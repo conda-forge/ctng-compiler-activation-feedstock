@@ -147,6 +147,7 @@ if [ "${CONDA_BUILD:-0}" = "1" ]; then
   _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_INSTALL_PREFIX=${PREFIX} -DCMAKE_INSTALL_LIBDIR=lib"
 fi
 
+# shellcheck disable=SC2050  # "constant" comparison due to templating
 if [ "@CONDA_BUILD_CROSS_COMPILATION@" = "1" ]; then
   _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_SYSTEM_NAME=Linux -DCMAKE_SYSTEM_PROCESSOR=@LINUX_MACHINE@"
 fi
@@ -172,6 +173,7 @@ _tc_activation \
 
 unset _CMAKE_ARGS
 
+# shellcheck disable=SC2050  # "constant" comparison due to templating
 if [ "@CONDA_BUILD_CROSS_COMPILATION@" = "1" ]; then
 _tc_activation \
    activate @CHOST@- \
