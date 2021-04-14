@@ -1,9 +1,11 @@
-#!/bin/bash
+# shellcheck shell=sh
 
 # This function takes no arguments
 # It tries to determine the name of this file in a programatic way.
-function _get_sourced_filename() {
-    if [ -n "${BASH_SOURCE[0]}" ]; then
+_get_sourced_filename() {
+    # shellcheck disable=SC2039  # non-POSIX array access is guarded
+    if [ -n "${BASH_SOURCE+x}" ] && [ -n "${BASH_SOURCE[0]}" ]; then
+        # shellcheck disable=SC2039  # non-POSIX array access is guarded
         basename "${BASH_SOURCE[0]}"
     elif [ -n "${(%):-%x}" ]; then
         # in zsh use prompt-style expansion to introspect the same information
@@ -28,7 +30,7 @@ function _get_sourced_filename() {
 #  For deactivation, the distinction is irrelevant as in all
 #  cases NAME simply gets reset to CONDA_BACKUP_NAME.  It is
 #  a fatal error if a program is identified but not present.
-function _tc_activation() {
+_tc_activation() {
   local act_nature=$1; shift
   local tc_prefix=$1; shift
   local thing
@@ -54,15 +56,16 @@ function _tc_activation() {
           ;;
         *)
           newval="${CONDA_PREFIX}/bin/${tc_prefix}${thing}"
-          if [ ! -x "${newval}" -a "${pass}" = "check" ]; then
+          if [ ! -x "${newval}" ] && [ "${pass}" = "check" ]; then
             echo "ERROR: This cross-compiler package contains no program ${newval}"
             return 1
           fi
           ;;
       esac
       if [ "${pass}" = "apply" ]; then
-        thing=$(echo ${thing} | tr 'a-z+-.' 'A-ZX__')
+        thing=$(echo "${thing}" | tr 'a-z+-.' 'A-ZX__')
         eval oldval="\$${from}$thing"
+        # shellcheck disable=SC2154  # oldval is set via eval above
         if [ -n "${oldval}" ]; then
           eval export "${to}'${thing}'=\"${oldval}\""
         else
