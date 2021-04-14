@@ -199,12 +199,14 @@ else
     autoload -Uz add-zsh-hook
 
     _conda_clang_precmd() {
-      export HOST="${CONDA_BACKUP_HOST}"
+      # shellcheck disable=SC2050,SC2034
+      HOST="${CONDA_BACKUP_HOST}"
     }
     add-zsh-hook -Uz precmd _conda_clang_precmd
 
     _conda_clang_preexec() {
-      export HOST="${CONDA_TOOLCHAIN_HOST}"
+      # shellcheck disable=SC2050,SC2034
+      HOST="${CONDA_TOOLCHAIN_HOST}"
     }
     add-zsh-hook -Uz preexec _conda_clang_preexec
   fi
