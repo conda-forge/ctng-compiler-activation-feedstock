@@ -8,9 +8,9 @@ libgfortran_soname:
   - 5
   - 5
 ctng_binutils:
-  - 2.35
+  - 2.36
 ctng_gcc_activation_build_num:
-  - 30
+  - 31
 ctng_target_platform:
   - linux-64
   - linux-ppc64le
