@@ -181,6 +181,7 @@ Installing `ctng-compiler-activation` from the `conda-forge` channel can be achi
 
 ```
 conda config --add channels conda-forge
+conda config --set channel_priority strict
 ```
 
 Once the `conda-forge` channel has been enabled, `binutils_linux-64, binutils_linux-aarch64, binutils_linux-ppc64le, gcc_bootstrap_linux-64, gcc_bootstrap_linux-aarch64, gcc_bootstrap_linux-ppc64le, gcc_linux-64, gcc_linux-aarch64, gcc_linux-ppc64le, gfortran_linux-64, gfortran_linux-aarch64, gfortran_linux-ppc64le, gxx_linux-64, gxx_linux-aarch64, gxx_linux-ppc64le` can be installed with:
@@ -251,9 +252,9 @@ build distinct package versions.
 
 In order to produce a uniquely identifiable distribution:
  * If the version of a package **is not** being increased, please add or increase
-   the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string).
+   the [``build/number``](https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-number-and-string).
  * If the version of a package **is** being increased, please remember to return
-   the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string)
+   the [``build/number``](https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-number-and-string)
    back to 0.
 
 Feedstock Maintainers
