@@ -147,7 +147,6 @@ outputs:
         - gxx_impl_{{ ctng_target_platform }} {{ ctng_gcc }}.*
         - gcc_impl_{{ ctng_target_platform }} {{ ctng_gcc }}.*
     build:
-      skip: True  # [target_platform != ctng_target_platform]
       always_include_files:
         - bin/
         - etc/
