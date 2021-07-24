@@ -147,6 +147,8 @@ outputs:
         - gxx_impl_{{ ctng_target_platform }} {{ ctng_gcc }}.*
         - gcc_impl_{{ ctng_target_platform }} {{ ctng_gcc }}.*
     build:
+      binary_relocation: False
+      detect_binary_files_with_prefix: False
       always_include_files:
         - bin/
         - etc/
