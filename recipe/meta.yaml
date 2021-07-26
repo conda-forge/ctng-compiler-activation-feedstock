@@ -8,7 +8,7 @@ source:
 build:
   # defined in conda_build_config.yaml so that we can keep it associated with a particular GCC version number
   number: "{{ ctng_gcc_activation_build_num }}"
-  skip: True  # [not linux or ((aarch64 or ppc64le) and target_platform != ctng_target_platform)]
+  skip: True  # [not linux or ((aarch64 or ppc64le or s390x) and target_platform != ctng_target_platform)]
 
 requirements:
   build:
