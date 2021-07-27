@@ -150,6 +150,13 @@ outputs:
       binary_relocation: False
       detect_binary_files_with_prefix: False
       always_include_files:
+        - bin/*
+        - etc/*
+        - lib64/*
+        - lib/*
+        - libexec/*
+        - share/*
+        - {{ ctng_cpu_arch }}-{{ ctng_vendor }}-linux-gnu/*
         - bin/
         - etc/
         - lib64/
@@ -160,6 +167,8 @@ outputs:
     test:
       commands:
         - test -f $PREFIX/bin/{{ ctng_cpu_arch }}-{{ ctng_vendor }}-linux-gnu-cc
+        - test -d $PREFIX/{{ ctng_cpu_arch }}-{{ ctng_vendor }}/sysroot/lib
+        - test -d $PREFIX/{{ ctng_cpu_arch }}-{{ ctng_vendor }}/sysroot/usr/lib
     about:
       summary: GCC bootstrap compilers for building deps
       home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
