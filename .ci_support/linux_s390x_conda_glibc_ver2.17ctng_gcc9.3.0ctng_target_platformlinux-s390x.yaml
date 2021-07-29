@@ -1,7 +1,7 @@
 cdt_name:
-- cos6
+- cos7
 channel_sources:
-- conda-forge,defaults
+- https://conda-web.anaconda.org/conda-forge
 channel_targets:
 - conda-forge main
 conda_glibc_ver:
@@ -9,26 +9,24 @@ conda_glibc_ver:
 ctng_binutils:
 - '2.36'
 ctng_cpu_arch:
-- aarch64
+- s390x
 ctng_gcc:
-- 7.5.0
+- 9.3.0
 ctng_target_platform:
-- linux-aarch64
+- linux-s390x
 ctng_target_platform_u:
-- linux_aarch64
+- linux_s390x
 ctng_vendor:
 - conda
 docker_image:
 - quay.io/condaforge/linux-anvil-comp7
 libgfortran_soname:
-- '4'
+- '5'
 linux_machine:
-- aarch64
+- s390x
 target_platform:
-- linux-64
+- linux-s390x
 zip_keys:
-- - cdt_name
-  - docker_image
 - - ctng_gcc
   - libgfortran_soname
 - - ctng_target_platform

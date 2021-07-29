@@ -12,8 +12,6 @@ ctng_cpu_arch:
 - s390x
 ctng_gcc:
 - 9.3.0
-ctng_gcc_activation_build_num:
-- '34'
 ctng_target_platform:
 - linux-s390x
 ctng_target_platform_u:

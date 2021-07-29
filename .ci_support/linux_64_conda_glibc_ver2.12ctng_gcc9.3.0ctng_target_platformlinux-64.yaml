@@ -12,8 +12,6 @@ ctng_cpu_arch:
 - x86_64
 ctng_gcc:
 - 9.3.0
-ctng_gcc_activation_build_num:
-- '34'
 ctng_target_platform:
 - linux-64
 ctng_target_platform_u:

@@ -1,5 +1,98 @@
 ---
 kind: pipeline
+name: linux_aarch64_conda_glibc_ver2.12ct_hacc73b53fe
+
+platform:
+  os: linux
+  arch: arm64
+
+steps:
+- name: Install and build
+  image: quay.io/condaforge/linux-anvil-aarch64
+  environment:
+    CONFIG: linux_aarch64_conda_glibc_ver2.12ctng_gcc7.5.0ctng_target_platformlinux-64
+    UPLOAD_PACKAGES: True
+    PLATFORM: linux-aarch64
+    BINSTAR_TOKEN:
+      from_secret: BINSTAR_TOKEN
+    FEEDSTOCK_TOKEN:
+      from_secret: FEEDSTOCK_TOKEN
+    STAGING_BINSTAR_TOKEN:
+      from_secret: STAGING_BINSTAR_TOKEN
+  commands:
+    - export FEEDSTOCK_ROOT="$DRONE_WORKSPACE"
+    - export RECIPE_ROOT="$FEEDSTOCK_ROOT/recipe"
+    - export CI=drone
+    - export GIT_BRANCH="$DRONE_BRANCH"
+    - export FEEDSTOCK_NAME=$(basename ${DRONE_REPO_NAME})
+    - sed -i '$ichown -R conda:conda "$FEEDSTOCK_ROOT"' /opt/docker/bin/entrypoint
+    - /opt/docker/bin/entrypoint $FEEDSTOCK_ROOT/.scripts/build_steps.sh
+    - echo "Done building"
+
+---
+kind: pipeline
+name: linux_aarch64_conda_glibc_ver2.12ct_h4c21dd69a8
+
+platform:
+  os: linux
+  arch: arm64
+
+steps:
+- name: Install and build
+  image: quay.io/condaforge/linux-anvil-aarch64
+  environment:
+    CONFIG: linux_aarch64_conda_glibc_ver2.12ctng_gcc8.4.0ctng_target_platformlinux-64
+    UPLOAD_PACKAGES: True
+    PLATFORM: linux-aarch64
+    BINSTAR_TOKEN:
+      from_secret: BINSTAR_TOKEN
+    FEEDSTOCK_TOKEN:
+      from_secret: FEEDSTOCK_TOKEN
+    STAGING_BINSTAR_TOKEN:
+      from_secret: STAGING_BINSTAR_TOKEN
+  commands:
+    - export FEEDSTOCK_ROOT="$DRONE_WORKSPACE"
+    - export RECIPE_ROOT="$FEEDSTOCK_ROOT/recipe"
+    - export CI=drone
+    - export GIT_BRANCH="$DRONE_BRANCH"
+    - export FEEDSTOCK_NAME=$(basename ${DRONE_REPO_NAME})
+    - sed -i '$ichown -R conda:conda "$FEEDSTOCK_ROOT"' /opt/docker/bin/entrypoint
+    - /opt/docker/bin/entrypoint $FEEDSTOCK_ROOT/.scripts/build_steps.sh
+    - echo "Done building"
+
+---
+kind: pipeline
+name: linux_aarch64_conda_glibc_ver2.12ct_h48d61cedb3
+
+platform:
+  os: linux
+  arch: arm64
+
+steps:
+- name: Install and build
+  image: quay.io/condaforge/linux-anvil-aarch64
+  environment:
+    CONFIG: linux_aarch64_conda_glibc_ver2.12ctng_gcc9.3.0ctng_target_platformlinux-64
+    UPLOAD_PACKAGES: True
+    PLATFORM: linux-aarch64
+    BINSTAR_TOKEN:
+      from_secret: BINSTAR_TOKEN
+    FEEDSTOCK_TOKEN:
+      from_secret: FEEDSTOCK_TOKEN
+    STAGING_BINSTAR_TOKEN:
+      from_secret: STAGING_BINSTAR_TOKEN
+  commands:
+    - export FEEDSTOCK_ROOT="$DRONE_WORKSPACE"
+    - export RECIPE_ROOT="$FEEDSTOCK_ROOT/recipe"
+    - export CI=drone
+    - export GIT_BRANCH="$DRONE_BRANCH"
+    - export FEEDSTOCK_NAME=$(basename ${DRONE_REPO_NAME})
+    - sed -i '$ichown -R conda:conda "$FEEDSTOCK_ROOT"' /opt/docker/bin/entrypoint
+    - /opt/docker/bin/entrypoint $FEEDSTOCK_ROOT/.scripts/build_steps.sh
+    - echo "Done building"
+
+---
+kind: pipeline
 name: linux_aarch64_conda_glibc_ver2.17ct_h9013dd4b19
 
 platform:
@@ -11,6 +104,68 @@ steps:
   image: quay.io/condaforge/linux-anvil-aarch64
   environment:
     CONFIG: linux_aarch64_conda_glibc_ver2.17ctng_gcc7.5.0ctng_target_platformlinux-aarch64
+    UPLOAD_PACKAGES: True
+    PLATFORM: linux-aarch64
+    BINSTAR_TOKEN:
+      from_secret: BINSTAR_TOKEN
+    FEEDSTOCK_TOKEN:
+      from_secret: FEEDSTOCK_TOKEN
+    STAGING_BINSTAR_TOKEN:
+      from_secret: STAGING_BINSTAR_TOKEN
+  commands:
+    - export FEEDSTOCK_ROOT="$DRONE_WORKSPACE"
+    - export RECIPE_ROOT="$FEEDSTOCK_ROOT/recipe"
+    - export CI=drone
+    - export GIT_BRANCH="$DRONE_BRANCH"
+    - export FEEDSTOCK_NAME=$(basename ${DRONE_REPO_NAME})
+    - sed -i '$ichown -R conda:conda "$FEEDSTOCK_ROOT"' /opt/docker/bin/entrypoint
+    - /opt/docker/bin/entrypoint $FEEDSTOCK_ROOT/.scripts/build_steps.sh
+    - echo "Done building"
+
+---
+kind: pipeline
+name: linux_aarch64_conda_glibc_ver2.17ct_h9941b4b312
+
+platform:
+  os: linux
+  arch: arm64
+
+steps:
+- name: Install and build
+  image: quay.io/condaforge/linux-anvil-aarch64
+  environment:
+    CONFIG: linux_aarch64_conda_glibc_ver2.17ctng_gcc7.5.0ctng_target_platformlinux-ppc64le
+    UPLOAD_PACKAGES: True
+    PLATFORM: linux-aarch64
+    BINSTAR_TOKEN:
+      from_secret: BINSTAR_TOKEN
+    FEEDSTOCK_TOKEN:
+      from_secret: FEEDSTOCK_TOKEN
+    STAGING_BINSTAR_TOKEN:
+      from_secret: STAGING_BINSTAR_TOKEN
+  commands:
+    - export FEEDSTOCK_ROOT="$DRONE_WORKSPACE"
+    - export RECIPE_ROOT="$FEEDSTOCK_ROOT/recipe"
+    - export CI=drone
+    - export GIT_BRANCH="$DRONE_BRANCH"
+    - export FEEDSTOCK_NAME=$(basename ${DRONE_REPO_NAME})
+    - sed -i '$ichown -R conda:conda "$FEEDSTOCK_ROOT"' /opt/docker/bin/entrypoint
+    - /opt/docker/bin/entrypoint $FEEDSTOCK_ROOT/.scripts/build_steps.sh
+    - echo "Done building"
+
+---
+kind: pipeline
+name: linux_aarch64_conda_glibc_ver2.17ct_h42825a1744
+
+platform:
+  os: linux
+  arch: arm64
+
+steps:
+- name: Install and build
+  image: quay.io/condaforge/linux-anvil-aarch64
+  environment:
+    CONFIG: linux_aarch64_conda_glibc_ver2.17ctng_gcc7.5.0ctng_target_platformlinux-s390x
     UPLOAD_PACKAGES: True
     PLATFORM: linux-aarch64
     BINSTAR_TOKEN:
@@ -62,6 +217,68 @@ steps:
 
 ---
 kind: pipeline
+name: linux_aarch64_conda_glibc_ver2.17ct_h8ffc5f502f
+
+platform:
+  os: linux
+  arch: arm64
+
+steps:
+- name: Install and build
+  image: quay.io/condaforge/linux-anvil-aarch64
+  environment:
+    CONFIG: linux_aarch64_conda_glibc_ver2.17ctng_gcc8.4.0ctng_target_platformlinux-ppc64le
+    UPLOAD_PACKAGES: True
+    PLATFORM: linux-aarch64
+    BINSTAR_TOKEN:
+      from_secret: BINSTAR_TOKEN
+    FEEDSTOCK_TOKEN:
+      from_secret: FEEDSTOCK_TOKEN
+    STAGING_BINSTAR_TOKEN:
+      from_secret: STAGING_BINSTAR_TOKEN
+  commands:
+    - export FEEDSTOCK_ROOT="$DRONE_WORKSPACE"
+    - export RECIPE_ROOT="$FEEDSTOCK_ROOT/recipe"
+    - export CI=drone
+    - export GIT_BRANCH="$DRONE_BRANCH"
+    - export FEEDSTOCK_NAME=$(basename ${DRONE_REPO_NAME})
+    - sed -i '$ichown -R conda:conda "$FEEDSTOCK_ROOT"' /opt/docker/bin/entrypoint
+    - /opt/docker/bin/entrypoint $FEEDSTOCK_ROOT/.scripts/build_steps.sh
+    - echo "Done building"
+
+---
+kind: pipeline
+name: linux_aarch64_conda_glibc_ver2.17ct_hafd3f0a679
+
+platform:
+  os: linux
+  arch: arm64
+
+steps:
+- name: Install and build
+  image: quay.io/condaforge/linux-anvil-aarch64
+  environment:
+    CONFIG: linux_aarch64_conda_glibc_ver2.17ctng_gcc8.4.0ctng_target_platformlinux-s390x
+    UPLOAD_PACKAGES: True
+    PLATFORM: linux-aarch64
+    BINSTAR_TOKEN:
+      from_secret: BINSTAR_TOKEN
+    FEEDSTOCK_TOKEN:
+      from_secret: FEEDSTOCK_TOKEN
+    STAGING_BINSTAR_TOKEN:
+      from_secret: STAGING_BINSTAR_TOKEN
+  commands:
+    - export FEEDSTOCK_ROOT="$DRONE_WORKSPACE"
+    - export RECIPE_ROOT="$FEEDSTOCK_ROOT/recipe"
+    - export CI=drone
+    - export GIT_BRANCH="$DRONE_BRANCH"
+    - export FEEDSTOCK_NAME=$(basename ${DRONE_REPO_NAME})
+    - sed -i '$ichown -R conda:conda "$FEEDSTOCK_ROOT"' /opt/docker/bin/entrypoint
+    - /opt/docker/bin/entrypoint $FEEDSTOCK_ROOT/.scripts/build_steps.sh
+    - echo "Done building"
+
+---
+kind: pipeline
 name: linux_aarch64_conda_glibc_ver2.17ct_he933cb50ff
 
 platform:
@@ -73,6 +290,68 @@ steps:
   image: quay.io/condaforge/linux-anvil-aarch64
   environment:
     CONFIG: linux_aarch64_conda_glibc_ver2.17ctng_gcc9.3.0ctng_target_platformlinux-aarch64
+    UPLOAD_PACKAGES: True
+    PLATFORM: linux-aarch64
+    BINSTAR_TOKEN:
+      from_secret: BINSTAR_TOKEN
+    FEEDSTOCK_TOKEN:
+      from_secret: FEEDSTOCK_TOKEN
+    STAGING_BINSTAR_TOKEN:
+      from_secret: STAGING_BINSTAR_TOKEN
+  commands:
+    - export FEEDSTOCK_ROOT="$DRONE_WORKSPACE"
+    - export RECIPE_ROOT="$FEEDSTOCK_ROOT/recipe"
+    - export CI=drone
+    - export GIT_BRANCH="$DRONE_BRANCH"
+    - export FEEDSTOCK_NAME=$(basename ${DRONE_REPO_NAME})
+    - sed -i '$ichown -R conda:conda "$FEEDSTOCK_ROOT"' /opt/docker/bin/entrypoint
+    - /opt/docker/bin/entrypoint $FEEDSTOCK_ROOT/.scripts/build_steps.sh
+    - echo "Done building"
+
+---
+kind: pipeline
+name: linux_aarch64_conda_glibc_ver2.17ct_hb406a7b958
+
+platform:
+  os: linux
+  arch: arm64
+
+steps:
+- name: Install and build
+  image: quay.io/condaforge/linux-anvil-aarch64
+  environment:
+    CONFIG: linux_aarch64_conda_glibc_ver2.17ctng_gcc9.3.0ctng_target_platformlinux-ppc64le
+    UPLOAD_PACKAGES: True
+    PLATFORM: linux-aarch64
+    BINSTAR_TOKEN:
+      from_secret: BINSTAR_TOKEN
+    FEEDSTOCK_TOKEN:
+      from_secret: FEEDSTOCK_TOKEN
+    STAGING_BINSTAR_TOKEN:
+      from_secret: STAGING_BINSTAR_TOKEN
+  commands:
+    - export FEEDSTOCK_ROOT="$DRONE_WORKSPACE"
+    - export RECIPE_ROOT="$FEEDSTOCK_ROOT/recipe"
+    - export CI=drone
+    - export GIT_BRANCH="$DRONE_BRANCH"
+    - export FEEDSTOCK_NAME=$(basename ${DRONE_REPO_NAME})
+    - sed -i '$ichown -R conda:conda "$FEEDSTOCK_ROOT"' /opt/docker/bin/entrypoint
+    - /opt/docker/bin/entrypoint $FEEDSTOCK_ROOT/.scripts/build_steps.sh
+    - echo "Done building"
+
+---
+kind: pipeline
+name: linux_aarch64_conda_glibc_ver2.17ct_h7ed1eec11f
+
+platform:
+  os: linux
+  arch: arm64
+
+steps:
+- name: Install and build
+  image: quay.io/condaforge/linux-anvil-aarch64
+  environment:
+    CONFIG: linux_aarch64_conda_glibc_ver2.17ctng_gcc9.3.0ctng_target_platformlinux-s390x
     UPLOAD_PACKAGES: True
     PLATFORM: linux-aarch64
     BINSTAR_TOKEN:
