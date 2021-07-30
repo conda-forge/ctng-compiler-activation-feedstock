@@ -104,7 +104,7 @@ FINAL_DEBUG_CFLAGS_linux_32:
   - -march=prescott -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe
 FINAL_DEBUG_CFLAGS_linux_ppc64le:
   - -mcpu=power8 -mtune=power8 -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe
-iFINAL_DEBUG_CFLAGS_linux_aarch64:
+FINAL_DEBUG_CFLAGS_linux_aarch64:
   - -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe
 FINAL_DEBUG_CFLAGS_linux_s390x:
   - -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe
