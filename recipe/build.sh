@@ -1,5 +1,5 @@
 
-CBUILD=$(${PREFIX}/bin/*-gcc -dumpmachine)
+CBUILD=$(${PREFIX}/bin/*-${ctng_vendor}-linux-gnu-gcc -dumpmachine)
 CHOST=${ctng_cpu_arch}-${ctng_vendor}-linux-gnu
 
 FINAL_CFLAGS=FINAL_CFLAGS_${ctng_target_platform_u}
