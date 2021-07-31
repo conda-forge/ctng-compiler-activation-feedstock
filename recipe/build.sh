@@ -37,10 +37,17 @@ FINAL_LDFLAGS="${!FINAL_LDFLAGS}"
 FINAL_CONDA_PYTHON_SYSCONFIGDATA_NAME="${!FINAL_CONDA_PYTHON_SYSCONFIGDATA_NAME}"
 
 MAJOR_VERSION="${PKG_VERSION%%.*}"
+
+# See https://github.com/conda-forge/ctng-compiler-activation-feedstock/issues/42
+# -std=c++17 shouldn't be a default flag, but from gcc 11 onwards it is the default.
+# Not removing the flag ffor gcc 9 because some package ABIs change according to
+# the C++ standard (like boost).
 if [[ "${MAJOR_VERSION}" != 9 && "${MAJOR_VERSION}" != 10 ]]; then
     FINAL_CXXFLAGS="$(echo $FINAL_CXXFLAGS | sed 's/-std=c++17 //g')"
     FINAL_DEBUG_CXXFLAGS="$(echo $FINAL_DEBUG_CXXFLAGS | sed 's/-std=c++17 //g')"
 fi
+# -fopenmp shouldn't be a default flag. We are not removing it for gcc 9 as gcc 9.3
+# already had this flag, but we are removing it for gcc 10+.
 if [[ "${MAJOR_VERSION}" != 9 ]]; then
     FINAL_FFLAGS="$(echo $FINAL_FFLAGS | sed 's/-fopenmp //g')"
     FINAL_DEBUG_FFLAGS="$(echo $FINAL_DEBUG_FFLAGS | sed 's/-fopenmp //g')"
