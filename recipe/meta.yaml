@@ -103,13 +103,13 @@ outputs:
         - libgcc-ng >={{ ctng_gcc }}
     test:
       requires:
-        - cmake >=3.11
-        - make
+        - cmake >=3.11  # [x86_64 or aarch64 or ppc64le]
+        - make          # [x86_64 or aarch64 or ppc64le]
         - sysroot_{{ ctng_target_platform }} {{ conda_glibc_ver }}
       commands:
         - ${FC} --version
         - pushd tests/fortomp
-        - sh test_fort.sh       # [target_platform == ctng_target_platform]
+        - sh test_fort.sh       # [target_platform == ctng_target_platform and (x86_64 or aarch64 or ppc64le)]
       files:
         - tests/fortomp/*
     about:
