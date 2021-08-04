@@ -15,9 +15,7 @@ ctng_binutils:
 ctng_cpu_arch:
 - aarch64
 ctng_gcc:
-- 9.3.0
-ctng_gcc_activation_build_num:
-- '33'
+- 11.1.0
 ctng_target_platform:
 - linux-aarch64
 ctng_target_platform_u:
@@ -25,7 +23,7 @@ ctng_target_platform_u:
 ctng_vendor:
 - conda
 docker_image:
-- quay.io/condaforge/linux-anvil-aarch64
+- quay.io/condaforge/linux-anvil-comp7
 libgfortran_soname:
 - '5'
 linux_machine:

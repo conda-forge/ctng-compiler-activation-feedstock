@@ -1,34 +1,34 @@
 cdt_name:
-- cos7
+- cos6
 channel_sources:
 - conda-forge,defaults
 channel_targets:
 - conda-forge main
 conda_glibc_ver:
-- '2.17'
+- '2.12'
 ctng_binutils:
 - '2.36'
 ctng_cpu_arch:
-- powerpc64le
+- x86_64
 ctng_gcc:
-- 7.5.0
-ctng_gcc_activation_build_num:
-- '33'
+- 9.4.0
 ctng_target_platform:
-- linux-ppc64le
+- linux-64
 ctng_target_platform_u:
-- linux_ppc64le
+- linux_64
 ctng_vendor:
 - conda
 docker_image:
-- quay.io/condaforge/linux-anvil-ppc64le
+- quay.io/condaforge/linux-anvil-comp7
 libgfortran_soname:
-- '4'
+- '5'
 linux_machine:
-- ppc64le
+- x86_64
 target_platform:
-- linux-ppc64le
+- linux-64
 zip_keys:
+- - cdt_name
+  - docker_image
 - - ctng_gcc
   - libgfortran_soname
 - - ctng_target_platform

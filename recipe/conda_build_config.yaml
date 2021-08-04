@@ -1,16 +1,14 @@
 # cos6-specific because of PYTHON_SYSCONFIGDATA_NAME below.  Would be nice to make that more generic if possible.
 ctng_gcc:
-  - 7.5.0
-  - 8.4.0
-  - 9.3.0
+  - 9.4.0
+  - 10.3.0
+  - 11.1.0
 libgfortran_soname:
-  - 4
+  - 5
   - 5
   - 5
 ctng_binutils:
   - 2.36
-ctng_gcc_activation_build_num:
-  - 33
 ctng_target_platform:
   - linux-64
   - linux-ppc64le
@@ -140,4 +138,4 @@ FINAL_CONDA_PYTHON_SYSCONFIGDATA_NAME_linux_ppc64le:
 FINAL_CONDA_PYTHON_SYSCONFIGDATA_NAME_linux_aarch64:
   - _sysconfigdata_aarch64_conda_cos7_linux_gnu
 FINAL_CONDA_PYTHON_SYSCONFIGDATA_NAME_linux_s390x:
-  - _sysconfigdata_aarch64_conda_linux_gnu
+  - _sysconfigdata_s390x_conda_linux_gnu
