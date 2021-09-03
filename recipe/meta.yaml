@@ -115,6 +115,7 @@ outputs:
     test:
       commands:
         - ${PREFIX}/bin/g++ -v
+        - ${PREFIX}/bin/gcc -v
     about:
       summary: GNU C++ native compiler (symlinks)
       home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
@@ -172,7 +173,8 @@ outputs:
         - libgfortran-ng
     test:
       commands:
-        - ${PREFIX}/bin/gfortran-v
+        - ${PREFIX}/bin/gfortran -v
+        - ${PREFIX}/bin/gcc -v
     about:
       summary: GNU Fortran native compiler (symlinks)
       home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
