@@ -6,7 +6,7 @@ source:
   path: .
 
 build:
-  number: 0
+  number: 1
   skip: True  # [not linux]
 
 requirements:
@@ -48,6 +48,26 @@ outputs:
       license: BSD-3-Clause
       license_file: LICENSE
 
+  - name: gcc
+    script: install-symlinks.sh
+    build:
+      skip: True  # [target_platform != ctng_target_platform]
+    requirements:
+      run:
+        - gcc_impl_{{ target_platform }} {{ ctng_gcc }}.*
+    run_exports:
+      strong:
+        - libgcc-ng >={{ ctng_gcc }}
+    test:
+      commands:
+        - ${PREFIX}/bin/gcc -v
+        - ${PREFIX}/bin/gcov -v
+    about:
+      summary: GNU C native compiler (symlinks)
+      home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+      license: BSD-3-Clause
+      license_file: LICENSE
+
   - name: gxx_{{ ctng_target_platform }}
     script: install-g++.sh
     requirements:
@@ -77,6 +97,27 @@ outputs:
         - libgcc-ng >={{ ctng_gcc }}
     about:
       summary: GNU C++ Compiler (activation scripts)
+      home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+      license: BSD-3-Clause
+      license_file: LICENSE
+
+  - name: gxx
+    script: install-symlinks.sh
+    build:
+      skip: True  # [target_platform != ctng_target_platform]
+    requirements:
+      run:
+        - gxx_impl_{{ target_platform }} {{ ctng_gcc }}.*
+    run_exports:
+      strong:
+        - libstdcxx-ng >={{ ctng_gcc }}
+        # Because transitive run_exports do not work:
+        - libgcc-ng >={{ ctng_gcc }}
+    test:
+      commands:
+        - ${PREFIX}/bin/g++ -v
+    about:
+      summary: GNU C++ native compiler (symlinks)
       home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
       license: BSD-3-Clause
       license_file: LICENSE
@@ -114,6 +155,27 @@ outputs:
         - tests/fortomp/*
     about:
       summary: GNU Fortran Compiler (activation scripts)
+      home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+      license: BSD-3-Clause
+      license_file: LICENSE
+
+  - name: gfortran
+    script: install-symlinks.sh
+    build:
+      skip: True  # [target_platform != ctng_target_platform]
+    requirements:
+      run:
+        - gfortran_impl_{{ target_platform }} {{ ctng_gcc }}.*
+    run_exports:
+      strong:
+        # Because transitive run_exports do not work:
+        - libgfortran{{ libgfortran_soname }} {{ ctng_gcc }}.*
+        - libgfortran-ng
+    test:
+      commands:
+        - ${PREFIX}/bin/gfortran-v
+    about:
+      summary: GNU Fortran native compiler (symlinks)
       home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
       license: BSD-3-Clause
       license_file: LICENSE
