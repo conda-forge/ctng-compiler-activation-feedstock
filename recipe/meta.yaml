@@ -53,8 +53,7 @@ outputs:
     build:
       skip: True  # [target_platform != ctng_target_platform]
     requirements:
-      run:
-        - gcc_impl_{{ target_platform }} {{ ctng_gcc }}.*
+      - gcc_impl_{{ target_platform }} {{ ctng_gcc }}.*
     run_exports:
       strong:
         - libgcc-ng >={{ ctng_gcc }}
@@ -106,8 +105,8 @@ outputs:
     build:
       skip: True  # [target_platform != ctng_target_platform]
     requirements:
-      run:
-        - gxx_impl_{{ target_platform }} {{ ctng_gcc }}.*
+      - gxx_impl_{{ target_platform }} {{ ctng_gcc }}.*
+      - gcc {{ ctng_gcc }}.*
     run_exports:
       strong:
         - libstdcxx-ng >={{ ctng_gcc }}
@@ -164,8 +163,8 @@ outputs:
     build:
       skip: True  # [target_platform != ctng_target_platform]
     requirements:
-      run:
-        - gfortran_impl_{{ target_platform }} {{ ctng_gcc }}.*
+      - gfortran_impl_{{ target_platform }} {{ ctng_gcc }}.*
+      - gcc {{ ctng_gcc }}.*
     run_exports:
       strong:
         # Because transitive run_exports do not work:
