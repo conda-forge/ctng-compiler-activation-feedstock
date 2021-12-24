@@ -142,7 +142,7 @@ else
   fi
 
   # unfix prompt for zsh
-  if [[ -n "${ZSH_NAME:-}" ]]; then
+  if [ -n "${ZSH_NAME:-}" ]; then
     precmd_functions=(${precmd_functions:#_conda_clang_precmd})
     preexec_functions=(${preexec_functions:#_conda_clang_preexec})
   fi

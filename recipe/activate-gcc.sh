@@ -191,7 +191,7 @@ else
   fi
 
   # fix prompt for zsh
-  if [[ -n "${ZSH_NAME:-}" ]]; then
+  if [ -n "${ZSH_NAME:-}" ]; then
     autoload -Uz add-zsh-hook
 
     _conda_clang_precmd() {
