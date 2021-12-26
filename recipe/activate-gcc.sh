@@ -2,7 +2,7 @@
 
 # This function takes no arguments
 # It tries to determine the name of this file in a programatic way.
-function _get_sourced_filename() {
+_get_sourced_filename() {
     if [ -n "${BASH_SOURCE[0]}" ]; then
         basename "${BASH_SOURCE[0]}"
     elif [ -n "${(%):-%x}" ]; then
@@ -28,7 +28,7 @@ function _get_sourced_filename() {
 #  For deactivation, the distinction is irrelevant as in all
 #  cases NAME simply gets reset to CONDA_BACKUP_NAME.  It is
 #  a fatal error if a program is identified but not present.
-function _tc_activation() {
+_tc_activation() {
   local act_nature=$1; shift
   local tc_prefix=$1; shift
   local thing
@@ -191,7 +191,7 @@ else
   fi
 
   # fix prompt for zsh
-  if [[ -n "${ZSH_NAME:-}" ]]; then
+  if [ -n "${ZSH_NAME:-}" ]; then
     autoload -Uz add-zsh-hook
 
     _conda_clang_precmd() {
