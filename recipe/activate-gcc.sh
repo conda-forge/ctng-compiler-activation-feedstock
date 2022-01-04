@@ -54,7 +54,7 @@ _tc_activation() {
           ;;
         *)
           newval="${CONDA_PREFIX}/bin/${tc_prefix}${thing}"
-          thing=$(echo ${thing} | tr 'a-z+-' 'A-ZX_')
+          thing=$(echo "${thing}" | tr 'a-z+-' 'A-ZX_')
           if [ ! -x "${newval}" ] && [ "${pass}" = "check" ]; then
             echo "ERROR: This cross-compiler package contains no program ${newval}"
             return 1
@@ -105,12 +105,12 @@ fi
 
 _CONDA_PYTHON_SYSCONFIGDATA_NAME_USED=${_CONDA_PYTHON_SYSCONFIGDATA_NAME:-@_CONDA_PYTHON_SYSCONFIGDATA_NAME@}
 if [ -n "${_CONDA_PYTHON_SYSCONFIGDATA_NAME_USED}" ] && [ -n "${SYS_SYSROOT}" ]; then
-  if find "$(dirname $(dirname ${SYS_PYTHON}))/lib/"python* -type f -name "${_CONDA_PYTHON_SYSCONFIGDATA_NAME_USED}.py" -exec false {} +; then
+  if find "$(dirname "$(dirname "${SYS_PYTHON}")")/lib/"python* -type f -name "${_CONDA_PYTHON_SYSCONFIGDATA_NAME_USED}.py" -exec false {} +; then
     echo ""
     echo "WARNING: The Python interpreter at the following prefix:"
-    echo "         $(dirname $(dirname ${SYS_PYTHON}))"
+    echo "         $(dirname "$(dirname "${SYS_PYTHON}")")"
     echo "         .. is not able to handle sysconfigdata-based compilation for the host:"
-    echo "         ${_CONDA_PYTHON_SYSCONFIGDATA_NAME_USED//_sysconfigdata_/}"
+    echo "         $( printf %s "${_CONDA_PYTHON_SYSCONFIGDATA_NAME_USED}" | sed s/_sysconfigdata_//g )"
     echo ""
     echo "         We are not preventing things from continuing here, but *this* Python will not"
     echo "         be able to compile software for this host, and, depending on whether it has"
