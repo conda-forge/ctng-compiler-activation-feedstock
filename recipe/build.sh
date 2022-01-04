@@ -69,5 +69,5 @@ find . -name "*activate*.sh.bak" -exec rm "{}" \;
 
 # Check if (de-)activate scripts can be used in non-Bash shells (ignoring the commonly supported "local" keyword.)
 find . -name "*activate*.sh" -exec shellcheck --severity=info --format=gcc {} \; \
-    | grep -vF "In POSIX sh, 'local' is undefined. [SC2039]" \
+    | grep -vF "In POSIX sh, 'local' is undefined. [SC" \
     && exit 1 || true
