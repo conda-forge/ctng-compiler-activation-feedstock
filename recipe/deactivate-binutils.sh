@@ -3,11 +3,15 @@
 # This function takes no arguments
 # It tries to determine the name of this file in a programatic way.
 _get_sourced_filename() {
+    # shellcheck disable=SC3054 # non-POSIX array access is guarded
     if [ -n "${BASH_SOURCE+x}" ] && [ -n "${BASH_SOURCE[0]}" ]; then
+        # shellcheck disable=SC3054 # non-POSIX array access is guarded
         basename "${BASH_SOURCE[0]}"
+    # shellcheck disable=SC2296  # bad '(' is guarded
     elif [ -n "$ZSH_NAME" ] && [ -n "${(%):-%x}" ]; then
         # in zsh use prompt-style expansion to introspect the same information
         # see http://stackoverflow.com/questions/9901210/bash-source0-equivalent-in-zsh
+        # shellcheck disable=SC2296  # bad '(' is guarded
         basename "${(%):-%x}"
     else
         echo "UNKNOWN FILE"
