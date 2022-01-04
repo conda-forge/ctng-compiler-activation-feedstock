@@ -147,6 +147,7 @@ else
 
   # unfix prompt for zsh
   if [ -n "${ZSH_NAME:-}" ]; then
+    # we use eval here to avoid non-POSIX shells trying to parse the ZSH syntax
     eval "precmd_functions=(\${precmd_functions:#_conda_clang_precmd})"
     eval "preexec_functions=(\${preexec_functions:#_conda_clang_preexec})"
   fi
