@@ -1,11 +1,11 @@
-#!/bin/bash
+# shellcheck shell=sh
 
 # This function takes no arguments
 # It tries to determine the name of this file in a programatic way.
 _get_sourced_filename() {
-    if [ -n "${BASH_SOURCE[0]}" ]; then
+    if [ -n "${BASH_SOURCE+x}" ] && [ -n "${BASH_SOURCE[0]}" ]; then
         basename "${BASH_SOURCE[0]}"
-    elif [ -n "${(%):-%x}" ]; then
+    elif [ -n "$ZSH_NAME" ] && [ -n "${(%):-%x}" ]; then
         # in zsh use prompt-style expansion to introspect the same information
         # see http://stackoverflow.com/questions/9901210/bash-source0-equivalent-in-zsh
         basename "${(%):-%x}"
@@ -29,8 +29,8 @@ _get_sourced_filename() {
 #  cases NAME simply gets reset to CONDA_BACKUP_NAME.  It is
 #  a fatal error if a program is identified but not present.
 _tc_activation() {
-  local act_nature=$1; shift
-  local tc_prefix=$1; shift
+  local act_nature="$1"; shift
+  local tc_prefix="$1"; shift
   local thing
   local newval
   local from
@@ -54,14 +54,14 @@ _tc_activation() {
           ;;
         *)
           newval="${CONDA_PREFIX}/bin/${tc_prefix}${thing}"
-          if [ ! -x "${newval}" -a "${pass}" = "check" ]; then
+          if [ ! -x "${newval}" ] && [ "${pass}" = "check" ]; then
             echo "ERROR: This cross-compiler package contains no program ${newval}"
             return 1
           fi
           ;;
       esac
       if [ "${pass}" = "apply" ]; then
-        thing=$(echo ${thing} | tr 'a-z+-' 'A-ZX_')
+        thing=$(echo "${thing}" | tr 'a-z+-' 'A-ZX_')
         eval oldval="\$${from}$thing"
         if [ -n "${oldval}" ]; then
           eval export "${to}'${thing}'=\"${oldval}\""

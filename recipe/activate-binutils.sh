@@ -29,8 +29,8 @@ _get_sourced_filename() {
 #  cases NAME simply gets reset to CONDA_BACKUP_NAME.  It is
 #  a fatal error if a program is identified but not present.
 _tc_activation() {
-  local act_nature=$1; shift
-  local tc_prefix=$1; shift
+  local act_nature="$1"; shift
+  local tc_prefix="$1"; shift
   local thing
   local newval
   local from
