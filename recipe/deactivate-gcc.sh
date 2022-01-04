@@ -105,6 +105,7 @@ if [ "${CONDA_BUILD:-0}" = "1" ]; then
   env > /tmp/old-env-$$.txt
 fi
 
+# shellcheck disable=SC2050 # templating will fix this error
 if [ "@CONDA_BUILD_CROSS_COMPILATION@" = "1" ]; then
 _tc_activation \
   deactivate @CHOST@- \

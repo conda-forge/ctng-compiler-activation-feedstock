@@ -148,6 +148,7 @@ if [ "${CONDA_BUILD:-0}" = "1" ]; then
   _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_PROGRAM_PATH=${BUILD_PREFIX}/bin;$PREFIX/bin"
 fi
 
+# shellcheck disable=SC2050 # templating will fix this error
 if [ "@CONDA_BUILD_CROSS_COMPILATION@" = "1" ]; then
   _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_SYSTEM_NAME=Linux -DCMAKE_SYSTEM_PROCESSOR=@LINUX_MACHINE@"
 fi
@@ -173,6 +174,7 @@ _tc_activation \
 
 unset _CMAKE_ARGS
 
+# shellcheck disable=SC2050 # templating will fix this error
 if [ "@CONDA_BUILD_CROSS_COMPILATION@" = "1" ]; then
 _tc_activation \
    activate @CHOST@- \
@@ -198,11 +200,13 @@ else
     autoload -Uz add-zsh-hook
 
     _conda_clang_precmd() {
+      # shellcheck disable=SC2034 # guarded for zsh
       HOST="${CONDA_BACKUP_HOST}"
     }
     add-zsh-hook -Uz precmd _conda_clang_precmd
 
     _conda_clang_preexec() {
+      # shellcheck disable=SC2034 # guarded for zsh
       HOST="${CONDA_TOOLCHAIN_HOST}"
     }
     add-zsh-hook -Uz preexec _conda_clang_preexec
