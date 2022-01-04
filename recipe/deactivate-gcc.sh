@@ -54,7 +54,7 @@ _tc_activation() {
           ;;
         *)
           newval="${CONDA_PREFIX}/bin/${tc_prefix}${thing}"
-          thing=$(echo ${thing} | tr 'a-z+-' 'A-ZX_')
+          thing=$(echo "${thing}" | tr 'a-z+-' 'A-ZX_')
           if [ ! -x "${newval}" ] && [ "${pass}" = "check" ]; then
             echo "ERROR: This cross-compiler package contains no program ${newval}"
             return 1
