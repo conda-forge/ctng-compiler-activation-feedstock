@@ -66,3 +66,10 @@ find . -name "*activate*.sh" -exec sed -i.bak "s|@_CONDA_PYTHON_SYSCONFIGDATA_NA
 find . -name "*activate*.sh" -exec sed -i.bak "s|@CONDA_BUILD_CROSS_COMPILATION@|${CONDA_BUILD_CROSS_COMPILATION}|g"                "{}" \;
 
 find . -name "*activate*.sh.bak" -exec rm "{}" \;
+
+# Check if (de-)activate scripts can be used in non-Bash shells (ignoring the commonly supported "local" keyword.)
+errors=$(find . -name "*activate*.sh" -exec shellcheck -e SC3043 --severity=info --format=gcc {} \;)
+echo $errors
+if [[ ${errors} != "" ]]; then
+  exit 1
+fi

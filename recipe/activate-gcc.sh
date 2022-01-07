@@ -1,13 +1,16 @@
-#!/bin/bash
+# shellcheck shell=sh
 
 # This function takes no arguments
 # It tries to determine the name of this file in a programatic way.
 _get_sourced_filename() {
-    if [ -n "${BASH_SOURCE[0]}" ]; then
+    # shellcheck disable=SC3054,SC2296 # non-POSIX array access and bad '(' are guarded
+    if [ -n "${BASH_SOURCE+x}" ] && [ -n "${BASH_SOURCE[0]}" ]; then
+        # shellcheck disable=SC3054 # non-POSIX array access is guarded
         basename "${BASH_SOURCE[0]}"
-    elif [ -n "${(%):-%x}" ]; then
+    elif [ -n "$ZSH_NAME" ] && [ -n "${(%):-%x}" ]; then
         # in zsh use prompt-style expansion to introspect the same information
         # see http://stackoverflow.com/questions/9901210/bash-source0-equivalent-in-zsh
+        # shellcheck disable=SC2296  # bad '(' is guarded
         basename "${(%):-%x}"
     else
         echo "UNKNOWN FILE"
@@ -29,8 +32,8 @@ _get_sourced_filename() {
 #  cases NAME simply gets reset to CONDA_BACKUP_NAME.  It is
 #  a fatal error if a program is identified but not present.
 _tc_activation() {
-  local act_nature=$1; shift
-  local tc_prefix=$1; shift
+  local act_nature="$1"; shift
+  local tc_prefix="$1"; shift
   local thing
   local newval
   local from
@@ -54,8 +57,8 @@ _tc_activation() {
           ;;
         *)
           newval="${CONDA_PREFIX}/bin/${tc_prefix}${thing}"
-          thing=$(echo ${thing} | tr 'a-z+-' 'A-ZX_')
-          if [ ! -x "${newval}" -a "${pass}" = "check" ]; then
+          thing=$(echo "${thing}" | tr 'a-z+-' 'A-ZX_')
+          if [ ! -x "${newval}" ] && [ "${pass}" = "check" ]; then
             echo "ERROR: This cross-compiler package contains no program ${newval}"
             return 1
           fi
@@ -105,12 +108,12 @@ fi
 
 _CONDA_PYTHON_SYSCONFIGDATA_NAME_USED=${_CONDA_PYTHON_SYSCONFIGDATA_NAME:-@_CONDA_PYTHON_SYSCONFIGDATA_NAME@}
 if [ -n "${_CONDA_PYTHON_SYSCONFIGDATA_NAME_USED}" ] && [ -n "${SYS_SYSROOT}" ]; then
-  if find "$(dirname $(dirname ${SYS_PYTHON}))/lib/"python* -type f -name "${_CONDA_PYTHON_SYSCONFIGDATA_NAME_USED}.py" -exec false {} +; then
+  if find "$(dirname "$(dirname "${SYS_PYTHON}")")/lib/"python* -type f -name "${_CONDA_PYTHON_SYSCONFIGDATA_NAME_USED}.py" -exec false {} +; then
     echo ""
     echo "WARNING: The Python interpreter at the following prefix:"
-    echo "         $(dirname $(dirname ${SYS_PYTHON}))"
+    echo "         $(dirname "$(dirname "${SYS_PYTHON}")")"
     echo "         .. is not able to handle sysconfigdata-based compilation for the host:"
-    echo "         ${_CONDA_PYTHON_SYSCONFIGDATA_NAME_USED//_sysconfigdata_/}"
+    echo "         $( printf %s "${_CONDA_PYTHON_SYSCONFIGDATA_NAME_USED}" | sed s/_sysconfigdata_//g )"
     echo ""
     echo "         We are not preventing things from continuing here, but *this* Python will not"
     echo "         be able to compile software for this host, and, depending on whether it has"
@@ -145,6 +148,7 @@ if [ "${CONDA_BUILD:-0}" = "1" ]; then
   _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_PROGRAM_PATH=${BUILD_PREFIX}/bin;$PREFIX/bin"
 fi
 
+# shellcheck disable=SC2050 # templating will fix this error
 if [ "@CONDA_BUILD_CROSS_COMPILATION@" = "1" ]; then
   _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_SYSTEM_NAME=Linux -DCMAKE_SYSTEM_PROCESSOR=@LINUX_MACHINE@"
 fi
@@ -170,6 +174,7 @@ _tc_activation \
 
 unset _CMAKE_ARGS
 
+# shellcheck disable=SC2050 # templating will fix this error
 if [ "@CONDA_BUILD_CROSS_COMPILATION@" = "1" ]; then
 _tc_activation \
    activate @CHOST@- \
@@ -195,11 +200,13 @@ else
     autoload -Uz add-zsh-hook
 
     _conda_clang_precmd() {
+      # shellcheck disable=SC2034 # guarded for zsh
       HOST="${CONDA_BACKUP_HOST}"
     }
     add-zsh-hook -Uz precmd _conda_clang_precmd
 
     _conda_clang_preexec() {
+      # shellcheck disable=SC2034 # guarded for zsh
       HOST="${CONDA_TOOLCHAIN_HOST}"
     }
     add-zsh-hook -Uz preexec _conda_clang_preexec

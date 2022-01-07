@@ -23,7 +23,7 @@ ctng_target_platform_u:
 ctng_vendor:
 - conda
 docker_image:
-- quay.io/condaforge/linux-anvil-comp7
+- quay.io/condaforge/linux-anvil-cos7-x86_64
 libgfortran_soname:
 - '5'
 linux_machine:

@@ -1,13 +1,16 @@
-#!/bin/bash
+# shellcheck shell=sh
 
 # This function takes no arguments
 # It tries to determine the name of this file in a programatic way.
 _get_sourced_filename() {
-    if [ -n "${BASH_SOURCE[0]}" ]; then
+    # shellcheck disable=SC3054,SC2296 # non-POSIX array access and bad '(' are guarded
+    if [ -n "${BASH_SOURCE+x}" ] && [ -n "${BASH_SOURCE[0]}" ]; then
+        # shellcheck disable=SC3054 # non-POSIX array access is guarded
         basename "${BASH_SOURCE[0]}"
-    elif [ -n "${(%):-%x}" ]; then
+    elif [ -n "$ZSH_NAME" ] && [ -n "${(%):-%x}" ]; then
         # in zsh use prompt-style expansion to introspect the same information
         # see http://stackoverflow.com/questions/9901210/bash-source0-equivalent-in-zsh
+        # shellcheck disable=SC2296  # bad '(' is guarded
         basename "${(%):-%x}"
     else
         echo "UNKNOWN FILE"
@@ -29,8 +32,8 @@ _get_sourced_filename() {
 #  cases NAME simply gets reset to CONDA_BACKUP_NAME.  It is
 #  a fatal error if a program is identified but not present.
 _tc_activation() {
-  local act_nature=$1; shift
-  local tc_prefix=$1; shift
+  local act_nature="$1"; shift
+  local tc_prefix="$1"; shift
   local thing
   local newval
   local from
@@ -54,8 +57,8 @@ _tc_activation() {
           ;;
         *)
           newval="${CONDA_PREFIX}/bin/${tc_prefix}${thing}"
-          thing=$(echo ${thing} | tr 'a-z+-' 'A-ZX_')
-          if [ ! -x "${newval}" -a "${pass}" = "check" ]; then
+          thing=$(echo "${thing}" | tr 'a-z+-' 'A-ZX_')
+          if [ ! -x "${newval}" ] && [ "${pass}" = "check" ]; then
             echo "ERROR: This cross-compiler package contains no program ${newval}"
             return 1
           fi
@@ -102,6 +105,7 @@ if [ "${CONDA_BUILD:-0}" = "1" ]; then
   env > /tmp/old-env-$$.txt
 fi
 
+# shellcheck disable=SC2050 # templating will fix this error
 if [ "@CONDA_BUILD_CROSS_COMPILATION@" = "1" ]; then
 _tc_activation \
   deactivate @CHOST@- \
@@ -143,7 +147,8 @@ else
 
   # unfix prompt for zsh
   if [ -n "${ZSH_NAME:-}" ]; then
-    precmd_functions=(${precmd_functions:#_conda_clang_precmd})
-    preexec_functions=(${preexec_functions:#_conda_clang_preexec})
+    # we use eval here to avoid non-POSIX shells trying to parse the ZSH syntax
+    eval "precmd_functions=(\${precmd_functions:#_conda_clang_precmd})"
+    eval "preexec_functions=(\${preexec_functions:#_conda_clang_preexec})"
   fi
 fi
