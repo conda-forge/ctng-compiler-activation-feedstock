@@ -6,7 +6,7 @@ source:
   path: .
 
 build:
-  number: 5
+  number: 6
   skip: True  # [not linux]
 
 requirements:
@@ -132,6 +132,7 @@ outputs:
         - libgfortran-ng  {{ ctng_gcc }}.*
       run:
         - gfortran_impl_{{ ctng_target_platform }} {{ ctng_gcc }}.*
+        - gfortran_impl_{{ target_platform }} {{ ctng_gcc }}.*
         # for activation of gcc env vars:
         - {{ pin_subpackage("gcc_" ~ ctng_target_platform, exact=True) }}
         # for activation of binutils env vars:
