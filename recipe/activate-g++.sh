@@ -102,8 +102,8 @@ fi
 _tc_activation \
   activate @CHOST@- \
   c++ g++ \
-  "CXXFLAGS,${CXXFLAGS:-${CXXFLAGS_USED}}" \
-  "DEBUG_CXXFLAGS,${DEBUG_CXXFLAGS:-${DEBUG_CXXFLAGS_USED}}" \
+  "CXXFLAGS,${CXXFLAGS_USED} ${CXXFLAGS:-}" \
+  "DEBUG_CXXFLAGS,${DEBUG_CXXFLAGS_USED} ${DEBUG_CXXFLAGS:-}" \
   "CXX_FOR_BUILD,${CONDA_PREFIX}/bin/@CBUILD@-c++"
 
 if [ $? -ne 0 ]; then
