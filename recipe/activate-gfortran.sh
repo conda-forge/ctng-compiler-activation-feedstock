@@ -101,10 +101,10 @@ _tc_activation \
   activate @CHOST@- \
   gfortran f95 \
   "FC_FOR_BUILD,${CONDA_PREFIX}/bin/@CBUILD@-gfortran" \
-  "FFLAGS,${FFLAGS_USED} ${FFLAGS:-}" \
-  "FORTRANFLAGS,${FFLAGS_USED} ${FORTRANFLAGS:-}" \
-  "DEBUG_FFLAGS,${FFLAGS_USED} @DEBUG_FFLAGS@ ${FFLAGS:-}" \
-  "DEBUG_FORTRANFLAGS,${FFLAGS_USED} @DEBUG_FFLAGS@ ${FORTRANFLAGS:-}" \
+  "FFLAGS,${FFLAGS_USED}${FFLAGS:+ }${FFLAGS:-}" \
+  "FORTRANFLAGS,${FFLAGS_USED}${FORTRANFLAGS:+ }${FORTRANFLAGS:-}" \
+  "DEBUG_FFLAGS,${FFLAGS_USED} @DEBUG_FFLAGS@${FFLAGS:+ }${FFLAGS:-}" \
+  "DEBUG_FORTRANFLAGS,${FFLAGS_USED} @DEBUG_FFLAGS@${FORTRANFLAGS:+ }${FORTRANFLAGS:-}" \
 
 # extra ones - have a dependency on the previous ones, so done after.
 _tc_activation \
