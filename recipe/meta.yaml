@@ -167,6 +167,7 @@ outputs:
       skip: True  # [target_platform != ctng_target_platform]
     requirements:
       - gfortran_impl_{{ target_platform }} {{ ctng_gcc }}.*
+      - gcc_impl_{{ target_platform }} {{ ctng_gcc }}.*
       - gcc {{ ctng_gcc }}.*
     run_exports:
       strong:
