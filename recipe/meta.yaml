@@ -6,7 +6,7 @@ source:
   path: .
 
 build:
-  number: 8
+  number: 9
   skip: True  # [not linux]
 
 requirements:
@@ -166,7 +166,8 @@ outputs:
     build:
       skip: True  # [target_platform != ctng_target_platform]
     requirements:
-      - gfortran_{{ target_platform }} {{ ctng_gcc }}.*
+      - gfortran_impl_{{ target_platform }} {{ ctng_gcc }}.*
+      - gcc_impl_{{ target_platform }} {{ ctng_gcc }}.*
       - gcc {{ ctng_gcc }}.*
     run_exports:
       strong:
