@@ -1,4 +1,4 @@
-{% set min_runtime_version={{ min_runtime_version }} %}
+{% set min_runtime_version = 12 %}
 
 package:
   name: ctng-compiler-activation
