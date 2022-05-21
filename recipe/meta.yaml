@@ -1,3 +1,5 @@
+{% set min_runtime_version = 12 %}
+
 package:
   name: ctng-compiler-activation
   version: {{ ctng_gcc }}
@@ -6,7 +8,7 @@ source:
   path: .
 
 build:
-  number: 9
+  number: 10
   skip: True  # [not linux]
 
 requirements:
@@ -28,7 +30,7 @@ outputs:
         - sysroot_{{ ctng_target_platform }}
     run_exports:
       strong:
-        - libgcc-ng >={{ ctng_gcc }}
+        - libgcc-ng >={{ min_runtime_version }}
     test:
       requires:
         - sysroot_{{ ctng_target_platform }} {{ conda_glibc_ver }}
@@ -57,7 +59,7 @@ outputs:
       - gcc_impl_{{ target_platform }} {{ ctng_gcc }}.*
     run_exports:
       strong:
-        - libgcc-ng >={{ ctng_gcc }}
+        - libgcc-ng >={{ min_runtime_version }}
     test:
       commands:
         - ${PREFIX}/bin/gcc -v
@@ -92,9 +94,10 @@ outputs:
         - test -d ${CONDA_BUILD_SYSROOT} || exit 1
     run_exports:
       strong:
-        - libstdcxx-ng >={{ ctng_gcc }}
+        # This should be a transitive dependency, but conda-build doesn't support those
+        - libstdcxx-ng >={{ min_runtime_version }}
         # Because transitive run_exports do not work:
-        - libgcc-ng >={{ ctng_gcc }}
+        - libgcc-ng >={{ min_runtime_version }}
     about:
       summary: GNU C++ Compiler (activation scripts)
       home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
@@ -110,9 +113,9 @@ outputs:
       - gcc {{ ctng_gcc }}.*
     run_exports:
       strong:
-        - libstdcxx-ng >={{ ctng_gcc }}
+        - libstdcxx-ng >={{ min_runtime_version }}
         # Because transitive run_exports do not work:
-        - libgcc-ng >={{ ctng_gcc }}
+        - libgcc-ng >={{ min_runtime_version }}
     test:
       commands:
         - ${PREFIX}/bin/g++ -v
@@ -143,7 +146,7 @@ outputs:
         - libgfortran{{ libgfortran_soname }} >={{ ctng_gcc }}
         - libgfortran-ng
         # Because transitive run_exports do not work:
-        - libgcc-ng >={{ ctng_gcc }}
+        - libgcc-ng >={{ min_runtime_version }}
     test:
       requires:
         - cmake >=3.11  # [x86_64 or aarch64 or ppc64le]
@@ -175,7 +178,7 @@ outputs:
         - libgfortran{{ libgfortran_soname }} >={{ ctng_gcc }}
         - libgfortran-ng
         # Because transitive run_exports do not work:
-        - libgcc-ng >={{ ctng_gcc }}
+        - libgcc-ng >={{ min_runtime_version }}
     test:
       commands:
         - ${PREFIX}/bin/gfortran -v
