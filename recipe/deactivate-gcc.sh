@@ -88,14 +88,14 @@ if [ "${CONDA_BUILD:-0}" = "1" ]; then
   LDFLAGS_USED="@LDFLAGS@ -Wl,-rpath,${PREFIX}/lib -L${PREFIX}/lib"
   CPPFLAGS_USED="@CPPFLAGS@ -isystem ${PREFIX}/include"
   DEBUG_CPPFLAGS_USED="@DEBUG_CPPFLAGS@ -isystem ${PREFIX}/include"
-  CMAKE_PREFIX_PATH_USED="${PREFIX}:${CONDA_PREFIX}/@CHOST@/sysroot/usr"
+  CMAKE_PREFIX_PATH_USED="${PREFIX};${CONDA_PREFIX}/@CHOST@/sysroot/usr"
 else
   CFLAGS_USED="@CFLAGS@ -isystem ${CONDA_PREFIX}/include"
   DEBUG_CFLAGS_USED="@DEBUG_CFLAGS@ -isystem ${CONDA_PREFIX}/include"
   CPPFLAGS_USED="@CPPFLAGS@ -isystem ${CONDA_PREFIX}/include"
   DEBUG_CPPFLAGS_USED="@DEBUG_CPPFLAGS@ -isystem ${CONDA_PREFIX}/include"
   LDFLAGS_USED="@LDFLAGS@ -Wl,-rpath,${CONDA_PREFIX}/lib -Wl,-rpath-link,${CONDA_PREFIX}/lib -L${CONDA_PREFIX}/lib"
-  CMAKE_PREFIX_PATH_USED="${CONDA_PREFIX}:${CONDA_PREFIX}/@CHOST@/sysroot/usr"
+  CMAKE_PREFIX_PATH_USED="${CONDA_PREFIX};${CONDA_PREFIX}/@CHOST@/sysroot/usr"
 fi
 
 if [ "${CONDA_BUILD:-0}" = "1" ]; then
