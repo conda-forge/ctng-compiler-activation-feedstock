@@ -1,9 +1,9 @@
 # cos6-specific because of PYTHON_SYSCONFIGDATA_NAME below.  Would be nice to make that more generic if possible.
 ctng_gcc:
-  - 8.5.0
   - 9.4.0
   - 10.3.0
   - 11.2.0
+  - 12.1.0
 libgfortran_soname:
   - 5
   - 5
