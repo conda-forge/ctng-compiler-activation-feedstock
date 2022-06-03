@@ -4,7 +4,9 @@ ctng_gcc:
   - 9.4.0
   - 10.3.0
   - 11.2.0
+  - 12.1.0
 libgfortran_soname:
+  - 5
   - 5
   - 5
   - 5
