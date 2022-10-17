@@ -11,7 +11,7 @@ channel_targets:
 conda_glibc_ver:
 - '2.17'
 ctng_binutils:
-- '2.36'
+- '2.39'
 ctng_cpu_arch:
 - powerpc64le
 ctng_gcc:
