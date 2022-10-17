@@ -1,9 +1,5 @@
-BUILD:
-- aarch64-conda_cos7-linux-gnu
-cdt_arch:
-- aarch64
 cdt_name:
-- cos7
+- cos6
 channel_sources:
 - conda-forge
 channel_targets:
@@ -11,15 +7,15 @@ channel_targets:
 conda_glibc_ver:
 - '2.17'
 ctng_binutils:
-- '2.36'
+- '2.39'
 ctng_cpu_arch:
-- powerpc64le
+- s390x
 ctng_gcc:
-- 12.1.0
+- 12.2.0
 ctng_target_platform:
-- linux-ppc64le
+- linux-s390x
 ctng_target_platform_u:
-- linux_ppc64le
+- linux_s390x
 ctng_vendor:
 - conda
 docker_image:
@@ -27,9 +23,9 @@ docker_image:
 libgfortran_soname:
 - '5'
 linux_machine:
-- ppc64le
+- s390x
 target_platform:
-- linux-aarch64
+- linux-64
 zip_keys:
 - - ctng_gcc
   - libgfortran_soname

@@ -3,14 +3,14 @@ ctng_gcc:
   - 9.5.0
   - 10.4.0
   - 11.3.0
-  - 12.1.0
+  - 12.2.0
 libgfortran_soname:
   - 5
   - 5
   - 5
   - 5
 ctng_binutils:
-  - 2.36
+  - 2.39
 ctng_target_platform:
   - linux-64
   - linux-ppc64le

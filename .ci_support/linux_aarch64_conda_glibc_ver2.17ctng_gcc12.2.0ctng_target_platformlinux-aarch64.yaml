@@ -11,15 +11,15 @@ channel_targets:
 conda_glibc_ver:
 - '2.17'
 ctng_binutils:
-- '2.36'
+- '2.39'
 ctng_cpu_arch:
-- s390x
+- aarch64
 ctng_gcc:
-- 12.1.0
+- 12.2.0
 ctng_target_platform:
-- linux-s390x
+- linux-aarch64
 ctng_target_platform_u:
-- linux_s390x
+- linux_aarch64
 ctng_vendor:
 - conda
 docker_image:
@@ -27,7 +27,7 @@ docker_image:
 libgfortran_soname:
 - '5'
 linux_machine:
-- s390x
+- aarch64
 target_platform:
 - linux-aarch64
 zip_keys:

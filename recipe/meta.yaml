@@ -8,7 +8,7 @@ source:
   path: .
 
 build:
-  number: 10
+  number: 11
   skip: True  # [not linux]
 
 requirements:
