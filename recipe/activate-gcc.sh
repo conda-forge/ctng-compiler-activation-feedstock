@@ -154,19 +154,19 @@ _MESON_ARGS="--buildtype release"
 if [ "@CONDA_BUILD_CROSS_COMPILATION@" = "1" ]; then
   _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_SYSTEM_NAME=Linux -DCMAKE_SYSTEM_PROCESSOR=@LINUX_MACHINE@"
   _MESON_ARGS="${_MESON_ARGS} --cross-file ${CONDA_PREFIX}/meson_cross_file.txt"
-  echo "[host_machine]" > ${CONDA_PREFIX}/meson_cross_file.txt
-  echo "system = 'linux'" >> ${CONDA_PREFIX}/meson_cross_file.txt
-  echo "cpu = '@LINUX_MACHINE@'" >> ${CONDA_PREFIX}/meson_cross_file.txt
-  echo "cpu_family = '@LINUX_MACHINE@'" >> ${CONDA_PREFIX}/meson_cross_file.txt
-  echo "endian = 'little'" >> ${CONDA_PREFIX}/meson_cross_file.txt
+  echo "[host_machine]" > "${CONDA_PREFIX}/meson_cross_file.txt"
+  echo "system = 'linux'" >> "${CONDA_PREFIX}/meson_cross_file.txt"
+  echo "cpu = '@LINUX_MACHINE@'" >> "${CONDA_PREFIX}/meson_cross_file.txt"
+  echo "cpu_family = '@LINUX_MACHINE@'" >> "${CONDA_PREFIX}/meson_cross_file.txt"
+  echo "endian = 'little'" >> "${CONDA_PREFIX}/meson_cross_file.txt"
   # specify path to correct binaries/metadata the meson will not auto-discover out of caution
   # binaries from build env
-  echo "[binaries]" >> ${CONDA_PREFIX}/meson_cross_file.txt
-  echo "cmake = '${CONDA_PREFIX}/bin/cmake'" >> ${CONDA_PREFIX}/meson_cross_file.txt
-  echo "pkgconfig = '${CONDA_PREFIX}/bin/pkg-config'" >> ${CONDA_PREFIX}/meson_cross_file.txt
+  echo "[binaries]" >> "${CONDA_PREFIX}/meson_cross_file.txt"
+  echo "cmake = '${CONDA_PREFIX}/bin/cmake'" >> "${CONDA_PREFIX}/meson_cross_file.txt"
+  echo "pkgconfig = '${CONDA_PREFIX}/bin/pkg-config'" >> "${CONDA_PREFIX}/meson_cross_file.txt"
   # metadata from host env
-  echo "[properties]" >> ${CONDA_PREFIX}/meson_cross_file.txt
-  echo "pkg_config_libdir = '${PREFIX}/lib'" >> ${CONDA_PREFIX}/meson_cross_file.txt
+  echo "[properties]" >> "${CONDA_PREFIX}/meson_cross_file.txt"
+  echo "pkg_config_libdir = '${PREFIX}/lib'" >> "${CONDA_PREFIX}/meson_cross_file.txt"
 fi
 
 _tc_activation \
