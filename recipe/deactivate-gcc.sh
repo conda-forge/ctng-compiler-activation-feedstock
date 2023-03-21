@@ -129,6 +129,7 @@ _tc_activation \
   "CC_FOR_BUILD,${CONDA_PREFIX}/bin/@CBUILD@-cc" \
   "build_alias,@CBUILD@" \
   "host_alias,@CHOST@" \
+  "MESON_ARGS,${_MESON_ARGS:-}" \
   "CMAKE_ARGS,${_CMAKE_ARGS:-}"
 
 if [ $? -ne 0 ]; then
