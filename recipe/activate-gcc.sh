@@ -146,6 +146,7 @@ if [ "${CONDA_BUILD:-0}" = "1" ]; then
   _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_FIND_ROOT_PATH=$PREFIX;${BUILD_PREFIX}/@CHOST@/sysroot"
   _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_INSTALL_PREFIX=${PREFIX} -DCMAKE_INSTALL_LIBDIR=lib"
   _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_PROGRAM_PATH=${BUILD_PREFIX}/bin;$PREFIX/bin"
+  _MESON_ARGS="${_MESON_ARGS} --prefix=$PREFIX -Dlibdir=lib"
 fi
 
 _MESON_ARGS="--buildtype release"
@@ -153,7 +154,6 @@ _MESON_ARGS="--buildtype release"
 # shellcheck disable=SC2050 # templating will fix this error
 if [ "@CONDA_BUILD_CROSS_COMPILATION@" = "1" ]; then
   _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_SYSTEM_NAME=Linux -DCMAKE_SYSTEM_PROCESSOR=@LINUX_MACHINE@"
-  _MESON_ARGS="${_MESON_ARGS} --prefix="$PREFIX" -Dlibdir=lib"
   _MESON_ARGS="${_MESON_ARGS} --cross-file ${CONDA_PREFIX}/meson_cross_file.txt"
   echo "[host_machine]" > "${CONDA_PREFIX}/meson_cross_file.txt"
   echo "system = 'linux'" >> "${CONDA_PREFIX}/meson_cross_file.txt"
