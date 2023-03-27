@@ -141,16 +141,30 @@ _CMAKE_ARGS="-DCMAKE_AR=${CONDA_PREFIX}/bin/@CHOST@-ar -DCMAKE_CXX_COMPILER_AR=$
 _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_RANLIB=${CONDA_PREFIX}/bin/@CHOST@-ranlib -DCMAKE_CXX_COMPILER_RANLIB=${CONDA_PREFIX}/bin/@CHOST@-gcc-ranlib -DCMAKE_C_COMPILER_RANLIB=${CONDA_PREFIX}/bin/@CHOST@-gcc-ranlib"
 _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_LINKER=${CONDA_PREFIX}/bin/@CHOST@-ld -DCMAKE_STRIP=${CONDA_PREFIX}/bin/@CHOST@-strip"
 
+_MESON_ARGS="--buildtype release"
+
 if [ "${CONDA_BUILD:-0}" = "1" ]; then
   _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_FIND_ROOT_PATH_MODE_PROGRAM=NEVER -DCMAKE_FIND_ROOT_PATH_MODE_LIBRARY=ONLY -DCMAKE_FIND_ROOT_PATH_MODE_INCLUDE=ONLY"
   _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_FIND_ROOT_PATH=$PREFIX;${BUILD_PREFIX}/@CHOST@/sysroot"
   _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_INSTALL_PREFIX=${PREFIX} -DCMAKE_INSTALL_LIBDIR=lib"
   _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_PROGRAM_PATH=${BUILD_PREFIX}/bin;$PREFIX/bin"
+  _MESON_ARGS="${_MESON_ARGS} --prefix=$PREFIX -Dlibdir=lib"
 fi
 
 # shellcheck disable=SC2050 # templating will fix this error
 if [ "@CONDA_BUILD_CROSS_COMPILATION@" = "1" ]; then
   _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_SYSTEM_NAME=Linux -DCMAKE_SYSTEM_PROCESSOR=@LINUX_MACHINE@"
+  _MESON_ARGS="${_MESON_ARGS} --cross-file ${CONDA_PREFIX}/meson_cross_file.txt"
+  echo "[host_machine]" > "${CONDA_PREFIX}/meson_cross_file.txt"
+  echo "system = 'linux'" >> "${CONDA_PREFIX}/meson_cross_file.txt"
+  echo "cpu = '@LINUX_MACHINE@'" >> "${CONDA_PREFIX}/meson_cross_file.txt"
+  echo "cpu_family = '@LINUX_MACHINE@'" >> "${CONDA_PREFIX}/meson_cross_file.txt"
+  echo "endian = 'little'" >> "${CONDA_PREFIX}/meson_cross_file.txt"
+  # specify path to correct binaries from build (not host) environment,
+  # which meson will not auto-discover (out of caution) if not told explicitly.
+  echo "[binaries]" >> "${CONDA_PREFIX}/meson_cross_file.txt"
+  echo "cmake = '${CONDA_PREFIX}/bin/cmake'" >> "${CONDA_PREFIX}/meson_cross_file.txt"
+  echo "pkgconfig = '${CONDA_PREFIX}/bin/pkg-config'" >> "${CONDA_PREFIX}/meson_cross_file.txt"
 fi
 
 _tc_activation \
@@ -170,6 +184,7 @@ _tc_activation \
   "CC_FOR_BUILD,${CONDA_PREFIX}/bin/@CBUILD@-cc" \
   "build_alias,@CBUILD@" \
   "host_alias,@CHOST@" \
+  "MESON_ARGS,${_MESON_ARGS}" \
   "CMAKE_ARGS,${_CMAKE_ARGS}"
 
 unset _CMAKE_ARGS
