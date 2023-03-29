@@ -50,7 +50,14 @@ else
   export CONDA_BUILD_CROSS_COMPILATION="1"
 fi
 
+if [[ "$ctng_target_platform" == linux-ppc64le ]]; then
+  MESON_FAMILY=ppc64
+else
+  MESON_FAMILY=${linux_machine}
+fi
+
 find . -name "*activate*.sh" -exec sed -i.bak "s|@LINUX_MACHINE@|${linux_machine}|g"                                                "{}" \;
+find . -name "*activate*.sh" -exec sed -i.bak "s|@MESON_FAMILY@|${MESON_FAMILY}|g"                                                  "{}" \;
 find . -name "*activate*.sh" -exec sed -i.bak "s|@CBUILD@|${CBUILD}|g"                                                              "{}" \;
 find . -name "*activate*.sh" -exec sed -i.bak "s|@CHOST@|${CHOST}|g"                                                                "{}" \;
 find . -name "*activate*.sh" -exec sed -i.bak "s|@CPPFLAGS@|${FINAL_CPPFLAGS}|g"                                                    "{}" \;

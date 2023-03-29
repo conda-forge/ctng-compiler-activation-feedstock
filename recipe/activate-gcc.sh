@@ -158,7 +158,7 @@ if [ "@CONDA_BUILD_CROSS_COMPILATION@" = "1" ]; then
   echo "[host_machine]" > "${CONDA_PREFIX}/meson_cross_file.txt"
   echo "system = 'linux'" >> "${CONDA_PREFIX}/meson_cross_file.txt"
   echo "cpu = '@LINUX_MACHINE@'" >> "${CONDA_PREFIX}/meson_cross_file.txt"
-  echo "cpu_family = '@LINUX_MACHINE@'" >> "${CONDA_PREFIX}/meson_cross_file.txt"
+  echo "cpu_family = '@MESON_FAMILY@'" >> "${CONDA_PREFIX}/meson_cross_file.txt"
   echo "endian = 'little'" >> "${CONDA_PREFIX}/meson_cross_file.txt"
   # specify path to correct binaries from build (not host) environment,
   # which meson will not auto-discover (out of caution) if not told explicitly.
