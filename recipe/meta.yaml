@@ -1,4 +1,5 @@
-{% set min_runtime_version = 13 %}
+{% set build_num = 13 %}
+{% set min_runtime_version = 12 %}
 
 package:
   name: ctng-compiler-activation
@@ -8,7 +9,7 @@ source:
   path: .
 
 build:
-  number: 12
+  number: {{ build_num }}
   skip: True  # [not linux]
 
 requirements:
