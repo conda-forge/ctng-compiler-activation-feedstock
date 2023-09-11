@@ -9,13 +9,13 @@ conda_glibc_ver:
 ctng_binutils:
 - '2.40'
 ctng_cpu_arch:
-- powerpc64le
+- s390x
 ctng_gcc:
-- 13.1.0
+- 13.2.0
 ctng_target_platform:
-- linux-ppc64le
+- linux-s390x
 ctng_target_platform_u:
-- linux_ppc64le
+- linux_s390x
 ctng_vendor:
 - conda
 docker_image:
@@ -23,7 +23,7 @@ docker_image:
 libgfortran_soname:
 - '5'
 linux_machine:
-- ppc64le
+- s390x
 target_platform:
 - linux-64
 zip_keys:
