@@ -8,7 +8,7 @@
 # C.f. https://johannst.github.io/notes/development/symbolver.html resp.
 # check if some symbol changed ABI (and thus got reversioned) at the bottom of
 # https://gcc.gnu.org/onlinedocs/libstdc++/manual/api.html
-{% set min_runtime_version = 13 if gcc_major|int >= 13 else 12 %}
+{% set min_runtime_version = gcc_major if gcc_major|int >= 13 else 12 %}
 
 package:
   name: ctng-compiler-activation
