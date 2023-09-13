@@ -6,8 +6,9 @@
 # packages built with older compilers (because that build environment will
 # pull in the newest libstdcxx, and then depend on that new symbol version).
 # C.f. https://johannst.github.io/notes/development/symbolver.html resp.
-# https://github.com/search?q=repo%3Agcc-mirror%2Fgcc%20_GLIBCXX_BEGIN_INLINE_ABI_NAMESPACE&type=code
-{% set min_runtime_version = 13 if gcc_major|int >= 13 else 12%}
+# check if some symbol changed ABI (and thus got reversioned) at the bottom of
+# https://gcc.gnu.org/onlinedocs/libstdc++/manual/api.html
+{% set min_runtime_version = 13 if gcc_major|int >= 13 else 12 %}
 
 package:
   name: ctng-compiler-activation
