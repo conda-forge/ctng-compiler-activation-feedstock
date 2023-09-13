@@ -1,7 +1,11 @@
+BUILD:
+- aarch64-conda_cos7-linux-gnu
+cdt_arch:
+- aarch64
 cdt_name:
 - cos7
 channel_sources:
-- https://conda-web.anaconda.org/conda-forge
+- conda-forge
 channel_targets:
 - conda-forge main
 conda_glibc_ver:
@@ -11,7 +15,7 @@ ctng_binutils:
 ctng_cpu_arch:
 - powerpc64le
 ctng_gcc:
-- 13.1.0
+- 13.2.0
 ctng_target_platform:
 - linux-ppc64le
 ctng_target_platform_u:
@@ -25,7 +29,7 @@ libgfortran_soname:
 linux_machine:
 - ppc64le
 target_platform:
-- linux-s390x
+- linux-aarch64
 zip_keys:
 - - ctng_gcc
   - libgfortran_soname

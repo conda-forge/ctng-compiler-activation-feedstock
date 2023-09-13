@@ -1,7 +1,7 @@
 cdt_name:
-- cos6
+- cos7
 channel_sources:
-- conda-forge
+- https://conda-web.anaconda.org/conda-forge
 channel_targets:
 - conda-forge main
 conda_glibc_ver:
@@ -11,7 +11,7 @@ ctng_binutils:
 ctng_cpu_arch:
 - x86_64
 ctng_gcc:
-- 13.1.0
+- 13.2.0
 ctng_target_platform:
 - linux-64
 ctng_target_platform_u:
@@ -25,7 +25,7 @@ libgfortran_soname:
 linux_machine:
 - x86_64
 target_platform:
-- linux-64
+- linux-s390x
 zip_keys:
 - - ctng_gcc
   - libgfortran_soname
