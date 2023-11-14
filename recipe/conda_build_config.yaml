@@ -37,6 +37,9 @@ conda_glibc_ver:
 ctng_vendor:
   - conda
 
+clang_version:
+  - 16
+
 zip_keys:
   - - ctng_target_platform
     - ctng_target_platform_u

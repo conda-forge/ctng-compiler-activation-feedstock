@@ -104,7 +104,7 @@ _tc_activation \
   c++ g++ \
   "CXXFLAGS,${CXXFLAGS_USED}${CXXFLAGS:+ }${CXXFLAGS:-}" \
   "DEBUG_CXXFLAGS,${DEBUG_CXXFLAGS_USED}${DEBUG_CXXFLAGS:+ }${DEBUG_CXXFLAGS:-}" \
-  "CXX_FOR_BUILD,${CONDA_PREFIX}/bin/@CBUILD@-c++"
+  "CXX_FOR_BUILD,${CONDA_PREFIX}/bin/@CXX_FOR_BUILD@"
 
 if [ $? -ne 0 ]; then
   echo "ERROR: $(_get_sourced_filename) failed, see above for details"
