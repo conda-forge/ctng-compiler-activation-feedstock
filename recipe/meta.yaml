@@ -266,13 +266,6 @@ outputs:
     version: "{{ ctng_gcc }}"
     build:
       skip: True  # [not linux]
-    requirements:
-      host:
-        - binutils_impl_{{ ctng_target_platform }} {{ ctng_binutils }}.*
-        - gfortran_impl_{{ ctng_target_platform }} {{ ctng_gcc }}.*
-        - gxx_impl_{{ ctng_target_platform }} {{ ctng_gcc }}.*
-        - gcc_impl_{{ ctng_target_platform }} {{ ctng_gcc }}.*
-    build:
       binary_relocation: False
       detect_binary_files_with_prefix: False
       always_include_files:
@@ -283,6 +276,12 @@ outputs:
         - libexec/
         - share/
         - {{ ctng_cpu_arch }}-{{ ctng_vendor }}-linux-gnu/
+    requirements:
+      host:
+        - binutils_impl_{{ ctng_target_platform }} {{ ctng_binutils }}.*
+        - gfortran_impl_{{ ctng_target_platform }} {{ ctng_gcc }}.*
+        - gxx_impl_{{ ctng_target_platform }} {{ ctng_gcc }}.*
+        - gcc_impl_{{ ctng_target_platform }} {{ ctng_gcc }}.*
     test:
       commands:
         - test -f $PREFIX/bin/{{ ctng_cpu_arch }}-{{ ctng_vendor }}-linux-gnu-cc
