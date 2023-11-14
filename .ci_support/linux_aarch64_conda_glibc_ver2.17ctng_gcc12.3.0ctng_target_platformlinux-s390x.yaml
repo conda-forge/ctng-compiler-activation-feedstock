@@ -18,9 +18,9 @@ ctng_cpu_arch:
 - s390x
 ctng_gcc:
 - 12.3.0
-ctng_target_platform:
+cross_target_platform:
 - linux-s390x
-ctng_target_platform_u:
+cross_target_platform_u:
 - linux_s390x
 ctng_vendor:
 - conda
@@ -35,8 +35,8 @@ target_platform:
 zip_keys:
 - - ctng_gcc
   - libgfortran_soname
-- - ctng_target_platform
-  - ctng_target_platform_u
+- - cross_target_platform
+  - cross_target_platform_u
   - ctng_cpu_arch
   - conda_glibc_ver
   - linux_machine

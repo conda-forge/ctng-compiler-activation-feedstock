@@ -24,4 +24,4 @@ get_triplet() {
 }
 
 export CBUILD="$(get_triplet $target_platform)"
-export CHOST="$(get_triplet $ctng_target_platform)"
+export CHOST="$(get_triplet $cross_target_platform)"

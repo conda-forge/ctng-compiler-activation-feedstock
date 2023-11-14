@@ -26,32 +26,32 @@ requirements:
     - shellcheck  # [not (aarch64 or ppc64le)]
 
 outputs:
-  - name: gcc_{{ ctng_target_platform }}
+  - name: gcc_{{ cross_target_platform }}
     build:
       skip: True  # [not linux]
     script: install-gcc.sh
     requirements:
       run:
         - gcc_impl_{{ target_platform }} {{ ctng_gcc }}.*
-        - gcc_impl_{{ ctng_target_platform }} {{ ctng_gcc }}.*
+        - gcc_impl_{{ cross_target_platform }} {{ ctng_gcc }}.*
         # for activation of binutils env vars
-        - {{ pin_subpackage("binutils_" ~ ctng_target_platform, exact=True) }}
+        - {{ pin_subpackage("binutils_" ~ cross_target_platform, exact=True) }}
         - sysroot_{{ target_platform }}
-        - sysroot_{{ ctng_target_platform }}
+        - sysroot_{{ cross_target_platform }}
     run_exports:
       strong:
         - libgcc-ng >={{ min_runtime_version }}
     test:
       requires:
-        - sysroot_{{ ctng_target_platform }} {{ conda_glibc_ver }}
+        - sysroot_{{ cross_target_platform }} {{ conda_glibc_ver }}
       files:
         - tests
       commands:
-        - echo {{ ctng_target_platform_u }}
+        - echo {{ cross_target_platform_u }}
         - echo {{ linux_machine }}
         - ${CC} ${CFLAGS} -Wall tests/aligned_alloc.c -c -o c_aligned.o -v
-        - ${CC} ${LDFLAGS} c_aligned.o -o c_aligned     # [target_platform == ctng_target_platform]
-        - ./c_aligned                                   # [target_platform == ctng_target_platform]
+        - ${CC} ${LDFLAGS} c_aligned.o -o c_aligned     # [target_platform == cross_target_platform]
+        - ./c_aligned                                   # [target_platform == cross_target_platform]
         # CONDA_BUILD_SYSROOT is defined for clang++ to find correct C++ headers, see issue 8
         - test -z "${CONDA_BUILD_SYSROOT+x}" && echo "CONDA_BUILD_SYSROOT is not set" && exit 1
         - test -d ${CONDA_BUILD_SYSROOT} || exit 1
@@ -61,18 +61,18 @@ outputs:
       license: BSD-3-Clause
       license_file: LICENSE
 
-  - name: clang_{{ ctng_target_platform }}
+  - name: clang_{{ cross_target_platform }}
     version: {{ clang_version }}
     script: install-clang.sh
     build:
       skip: True  # [win]
     requirements:
       run:
-        - libgcc-devel_{{ ctng_target_platform }} {{ ctng_gcc }}.*
+        - libgcc-devel_{{ cross_target_platform }} {{ ctng_gcc }}.*
         # for activation of binutils env vars
-        - {{ pin_subpackage("binutils_" ~ ctng_target_platform, exact=True) }}
-        - sysroot_{{ ctng_target_platform }}
-        - compiler-rt_{{ ctng_target_platform }}
+        - {{ pin_subpackage("binutils_" ~ cross_target_platform, exact=True) }}
+        - sysroot_{{ cross_target_platform }}
+        - compiler-rt_{{ cross_target_platform }}
         - compiler-rt
         - clang_impl_{{ target_platform }}  {{ clang_version }}   # [osx]
     run_exports:
@@ -80,15 +80,15 @@ outputs:
         - libgcc-ng >={{ min_runtime_version }}
     test:
       requires:
-        - sysroot_{{ ctng_target_platform }} {{ conda_glibc_ver }}
+        - sysroot_{{ cross_target_platform }} {{ conda_glibc_ver }}
       files:
         - tests
       commands:
-        - echo {{ ctng_target_platform_u }}
+        - echo {{ cross_target_platform_u }}
         - echo {{ linux_machine }}
         - ${CC} ${CFLAGS} -Wall tests/aligned_alloc.c -c -o c_aligned.o -v
-        - ${CC} ${LDFLAGS} c_aligned.o -o c_aligned     # [target_platform == ctng_target_platform]
-        - ./c_aligned                                   # [target_platform == ctng_target_platform]
+        - ${CC} ${LDFLAGS} c_aligned.o -o c_aligned     # [target_platform == cross_target_platform]
+        - ./c_aligned                                   # [target_platform == cross_target_platform]
         # CONDA_BUILD_SYSROOT is defined for clang++ to find correct C++ headers, see issue 8
         - test -z "${CONDA_BUILD_SYSROOT+x}" && echo "CONDA_BUILD_SYSROOT is not set" && exit 1
         - test -d ${CONDA_BUILD_SYSROOT} || exit 1
@@ -101,7 +101,7 @@ outputs:
   - name: gcc
     script: install-symlinks.sh
     build:
-      skip: True  # [target_platform != ctng_target_platform]
+      skip: True  # [target_platform != cross_target_platform]
       skip: True  # [not linux]
     requirements:
       - gcc_impl_{{ target_platform }} {{ ctng_gcc }}.*
@@ -118,28 +118,28 @@ outputs:
       license: BSD-3-Clause
       license_file: LICENSE
 
-  - name: gxx_{{ ctng_target_platform }}
+  - name: gxx_{{ cross_target_platform }}
     script: install-g++.sh
     build:
       skip: True  # [not linux]
     requirements:
       run:
         - gxx_impl_{{ target_platform }} {{ ctng_gcc }}.*
-        - gxx_impl_{{ ctng_target_platform }} {{ ctng_gcc }}.*
+        - gxx_impl_{{ cross_target_platform }} {{ ctng_gcc }}.*
         # for activation of gcc env vars
-        - {{ pin_subpackage("gcc_" ~ ctng_target_platform, exact=True) }}
+        - {{ pin_subpackage("gcc_" ~ cross_target_platform, exact=True) }}
         # for activation of binutils env vars
-        - {{ pin_subpackage("binutils_" ~ ctng_target_platform, exact=True) }}
-        - sysroot_{{ ctng_target_platform }}
+        - {{ pin_subpackage("binutils_" ~ cross_target_platform, exact=True) }}
+        - sysroot_{{ cross_target_platform }}
     test:
       requires:
-        - sysroot_{{ ctng_target_platform }} {{ conda_glibc_ver }}
+        - sysroot_{{ cross_target_platform }} {{ conda_glibc_ver }}
       files:
         - tests
       commands:
         - ${CXX} ${CXXFLAGS} -Wall tests/aligned_alloc.cpp -c -o cpp_aligned.o
-        - ${CXX} ${LDFLAGS} cpp_aligned.o -o cpp_aligned    # [target_platform == ctng_target_platform]
-        - ./cpp_aligned                                     # [target_platform == ctng_target_platform]
+        - ${CXX} ${LDFLAGS} cpp_aligned.o -o cpp_aligned    # [target_platform == cross_target_platform]
+        - ./cpp_aligned                                     # [target_platform == cross_target_platform]
         - test -z "${CONDA_BUILD_SYSROOT+x}" && echo "CONDA_BUILD_SYSROOT is not set" && exit 1
         - test -d ${CONDA_BUILD_SYSROOT} || exit 1
     run_exports:
@@ -157,7 +157,7 @@ outputs:
   - name: gxx
     script: install-symlinks.sh
     build:
-      skip: True  # [target_platform != ctng_target_platform]
+      skip: True  # [target_platform != cross_target_platform]
       skip: True  # [not linux]
     requirements:
       - gxx_impl_{{ target_platform }} {{ ctng_gcc }}.*
@@ -177,7 +177,7 @@ outputs:
       license: BSD-3-Clause
       license_file: LICENSE
 
-  - name: gfortran_{{ ctng_target_platform }}
+  - name: gfortran_{{ cross_target_platform }}
     script: install-gfortran.sh
     build:
       skip: True  # [not linux]
@@ -187,13 +187,13 @@ outputs:
         - libgfortran{{ libgfortran_soname }} {{ ctng_gcc }}.*
         - libgfortran-ng  {{ ctng_gcc }}.*
       run:
-        - gfortran_impl_{{ ctng_target_platform }} {{ ctng_gcc }}.*
+        - gfortran_impl_{{ cross_target_platform }} {{ ctng_gcc }}.*
         - gfortran_impl_{{ target_platform }} {{ ctng_gcc }}.*
         # for activation of gcc env vars:
-        - {{ pin_subpackage("gcc_" ~ ctng_target_platform, exact=True) }}
+        - {{ pin_subpackage("gcc_" ~ cross_target_platform, exact=True) }}
         # for activation of binutils env vars:
-        - {{ pin_subpackage("binutils_" ~ ctng_target_platform, exact=True) }}
-        - sysroot_{{ ctng_target_platform }}
+        - {{ pin_subpackage("binutils_" ~ cross_target_platform, exact=True) }}
+        - sysroot_{{ cross_target_platform }}
     run_exports:
       strong:
         - libgfortran{{ libgfortran_soname }} >={{ ctng_gcc }}
@@ -204,11 +204,11 @@ outputs:
       requires:
         - cmake >=3.11  # [x86_64 or aarch64 or ppc64le]
         - make          # [x86_64 or aarch64 or ppc64le]
-        - sysroot_{{ ctng_target_platform }} {{ conda_glibc_ver }}
+        - sysroot_{{ cross_target_platform }} {{ conda_glibc_ver }}
       commands:
         - ${FC} --version
         - pushd tests/fortomp
-        - sh test_fort.sh       # [target_platform == ctng_target_platform and (x86_64 or aarch64 or ppc64le)]
+        - sh test_fort.sh       # [target_platform == cross_target_platform and (x86_64 or aarch64 or ppc64le)]
       files:
         - tests/fortomp/*
     about:
@@ -220,7 +220,7 @@ outputs:
   - name: gfortran
     script: install-symlinks.sh
     build:
-      skip: True  # [target_platform != ctng_target_platform]
+      skip: True  # [target_platform != cross_target_platform]
       skip: True  # [not linux]
     requirements:
       - gfortran_impl_{{ target_platform }} {{ ctng_gcc }}.*
@@ -243,17 +243,17 @@ outputs:
       license: BSD-3-Clause
       license_file: LICENSE
 
-  - name: binutils_{{ ctng_target_platform }}
+  - name: binutils_{{ cross_target_platform }}
     version: "{{ ctng_binutils }}"
     script: install-binutils.sh
     requirements:
       run:
-        - binutils_impl_{{ ctng_target_platform }} {{ ctng_binutils }}.*
+        - binutils_impl_{{ cross_target_platform }} {{ ctng_binutils }}.*
         - sysroot_{{ target_platform }}       # [linux]
-        - sysroot_{{ ctng_target_platform }}
+        - sysroot_{{ cross_target_platform }}
     test:
       requires:
-        - sysroot_{{ ctng_target_platform }} {{ conda_glibc_ver }}
+        - sysroot_{{ cross_target_platform }} {{ conda_glibc_ver }}
       commands:
         - test -f $LD
     about:
@@ -262,7 +262,7 @@ outputs:
       license: BSD-3-Clause
       license_file: LICENSE
 
-  - name: gcc_bootstrap_{{ ctng_target_platform }}
+  - name: gcc_bootstrap_{{ cross_target_platform }}
     version: "{{ ctng_gcc }}"
     build:
       skip: True  # [not linux]
@@ -278,10 +278,10 @@ outputs:
         - {{ ctng_cpu_arch }}-{{ ctng_vendor }}-linux-gnu/
     requirements:
       host:
-        - binutils_impl_{{ ctng_target_platform }} {{ ctng_binutils }}.*
-        - gfortran_impl_{{ ctng_target_platform }} {{ ctng_gcc }}.*
-        - gxx_impl_{{ ctng_target_platform }} {{ ctng_gcc }}.*
-        - gcc_impl_{{ ctng_target_platform }} {{ ctng_gcc }}.*
+        - binutils_impl_{{ cross_target_platform }} {{ ctng_binutils }}.*
+        - gfortran_impl_{{ cross_target_platform }} {{ ctng_gcc }}.*
+        - gxx_impl_{{ cross_target_platform }} {{ ctng_gcc }}.*
+        - gcc_impl_{{ cross_target_platform }} {{ ctng_gcc }}.*
     test:
       commands:
         - test -f $PREFIX/bin/{{ ctng_cpu_arch }}-{{ ctng_vendor }}-linux-gnu-cc

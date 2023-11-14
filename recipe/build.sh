@@ -4,14 +4,14 @@ set -ex
 
 source $RECIPE_DIR/get_cpu_arch.sh
 
-FINAL_CFLAGS=FINAL_CFLAGS_${ctng_target_platform_u}
-FINAL_DEBUG_CFLAGS=FINAL_DEBUG_CFLAGS_${ctng_target_platform_u}
-FINAL_CXXFLAGS=FINAL_CXXFLAGS_${ctng_target_platform_u}
-FINAL_DEBUG_CXXFLAGS=FINAL_DEBUG_CXXFLAGS_${ctng_target_platform_u}
-FINAL_FFLAGS=FINAL_FFLAGS_${ctng_target_platform_u}
-FINAL_DEBUG_FFLAGS=FINAL_DEBUG_FFLAGS_${ctng_target_platform_u}
-FINAL_LDFLAGS=FINAL_LDFLAGS_${ctng_target_platform_u}
-FINAL_CONDA_PYTHON_SYSCONFIGDATA_NAME=FINAL_CONDA_PYTHON_SYSCONFIGDATA_NAME_${ctng_target_platform_u}
+FINAL_CFLAGS=FINAL_CFLAGS_${cross_target_platform_u}
+FINAL_DEBUG_CFLAGS=FINAL_DEBUG_CFLAGS_${cross_target_platform_u}
+FINAL_CXXFLAGS=FINAL_CXXFLAGS_${cross_target_platform_u}
+FINAL_DEBUG_CXXFLAGS=FINAL_DEBUG_CXXFLAGS_${cross_target_platform_u}
+FINAL_FFLAGS=FINAL_FFLAGS_${cross_target_platform_u}
+FINAL_DEBUG_FFLAGS=FINAL_DEBUG_FFLAGS_${cross_target_platform_u}
+FINAL_LDFLAGS=FINAL_LDFLAGS_${cross_target_platform_u}
+FINAL_CONDA_PYTHON_SYSCONFIGDATA_NAME=FINAL_CONDA_PYTHON_SYSCONFIGDATA_NAME_${cross_target_platform_u}
 
 FINAL_CFLAGS="${!FINAL_CFLAGS}"
 FINAL_CXXFLAGS="${!FINAL_CXXFLAGS}"
@@ -44,13 +44,13 @@ if [ -z "${FINAL_CFLAGS}" ]; then
     exit 1
 fi
 
-if [[ "$target_platform" == "$ctng_target_platform" ]]; then
+if [[ "$target_platform" == "$cross_target_platform" ]]; then
   export CONDA_BUILD_CROSS_COMPILATION=""
 else
   export CONDA_BUILD_CROSS_COMPILATION="1"
 fi
 
-if [[ "$ctng_target_platform" == linux-ppc64le ]]; then
+if [[ "$cross_target_platform" == linux-ppc64le ]]; then
   MESON_FAMILY=ppc64
 else
   MESON_FAMILY=${linux_machine}

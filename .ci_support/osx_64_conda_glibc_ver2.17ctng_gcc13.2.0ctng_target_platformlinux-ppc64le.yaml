@@ -14,9 +14,9 @@ ctng_cpu_arch:
 - powerpc64le
 ctng_gcc:
 - 13.2.0
-ctng_target_platform:
+cross_target_platform:
 - linux-ppc64le
-ctng_target_platform_u:
+cross_target_platform_u:
 - linux_ppc64le
 ctng_vendor:
 - conda
@@ -27,8 +27,8 @@ macos_machine:
 target_platform:
 - osx-64
 zip_keys:
-- - ctng_target_platform
-  - ctng_target_platform_u
+- - cross_target_platform
+  - cross_target_platform_u
   - ctng_cpu_arch
   - conda_glibc_ver
   - linux_machine
