@@ -74,6 +74,8 @@ find . -name "*activate*.sh" -exec sed -i.bak "s|@CONDA_BUILD_CROSS_COMPILATION@
 
 cp activate-gcc.sh activate-clang.sh
 cp activate-g++.sh activate-clang++.sh
+cp deactivate-gcc.sh deactivate-clang.sh
+cp deactivate-g++.sh deactivate-clang++.sh
 
 find . -name "*activate-gcc.sh" -exec sed -i.bak "s|@COMPILERS@|cc cpp gcc gcc-ar gcc-nm gcc-ranlib|g"  "{}" \;
 find . -name "*activate-g++.sh" -exec sed -i.bak "s|@COMPILERS@|c++ g++|g"                              "{}" \;
