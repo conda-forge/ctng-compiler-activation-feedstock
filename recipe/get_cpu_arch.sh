@@ -23,5 +23,5 @@ get_triplet() {
   fi
 }
 
-export CBUILD="$(get_cpu_arch $target_platform)"
-export CHOST="$(get_cpu_arch $ctng_target_platform)"
+export CBUILD="$(get_triplet $target_platform)"
+export CHOST="$(get_triplet $ctng_target_platform)"
