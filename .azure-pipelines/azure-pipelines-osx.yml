@@ -8,41 +8,41 @@ jobs:
     vmImage: macOS-11
   strategy:
     matrix:
-      osx_64_conda_glibc_ver2.12ctng_gcc11.4.0cross_target_platformlinux-64:
-        CONFIG: osx_64_conda_glibc_ver2.12ctng_gcc11.4.0cross_target_platformlinux-64
+      osx_64_conda_glibc_ver2.12cross_target_platformlinux-64ctng_gcc11.4.0:
+        CONFIG: osx_64_conda_glibc_ver2.12cross_target_platformlinux-64ctng_gcc11.4.0
         UPLOAD_PACKAGES: 'True'
-      osx_64_conda_glibc_ver2.12ctng_gcc12.3.0cross_target_platformlinux-64:
-        CONFIG: osx_64_conda_glibc_ver2.12ctng_gcc12.3.0cross_target_platformlinux-64
+      osx_64_conda_glibc_ver2.12cross_target_platformlinux-64ctng_gcc12.3.0:
+        CONFIG: osx_64_conda_glibc_ver2.12cross_target_platformlinux-64ctng_gcc12.3.0
         UPLOAD_PACKAGES: 'True'
-      osx_64_conda_glibc_ver2.12ctng_gcc13.2.0cross_target_platformlinux-64:
-        CONFIG: osx_64_conda_glibc_ver2.12ctng_gcc13.2.0cross_target_platformlinux-64
+      osx_64_conda_glibc_ver2.12cross_target_platformlinux-64ctng_gcc13.2.0:
+        CONFIG: osx_64_conda_glibc_ver2.12cross_target_platformlinux-64ctng_gcc13.2.0
         UPLOAD_PACKAGES: 'True'
-      osx_64_conda_glibc_ver2.17ctng_gcc11.4.0cross_target_platformlinux-aarch64:
-        CONFIG: osx_64_conda_glibc_ver2.17ctng_gcc11.4.0cross_target_platformlinux-aarch64
+      osx_64_conda_glibc_ver2.17cross_target_platformlinux-aarch64ctng_gcc11.4.0:
+        CONFIG: osx_64_conda_glibc_ver2.17cross_target_platformlinux-aarch64ctng_gcc11.4.0
         UPLOAD_PACKAGES: 'True'
-      osx_64_conda_glibc_ver2.17ctng_gcc11.4.0cross_target_platformlinux-ppc64le:
-        CONFIG: osx_64_conda_glibc_ver2.17ctng_gcc11.4.0cross_target_platformlinux-ppc64le
+      osx_64_conda_glibc_ver2.17cross_target_platformlinux-aarch64ctng_gcc12.3.0:
+        CONFIG: osx_64_conda_glibc_ver2.17cross_target_platformlinux-aarch64ctng_gcc12.3.0
         UPLOAD_PACKAGES: 'True'
-      osx_64_conda_glibc_ver2.17ctng_gcc11.4.0cross_target_platformlinux-s390x:
-        CONFIG: osx_64_conda_glibc_ver2.17ctng_gcc11.4.0cross_target_platformlinux-s390x
+      osx_64_conda_glibc_ver2.17cross_target_platformlinux-aarch64ctng_gcc13.2.0:
+        CONFIG: osx_64_conda_glibc_ver2.17cross_target_platformlinux-aarch64ctng_gcc13.2.0
         UPLOAD_PACKAGES: 'True'
-      osx_64_conda_glibc_ver2.17ctng_gcc12.3.0cross_target_platformlinux-aarch64:
-        CONFIG: osx_64_conda_glibc_ver2.17ctng_gcc12.3.0cross_target_platformlinux-aarch64
+      osx_64_conda_glibc_ver2.17cross_target_platformlinux-ppc64lectng_gcc11.4.0:
+        CONFIG: osx_64_conda_glibc_ver2.17cross_target_platformlinux-ppc64lectng_gcc11.4.0
         UPLOAD_PACKAGES: 'True'
-      osx_64_conda_glibc_ver2.17ctng_gcc12.3.0cross_target_platformlinux-ppc64le:
-        CONFIG: osx_64_conda_glibc_ver2.17ctng_gcc12.3.0cross_target_platformlinux-ppc64le
+      osx_64_conda_glibc_ver2.17cross_target_platformlinux-ppc64lectng_gcc12.3.0:
+        CONFIG: osx_64_conda_glibc_ver2.17cross_target_platformlinux-ppc64lectng_gcc12.3.0
         UPLOAD_PACKAGES: 'True'
-      osx_64_conda_glibc_ver2.17ctng_gcc12.3.0cross_target_platformlinux-s390x:
-        CONFIG: osx_64_conda_glibc_ver2.17ctng_gcc12.3.0cross_target_platformlinux-s390x
+      osx_64_conda_glibc_ver2.17cross_target_platformlinux-ppc64lectng_gcc13.2.0:
+        CONFIG: osx_64_conda_glibc_ver2.17cross_target_platformlinux-ppc64lectng_gcc13.2.0
         UPLOAD_PACKAGES: 'True'
-      osx_64_conda_glibc_ver2.17ctng_gcc13.2.0cross_target_platformlinux-aarch64:
-        CONFIG: osx_64_conda_glibc_ver2.17ctng_gcc13.2.0cross_target_platformlinux-aarch64
+      osx_64_conda_glibc_ver2.17cross_target_platformlinux-s390xctng_gcc11.4.0:
+        CONFIG: osx_64_conda_glibc_ver2.17cross_target_platformlinux-s390xctng_gcc11.4.0
         UPLOAD_PACKAGES: 'True'
-      osx_64_conda_glibc_ver2.17ctng_gcc13.2.0cross_target_platformlinux-ppc64le:
-        CONFIG: osx_64_conda_glibc_ver2.17ctng_gcc13.2.0cross_target_platformlinux-ppc64le
+      osx_64_conda_glibc_ver2.17cross_target_platformlinux-s390xctng_gcc12.3.0:
+        CONFIG: osx_64_conda_glibc_ver2.17cross_target_platformlinux-s390xctng_gcc12.3.0
         UPLOAD_PACKAGES: 'True'
-      osx_64_conda_glibc_ver2.17ctng_gcc13.2.0cross_target_platformlinux-s390x:
-        CONFIG: osx_64_conda_glibc_ver2.17ctng_gcc13.2.0cross_target_platformlinux-s390x
+      osx_64_conda_glibc_ver2.17cross_target_platformlinux-s390xctng_gcc13.2.0:
+        CONFIG: osx_64_conda_glibc_ver2.17cross_target_platformlinux-s390xctng_gcc13.2.0
         UPLOAD_PACKAGES: 'True'
     maxParallel: 10
   timeoutInMinutes: 360

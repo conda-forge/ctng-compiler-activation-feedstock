@@ -64,7 +64,7 @@ outputs:
     version: {{ clang_version }}
     script: install-clang.sh
     build:
-      skip: True  # [win]
+      skip: True  # [win or s390x or cross_target_platform == "linux-s390x"]
     requirements:
       run:
         - libgcc-devel_{{ cross_target_platform }} {{ ctng_gcc }}.*
