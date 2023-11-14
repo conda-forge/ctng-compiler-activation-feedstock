@@ -4,6 +4,8 @@ set -ex
 
 source $RECIPE_DIR/get_cpu_arch.sh
 
+cross_target_platform_u=${cross_target_platform/-/_}
+
 FINAL_CFLAGS=FINAL_CFLAGS_${cross_target_platform_u}
 FINAL_DEBUG_CFLAGS=FINAL_DEBUG_CFLAGS_${cross_target_platform_u}
 FINAL_CXXFLAGS=FINAL_CXXFLAGS_${cross_target_platform_u}

@@ -47,7 +47,6 @@ outputs:
       files:
         - tests
       commands:
-        - echo {{ cross_target_platform_u }}
         - echo {{ linux_machine }}
         - ${CC} ${CFLAGS} -Wall tests/aligned_alloc.c -c -o c_aligned.o -v
         - ${CC} ${LDFLAGS} c_aligned.o -o c_aligned     # [target_platform == cross_target_platform]
@@ -84,7 +83,6 @@ outputs:
       files:
         - tests
       commands:
-        - echo {{ cross_target_platform_u }}
         - echo {{ linux_machine }}
         - ${CC} ${CFLAGS} -Wall tests/aligned_alloc.c -c -o c_aligned.o -v
         - ${CC} ${LDFLAGS} c_aligned.o -o c_aligned     # [target_platform == cross_target_platform]
