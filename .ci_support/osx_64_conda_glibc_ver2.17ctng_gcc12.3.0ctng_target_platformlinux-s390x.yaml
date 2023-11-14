@@ -1,7 +1,7 @@
-cdt_name:
-- cos7
+MACOSX_DEPLOYMENT_TARGET:
+- '10.9'
 channel_sources:
-- https://conda-web.anaconda.org/conda-forge
+- conda-forge
 channel_targets:
 - conda-forge main
 clang_version:
@@ -13,24 +13,20 @@ ctng_binutils:
 ctng_cpu_arch:
 - s390x
 ctng_gcc:
-- 13.2.0
+- 12.3.0
 ctng_target_platform:
 - linux-s390x
 ctng_target_platform_u:
 - linux_s390x
 ctng_vendor:
 - conda
-docker_image:
-- quay.io/condaforge/linux-anvil-cos7-x86_64
-libgfortran_soname:
-- '5'
 linux_machine:
 - s390x
+macos_machine:
+- x86_64-apple-darwin13.4.0
 target_platform:
-- linux-s390x
+- osx-64
 zip_keys:
-- - ctng_gcc
-  - libgfortran_soname
 - - ctng_target_platform
   - ctng_target_platform_u
   - ctng_cpu_arch
