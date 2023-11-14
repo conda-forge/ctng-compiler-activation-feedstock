@@ -77,15 +77,19 @@ cp activate-g++.sh activate-clang++.sh
 cp deactivate-gcc.sh deactivate-clang.sh
 cp deactivate-g++.sh deactivate-clang++.sh
 
-find . -name "*activate-gcc.sh" -exec sed -i.bak "s|@COMPILERS@|cc cpp gcc gcc-ar gcc-nm gcc-ranlib|g"  "{}" \;
-find . -name "*activate-g++.sh" -exec sed -i.bak "s|@COMPILERS@|c++ g++|g"                              "{}" \;
-find . -name "*activate-gcc.sh" -exec sed -i.bak "s|@CC_FOR_BUILD@|$CBUILD-clang|g"                     "{}" \;
-find . -name "*activate-g++.sh" -exec sed -i.bak "s|@CXX_FOR_BUILD@|$CBUILD-clang++|g"                  "{}" \;
+find . -name "*activate-gcc.sh" -exec sed -i.bak "s|@COMPILERS@|cpp gcc gcc-ar gcc-nm gcc-ranlib|g"     "{}" \;
+find . -name "*activate-g++.sh" -exec sed -i.bak "s|@CXX_COMPILERS@|g++|g"                              "{}" \;
+find . -name "*activate-gcc.sh" -exec sed -i.bak "s|@CC@|${CHOST}-cc|g"                                 "{}" \;
+find . -name "*activate-g++.sh" -exec sed -i.bak "s|@CXX@|${CHOST}-c++|g"                               "{}" \;
+find . -name "*activate-gcc.sh" -exec sed -i.bak "s|@CC_FOR_BUILD@|${CBUILD}-clang|g"                   "{}" \;
+find . -name "*activate-g++.sh" -exec sed -i.bak "s|@CXX_FOR_BUILD@|${CBUILD}-clang++|g"                "{}" \;
 
 find . -name "*activate-clang.sh" -exec sed -i.bak "s|@COMPILERS@|clang|g"                              "{}" \;
-find . -name "*activate-clang++.sh" -exec sed -i.bak "s|@COMPILERS@|clang++|g"                          "{}" \;
-find . -name "*activate-clang.sh" -exec sed -i.bak "s|@CC_FOR_BUILD@|$CBUILD-clang|g"                   "{}" \;
-find . -name "*activate-clang++.sh" -exec sed -i.bak "s|@CXX_FOR_BUILD@|$CBUILD-clang++|g"              "{}" \;
+find . -name "*activate-clang++.sh" -exec sed -i.bak "s|@CXX_COMPILERS@|clang++|g"                      "{}" \;
+find . -name "*activate-clang.sh" -exec sed -i.bak "s|@CC@|${CHOST}-clang|g"                            "{}" \;
+find . -name "*activate-clang++.sh" -exec sed -i.bak "s|@CXX@|${CHOST}-clang++|g"                       "{}" \;
+find . -name "*activate-clang.sh" -exec sed -i.bak "s|@CC_FOR_BUILD@|${CBUILD}-clang|g"                 "{}" \;
+find . -name "*activate-clang++.sh" -exec sed -i.bak "s|@CXX_FOR_BUILD@|${CBUILD}-clang++|g"            "{}" \;
 
 find . -name "*activate*.sh.bak" -exec rm "{}" \;
 
