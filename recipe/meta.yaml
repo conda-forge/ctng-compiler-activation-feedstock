@@ -1,5 +1,5 @@
 {% set build_num = 2 %}
-{% set gcc_major = 13 if ctng_gcc is undefined else ctng_gcc.split(".")[0] %}
+{% set gcc_major = 13 if compiler_version is undefined else compiler_version.split(".")[0] %}
 # generally, the runtime version of libstdcxx needs to be at least as high
 # as the compiler; however, wherever libstdcxx changes the default ABI version
 # of a symbol, we need to ensure at least that version at runtime also for
@@ -16,7 +16,7 @@
 
 package:
   name: ctng-compiler-activation
-  version: {{ ctng_gcc }}
+  version: {{ compiler_version }}
 
 source:
   path: .
@@ -32,12 +32,13 @@ requirements:
 outputs:
   - name: gcc_{{ cross_target_platform }}
     build:
+      skip: true  # [compiler_vendor != "gcc"]
       skip: true  # [not linux]
     script: install-gcc.sh
     requirements:
       run:
-        - gcc_impl_{{ target_platform }} {{ ctng_gcc }}.*
-        - gcc_impl_{{ cross_target_platform }} {{ ctng_gcc }}.*
+        - gcc_impl_{{ target_platform }} {{ compiler_version }}.*
+        - gcc_impl_{{ cross_target_platform }} {{ compiler_version }}.*
         # for activation of binutils env vars
         - {{ pin_subpackage("binutils_" ~ cross_target_platform, exact=True) }}
         - sysroot_{{ target_platform }}
@@ -65,22 +66,24 @@ outputs:
       license_file: LICENSE
 
   - name: clang_{{ cross_target_platform }}
-    version: {{ clang_version }}
+    version: {{ compiler_version }}
     script: install-clang.sh
     build:
       skip: true  # [win or s390x or cross_target_platform == "linux-s390x"]
+      skip: true  # [compiler_vendor != "clang"]
     requirements:
       run:
-        - libgcc-devel_{{ cross_target_platform }} {{ ctng_gcc }}.*
+        # we need one fixed GCC version for clang builds; use last_symbol_bump
+        - libgcc-devel_{{ cross_target_platform }} {{ last_symbol_bump }}.*
         # for activation of binutils env vars
         - {{ pin_subpackage("binutils_" ~ cross_target_platform, exact=True) }}
         - sysroot_{{ cross_target_platform }}
         - compiler-rt_{{ cross_target_platform }}
         - compiler-rt
-        - clang_impl_{{ target_platform }}  {{ clang_version }}   # [osx]
+        - clang_impl_{{ target_platform }}  {{ compiler_version }}   # [osx]
     run_exports:
       strong:
-        - libgcc-ng >={{ min_runtime_version }}
+        - libgcc-ng >={{ last_symbol_bump }}
     test:
       requires:
         - sysroot_{{ cross_target_platform }} {{ conda_glibc_ver }}
@@ -104,9 +107,10 @@ outputs:
     script: install-symlinks.sh
     build:
       skip: true  # [target_platform != cross_target_platform]
+      skip: true  # [compiler_vendor != "gcc"]
       skip: true  # [not linux]
     requirements:
-      - gcc_impl_{{ target_platform }} {{ ctng_gcc }}.*
+      - gcc_impl_{{ target_platform }} {{ compiler_version }}.*
     run_exports:
       strong:
         - libgcc-ng >={{ min_runtime_version }}
@@ -123,11 +127,12 @@ outputs:
   - name: gxx_{{ cross_target_platform }}
     script: install-g++.sh
     build:
+      skip: true  # [compiler_vendor != "gcc"]
       skip: true  # [not linux]
     requirements:
       run:
-        - gxx_impl_{{ target_platform }} {{ ctng_gcc }}.*
-        - gxx_impl_{{ cross_target_platform }} {{ ctng_gcc }}.*
+        - gxx_impl_{{ target_platform }} {{ compiler_version }}.*
+        - gxx_impl_{{ cross_target_platform }} {{ compiler_version }}.*
         # for activation of gcc env vars
         - {{ pin_subpackage("gcc_" ~ cross_target_platform, exact=True) }}
         # for activation of binutils env vars
@@ -160,10 +165,11 @@ outputs:
     script: install-symlinks.sh
     build:
       skip: true  # [target_platform != cross_target_platform]
+      skip: true  # [compiler_vendor != "gcc"]
       skip: true  # [not linux]
     requirements:
-      - gxx_impl_{{ target_platform }} {{ ctng_gcc }}.*
-      - gcc {{ ctng_gcc }}.*
+      - gxx_impl_{{ target_platform }} {{ compiler_version }}.*
+      - gcc {{ compiler_version }}.*
     run_exports:
       strong:
         - libstdcxx-ng >={{ min_runtime_version }}
@@ -182,15 +188,16 @@ outputs:
   - name: gfortran_{{ cross_target_platform }}
     script: install-gfortran.sh
     build:
+      skip: true  # [compiler_vendor != "gcc"]
       skip: true  # [not linux]
     requirements:
       host:
         # So that pin_compatible has something to work with:
-        - libgfortran{{ libgfortran_soname }} {{ ctng_gcc }}.*
-        - libgfortran-ng  {{ ctng_gcc }}.*
+        - libgfortran{{ libgfortran_soname }} {{ compiler_version }}.*
+        - libgfortran-ng  {{ compiler_version }}.*
       run:
-        - gfortran_impl_{{ cross_target_platform }} {{ ctng_gcc }}.*
-        - gfortran_impl_{{ target_platform }} {{ ctng_gcc }}.*
+        - gfortran_impl_{{ cross_target_platform }} {{ compiler_version }}.*
+        - gfortran_impl_{{ target_platform }} {{ compiler_version }}.*
         # for activation of gcc env vars:
         - {{ pin_subpackage("gcc_" ~ cross_target_platform, exact=True) }}
         # for activation of binutils env vars:
@@ -198,7 +205,7 @@ outputs:
         - sysroot_{{ cross_target_platform }}
     run_exports:
       strong:
-        - libgfortran{{ libgfortran_soname }} >={{ ctng_gcc }}
+        - libgfortran{{ libgfortran_soname }} >={{ compiler_version }}
         - libgfortran-ng
         # Because transitive run_exports do not work:
         - libgcc-ng >={{ min_runtime_version }}
@@ -223,15 +230,16 @@ outputs:
     script: install-symlinks.sh
     build:
       skip: true  # [target_platform != cross_target_platform]
+      skip: true  # [compiler_vendor != "gcc"]
       skip: true  # [not linux]
     requirements:
-      - gfortran_impl_{{ target_platform }} {{ ctng_gcc }}.*
-      - gcc_impl_{{ target_platform }} {{ ctng_gcc }}.*
-      - gcc {{ ctng_gcc }}.*
+      - gfortran_impl_{{ target_platform }} {{ compiler_version }}.*
+      - gcc_impl_{{ target_platform }} {{ compiler_version }}.*
+      - gcc {{ compiler_version }}.*
     run_exports:
       strong:
         # Because transitive run_exports do not work:
-        - libgfortran{{ libgfortran_soname }} >={{ ctng_gcc }}
+        - libgfortran{{ libgfortran_soname }} >={{ compiler_version }}
         - libgfortran-ng
         # Because transitive run_exports do not work:
         - libgcc-ng >={{ min_runtime_version }}
@@ -265,8 +273,9 @@ outputs:
       license_file: LICENSE
 
   - name: gcc_bootstrap_{{ cross_target_platform }}
-    version: "{{ ctng_gcc }}"
+    version: "{{ compiler_version }}"
     build:
+      skip: true  # [compiler_vendor != "gcc"]
       skip: true  # [not linux]
       binary_relocation: false
       detect_binary_files_with_prefix: false
@@ -281,9 +290,9 @@ outputs:
     requirements:
       host:
         - binutils_impl_{{ cross_target_platform }} {{ ctng_binutils }}.*
-        - gfortran_impl_{{ cross_target_platform }} {{ ctng_gcc }}.*
-        - gxx_impl_{{ cross_target_platform }} {{ ctng_gcc }}.*
-        - gcc_impl_{{ cross_target_platform }} {{ ctng_gcc }}.*
+        - gfortran_impl_{{ cross_target_platform }} {{ compiler_version }}.*
+        - gxx_impl_{{ cross_target_platform }} {{ compiler_version }}.*
+        - gcc_impl_{{ cross_target_platform }} {{ compiler_version }}.*
     test:
       commands:
         - test -f $PREFIX/bin/{{ ctng_cpu_arch }}-{{ ctng_vendor }}-linux-gnu-cc

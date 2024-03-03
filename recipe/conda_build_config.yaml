@@ -1,12 +1,22 @@
+compiler_vendor:
+  - gcc
+  - gcc
+  - gcc
+  - clang
+  - clang
 # cos6-specific because of PYTHON_SYSCONFIGDATA_NAME below.  Would be nice to make that more generic if possible.
-ctng_gcc:
+compiler_version:
   - 11.4.0
   - 12.3.0
   - 13.2.0
+  - 16
+  - 17
 libgfortran_soname:
   - 5
   - 5
   - 5
+  - None
+  - None
 ctng_binutils:
   - 2.40
 cross_target_platform:
@@ -32,15 +42,13 @@ conda_glibc_ver:
 ctng_vendor:
   - conda
 
-clang_version:
-  - 16
-
 zip_keys:
   - - cross_target_platform
     - ctng_cpu_arch
     - conda_glibc_ver
     - linux_machine
-  - - ctng_gcc
+  - - compiler_vendor
+    - compiler_version
     - libgfortran_soname
 
 FINAL_CPPFLAGS:
