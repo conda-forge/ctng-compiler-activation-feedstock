@@ -24,6 +24,7 @@ source:
 build:
   number: {{ build_num }}
   skip: true  # [win]
+  skip: true  # [compiler_vendor == "clang" and (s390x or cross_target_platform == "linux-s390x")]
 
 requirements:
   build:
@@ -300,6 +301,8 @@ outputs:
   - name: binutils_{{ cross_target_platform }}
     version: "{{ ctng_binutils }}"
     script: install-binutils.sh
+    build:
+      skip: true  # [compiler_vendor == "clang" and (s390x or cross_target_platform == "linux-s390x")]
     requirements:
       run:
         - binutils_impl_{{ cross_target_platform }} {{ ctng_binutils }}.*
