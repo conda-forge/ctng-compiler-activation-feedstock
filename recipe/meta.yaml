@@ -166,6 +166,8 @@ outputs:
     build:
       skip: true  # [win or s390x or cross_target_platform == "linux-s390x"]
       skip: true  # [compiler_vendor != "clang"]
+      # no osx-builds for libstdcxx yet
+      skip: true  # [not linux]
     requirements:
       run:
         # we need one fixed GCC version for clang builds; use last_symbol_bump
