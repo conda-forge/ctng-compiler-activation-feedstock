@@ -1,20 +1,21 @@
 compiler_vendor:
-  - gcc
-  - gcc
-  - gcc
+  # build gcc only for linux, clang for both linux & osx
+  - gcc     # [linux]
+  - gcc     # [linux]
+  - gcc     # [linux]
   - clang
   - clang
 # cos6-specific because of PYTHON_SYSCONFIGDATA_NAME below.  Would be nice to make that more generic if possible.
 compiler_version:
-  - 11.4.0
-  - 12.3.0
-  - 13.2.0
+  - 11.4.0  # [linux]
+  - 12.3.0  # [linux]
+  - 13.2.0  # [linux]
   - 16
   - 17
 libgfortran_soname:
-  - 5
-  - 5
-  - 5
+  - 5       # [linux]
+  - 5       # [linux]
+  - 5       # [linux]
   - None
   - None
 ctng_binutils:
