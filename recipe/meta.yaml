@@ -79,7 +79,7 @@ outputs:
         - {{ pin_subpackage("binutils_" ~ cross_target_platform, exact=True) }}
         - sysroot_{{ cross_target_platform }}
         - compiler-rt_{{ cross_target_platform }}
-        - compiler-rt
+        - compiler-rt =={{ compiler_version }}
         - clang_impl_{{ target_platform }}  {{ compiler_version }}   # [osx]
     run_exports:
       strong:
@@ -176,7 +176,7 @@ outputs:
         - {{ pin_subpackage("binutils_" ~ cross_target_platform, exact=True) }}
         - sysroot_{{ cross_target_platform }}
         - compiler-rt_{{ cross_target_platform }}
-        - compiler-rt
+        - compiler-rt =={{ compiler_version }}
         - clangxx_impl_{{ target_platform }}  {{ compiler_version }}   # [osx]
     test:
       requires:
