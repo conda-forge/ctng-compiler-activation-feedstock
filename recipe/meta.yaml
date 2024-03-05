@@ -170,6 +170,8 @@ outputs:
       run:
         # we need one fixed GCC version for clang builds; use last_symbol_bump
         - libgcc-devel_{{ cross_target_platform }} {{ last_symbol_bump }}.*
+        # C++ compiler on linux needs a stdlib
+        - libstdcxx-ng  {{ last_symbol_bump }}.*
         # for activation of gcc env vars
         - {{ pin_subpackage("clang_" ~ cross_target_platform, exact=True) }}
         # for activation of binutils env vars
