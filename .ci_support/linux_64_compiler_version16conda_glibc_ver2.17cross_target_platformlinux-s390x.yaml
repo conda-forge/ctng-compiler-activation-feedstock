@@ -1,0 +1,36 @@
+cdt_name:
+- cos6
+channel_sources:
+- conda-forge
+channel_targets:
+- conda-forge main
+compiler_vendor:
+- clang
+compiler_version:
+- '16'
+conda_glibc_ver:
+- '2.17'
+cross_target_platform:
+- linux-s390x
+ctng_binutils:
+- '2.40'
+ctng_cpu_arch:
+- s390x
+ctng_vendor:
+- conda
+docker_image:
+- quay.io/condaforge/linux-anvil-cos7-x86_64
+libgfortran_soname:
+- None
+linux_machine:
+- s390x
+target_platform:
+- linux-64
+zip_keys:
+- - compiler_vendor
+  - compiler_version
+  - libgfortran_soname
+- - cross_target_platform
+  - ctng_cpu_arch
+  - conda_glibc_ver
+  - linux_machine
