@@ -161,6 +161,46 @@ outputs:
       license: BSD-3-Clause
       license_file: LICENSE
 
+  - name: clangxx_{{ cross_target_platform }}
+    script: install-clang++.sh
+    build:
+      skip: true  # [win or s390x or cross_target_platform == "linux-s390x"]
+      skip: true  # [compiler_vendor != "clang"]
+    requirements:
+      run:
+        # we need one fixed GCC version for clang builds; use last_symbol_bump
+        - libgcc-devel_{{ cross_target_platform }} {{ last_symbol_bump }}.*
+        # for activation of gcc env vars
+        - {{ pin_subpackage("clang_" ~ cross_target_platform, exact=True) }}
+        # for activation of binutils env vars
+        - {{ pin_subpackage("binutils_" ~ cross_target_platform, exact=True) }}
+        - sysroot_{{ cross_target_platform }}
+        - compiler-rt_{{ cross_target_platform }}
+        - compiler-rt
+        - clangxx_impl_{{ target_platform }}  {{ compiler_version }}   # [osx]
+    test:
+      requires:
+        - sysroot_{{ cross_target_platform }} {{ conda_glibc_ver }}
+      files:
+        - tests
+      commands:
+        - ${CXX} ${CXXFLAGS} -Wall tests/aligned_alloc.cpp -c -o cpp_aligned.o
+        - ${CXX} ${LDFLAGS} cpp_aligned.o -o cpp_aligned    # [target_platform == cross_target_platform]
+        - ./cpp_aligned                                     # [target_platform == cross_target_platform]
+        - test -z "${CONDA_BUILD_SYSROOT+x}" && echo "CONDA_BUILD_SYSROOT is not set" && exit 1
+        - test -d ${CONDA_BUILD_SYSROOT} || exit 1
+    run_exports:
+      strong:
+        # This should be a transitive dependency, but conda-build doesn't support those
+        - libstdcxx-ng >={{ last_symbol_bump }}
+        # Because transitive run_exports do not work:
+        - libgcc-ng >={{ last_symbol_bump }}
+    about:
+      summary: Clang C++ Compiler (activation scripts)
+      home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+      license: BSD-3-Clause
+      license_file: LICENSE
+
   - name: gxx
     script: install-symlinks.sh
     build:
