@@ -8,311 +8,295 @@ jobs:
     vmImage: ubuntu-latest
   strategy:
     matrix:
-      linux_64_compiler_version11.4.0conda_glibc_ver2.12cross_target_platformlinux-64:
-        CONFIG: linux_64_compiler_version11.4.0conda_glibc_ver2.12cross_target_platformlinux-64
+      linux_64_compiler_vendorclangcompiler_version16conda_glibc_ver2.12cross_target_platformlinux-64:
+        CONFIG: linux_64_compiler_vendorclangcompiler_version16conda_glibc_ver2.12cross_target_platformlinux-64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_compiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-aarch64:
-        CONFIG: linux_64_compiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-aarch64
+      linux_64_compiler_vendorclangcompiler_version16conda_glibc_ver2.17cross_target_platformlinux-aarch64:
+        CONFIG: linux_64_compiler_vendorclangcompiler_version16conda_glibc_ver2.17cross_target_platformlinux-aarch64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_compiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le:
-        CONFIG: linux_64_compiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le
+      linux_64_compiler_vendorclangcompiler_version16conda_glibc_ver2.17cross_target_platformlinux-ppc64le:
+        CONFIG: linux_64_compiler_vendorclangcompiler_version16conda_glibc_ver2.17cross_target_platformlinux-ppc64le
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_compiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-s390x:
-        CONFIG: linux_64_compiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-s390x
+      linux_64_compiler_vendorclangcompiler_version16conda_glibc_ver2.17cross_target_platformlinux-s390x:
+        CONFIG: linux_64_compiler_vendorclangcompiler_version16conda_glibc_ver2.17cross_target_platformlinux-s390x
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_compiler_version12.3.0conda_glibc_ver2.12cross_target_platformlinux-64:
-        CONFIG: linux_64_compiler_version12.3.0conda_glibc_ver2.12cross_target_platformlinux-64
+      linux_64_compiler_vendorclangcompiler_version17conda_glibc_ver2.12cross_target_platformlinux-64:
+        CONFIG: linux_64_compiler_vendorclangcompiler_version17conda_glibc_ver2.12cross_target_platformlinux-64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_compiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-aarch64:
-        CONFIG: linux_64_compiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-aarch64
+      linux_64_compiler_vendorclangcompiler_version17conda_glibc_ver2.17cross_target_platformlinux-aarch64:
+        CONFIG: linux_64_compiler_vendorclangcompiler_version17conda_glibc_ver2.17cross_target_platformlinux-aarch64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_compiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le:
-        CONFIG: linux_64_compiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le
+      linux_64_compiler_vendorclangcompiler_version17conda_glibc_ver2.17cross_target_platformlinux-ppc64le:
+        CONFIG: linux_64_compiler_vendorclangcompiler_version17conda_glibc_ver2.17cross_target_platformlinux-ppc64le
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_compiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-s390x:
-        CONFIG: linux_64_compiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-s390x
+      linux_64_compiler_vendorclangcompiler_version17conda_glibc_ver2.17cross_target_platformlinux-s390x:
+        CONFIG: linux_64_compiler_vendorclangcompiler_version17conda_glibc_ver2.17cross_target_platformlinux-s390x
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_compiler_version13.2.0conda_glibc_ver2.12cross_target_platformlinux-64:
-        CONFIG: linux_64_compiler_version13.2.0conda_glibc_ver2.12cross_target_platformlinux-64
+      linux_64_compiler_vendorgcccompiler_version11.4.0conda_glibc_ver2.12cross_target_platformlinux-64:
+        CONFIG: linux_64_compiler_vendorgcccompiler_version11.4.0conda_glibc_ver2.12cross_target_platformlinux-64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_compiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-aarch64:
-        CONFIG: linux_64_compiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-aarch64
+      linux_64_compiler_vendorgcccompiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-aarch64:
+        CONFIG: linux_64_compiler_vendorgcccompiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-aarch64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_compiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le:
-        CONFIG: linux_64_compiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le
+      linux_64_compiler_vendorgcccompiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le:
+        CONFIG: linux_64_compiler_vendorgcccompiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_compiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-s390x:
-        CONFIG: linux_64_compiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-s390x
+      linux_64_compiler_vendorgcccompiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-s390x:
+        CONFIG: linux_64_compiler_vendorgcccompiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-s390x
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_compiler_version16conda_glibc_ver2.12cross_target_platformlinux-64:
-        CONFIG: linux_64_compiler_version16conda_glibc_ver2.12cross_target_platformlinux-64
+      linux_64_compiler_vendorgcccompiler_version12.3.0conda_glibc_ver2.12cross_target_platformlinux-64:
+        CONFIG: linux_64_compiler_vendorgcccompiler_version12.3.0conda_glibc_ver2.12cross_target_platformlinux-64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_compiler_version16conda_glibc_ver2.17cross_target_platformlinux-aarch64:
-        CONFIG: linux_64_compiler_version16conda_glibc_ver2.17cross_target_platformlinux-aarch64
+      linux_64_compiler_vendorgcccompiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-aarch64:
+        CONFIG: linux_64_compiler_vendorgcccompiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-aarch64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_compiler_version16conda_glibc_ver2.17cross_target_platformlinux-ppc64le:
-        CONFIG: linux_64_compiler_version16conda_glibc_ver2.17cross_target_platformlinux-ppc64le
+      linux_64_compiler_vendorgcccompiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le:
+        CONFIG: linux_64_compiler_vendorgcccompiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_compiler_version16conda_glibc_ver2.17cross_target_platformlinux-s390x:
-        CONFIG: linux_64_compiler_version16conda_glibc_ver2.17cross_target_platformlinux-s390x
+      linux_64_compiler_vendorgcccompiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-s390x:
+        CONFIG: linux_64_compiler_vendorgcccompiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-s390x
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_compiler_version17conda_glibc_ver2.12cross_target_platformlinux-64:
-        CONFIG: linux_64_compiler_version17conda_glibc_ver2.12cross_target_platformlinux-64
+      linux_64_compiler_vendorgcccompiler_version13.2.0conda_glibc_ver2.12cross_target_platformlinux-64:
+        CONFIG: linux_64_compiler_vendorgcccompiler_version13.2.0conda_glibc_ver2.12cross_target_platformlinux-64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_compiler_version17conda_glibc_ver2.17cross_target_platformlinux-aarch64:
-        CONFIG: linux_64_compiler_version17conda_glibc_ver2.17cross_target_platformlinux-aarch64
+      linux_64_compiler_vendorgcccompiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-aarch64:
+        CONFIG: linux_64_compiler_vendorgcccompiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-aarch64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_compiler_version17conda_glibc_ver2.17cross_target_platformlinux-ppc64le:
-        CONFIG: linux_64_compiler_version17conda_glibc_ver2.17cross_target_platformlinux-ppc64le
+      linux_64_compiler_vendorgcccompiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le:
+        CONFIG: linux_64_compiler_vendorgcccompiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_compiler_version17conda_glibc_ver2.17cross_target_platformlinux-s390x:
-        CONFIG: linux_64_compiler_version17conda_glibc_ver2.17cross_target_platformlinux-s390x
+      linux_64_compiler_vendorgcccompiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-s390x:
+        CONFIG: linux_64_compiler_vendorgcccompiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-s390x
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_aarch64_compiler_version11.4.0conda_glibc_ver2.12cross_target_platformlinux-64:
-        CONFIG: linux_aarch64_compiler_version11.4.0conda_glibc_ver2.12cross_target_platformlinux-64
+      linux_aarch64_compiler_vendorclangcompiler_version16conda_glibc_ver2.12cross_target_platformlinux-64:
+        CONFIG: linux_aarch64_compiler_vendorclangcompiler_version16conda_glibc_ver2.12cross_target_platformlinux-64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_aarch64_compiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-aarch64:
-        CONFIG: linux_aarch64_compiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-aarch64
+      linux_aarch64_compiler_vendorclangcompiler_version16conda_glibc_ver2.17cross_target_platformlinux-aarch64:
+        CONFIG: linux_aarch64_compiler_vendorclangcompiler_version16conda_glibc_ver2.17cross_target_platformlinux-aarch64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_aarch64_compiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le:
-        CONFIG: linux_aarch64_compiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le
+      linux_aarch64_compiler_vendorclangcompiler_version16conda_glibc_ver2.17cross_target_platformlinux-ppc64le:
+        CONFIG: linux_aarch64_compiler_vendorclangcompiler_version16conda_glibc_ver2.17cross_target_platformlinux-ppc64le
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_aarch64_compiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-s390x:
-        CONFIG: linux_aarch64_compiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-s390x
+      linux_aarch64_compiler_vendorclangcompiler_version16conda_glibc_ver2.17cross_target_platformlinux-s390x:
+        CONFIG: linux_aarch64_compiler_vendorclangcompiler_version16conda_glibc_ver2.17cross_target_platformlinux-s390x
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_aarch64_compiler_version12.3.0conda_glibc_ver2.12cross_target_platformlinux-64:
-        CONFIG: linux_aarch64_compiler_version12.3.0conda_glibc_ver2.12cross_target_platformlinux-64
+      linux_aarch64_compiler_vendorclangcompiler_version17conda_glibc_ver2.12cross_target_platformlinux-64:
+        CONFIG: linux_aarch64_compiler_vendorclangcompiler_version17conda_glibc_ver2.12cross_target_platformlinux-64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_aarch64_compiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-aarch64:
-        CONFIG: linux_aarch64_compiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-aarch64
+      linux_aarch64_compiler_vendorclangcompiler_version17conda_glibc_ver2.17cross_target_platformlinux-aarch64:
+        CONFIG: linux_aarch64_compiler_vendorclangcompiler_version17conda_glibc_ver2.17cross_target_platformlinux-aarch64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_aarch64_compiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le:
-        CONFIG: linux_aarch64_compiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le
+      linux_aarch64_compiler_vendorclangcompiler_version17conda_glibc_ver2.17cross_target_platformlinux-ppc64le:
+        CONFIG: linux_aarch64_compiler_vendorclangcompiler_version17conda_glibc_ver2.17cross_target_platformlinux-ppc64le
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_aarch64_compiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-s390x:
-        CONFIG: linux_aarch64_compiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-s390x
+      linux_aarch64_compiler_vendorclangcompiler_version17conda_glibc_ver2.17cross_target_platformlinux-s390x:
+        CONFIG: linux_aarch64_compiler_vendorclangcompiler_version17conda_glibc_ver2.17cross_target_platformlinux-s390x
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_aarch64_compiler_version13.2.0conda_glibc_ver2.12cross_target_platformlinux-64:
-        CONFIG: linux_aarch64_compiler_version13.2.0conda_glibc_ver2.12cross_target_platformlinux-64
+      linux_aarch64_compiler_vendorgcccompiler_version11.4.0conda_glibc_ver2.12cross_target_platformlinux-64:
+        CONFIG: linux_aarch64_compiler_vendorgcccompiler_version11.4.0conda_glibc_ver2.12cross_target_platformlinux-64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_aarch64_compiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-aarch64:
-        CONFIG: linux_aarch64_compiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-aarch64
+      linux_aarch64_compiler_vendorgcccompiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-aarch64:
+        CONFIG: linux_aarch64_compiler_vendorgcccompiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-aarch64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_aarch64_compiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le:
-        CONFIG: linux_aarch64_compiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le
+      linux_aarch64_compiler_vendorgcccompiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le:
+        CONFIG: linux_aarch64_compiler_vendorgcccompiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_aarch64_compiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-s390x:
-        CONFIG: linux_aarch64_compiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-s390x
+      linux_aarch64_compiler_vendorgcccompiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-s390x:
+        CONFIG: linux_aarch64_compiler_vendorgcccompiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-s390x
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_aarch64_compiler_version16conda_glibc_ver2.12cross_target_platformlinux-64:
-        CONFIG: linux_aarch64_compiler_version16conda_glibc_ver2.12cross_target_platformlinux-64
+      linux_aarch64_compiler_vendorgcccompiler_version12.3.0conda_glibc_ver2.12cross_target_platformlinux-64:
+        CONFIG: linux_aarch64_compiler_vendorgcccompiler_version12.3.0conda_glibc_ver2.12cross_target_platformlinux-64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_aarch64_compiler_version16conda_glibc_ver2.17cross_target_platformlinux-aarch64:
-        CONFIG: linux_aarch64_compiler_version16conda_glibc_ver2.17cross_target_platformlinux-aarch64
+      linux_aarch64_compiler_vendorgcccompiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-aarch64:
+        CONFIG: linux_aarch64_compiler_vendorgcccompiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-aarch64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_aarch64_compiler_version16conda_glibc_ver2.17cross_target_platformlinux-ppc64le:
-        CONFIG: linux_aarch64_compiler_version16conda_glibc_ver2.17cross_target_platformlinux-ppc64le
+      linux_aarch64_compiler_vendorgcccompiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le:
+        CONFIG: linux_aarch64_compiler_vendorgcccompiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_aarch64_compiler_version16conda_glibc_ver2.17cross_target_platformlinux-s390x:
-        CONFIG: linux_aarch64_compiler_version16conda_glibc_ver2.17cross_target_platformlinux-s390x
+      linux_aarch64_compiler_vendorgcccompiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-s390x:
+        CONFIG: linux_aarch64_compiler_vendorgcccompiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-s390x
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_aarch64_compiler_version17conda_glibc_ver2.12cross_target_platformlinux-64:
-        CONFIG: linux_aarch64_compiler_version17conda_glibc_ver2.12cross_target_platformlinux-64
+      linux_aarch64_compiler_vendorgcccompiler_version13.2.0conda_glibc_ver2.12cross_target_platformlinux-64:
+        CONFIG: linux_aarch64_compiler_vendorgcccompiler_version13.2.0conda_glibc_ver2.12cross_target_platformlinux-64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_aarch64_compiler_version17conda_glibc_ver2.17cross_target_platformlinux-aarch64:
-        CONFIG: linux_aarch64_compiler_version17conda_glibc_ver2.17cross_target_platformlinux-aarch64
+      linux_aarch64_compiler_vendorgcccompiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-aarch64:
+        CONFIG: linux_aarch64_compiler_vendorgcccompiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-aarch64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_aarch64_compiler_version17conda_glibc_ver2.17cross_target_platformlinux-ppc64le:
-        CONFIG: linux_aarch64_compiler_version17conda_glibc_ver2.17cross_target_platformlinux-ppc64le
+      linux_aarch64_compiler_vendorgcccompiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le:
+        CONFIG: linux_aarch64_compiler_vendorgcccompiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_aarch64_compiler_version17conda_glibc_ver2.17cross_target_platformlinux-s390x:
-        CONFIG: linux_aarch64_compiler_version17conda_glibc_ver2.17cross_target_platformlinux-s390x
+      linux_aarch64_compiler_vendorgcccompiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-s390x:
+        CONFIG: linux_aarch64_compiler_vendorgcccompiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-s390x
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_ppc64le_compiler_version11.4.0conda_glibc_ver2.12cross_target_platformlinux-64:
-        CONFIG: linux_ppc64le_compiler_version11.4.0conda_glibc_ver2.12cross_target_platformlinux-64
+      linux_ppc64le_compiler_vendorclangcompiler_version16conda_glibc_ver2.12cross_target_platformlinux-64:
+        CONFIG: linux_ppc64le_compiler_vendorclangcompiler_version16conda_glibc_ver2.12cross_target_platformlinux-64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_ppc64le_compiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-aarch64:
-        CONFIG: linux_ppc64le_compiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-aarch64
+      linux_ppc64le_compiler_vendorclangcompiler_version16conda_glibc_ver2.17cross_target_platformlinux-aarch64:
+        CONFIG: linux_ppc64le_compiler_vendorclangcompiler_version16conda_glibc_ver2.17cross_target_platformlinux-aarch64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_ppc64le_compiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le:
-        CONFIG: linux_ppc64le_compiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le
+      linux_ppc64le_compiler_vendorclangcompiler_version16conda_glibc_ver2.17cross_target_platformlinux-ppc64le:
+        CONFIG: linux_ppc64le_compiler_vendorclangcompiler_version16conda_glibc_ver2.17cross_target_platformlinux-ppc64le
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_ppc64le_compiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-s390x:
-        CONFIG: linux_ppc64le_compiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-s390x
+      linux_ppc64le_compiler_vendorclangcompiler_version16conda_glibc_ver2.17cross_target_platformlinux-s390x:
+        CONFIG: linux_ppc64le_compiler_vendorclangcompiler_version16conda_glibc_ver2.17cross_target_platformlinux-s390x
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_ppc64le_compiler_version12.3.0conda_glibc_ver2.12cross_target_platformlinux-64:
-        CONFIG: linux_ppc64le_compiler_version12.3.0conda_glibc_ver2.12cross_target_platformlinux-64
+      linux_ppc64le_compiler_vendorclangcompiler_version17conda_glibc_ver2.12cross_target_platformlinux-64:
+        CONFIG: linux_ppc64le_compiler_vendorclangcompiler_version17conda_glibc_ver2.12cross_target_platformlinux-64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_ppc64le_compiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-aarch64:
-        CONFIG: linux_ppc64le_compiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-aarch64
+      linux_ppc64le_compiler_vendorclangcompiler_version17conda_glibc_ver2.17cross_target_platformlinux-aarch64:
+        CONFIG: linux_ppc64le_compiler_vendorclangcompiler_version17conda_glibc_ver2.17cross_target_platformlinux-aarch64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_ppc64le_compiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le:
-        CONFIG: linux_ppc64le_compiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le
+      linux_ppc64le_compiler_vendorclangcompiler_version17conda_glibc_ver2.17cross_target_platformlinux-ppc64le:
+        CONFIG: linux_ppc64le_compiler_vendorclangcompiler_version17conda_glibc_ver2.17cross_target_platformlinux-ppc64le
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_ppc64le_compiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-s390x:
-        CONFIG: linux_ppc64le_compiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-s390x
+      linux_ppc64le_compiler_vendorclangcompiler_version17conda_glibc_ver2.17cross_target_platformlinux-s390x:
+        CONFIG: linux_ppc64le_compiler_vendorclangcompiler_version17conda_glibc_ver2.17cross_target_platformlinux-s390x
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_ppc64le_compiler_version13.2.0conda_glibc_ver2.12cross_target_platformlinux-64:
-        CONFIG: linux_ppc64le_compiler_version13.2.0conda_glibc_ver2.12cross_target_platformlinux-64
+      linux_ppc64le_compiler_vendorgcccompiler_version11.4.0conda_glibc_ver2.12cross_target_platformlinux-64:
+        CONFIG: linux_ppc64le_compiler_vendorgcccompiler_version11.4.0conda_glibc_ver2.12cross_target_platformlinux-64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_ppc64le_compiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-aarch64:
-        CONFIG: linux_ppc64le_compiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-aarch64
+      linux_ppc64le_compiler_vendorgcccompiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-aarch64:
+        CONFIG: linux_ppc64le_compiler_vendorgcccompiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-aarch64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_ppc64le_compiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le:
-        CONFIG: linux_ppc64le_compiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le
+      linux_ppc64le_compiler_vendorgcccompiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le:
+        CONFIG: linux_ppc64le_compiler_vendorgcccompiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_ppc64le_compiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-s390x:
-        CONFIG: linux_ppc64le_compiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-s390x
+      linux_ppc64le_compiler_vendorgcccompiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-s390x:
+        CONFIG: linux_ppc64le_compiler_vendorgcccompiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-s390x
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_ppc64le_compiler_version16conda_glibc_ver2.12cross_target_platformlinux-64:
-        CONFIG: linux_ppc64le_compiler_version16conda_glibc_ver2.12cross_target_platformlinux-64
+      linux_ppc64le_compiler_vendorgcccompiler_version12.3.0conda_glibc_ver2.12cross_target_platformlinux-64:
+        CONFIG: linux_ppc64le_compiler_vendorgcccompiler_version12.3.0conda_glibc_ver2.12cross_target_platformlinux-64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_ppc64le_compiler_version16conda_glibc_ver2.17cross_target_platformlinux-aarch64:
-        CONFIG: linux_ppc64le_compiler_version16conda_glibc_ver2.17cross_target_platformlinux-aarch64
+      linux_ppc64le_compiler_vendorgcccompiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-aarch64:
+        CONFIG: linux_ppc64le_compiler_vendorgcccompiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-aarch64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_ppc64le_compiler_version16conda_glibc_ver2.17cross_target_platformlinux-ppc64le:
-        CONFIG: linux_ppc64le_compiler_version16conda_glibc_ver2.17cross_target_platformlinux-ppc64le
+      linux_ppc64le_compiler_vendorgcccompiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le:
+        CONFIG: linux_ppc64le_compiler_vendorgcccompiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_ppc64le_compiler_version16conda_glibc_ver2.17cross_target_platformlinux-s390x:
-        CONFIG: linux_ppc64le_compiler_version16conda_glibc_ver2.17cross_target_platformlinux-s390x
+      linux_ppc64le_compiler_vendorgcccompiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-s390x:
+        CONFIG: linux_ppc64le_compiler_vendorgcccompiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-s390x
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_ppc64le_compiler_version17conda_glibc_ver2.12cross_target_platformlinux-64:
-        CONFIG: linux_ppc64le_compiler_version17conda_glibc_ver2.12cross_target_platformlinux-64
+      linux_ppc64le_compiler_vendorgcccompiler_version13.2.0conda_glibc_ver2.12cross_target_platformlinux-64:
+        CONFIG: linux_ppc64le_compiler_vendorgcccompiler_version13.2.0conda_glibc_ver2.12cross_target_platformlinux-64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_ppc64le_compiler_version17conda_glibc_ver2.17cross_target_platformlinux-aarch64:
-        CONFIG: linux_ppc64le_compiler_version17conda_glibc_ver2.17cross_target_platformlinux-aarch64
+      linux_ppc64le_compiler_vendorgcccompiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-aarch64:
+        CONFIG: linux_ppc64le_compiler_vendorgcccompiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-aarch64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_ppc64le_compiler_version17conda_glibc_ver2.17cross_target_platformlinux-ppc64le:
-        CONFIG: linux_ppc64le_compiler_version17conda_glibc_ver2.17cross_target_platformlinux-ppc64le
+      linux_ppc64le_compiler_vendorgcccompiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le:
+        CONFIG: linux_ppc64le_compiler_vendorgcccompiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_ppc64le_compiler_version17conda_glibc_ver2.17cross_target_platformlinux-s390x:
-        CONFIG: linux_ppc64le_compiler_version17conda_glibc_ver2.17cross_target_platformlinux-s390x
+      linux_ppc64le_compiler_vendorgcccompiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-s390x:
+        CONFIG: linux_ppc64le_compiler_vendorgcccompiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-s390x
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_s390x_compiler_version11.4.0conda_glibc_ver2.12cross_target_platformlinux-64:
-        CONFIG: linux_s390x_compiler_version11.4.0conda_glibc_ver2.12cross_target_platformlinux-64
+      linux_s390x_compiler_vendorgcccompiler_version11.4.0conda_glibc_ver2.12cross_target_platformlinux-64:
+        CONFIG: linux_s390x_compiler_vendorgcccompiler_version11.4.0conda_glibc_ver2.12cross_target_platformlinux-64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_s390x_compiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-aarch64:
-        CONFIG: linux_s390x_compiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-aarch64
+      linux_s390x_compiler_vendorgcccompiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-aarch64:
+        CONFIG: linux_s390x_compiler_vendorgcccompiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-aarch64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_s390x_compiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le:
-        CONFIG: linux_s390x_compiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le
+      linux_s390x_compiler_vendorgcccompiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le:
+        CONFIG: linux_s390x_compiler_vendorgcccompiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_s390x_compiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-s390x:
-        CONFIG: linux_s390x_compiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-s390x
+      linux_s390x_compiler_vendorgcccompiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-s390x:
+        CONFIG: linux_s390x_compiler_vendorgcccompiler_version11.4.0conda_glibc_ver2.17cross_target_platformlinux-s390x
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_s390x_compiler_version12.3.0conda_glibc_ver2.12cross_target_platformlinux-64:
-        CONFIG: linux_s390x_compiler_version12.3.0conda_glibc_ver2.12cross_target_platformlinux-64
+      linux_s390x_compiler_vendorgcccompiler_version12.3.0conda_glibc_ver2.12cross_target_platformlinux-64:
+        CONFIG: linux_s390x_compiler_vendorgcccompiler_version12.3.0conda_glibc_ver2.12cross_target_platformlinux-64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_s390x_compiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-aarch64:
-        CONFIG: linux_s390x_compiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-aarch64
+      linux_s390x_compiler_vendorgcccompiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-aarch64:
+        CONFIG: linux_s390x_compiler_vendorgcccompiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-aarch64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_s390x_compiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le:
-        CONFIG: linux_s390x_compiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le
+      linux_s390x_compiler_vendorgcccompiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le:
+        CONFIG: linux_s390x_compiler_vendorgcccompiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_s390x_compiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-s390x:
-        CONFIG: linux_s390x_compiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-s390x
+      linux_s390x_compiler_vendorgcccompiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-s390x:
+        CONFIG: linux_s390x_compiler_vendorgcccompiler_version12.3.0conda_glibc_ver2.17cross_target_platformlinux-s390x
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_s390x_compiler_version13.2.0conda_glibc_ver2.12cross_target_platformlinux-64:
-        CONFIG: linux_s390x_compiler_version13.2.0conda_glibc_ver2.12cross_target_platformlinux-64
+      linux_s390x_compiler_vendorgcccompiler_version13.2.0conda_glibc_ver2.12cross_target_platformlinux-64:
+        CONFIG: linux_s390x_compiler_vendorgcccompiler_version13.2.0conda_glibc_ver2.12cross_target_platformlinux-64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_s390x_compiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-aarch64:
-        CONFIG: linux_s390x_compiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-aarch64
+      linux_s390x_compiler_vendorgcccompiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-aarch64:
+        CONFIG: linux_s390x_compiler_vendorgcccompiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-aarch64
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_s390x_compiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le:
-        CONFIG: linux_s390x_compiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le
+      linux_s390x_compiler_vendorgcccompiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le:
+        CONFIG: linux_s390x_compiler_vendorgcccompiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-ppc64le
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_s390x_compiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-s390x:
-        CONFIG: linux_s390x_compiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-s390x
+      linux_s390x_compiler_vendorgcccompiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-s390x:
+        CONFIG: linux_s390x_compiler_vendorgcccompiler_version13.2.0conda_glibc_ver2.17cross_target_platformlinux-s390x
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_s390x_compiler_version16conda_glibc_ver2.12cross_target_platformlinux-64:
-        CONFIG: linux_s390x_compiler_version16conda_glibc_ver2.12cross_target_platformlinux-64
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_s390x_compiler_version16conda_glibc_ver2.17cross_target_platformlinux-aarch64:
-        CONFIG: linux_s390x_compiler_version16conda_glibc_ver2.17cross_target_platformlinux-aarch64
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_s390x_compiler_version16conda_glibc_ver2.17cross_target_platformlinux-ppc64le:
-        CONFIG: linux_s390x_compiler_version16conda_glibc_ver2.17cross_target_platformlinux-ppc64le
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_s390x_compiler_version16conda_glibc_ver2.17cross_target_platformlinux-s390x:
-        CONFIG: linux_s390x_compiler_version16conda_glibc_ver2.17cross_target_platformlinux-s390x
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-    maxParallel: 45
+    maxParallel: 46
   timeoutInMinutes: 360
 
   steps:

@@ -17,9 +17,6 @@ jobs:
       osx_64_compiler_version16conda_glibc_ver2.17cross_target_platformlinux-ppc64le:
         CONFIG: osx_64_compiler_version16conda_glibc_ver2.17cross_target_platformlinux-ppc64le
         UPLOAD_PACKAGES: 'True'
-      osx_64_compiler_version16conda_glibc_ver2.17cross_target_platformlinux-s390x:
-        CONFIG: osx_64_compiler_version16conda_glibc_ver2.17cross_target_platformlinux-s390x
-        UPLOAD_PACKAGES: 'True'
       osx_64_compiler_version17conda_glibc_ver2.12cross_target_platformlinux-64:
         CONFIG: osx_64_compiler_version17conda_glibc_ver2.12cross_target_platformlinux-64
         UPLOAD_PACKAGES: 'True'
@@ -29,10 +26,7 @@ jobs:
       osx_64_compiler_version17conda_glibc_ver2.17cross_target_platformlinux-ppc64le:
         CONFIG: osx_64_compiler_version17conda_glibc_ver2.17cross_target_platformlinux-ppc64le
         UPLOAD_PACKAGES: 'True'
-      osx_64_compiler_version17conda_glibc_ver2.17cross_target_platformlinux-s390x:
-        CONFIG: osx_64_compiler_version17conda_glibc_ver2.17cross_target_platformlinux-s390x
-        UPLOAD_PACKAGES: 'True'
-    maxParallel: 5
+    maxParallel: 4
   timeoutInMinutes: 360
 
   steps:
