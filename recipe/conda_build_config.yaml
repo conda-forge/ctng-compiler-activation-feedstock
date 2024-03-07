@@ -34,6 +34,7 @@ ctng_vendor:
 
 clang_version:
   - 16
+  - 17
 
 zip_keys:
   - - cross_target_platform
