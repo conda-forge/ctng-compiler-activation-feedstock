@@ -4,14 +4,16 @@ set -ex
 
 source $RECIPE_DIR/get_cpu_arch.sh
 
-FINAL_CFLAGS=FINAL_CFLAGS_${ctng_target_platform_u}
-FINAL_DEBUG_CFLAGS=FINAL_DEBUG_CFLAGS_${ctng_target_platform_u}
-FINAL_CXXFLAGS=FINAL_CXXFLAGS_${ctng_target_platform_u}
-FINAL_DEBUG_CXXFLAGS=FINAL_DEBUG_CXXFLAGS_${ctng_target_platform_u}
-FINAL_FFLAGS=FINAL_FFLAGS_${ctng_target_platform_u}
-FINAL_DEBUG_FFLAGS=FINAL_DEBUG_FFLAGS_${ctng_target_platform_u}
-FINAL_LDFLAGS=FINAL_LDFLAGS_${ctng_target_platform_u}
-FINAL_CONDA_PYTHON_SYSCONFIGDATA_NAME=FINAL_CONDA_PYTHON_SYSCONFIGDATA_NAME_${ctng_target_platform_u}
+cross_target_platform_u=${cross_target_platform/-/_}
+
+FINAL_CFLAGS=FINAL_CFLAGS_${cross_target_platform_u}
+FINAL_DEBUG_CFLAGS=FINAL_DEBUG_CFLAGS_${cross_target_platform_u}
+FINAL_CXXFLAGS=FINAL_CXXFLAGS_${cross_target_platform_u}
+FINAL_DEBUG_CXXFLAGS=FINAL_DEBUG_CXXFLAGS_${cross_target_platform_u}
+FINAL_FFLAGS=FINAL_FFLAGS_${cross_target_platform_u}
+FINAL_DEBUG_FFLAGS=FINAL_DEBUG_FFLAGS_${cross_target_platform_u}
+FINAL_LDFLAGS=FINAL_LDFLAGS_${cross_target_platform_u}
+FINAL_CONDA_PYTHON_SYSCONFIGDATA_NAME=FINAL_CONDA_PYTHON_SYSCONFIGDATA_NAME_${cross_target_platform_u}
 
 FINAL_CFLAGS="${!FINAL_CFLAGS}"
 FINAL_CXXFLAGS="${!FINAL_CXXFLAGS}"
@@ -44,13 +46,13 @@ if [ -z "${FINAL_CFLAGS}" ]; then
     exit 1
 fi
 
-if [[ "$target_platform" == "$ctng_target_platform" ]]; then
+if [[ "$target_platform" == "$cross_target_platform" ]]; then
   export CONDA_BUILD_CROSS_COMPILATION=""
 else
   export CONDA_BUILD_CROSS_COMPILATION="1"
 fi
 
-if [[ "$ctng_target_platform" == linux-ppc64le ]]; then
+if [[ "$cross_target_platform" == linux-ppc64le ]]; then
   MESON_FAMILY=ppc64
 else
   MESON_FAMILY=${linux_machine}
@@ -71,6 +73,25 @@ find . -name "*activate*.sh" -exec sed -i.bak "s|@DEBUG_FFLAGS@|${FINAL_DEBUG_FF
 find . -name "*activate*.sh" -exec sed -i.bak "s|@LDFLAGS@|${FINAL_LDFLAGS}|g"                                                     "{}" \;
 find . -name "*activate*.sh" -exec sed -i.bak "s|@_CONDA_PYTHON_SYSCONFIGDATA_NAME@|${FINAL_CONDA_PYTHON_SYSCONFIGDATA_NAME}|g"    "{}" \;
 find . -name "*activate*.sh" -exec sed -i.bak "s|@CONDA_BUILD_CROSS_COMPILATION@|${CONDA_BUILD_CROSS_COMPILATION}|g"                "{}" \;
+
+cp activate-gcc.sh activate-clang.sh
+cp activate-g++.sh activate-clang++.sh
+cp deactivate-gcc.sh deactivate-clang.sh
+cp deactivate-g++.sh deactivate-clang++.sh
+
+find . -name "*activate-gcc.sh" -exec sed -i.bak "s|@COMPILERS@|cpp gcc gcc-ar gcc-nm gcc-ranlib|g"     "{}" \;
+find . -name "*activate-g++.sh" -exec sed -i.bak "s|@CXX_COMPILERS@|g++|g"                              "{}" \;
+find . -name "*activate-gcc.sh" -exec sed -i.bak "s|@CC@|${CHOST}-cc|g"                                 "{}" \;
+find . -name "*activate-g++.sh" -exec sed -i.bak "s|@CXX@|${CHOST}-c++|g"                               "{}" \;
+find . -name "*activate-gcc.sh" -exec sed -i.bak "s|@CC_FOR_BUILD@|${CBUILD}-clang|g"                   "{}" \;
+find . -name "*activate-g++.sh" -exec sed -i.bak "s|@CXX_FOR_BUILD@|${CBUILD}-clang++|g"                "{}" \;
+
+find . -name "*activate-clang.sh" -exec sed -i.bak "s|@COMPILERS@|clang|g"                              "{}" \;
+find . -name "*activate-clang++.sh" -exec sed -i.bak "s|@CXX_COMPILERS@|clang++|g"                      "{}" \;
+find . -name "*activate-clang.sh" -exec sed -i.bak "s|@CC@|${CHOST}-clang|g"                            "{}" \;
+find . -name "*activate-clang++.sh" -exec sed -i.bak "s|@CXX@|${CHOST}-clang++|g"                       "{}" \;
+find . -name "*activate-clang.sh" -exec sed -i.bak "s|@CC_FOR_BUILD@|${CBUILD}-clang|g"                 "{}" \;
+find . -name "*activate-clang++.sh" -exec sed -i.bak "s|@CXX_FOR_BUILD@|${CBUILD}-clang++|g"            "{}" \;
 
 find . -name "*activate*.sh.bak" -exec rm "{}" \;
 
