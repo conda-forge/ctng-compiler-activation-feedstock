@@ -13,8 +13,8 @@ Package license: BSD-3-Clause
 
 Summary: Activation scripts for gcc, g++, gfortran and binutils
 
-About binutils_linux-64
------------------------
+About binutils_linux-aarch64
+----------------------------
 
 Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
 
@@ -22,17 +22,8 @@ Package license: BSD-3-Clause
 
 Summary: The GNU Binutils are a collection of binary tools (activation scripts)
 
-About gcc
----------
-
-Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-
-Package license: BSD-3-Clause
-
-Summary: GNU C native compiler (symlinks)
-
-About gcc_bootstrap_linux-64
-----------------------------
+About gcc_bootstrap_linux-aarch64
+---------------------------------
 
 Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
 
@@ -40,8 +31,8 @@ Package license: GPL
 
 Summary: GCC bootstrap compilers for building deps
 
-About clang_linux-64
---------------------
+About clang_linux-aarch64
+-------------------------
 
 Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
 
@@ -49,8 +40,8 @@ Package license: BSD-3-Clause
 
 Summary: Clang Compiler (activation scripts)
 
-About gcc_linux-64
-------------------
+About gcc_linux-aarch64
+-----------------------
 
 Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
 
@@ -58,26 +49,17 @@ Package license: BSD-3-Clause
 
 Summary: GNU C Compiler (activation scripts)
 
-About gfortran
---------------
+About clangxx_linux-aarch64
+---------------------------
 
 Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
 
 Package license: BSD-3-Clause
 
-Summary: GNU Fortran native compiler (symlinks)
+Summary: Clang C++ Compiler (activation scripts)
 
-About gxx
----------
-
-Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-
-Package license: BSD-3-Clause
-
-Summary: GNU C++ native compiler (symlinks)
-
-About gfortran_linux-64
------------------------
+About gfortran_linux-aarch64
+----------------------------
 
 Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
 
@@ -85,8 +67,8 @@ Package license: BSD-3-Clause
 
 Summary: GNU Fortran Compiler (activation scripts)
 
-About gxx_linux-64
-------------------
+About gxx_linux-aarch64
+-----------------------
 
 Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
 
@@ -129,6 +111,15 @@ Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
 Package license: BSD-3-Clause
 
 Summary: GNU C Compiler (activation scripts)
+
+About clangxx_linux-ppc64le
+---------------------------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+Package license: BSD-3-Clause
+
+Summary: Clang C++ Compiler (activation scripts)
 
 About gfortran_linux-ppc64le
 ----------------------------
@@ -193,8 +184,8 @@ Package license: BSD-3-Clause
 
 Summary: GNU C++ Compiler (activation scripts)
 
-About binutils_linux-aarch64
-----------------------------
+About binutils_linux-64
+-----------------------
 
 Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
 
@@ -202,8 +193,17 @@ Package license: BSD-3-Clause
 
 Summary: The GNU Binutils are a collection of binary tools (activation scripts)
 
-About gcc_bootstrap_linux-aarch64
----------------------------------
+About gcc
+---------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+Package license: BSD-3-Clause
+
+Summary: GNU C native compiler (symlinks)
+
+About gcc_bootstrap_linux-64
+----------------------------
 
 Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
 
@@ -211,8 +211,8 @@ Package license: GPL
 
 Summary: GCC bootstrap compilers for building deps
 
-About clang_linux-aarch64
--------------------------
+About clang_linux-64
+--------------------
 
 Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
 
@@ -220,8 +220,8 @@ Package license: BSD-3-Clause
 
 Summary: Clang Compiler (activation scripts)
 
-About gcc_linux-aarch64
------------------------
+About gcc_linux-64
+------------------
 
 Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
 
@@ -229,8 +229,35 @@ Package license: BSD-3-Clause
 
 Summary: GNU C Compiler (activation scripts)
 
-About gfortran_linux-aarch64
-----------------------------
+About gfortran
+--------------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+Package license: BSD-3-Clause
+
+Summary: GNU Fortran native compiler (symlinks)
+
+About gxx
+---------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+Package license: BSD-3-Clause
+
+Summary: GNU C++ native compiler (symlinks)
+
+About clangxx_linux-64
+----------------------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+Package license: BSD-3-Clause
+
+Summary: Clang C++ Compiler (activation scripts)
+
+About gfortran_linux-64
+-----------------------
 
 Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
 
@@ -238,8 +265,8 @@ Package license: BSD-3-Clause
 
 Summary: GNU Fortran Compiler (activation scripts)
 
-About gxx_linux-aarch64
------------------------
+About gxx_linux-64
+------------------
 
 Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
 
@@ -704,6 +731,9 @@ Current release info
 | [![Conda Recipe](https://img.shields.io/badge/recipe-clang_linux--64-green.svg)](https://anaconda.org/conda-forge/clang_linux-64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/clang_linux-64.svg)](https://anaconda.org/conda-forge/clang_linux-64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/clang_linux-64.svg)](https://anaconda.org/conda-forge/clang_linux-64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/clang_linux-64.svg)](https://anaconda.org/conda-forge/clang_linux-64) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-clang_linux--aarch64-green.svg)](https://anaconda.org/conda-forge/clang_linux-aarch64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/clang_linux-aarch64.svg)](https://anaconda.org/conda-forge/clang_linux-aarch64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/clang_linux-aarch64.svg)](https://anaconda.org/conda-forge/clang_linux-aarch64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/clang_linux-aarch64.svg)](https://anaconda.org/conda-forge/clang_linux-aarch64) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-clang_linux--ppc64le-green.svg)](https://anaconda.org/conda-forge/clang_linux-ppc64le) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/clang_linux-ppc64le.svg)](https://anaconda.org/conda-forge/clang_linux-ppc64le) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/clang_linux-ppc64le.svg)](https://anaconda.org/conda-forge/clang_linux-ppc64le) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/clang_linux-ppc64le.svg)](https://anaconda.org/conda-forge/clang_linux-ppc64le) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-clangxx_linux--64-green.svg)](https://anaconda.org/conda-forge/clangxx_linux-64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/clangxx_linux-64.svg)](https://anaconda.org/conda-forge/clangxx_linux-64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/clangxx_linux-64.svg)](https://anaconda.org/conda-forge/clangxx_linux-64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/clangxx_linux-64.svg)](https://anaconda.org/conda-forge/clangxx_linux-64) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-clangxx_linux--aarch64-green.svg)](https://anaconda.org/conda-forge/clangxx_linux-aarch64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/clangxx_linux-aarch64.svg)](https://anaconda.org/conda-forge/clangxx_linux-aarch64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/clangxx_linux-aarch64.svg)](https://anaconda.org/conda-forge/clangxx_linux-aarch64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/clangxx_linux-aarch64.svg)](https://anaconda.org/conda-forge/clangxx_linux-aarch64) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-clangxx_linux--ppc64le-green.svg)](https://anaconda.org/conda-forge/clangxx_linux-ppc64le) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/clangxx_linux-ppc64le.svg)](https://anaconda.org/conda-forge/clangxx_linux-ppc64le) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/clangxx_linux-ppc64le.svg)](https://anaconda.org/conda-forge/clangxx_linux-ppc64le) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/clangxx_linux-ppc64le.svg)](https://anaconda.org/conda-forge/clangxx_linux-ppc64le) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-gcc-green.svg)](https://anaconda.org/conda-forge/gcc) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gcc.svg)](https://anaconda.org/conda-forge/gcc) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gcc.svg)](https://anaconda.org/conda-forge/gcc) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gcc.svg)](https://anaconda.org/conda-forge/gcc) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-gcc_bootstrap_linux--64-green.svg)](https://anaconda.org/conda-forge/gcc_bootstrap_linux-64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gcc_bootstrap_linux-64.svg)](https://anaconda.org/conda-forge/gcc_bootstrap_linux-64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gcc_bootstrap_linux-64.svg)](https://anaconda.org/conda-forge/gcc_bootstrap_linux-64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gcc_bootstrap_linux-64.svg)](https://anaconda.org/conda-forge/gcc_bootstrap_linux-64) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-gcc_bootstrap_linux--aarch64-green.svg)](https://anaconda.org/conda-forge/gcc_bootstrap_linux-aarch64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gcc_bootstrap_linux-aarch64.svg)](https://anaconda.org/conda-forge/gcc_bootstrap_linux-aarch64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gcc_bootstrap_linux-aarch64.svg)](https://anaconda.org/conda-forge/gcc_bootstrap_linux-aarch64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gcc_bootstrap_linux-aarch64.svg)](https://anaconda.org/conda-forge/gcc_bootstrap_linux-aarch64) |
@@ -734,16 +764,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `binutils_linux-64, binutils_linux-aarch64, binutils_linux-ppc64le, binutils_linux-s390x, clang_linux-64, clang_linux-aarch64, clang_linux-ppc64le, gcc, gcc_bootstrap_linux-64, gcc_bootstrap_linux-aarch64, gcc_bootstrap_linux-ppc64le, gcc_bootstrap_linux-s390x, gcc_linux-64, gcc_linux-aarch64, gcc_linux-ppc64le, gcc_linux-s390x, gfortran, gfortran_linux-64, gfortran_linux-aarch64, gfortran_linux-ppc64le, gfortran_linux-s390x, gxx, gxx_linux-64, gxx_linux-aarch64, gxx_linux-ppc64le, gxx_linux-s390x` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `binutils_linux-64, binutils_linux-aarch64, binutils_linux-ppc64le, binutils_linux-s390x, clang_linux-64, clang_linux-aarch64, clang_linux-ppc64le, clangxx_linux-64, clangxx_linux-aarch64, clangxx_linux-ppc64le, gcc, gcc_bootstrap_linux-64, gcc_bootstrap_linux-aarch64, gcc_bootstrap_linux-ppc64le, gcc_bootstrap_linux-s390x, gcc_linux-64, gcc_linux-aarch64, gcc_linux-ppc64le, gcc_linux-s390x, gfortran, gfortran_linux-64, gfortran_linux-aarch64, gfortran_linux-ppc64le, gfortran_linux-s390x, gxx, gxx_linux-64, gxx_linux-aarch64, gxx_linux-ppc64le, gxx_linux-s390x` can be installed with `conda`:
 
 ```
-conda install binutils_linux-64 binutils_linux-aarch64 binutils_linux-ppc64le binutils_linux-s390x clang_linux-64 clang_linux-aarch64 clang_linux-ppc64le gcc gcc_bootstrap_linux-64 gcc_bootstrap_linux-aarch64 gcc_bootstrap_linux-ppc64le gcc_bootstrap_linux-s390x gcc_linux-64 gcc_linux-aarch64 gcc_linux-ppc64le gcc_linux-s390x gfortran gfortran_linux-64 gfortran_linux-aarch64 gfortran_linux-ppc64le gfortran_linux-s390x gxx gxx_linux-64 gxx_linux-aarch64 gxx_linux-ppc64le gxx_linux-s390x
+conda install binutils_linux-64 binutils_linux-aarch64 binutils_linux-ppc64le binutils_linux-s390x clang_linux-64 clang_linux-aarch64 clang_linux-ppc64le clangxx_linux-64 clangxx_linux-aarch64 clangxx_linux-ppc64le gcc gcc_bootstrap_linux-64 gcc_bootstrap_linux-aarch64 gcc_bootstrap_linux-ppc64le gcc_bootstrap_linux-s390x gcc_linux-64 gcc_linux-aarch64 gcc_linux-ppc64le gcc_linux-s390x gfortran gfortran_linux-64 gfortran_linux-aarch64 gfortran_linux-ppc64le gfortran_linux-s390x gxx gxx_linux-64 gxx_linux-aarch64 gxx_linux-ppc64le gxx_linux-s390x
 ```
 
 or with `mamba`:
 
 ```
-mamba install binutils_linux-64 binutils_linux-aarch64 binutils_linux-ppc64le binutils_linux-s390x clang_linux-64 clang_linux-aarch64 clang_linux-ppc64le gcc gcc_bootstrap_linux-64 gcc_bootstrap_linux-aarch64 gcc_bootstrap_linux-ppc64le gcc_bootstrap_linux-s390x gcc_linux-64 gcc_linux-aarch64 gcc_linux-ppc64le gcc_linux-s390x gfortran gfortran_linux-64 gfortran_linux-aarch64 gfortran_linux-ppc64le gfortran_linux-s390x gxx gxx_linux-64 gxx_linux-aarch64 gxx_linux-ppc64le gxx_linux-s390x
+mamba install binutils_linux-64 binutils_linux-aarch64 binutils_linux-ppc64le binutils_linux-s390x clang_linux-64 clang_linux-aarch64 clang_linux-ppc64le clangxx_linux-64 clangxx_linux-aarch64 clangxx_linux-ppc64le gcc gcc_bootstrap_linux-64 gcc_bootstrap_linux-aarch64 gcc_bootstrap_linux-ppc64le gcc_bootstrap_linux-s390x gcc_linux-64 gcc_linux-aarch64 gcc_linux-ppc64le gcc_linux-s390x gfortran gfortran_linux-64 gfortran_linux-aarch64 gfortran_linux-ppc64le gfortran_linux-s390x gxx gxx_linux-64 gxx_linux-aarch64 gxx_linux-ppc64le gxx_linux-s390x
 ```
 
 It is possible to list all of the versions of `binutils_linux-64` available on your platform with `conda`:
