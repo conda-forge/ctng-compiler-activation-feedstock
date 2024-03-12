@@ -11,39 +11,51 @@ jobs:
       osx_64_conda_glibc_ver2.12cross_target_platformlinux-64ctng_gcc11.4.0:
         CONFIG: osx_64_conda_glibc_ver2.12cross_target_platformlinux-64ctng_gcc11.4.0
         UPLOAD_PACKAGES: 'True'
+        SHORT_CONFIG: osx_64_conda_glibc_ver2.12cross_tar_h61a036474e
       osx_64_conda_glibc_ver2.12cross_target_platformlinux-64ctng_gcc12.3.0:
         CONFIG: osx_64_conda_glibc_ver2.12cross_target_platformlinux-64ctng_gcc12.3.0
         UPLOAD_PACKAGES: 'True'
+        SHORT_CONFIG: osx_64_conda_glibc_ver2.12cross_tar_h515341c72e
       osx_64_conda_glibc_ver2.12cross_target_platformlinux-64ctng_gcc13.2.0:
         CONFIG: osx_64_conda_glibc_ver2.12cross_target_platformlinux-64ctng_gcc13.2.0
         UPLOAD_PACKAGES: 'True'
+        SHORT_CONFIG: osx_64_conda_glibc_ver2.12cross_tar_h17a1194dcf
       osx_64_conda_glibc_ver2.17cross_target_platformlinux-aarch64ctng_gcc11.4.0:
         CONFIG: osx_64_conda_glibc_ver2.17cross_target_platformlinux-aarch64ctng_gcc11.4.0
         UPLOAD_PACKAGES: 'True'
+        SHORT_CONFIG: osx_64_conda_glibc_ver2.17cross_tar_h3bb02d25f2
       osx_64_conda_glibc_ver2.17cross_target_platformlinux-aarch64ctng_gcc12.3.0:
         CONFIG: osx_64_conda_glibc_ver2.17cross_target_platformlinux-aarch64ctng_gcc12.3.0
         UPLOAD_PACKAGES: 'True'
+        SHORT_CONFIG: osx_64_conda_glibc_ver2.17cross_tar_h9628a87d0e
       osx_64_conda_glibc_ver2.17cross_target_platformlinux-aarch64ctng_gcc13.2.0:
         CONFIG: osx_64_conda_glibc_ver2.17cross_target_platformlinux-aarch64ctng_gcc13.2.0
         UPLOAD_PACKAGES: 'True'
+        SHORT_CONFIG: osx_64_conda_glibc_ver2.17cross_tar_hf99d1642e9
       osx_64_conda_glibc_ver2.17cross_target_platformlinux-ppc64lectng_gcc11.4.0:
         CONFIG: osx_64_conda_glibc_ver2.17cross_target_platformlinux-ppc64lectng_gcc11.4.0
         UPLOAD_PACKAGES: 'True'
+        SHORT_CONFIG: osx_64_conda_glibc_ver2.17cross_tar_hf68fb8dedb
       osx_64_conda_glibc_ver2.17cross_target_platformlinux-ppc64lectng_gcc12.3.0:
         CONFIG: osx_64_conda_glibc_ver2.17cross_target_platformlinux-ppc64lectng_gcc12.3.0
         UPLOAD_PACKAGES: 'True'
+        SHORT_CONFIG: osx_64_conda_glibc_ver2.17cross_tar_h2acc218b66
       osx_64_conda_glibc_ver2.17cross_target_platformlinux-ppc64lectng_gcc13.2.0:
         CONFIG: osx_64_conda_glibc_ver2.17cross_target_platformlinux-ppc64lectng_gcc13.2.0
         UPLOAD_PACKAGES: 'True'
+        SHORT_CONFIG: osx_64_conda_glibc_ver2.17cross_tar_hcda1cf4823
       osx_64_conda_glibc_ver2.17cross_target_platformlinux-s390xctng_gcc11.4.0:
         CONFIG: osx_64_conda_glibc_ver2.17cross_target_platformlinux-s390xctng_gcc11.4.0
         UPLOAD_PACKAGES: 'True'
+        SHORT_CONFIG: osx_64_conda_glibc_ver2.17cross_tar_h24e4dabbe8
       osx_64_conda_glibc_ver2.17cross_target_platformlinux-s390xctng_gcc12.3.0:
         CONFIG: osx_64_conda_glibc_ver2.17cross_target_platformlinux-s390xctng_gcc12.3.0
         UPLOAD_PACKAGES: 'True'
+        SHORT_CONFIG: osx_64_conda_glibc_ver2.17cross_tar_hb4ea5da402
       osx_64_conda_glibc_ver2.17cross_target_platformlinux-s390xctng_gcc13.2.0:
         CONFIG: osx_64_conda_glibc_ver2.17cross_target_platformlinux-s390xctng_gcc13.2.0
         UPLOAD_PACKAGES: 'True'
+        SHORT_CONFIG: osx_64_conda_glibc_ver2.17cross_tar_hd4f4b7b27c
     maxParallel: 10
   timeoutInMinutes: 360
 
@@ -68,3 +80,32 @@ jobs:
       BINSTAR_TOKEN: $(BINSTAR_TOKEN)
       FEEDSTOCK_TOKEN: $(FEEDSTOCK_TOKEN)
       STAGING_BINSTAR_TOKEN: $(STAGING_BINSTAR_TOKEN)
+  - script: |
+      export CI=azure
+      export CI_RUN_ID=$(build.BuildNumber).$(system.JobAttempt)
+      export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+      export CONDA_BLD_DIR=/Users/runner/miniforge3/conda-bld
+      export ARTIFACT_STAGING_DIR="$(Build.ArtifactStagingDirectory)"
+      # Archive everything in CONDA_BLD_DIR except environments
+      export BLD_ARTIFACT_PREFIX=conda_artifacts
+      if [[ "$AGENT_JOBSTATUS" == "Failed" ]]; then
+        # Archive the CONDA_BLD_DIR environments only when the job fails
+        export ENV_ARTIFACT_PREFIX=conda_envs
+      fi
+      ./.scripts/create_conda_build_artifacts.sh
+    displayName: Prepare conda build artifacts
+    condition: succeededOrFailed()
+
+  - task: PublishPipelineArtifact@1
+    displayName: Store conda build artifacts
+    condition: not(eq(variables.BLD_ARTIFACT_PATH, ''))
+    inputs:
+      targetPath: $(BLD_ARTIFACT_PATH)
+      artifactName: $(BLD_ARTIFACT_NAME)
+
+  - task: PublishPipelineArtifact@1
+    displayName: Store conda build environment artifacts
+    condition: not(eq(variables.ENV_ARTIFACT_PATH, ''))
+    inputs:
+      targetPath: $(ENV_ARTIFACT_PATH)
+      artifactName: $(ENV_ARTIFACT_NAME)
