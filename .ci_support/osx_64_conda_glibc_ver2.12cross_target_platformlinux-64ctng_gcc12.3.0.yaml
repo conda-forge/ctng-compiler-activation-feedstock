@@ -7,6 +7,7 @@ channel_targets:
 clang_version:
 - '16'
 - '17'
+- '18'
 conda_glibc_ver:
 - '2.12'
 cross_target_platform:
