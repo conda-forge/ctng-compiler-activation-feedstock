@@ -1,19 +1,27 @@
-get_cpu_arch() {
+get_triplet() {
   local CPU_ARCH
-  if [[ "$1" == "linux-64" ]]; then
+  if [[ "$1" == *"-64" ]]; then
     CPU_ARCH="x86_64"
-  elif [[ "$1" == "linux-ppc64le" ]]; then
+  elif [[ "$1" == *"-ppc64le" ]]; then
     CPU_ARCH="powerpc64le"
-  elif [[ "$1" == "linux-aarch64" ]]; then
+  elif [[ "$1" == *"-aarch64" ]]; then
     CPU_ARCH="aarch64"
-  elif [[ "$1" == "linux-s390x" ]]; then
+  elif [[ "$1" == *"-s390x" ]]; then
     CPU_ARCH="s390x"
+  elif [[ "$1" == *"-arm64" ]]; then
+    CPU_ARCH="arm64"
   else
     echo "Unknown architecture"
     exit 1
   fi
-  echo $CPU_ARCH
+  if [[ "$1" == "linux-"* ]]; then
+    echo $CPU_ARCH-${ctng_vendor}-linux-gnu
+  elif [[ "$1" == "osx-64" ]]; then
+    echo x86_64-apple-darwin13.4.0
+  elif [[ "$1" == "osx-arm64" ]]; then
+    echo arm64-apple-darwin20.0.0
+  fi
 }
 
-export CBUILD="$(get_cpu_arch $target_platform)-${ctng_vendor}-linux-gnu"
-export CHOST="$(get_cpu_arch $ctng_target_platform)-${ctng_vendor}-linux-gnu"
+export CBUILD="$(get_triplet $target_platform)"
+export CHOST="$(get_triplet $cross_target_platform)"

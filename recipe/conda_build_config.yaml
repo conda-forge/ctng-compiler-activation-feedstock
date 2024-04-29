@@ -9,16 +9,11 @@ libgfortran_soname:
   - 5
 ctng_binutils:
   - 2.40
-ctng_target_platform:
+cross_target_platform:
   - linux-64
   - linux-ppc64le
   - linux-aarch64
   - linux-s390x
-ctng_target_platform_u:
-  - linux_64
-  - linux_ppc64le
-  - linux_aarch64
-  - linux_s390x
 ctng_cpu_arch:
   - x86_64
   - powerpc64le
@@ -37,9 +32,13 @@ conda_glibc_ver:
 ctng_vendor:
   - conda
 
+clang_version:
+  - 16
+  - 17
+  - 18
+
 zip_keys:
-  - - ctng_target_platform
-    - ctng_target_platform_u
+  - - cross_target_platform
     - ctng_cpu_arch
     - conda_glibc_ver
     - linux_machine

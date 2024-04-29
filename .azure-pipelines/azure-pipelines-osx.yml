@@ -1,0 +1,71 @@
+# This file was generated automatically from conda-smithy. To update this configuration,
+# update the conda-forge.yml and/or the recipe/meta.yaml.
+# -*- mode: yaml -*-
+
+jobs:
+- job: osx
+  pool:
+    vmImage: macOS-11
+  strategy:
+    matrix:
+      osx_64_conda_glibc_ver2.12cross_target_platformlinux-64ctng_gcc11.4.0:
+        CONFIG: osx_64_conda_glibc_ver2.12cross_target_platformlinux-64ctng_gcc11.4.0
+        UPLOAD_PACKAGES: 'True'
+      osx_64_conda_glibc_ver2.12cross_target_platformlinux-64ctng_gcc12.3.0:
+        CONFIG: osx_64_conda_glibc_ver2.12cross_target_platformlinux-64ctng_gcc12.3.0
+        UPLOAD_PACKAGES: 'True'
+      osx_64_conda_glibc_ver2.12cross_target_platformlinux-64ctng_gcc13.2.0:
+        CONFIG: osx_64_conda_glibc_ver2.12cross_target_platformlinux-64ctng_gcc13.2.0
+        UPLOAD_PACKAGES: 'True'
+      osx_64_conda_glibc_ver2.17cross_target_platformlinux-aarch64ctng_gcc11.4.0:
+        CONFIG: osx_64_conda_glibc_ver2.17cross_target_platformlinux-aarch64ctng_gcc11.4.0
+        UPLOAD_PACKAGES: 'True'
+      osx_64_conda_glibc_ver2.17cross_target_platformlinux-aarch64ctng_gcc12.3.0:
+        CONFIG: osx_64_conda_glibc_ver2.17cross_target_platformlinux-aarch64ctng_gcc12.3.0
+        UPLOAD_PACKAGES: 'True'
+      osx_64_conda_glibc_ver2.17cross_target_platformlinux-aarch64ctng_gcc13.2.0:
+        CONFIG: osx_64_conda_glibc_ver2.17cross_target_platformlinux-aarch64ctng_gcc13.2.0
+        UPLOAD_PACKAGES: 'True'
+      osx_64_conda_glibc_ver2.17cross_target_platformlinux-ppc64lectng_gcc11.4.0:
+        CONFIG: osx_64_conda_glibc_ver2.17cross_target_platformlinux-ppc64lectng_gcc11.4.0
+        UPLOAD_PACKAGES: 'True'
+      osx_64_conda_glibc_ver2.17cross_target_platformlinux-ppc64lectng_gcc12.3.0:
+        CONFIG: osx_64_conda_glibc_ver2.17cross_target_platformlinux-ppc64lectng_gcc12.3.0
+        UPLOAD_PACKAGES: 'True'
+      osx_64_conda_glibc_ver2.17cross_target_platformlinux-ppc64lectng_gcc13.2.0:
+        CONFIG: osx_64_conda_glibc_ver2.17cross_target_platformlinux-ppc64lectng_gcc13.2.0
+        UPLOAD_PACKAGES: 'True'
+      osx_64_conda_glibc_ver2.17cross_target_platformlinux-s390xctng_gcc11.4.0:
+        CONFIG: osx_64_conda_glibc_ver2.17cross_target_platformlinux-s390xctng_gcc11.4.0
+        UPLOAD_PACKAGES: 'True'
+      osx_64_conda_glibc_ver2.17cross_target_platformlinux-s390xctng_gcc12.3.0:
+        CONFIG: osx_64_conda_glibc_ver2.17cross_target_platformlinux-s390xctng_gcc12.3.0
+        UPLOAD_PACKAGES: 'True'
+      osx_64_conda_glibc_ver2.17cross_target_platformlinux-s390xctng_gcc13.2.0:
+        CONFIG: osx_64_conda_glibc_ver2.17cross_target_platformlinux-s390xctng_gcc13.2.0
+        UPLOAD_PACKAGES: 'True'
+    maxParallel: 10
+  timeoutInMinutes: 360
+  variables: {}
+
+  steps:
+  # TODO: Fast finish on azure pipelines?
+  - script: |
+      export CI=azure
+      export flow_run_id=azure_$(Build.BuildNumber).$(System.JobAttempt)
+      export remote_url=$(Build.Repository.Uri)
+      export sha=$(Build.SourceVersion)
+      export OSX_FORCE_SDK_DOWNLOAD="1"
+      export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+      export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+      if [[ "${BUILD_REASON:-}" == "PullRequest" ]]; then
+        export IS_PR_BUILD="True"
+      else
+        export IS_PR_BUILD="False"
+      fi
+      ./.scripts/run_osx_build.sh
+    displayName: Run OSX build
+    env:
+      BINSTAR_TOKEN: $(BINSTAR_TOKEN)
+      FEEDSTOCK_TOKEN: $(FEEDSTOCK_TOKEN)
+      STAGING_BINSTAR_TOKEN: $(STAGING_BINSTAR_TOKEN)
