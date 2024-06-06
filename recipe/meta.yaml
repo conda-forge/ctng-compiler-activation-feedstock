@@ -23,7 +23,7 @@ source:
 
 build:
   number: {{ build_num }}
-  skip: true  # [win or (cross_target_platform == "win-64" and int(gcc_major) < 13]
+  skip: true  # [win or (cross_target_platform == "win-64" and int(gcc_major) < 13)]
 
 requirements:
   build:
@@ -258,8 +258,8 @@ outputs:
         - gcc_impl_{{ cross_target_platform }} {{ gcc_version }}.*
     test:
       commands:
-        - test -f $PREFIX/bin/{{ triplet }}-cc       # [cross_target_platform != "win-64]
-        - test -f $PREFIX/bin/{{ triplet }}-gcc.exe  # [cross_target_platform != "win-64]
+        - test -f $PREFIX/bin/{{ triplet }}-cc       # [cross_target_platform != "win-64"]
+        - test -f $PREFIX/bin/{{ triplet }}-gcc.exe  # [cross_target_platform == "win-64"]
     about:
       summary: GCC bootstrap compilers for building deps
       home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
