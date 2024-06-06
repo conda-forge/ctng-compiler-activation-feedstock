@@ -1,5 +1,5 @@
 # cos6-specific because of PYTHON_SYSCONFIGDATA_NAME below.  Would be nice to make that more generic if possible.
-ctng_gcc:
+gcc_version:
   - 11.4.0
   - 12.3.0
   - 13.2.0
@@ -7,30 +7,33 @@ libgfortran_soname:
   - 5
   - 5
   - 5
-ctng_binutils:
+binutils_version:
   - 2.40
 cross_target_platform:
   - linux-64
   - linux-ppc64le
   - linux-aarch64
   - linux-s390x
-ctng_cpu_arch:
-  - x86_64
-  - powerpc64le
-  - aarch64
-  - s390x
+triplet:
+  - x86_64-conda-linux-gnu
+  - powerpc64le-conda-linux-gnu
+  - aarch64-conda-linux-gnu
+  - s390x-conda-linux-gnu
+cross_stdlib:
+  - sysroot
+  - sysroot
+  - sysroot
+  - sysroot
+cross_stdlib_version:
+  - 2.12
+  - 2.17
+  - 2.17
+  - 2.17
 linux_machine:
   - x86_64
   - ppc64le
   - aarch64
   - s390x
-conda_glibc_ver:
-  - 2.12
-  - 2.17
-  - 2.17
-  - 2.17
-ctng_vendor:
-  - conda
 
 clang_version:
   - 16
@@ -39,10 +42,11 @@ clang_version:
 
 zip_keys:
   - - cross_target_platform
-    - ctng_cpu_arch
-    - conda_glibc_ver
+    - triplet
+    - sysroot_name
+    - sysroot_version
     - linux_machine
-  - - ctng_gcc
+  - - gcc_version
     - libgfortran_soname
 
 FINAL_CPPFLAGS:
