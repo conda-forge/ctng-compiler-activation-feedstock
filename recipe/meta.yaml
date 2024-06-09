@@ -43,7 +43,7 @@ outputs:
         - gcc_impl_{{ cross_target_platform }} {{ gcc_version }}.*
         # for activation of binutils env vars
         - {{ pin_subpackage("binutils_" ~ cross_target_platform, exact=True) }}
-        - {{ c_stdlib }}_{{ target_platform }}
+        - {{ c_stdlib }}_{{ target_platform }}   # [linux]
         - {{ cross_stdlib }}_{{ cross_target_platform }}
     test:
       requires:
