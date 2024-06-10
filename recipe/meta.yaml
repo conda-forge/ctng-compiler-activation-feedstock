@@ -207,10 +207,6 @@ outputs:
           # Need ucrt for windows<10
           - ucrt >=10.0.20348.0  # [cross_target_platform == "win-64"]
     requirements:
-      host:
-        # So that pin_compatible has something to work with:
-        - libgfortran{{ libgfortran_soname }} {{ gcc_version }}.*
-        - libgfortran{{ runtime_suffix }}  {{ gcc_version }}.*
       run:
         - gfortran_impl_{{ cross_target_platform }} {{ gcc_version }}.*
         - gfortran_impl_{{ target_platform }} {{ gcc_version }}.*
