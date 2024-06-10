@@ -23,7 +23,7 @@ source:
 
 build:
   number: {{ build_num }}
-  skip: true  # [win or (cross_target_platform == "win-64" and int(gcc_major) < 13)]
+  skip: true  # [win or (cross_target_platform == "win-64" and (gcc_major == "12" or gcc_major == "11"))]
 
 requirements:
   build:
