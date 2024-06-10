@@ -71,7 +71,7 @@ outputs:
     version: {{ clang_version }}
     script: install-clang.sh
     build:
-      skip: true  # [win or s390x or cross_target_platform == "linux-s390x"]
+      skip: true  # [win or s390x or cross_target_platform in ("linux-s390x", "win-64")]
       run_exports:
         strong:
           - libgcc-ng >={{ min_runtime_version }}
@@ -143,7 +143,7 @@ outputs:
     version: {{ clang_version }}
     script: install-clang++.sh
     build:
-      skip: true  # [win or s390x or cross_target_platform == "linux-s390x"]
+      skip: true  # [win or s390x or cross_target_platform in ("linux-s390x", "win-64")]
       run_exports:
         strong:
           # This should be a transitive dependency, but conda-build doesn't support those
@@ -262,7 +262,7 @@ outputs:
     test:
       commands:
         - test -f $PREFIX/bin/{{ triplet }}-cc       # [cross_target_platform != "win-64"]
-        - test -f $PREFIX/bin/{{ triplet }}-gcc.exe  # [cross_target_platform == "win-64"]
+        - test -f $PREFIX/bin/{{ triplet }}-gcc      # [cross_target_platform == "win-64"]
     about:
       summary: GCC bootstrap compilers for building deps
       home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
