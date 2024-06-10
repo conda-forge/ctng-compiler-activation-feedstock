@@ -9,15 +9,15 @@ channel_sources:
 channel_targets:
 - conda-forge main
 cross_stdlib:
-- sysroot
+- m2w64-sysroot
 cross_stdlib_version:
-- '2.12'
+- '12'
 cross_target_platform:
-- linux-64
+- win-64
 docker_image:
 - quay.io/condaforge/linux-anvil-cos7-x86_64
 gcc_version:
-- 11.4.0
+- 13.2.0
 libgfortran_soname:
 - '5'
 linux_machine:
@@ -25,7 +25,7 @@ linux_machine:
 target_platform:
 - linux-s390x
 triplet:
-- x86_64-conda-linux-gnu
+- x86_64-w64-mingw32
 zip_keys:
 - - cross_target_platform
   - triplet
