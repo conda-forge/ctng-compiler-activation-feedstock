@@ -8,8 +8,12 @@ jobs:
     vmImage: ubuntu-latest
   strategy:
     matrix:
-      linux_64_cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version11.4.0:
-        CONFIG: linux_64_cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version11.4.0
+      linux_64_cross_stdlibm2w64-sysrootcross_stdlib_version12cross_target_platformwin-64gcc_version12.3.0:
+        CONFIG: linux_64_cross_stdlibm2w64-sysrootcross_stdlib_version12cross_target_platformwin-64gcc_version12.3.0
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_64_cross_stdlibm2w64-sysrootcross_stdlib_version12cross_target_platformwin-64gcc_version13.2.0:
+        CONFIG: linux_64_cross_stdlibm2w64-sysrootcross_stdlib_version12cross_target_platformwin-64gcc_version13.2.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_64_cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version12.3.0:
@@ -20,20 +24,12 @@ jobs:
         CONFIG: linux_64_cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version13.2.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version11.4.0:
-        CONFIG: linux_64_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version11.4.0
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_64_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version12.3.0:
         CONFIG: linux_64_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version12.3.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_64_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version13.2.0:
         CONFIG: linux_64_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version13.2.0
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version11.4.0:
-        CONFIG: linux_64_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version11.4.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_64_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version12.3.0:
@@ -44,10 +40,6 @@ jobs:
         CONFIG: linux_64_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version13.2.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-s390xgcc_version11.4.0:
-        CONFIG: linux_64_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-s390xgcc_version11.4.0
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_64_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-s390xgcc_version12.3.0:
         CONFIG: linux_64_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-s390xgcc_version12.3.0
         UPLOAD_PACKAGES: 'True'
@@ -56,8 +48,12 @@ jobs:
         CONFIG: linux_64_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-s390xgcc_version13.2.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_aarch64_cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version11.4.0:
-        CONFIG: linux_aarch64_cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version11.4.0
+      linux_aarch64_cross_stdlibm2w64-sysrootcross_stdlib_version12cross_target_platformwin-64gcc_version12.3.0:
+        CONFIG: linux_aarch64_cross_stdlibm2w64-sysrootcross_stdlib_version12cross_target_platformwin-64gcc_version12.3.0
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_aarch64_cross_stdlibm2w64-sysrootcross_stdlib_version12cross_target_platformwin-64gcc_version13.2.0:
+        CONFIG: linux_aarch64_cross_stdlibm2w64-sysrootcross_stdlib_version12cross_target_platformwin-64gcc_version13.2.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_aarch64_cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version12.3.0:
@@ -68,20 +64,12 @@ jobs:
         CONFIG: linux_aarch64_cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version13.2.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_aarch64_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version11.4.0:
-        CONFIG: linux_aarch64_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version11.4.0
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_aarch64_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version12.3.0:
         CONFIG: linux_aarch64_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version12.3.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_aarch64_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version13.2.0:
         CONFIG: linux_aarch64_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version13.2.0
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_aarch64_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version11.4.0:
-        CONFIG: linux_aarch64_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version11.4.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_aarch64_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version12.3.0:
@@ -92,10 +80,6 @@ jobs:
         CONFIG: linux_aarch64_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version13.2.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_aarch64_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-s390xgcc_version11.4.0:
-        CONFIG: linux_aarch64_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-s390xgcc_version11.4.0
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_aarch64_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-s390xgcc_version12.3.0:
         CONFIG: linux_aarch64_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-s390xgcc_version12.3.0
         UPLOAD_PACKAGES: 'True'
@@ -104,8 +88,12 @@ jobs:
         CONFIG: linux_aarch64_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-s390xgcc_version13.2.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_ppc64le_cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version11.4.0:
-        CONFIG: linux_ppc64le_cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version11.4.0
+      linux_ppc64le_cross_stdlibm2w64-sysrootcross_stdlib_version12cross_target_platformwin-64gcc_version12.3.0:
+        CONFIG: linux_ppc64le_cross_stdlibm2w64-sysrootcross_stdlib_version12cross_target_platformwin-64gcc_version12.3.0
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_ppc64le_cross_stdlibm2w64-sysrootcross_stdlib_version12cross_target_platformwin-64gcc_version13.2.0:
+        CONFIG: linux_ppc64le_cross_stdlibm2w64-sysrootcross_stdlib_version12cross_target_platformwin-64gcc_version13.2.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_ppc64le_cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version12.3.0:
@@ -116,20 +104,12 @@ jobs:
         CONFIG: linux_ppc64le_cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version13.2.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_ppc64le_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version11.4.0:
-        CONFIG: linux_ppc64le_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version11.4.0
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_ppc64le_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version12.3.0:
         CONFIG: linux_ppc64le_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version12.3.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_ppc64le_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version13.2.0:
         CONFIG: linux_ppc64le_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version13.2.0
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_ppc64le_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version11.4.0:
-        CONFIG: linux_ppc64le_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version11.4.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_ppc64le_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version12.3.0:
@@ -140,10 +120,6 @@ jobs:
         CONFIG: linux_ppc64le_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version13.2.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_ppc64le_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-s390xgcc_version11.4.0:
-        CONFIG: linux_ppc64le_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-s390xgcc_version11.4.0
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_ppc64le_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-s390xgcc_version12.3.0:
         CONFIG: linux_ppc64le_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-s390xgcc_version12.3.0
         UPLOAD_PACKAGES: 'True'
@@ -152,8 +128,12 @@ jobs:
         CONFIG: linux_ppc64le_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-s390xgcc_version13.2.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_s390x_cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version11.4.0:
-        CONFIG: linux_s390x_cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version11.4.0
+      linux_s390x_cross_stdlibm2w64-sysrootcross_stdlib_version12cross_target_platformwin-64gcc_version12.3.0:
+        CONFIG: linux_s390x_cross_stdlibm2w64-sysrootcross_stdlib_version12cross_target_platformwin-64gcc_version12.3.0
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_s390x_cross_stdlibm2w64-sysrootcross_stdlib_version12cross_target_platformwin-64gcc_version13.2.0:
+        CONFIG: linux_s390x_cross_stdlibm2w64-sysrootcross_stdlib_version12cross_target_platformwin-64gcc_version13.2.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_s390x_cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version12.3.0:
@@ -164,20 +144,12 @@ jobs:
         CONFIG: linux_s390x_cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version13.2.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_s390x_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version11.4.0:
-        CONFIG: linux_s390x_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version11.4.0
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_s390x_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version12.3.0:
         CONFIG: linux_s390x_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version12.3.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_s390x_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version13.2.0:
         CONFIG: linux_s390x_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version13.2.0
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_s390x_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version11.4.0:
-        CONFIG: linux_s390x_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version11.4.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_s390x_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version12.3.0:
@@ -188,10 +160,6 @@ jobs:
         CONFIG: linux_s390x_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version13.2.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_s390x_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-s390xgcc_version11.4.0:
-        CONFIG: linux_s390x_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-s390xgcc_version11.4.0
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_s390x_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-s390xgcc_version12.3.0:
         CONFIG: linux_s390x_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-s390xgcc_version12.3.0
         UPLOAD_PACKAGES: 'True'
@@ -200,7 +168,6 @@ jobs:
         CONFIG: linux_s390x_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-s390xgcc_version13.2.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-    maxParallel: 40
   timeoutInMinutes: 360
   variables: {}
 
