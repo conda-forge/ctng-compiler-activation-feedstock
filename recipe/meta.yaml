@@ -1,5 +1,5 @@
 {% set build_num = 3 %}
-{% set gcc_major = 13 if ctng_gcc is undefined else ctng_gcc.split(".")[0] %}
+{% set gcc_major = 13 if gcc_version is undefined else gcc_version.split(".")[0] %}
 # generally, the runtime version of libstdcxx needs to be at least as high
 # as the compiler; however, wherever libstdcxx changes the default ABI version
 # of a symbol, we need to ensure at least that version at runtime also for
@@ -11,19 +11,19 @@
 # In this case, libstdcxx last changed the default version of an ELF symbol
 # in v12, therefore this is the lowest we can go for GCC <=12, see #97 or
 # https://github.com/gcc-mirror/gcc/commit/9e18a25331fa25c3907249fede65a02c6817b06e
-{% set last_symbol_bump = 12 %}
+{% set last_symbol_bump = 13 %}
 {% set min_runtime_version = gcc_major if gcc_major|int > last_symbol_bump else last_symbol_bump %}
 
 package:
   name: ctng-compiler-activation
-  version: {{ ctng_gcc }}
+  version: {{ gcc_version }}
 
 source:
   path: .
 
 build:
   number: {{ build_num }}
-  skip: true  # [win]
+  skip: true  # [win or (cross_target_platform == "win-64" and int(gcc_major) < 13)]
 
 requirements:
   build:
@@ -39,15 +39,15 @@ outputs:
     script: install-gcc.sh
     requirements:
       run:
-        - gcc_impl_{{ target_platform }} {{ ctng_gcc }}.*
-        - gcc_impl_{{ cross_target_platform }} {{ ctng_gcc }}.*
+        - gcc_impl_{{ target_platform }} {{ gcc_version }}.*
+        - gcc_impl_{{ cross_target_platform }} {{ gcc_version }}.*
         # for activation of binutils env vars
         - {{ pin_subpackage("binutils_" ~ cross_target_platform, exact=True) }}
-        - sysroot_{{ target_platform }}
-        - sysroot_{{ cross_target_platform }}
+        - {{ c_stdlib }}_{{ target_platform }}   # [linux]
+        - {{ cross_stdlib }}_{{ cross_target_platform }}
     test:
       requires:
-        - sysroot_{{ cross_target_platform }} {{ conda_glibc_ver }}
+        - {{ cross_stdlib }}_{{ cross_target_platform }} {{ cross_stdlib_version }}
       files:
         - tests
       commands:
@@ -74,16 +74,16 @@ outputs:
           - libgcc-ng >={{ min_runtime_version }}
     requirements:
       run:
-        - libgcc-devel_{{ cross_target_platform }} {{ ctng_gcc }}.*
+        - libgcc-devel_{{ cross_target_platform }} {{ gcc_version }}.*
         # for activation of binutils env vars
         - {{ pin_subpackage("binutils_" ~ cross_target_platform, exact=True) }}
-        - sysroot_{{ cross_target_platform }}
+        - {{ cross_stdlib }}_{{ cross_target_platform }}
         - compiler-rt_{{ cross_target_platform }}
         - compiler-rt =={{ clang_version }}.*
         - clang_impl_{{ target_platform }}  {{ clang_version }}   # [osx]
     test:
       requires:
-        - sysroot_{{ cross_target_platform }} {{ conda_glibc_ver }}
+        - {{ cross_stdlib }}_{{ cross_target_platform }} {{ cross_stdlib_version }}
       files:
         - tests
       commands:
@@ -112,16 +112,16 @@ outputs:
           - libgcc-ng >={{ min_runtime_version }}
     requirements:
       run:
-        - gxx_impl_{{ target_platform }} {{ ctng_gcc }}.*
-        - gxx_impl_{{ cross_target_platform }} {{ ctng_gcc }}.*
+        - gxx_impl_{{ target_platform }} {{ gcc_version }}.*
+        - gxx_impl_{{ cross_target_platform }} {{ gcc_version }}.*
         # for activation of gcc env vars
         - {{ pin_subpackage("gcc_" ~ cross_target_platform, exact=True) }}
         # for activation of binutils env vars
         - {{ pin_subpackage("binutils_" ~ cross_target_platform, exact=True) }}
-        - sysroot_{{ cross_target_platform }}
+        - {{ cross_stdlib }}_{{ cross_target_platform }}
     test:
       requires:
-        - sysroot_{{ cross_target_platform }} {{ conda_glibc_ver }}
+        - {{ cross_stdlib }}_{{ cross_target_platform }} {{ cross_stdlib_version }}
       files:
         - tests
       commands:
@@ -149,20 +149,20 @@ outputs:
           - libgcc-ng >={{ min_runtime_version }}
     requirements:
       run:
-        - libgcc-devel_{{ cross_target_platform }} {{ ctng_gcc }}.*
+        - libgcc-devel_{{ cross_target_platform }} {{ gcc_version }}.*
         # C++ compiler on linux needs a stdlib
-        - libstdcxx-devel_{{ cross_target_platform }}  {{ ctng_gcc }}.*
+        - libstdcxx-devel_{{ cross_target_platform }}  {{ gcc_version }}.*
         # for activation of gcc env vars
         - {{ pin_subpackage("clang_" ~ cross_target_platform, exact=True) }}
         # for activation of binutils env vars
         - {{ pin_subpackage("binutils_" ~ cross_target_platform, exact=True) }}
-        - sysroot_{{ cross_target_platform }}
+        - {{ cross_stdlib }}_{{ cross_target_platform }}
         - compiler-rt_{{ cross_target_platform }}
         - compiler-rt =={{ clang_version }}.*
         - clangxx_impl_{{ target_platform }}  {{ clang_version }}   # [osx]
     test:
       requires:
-        - sysroot_{{ cross_target_platform }} {{ conda_glibc_ver }}
+        - {{ cross_stdlib }}_{{ cross_target_platform }} {{ cross_stdlib_version }}
       files:
         - tests
       commands:
@@ -183,28 +183,28 @@ outputs:
       skip: true  # [not linux]
       run_exports:
         strong:
-          - libgfortran{{ libgfortran_soname }} >={{ ctng_gcc }}
+          - libgfortran{{ libgfortran_soname }} >={{ gcc_version }}
           - libgfortran-ng
           # Because transitive run_exports do not work:
           - libgcc-ng >={{ min_runtime_version }}
     requirements:
       host:
         # So that pin_compatible has something to work with:
-        - libgfortran{{ libgfortran_soname }} {{ ctng_gcc }}.*
-        - libgfortran-ng  {{ ctng_gcc }}.*
+        - libgfortran{{ libgfortran_soname }} {{ gcc_version }}.*
+        - libgfortran-ng  {{ gcc_version }}.*
       run:
-        - gfortran_impl_{{ cross_target_platform }} {{ ctng_gcc }}.*
-        - gfortran_impl_{{ target_platform }} {{ ctng_gcc }}.*
+        - gfortran_impl_{{ cross_target_platform }} {{ gcc_version }}.*
+        - gfortran_impl_{{ target_platform }} {{ gcc_version }}.*
         # for activation of gcc env vars:
         - {{ pin_subpackage("gcc_" ~ cross_target_platform, exact=True) }}
         # for activation of binutils env vars:
         - {{ pin_subpackage("binutils_" ~ cross_target_platform, exact=True) }}
-        - sysroot_{{ cross_target_platform }}
+        - {{ cross_stdlib }}_{{ cross_target_platform }}
     test:
       requires:
         - cmake >=3.11  # [x86_64 or aarch64 or ppc64le]
         - make          # [x86_64 or aarch64 or ppc64le]
-        - sysroot_{{ cross_target_platform }} {{ conda_glibc_ver }}
+        - {{ cross_stdlib }}_{{ cross_target_platform }} {{ cross_stdlib_version }}
       commands:
         - ${FC} --version
         - pushd tests/fortomp
@@ -218,16 +218,16 @@ outputs:
       license_file: LICENSE
 
   - name: binutils_{{ cross_target_platform }}
-    version: "{{ ctng_binutils }}"
+    version: "{{ binutils_version }}"
     script: install-binutils.sh
     requirements:
       run:
-        - binutils_impl_{{ cross_target_platform }} {{ ctng_binutils }}.*
-        - sysroot_{{ target_platform }}       # [linux]
-        - sysroot_{{ cross_target_platform }}
+        - binutils_impl_{{ cross_target_platform }} {{ binutils_version }}.*
+        - {{ c_stdlib }}_{{ target_platform }}       # [linux]
+        - {{ cross_stdlib }}_{{ cross_target_platform }}
     test:
       requires:
-        - sysroot_{{ cross_target_platform }} {{ conda_glibc_ver }}
+        - {{ cross_stdlib }}_{{ cross_target_platform }} {{ cross_stdlib_version }}
       commands:
         - test -f $LD
     about:
@@ -237,7 +237,7 @@ outputs:
       license_file: LICENSE
 
   - name: gcc_bootstrap_{{ cross_target_platform }}
-    version: "{{ ctng_gcc }}"
+    version: "{{ gcc_version }}"
     build:
       skip: true  # [not linux]
       binary_relocation: false
@@ -249,16 +249,17 @@ outputs:
         - lib/
         - libexec/
         - share/
-        - {{ ctng_cpu_arch }}-{{ ctng_vendor }}-linux-gnu/
+        - {{ triplet }}/
     requirements:
       host:
-        - binutils_impl_{{ cross_target_platform }} {{ ctng_binutils }}.*
-        - gfortran_impl_{{ cross_target_platform }} {{ ctng_gcc }}.*
-        - gxx_impl_{{ cross_target_platform }} {{ ctng_gcc }}.*
-        - gcc_impl_{{ cross_target_platform }} {{ ctng_gcc }}.*
+        - binutils_impl_{{ cross_target_platform }} {{ binutils_version }}.*
+        - gfortran_impl_{{ cross_target_platform }} {{ gcc_version }}.*
+        - gxx_impl_{{ cross_target_platform }} {{ gcc_version }}.*
+        - gcc_impl_{{ cross_target_platform }} {{ gcc_version }}.*
     test:
       commands:
-        - test -f $PREFIX/bin/{{ ctng_cpu_arch }}-{{ ctng_vendor }}-linux-gnu-cc
+        - test -f $PREFIX/bin/{{ triplet }}-cc       # [cross_target_platform != "win-64"]
+        - test -f $PREFIX/bin/{{ triplet }}-gcc.exe  # [cross_target_platform == "win-64"]
     about:
       summary: GCC bootstrap compilers for building deps
       home: https://github.com/conda-forge/ctng-compiler-activation-feedstock

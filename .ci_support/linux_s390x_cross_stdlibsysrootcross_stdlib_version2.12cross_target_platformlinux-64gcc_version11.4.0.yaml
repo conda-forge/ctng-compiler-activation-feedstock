@@ -1,0 +1,36 @@
+binutils_version:
+- '2.40'
+c_stdlib:
+- sysroot
+cdt_name:
+- cos7
+channel_sources:
+- https://conda-web.anaconda.org/conda-forge
+channel_targets:
+- conda-forge main
+cross_stdlib:
+- sysroot
+cross_stdlib_version:
+- '2.12'
+cross_target_platform:
+- linux-64
+docker_image:
+- quay.io/condaforge/linux-anvil-cos7-x86_64
+gcc_version:
+- 11.4.0
+libgfortran_soname:
+- '5'
+linux_machine:
+- x86_64
+target_platform:
+- linux-s390x
+triplet:
+- x86_64-conda-linux-gnu
+zip_keys:
+- - cross_target_platform
+  - triplet
+  - cross_stdlib
+  - cross_stdlib_version
+  - linux_machine
+- - gcc_version
+  - libgfortran_soname

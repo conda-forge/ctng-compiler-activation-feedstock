@@ -15,11 +15,13 @@ get_triplet() {
     exit 1
   fi
   if [[ "$1" == "linux-"* ]]; then
-    echo $CPU_ARCH-${ctng_vendor}-linux-gnu
+    echo $CPU_ARCH-conda-linux-gnu
   elif [[ "$1" == "osx-64" ]]; then
     echo x86_64-apple-darwin13.4.0
   elif [[ "$1" == "osx-arm64" ]]; then
     echo arm64-apple-darwin20.0.0
+  elif [[ "$1" == "win-64" ]]; then
+    echo x86_64-w64-mingw32
   fi
 }
 
