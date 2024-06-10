@@ -58,6 +58,14 @@ else
   MESON_FAMILY=${linux_machine}
 fi
 
+TOOLS="addr2line ar as c++filt elfedit gprof ld nm objcopy objdump ranlib readelf size strings strip"
+if [[ "${cross_target_platform}" == "linux-"* ]]; then
+  TOOLS="${TOOLS} dwp ld.gold"
+else
+  TOOLS="${TOOLS} dlltool"
+fi
+
+find . -name "*activate*.sh" -exec sed -i.bak "s|@TOOLS@|${TOOLS}|g"                                                                "{}" \;
 find . -name "*activate*.sh" -exec sed -i.bak "s|@LINUX_MACHINE@|${linux_machine}|g"                                                "{}" \;
 find . -name "*activate*.sh" -exec sed -i.bak "s|@MESON_FAMILY@|${MESON_FAMILY}|g"                                                  "{}" \;
 find . -name "*activate*.sh" -exec sed -i.bak "s|@CBUILD@|${CBUILD}|g"                                                              "{}" \;

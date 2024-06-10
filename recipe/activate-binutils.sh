@@ -89,16 +89,8 @@ if [ "${CONDA_BUILD:-0}" = "1" ]; then
   env > /tmp/old-env-$$.txt
 fi
 
-# gold has not been (cannot be?) built for powerpc
-if echo @CHOST@ | grep powerpc > /dev/null; then
-  GOLD_USED=
-else
-  GOLD_USED=ld.gold
-fi
-
 _tc_activation \
-  activate @CHOST@- \
-  addr2line ar as c++filt elfedit gprof ld ${GOLD_USED} nm objcopy objdump ranlib readelf size strings strip \
+  activate @CHOST@- @TOOLS@
 
 if [ $? -ne 0 ]; then
   echo "ERROR: $(_get_sourced_filename) failed, see above for details"

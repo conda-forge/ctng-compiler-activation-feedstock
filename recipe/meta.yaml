@@ -1,4 +1,4 @@
-{% set build_num = 4 %}
+{% set build_num = 5 %}
 {% set gcc_major = 13 if gcc_version is undefined else gcc_version.split(".")[0] %}
 # generally, the runtime version of libstdcxx needs to be at least as high
 # as the compiler; however, wherever libstdcxx changes the default ABI version
@@ -39,6 +39,8 @@ outputs:
       run_exports:
         strong:
           - libgcc-ng >={{ min_runtime_version }}
+          # Need ucrt for windows<10
+          - ucrt >=10.0.20348.0  # [cross_target_platform == "win-64"]
     script: install-gcc.sh
     requirements:
       run:
@@ -71,7 +73,7 @@ outputs:
     version: {{ clang_version }}
     script: install-clang.sh
     build:
-      skip: true  # [win or s390x or cross_target_platform == "linux-s390x"]
+      skip: true  # [win or s390x or cross_target_platform in ("linux-s390x", "win-64")]
       run_exports:
         strong:
           - libgcc-ng >={{ min_runtime_version }}
@@ -113,6 +115,8 @@ outputs:
           - libstdcxx-ng >={{ min_runtime_version }}
           # Because transitive run_exports do not work:
           - libgcc-ng >={{ min_runtime_version }}
+          # Need ucrt for windows<10
+          - ucrt >=10.0.20348.0  # [cross_target_platform == "win-64"]
     requirements:
       run:
         - gxx_impl_{{ target_platform }} {{ gcc_version }}.*
@@ -143,7 +147,7 @@ outputs:
     version: {{ clang_version }}
     script: install-clang++.sh
     build:
-      skip: true  # [win or s390x or cross_target_platform == "linux-s390x"]
+      skip: true  # [win or s390x or cross_target_platform in ("linux-s390x", "win-64")]
       run_exports:
         strong:
           # This should be a transitive dependency, but conda-build doesn't support those
@@ -190,6 +194,8 @@ outputs:
           - libgfortran-ng
           # Because transitive run_exports do not work:
           - libgcc-ng >={{ min_runtime_version }}
+          # Need ucrt for windows<10
+          - ucrt >=10.0.20348.0  # [cross_target_platform == "win-64"]
     requirements:
       host:
         # So that pin_compatible has something to work with:
@@ -262,7 +268,7 @@ outputs:
     test:
       commands:
         - test -f $PREFIX/bin/{{ triplet }}-cc       # [cross_target_platform != "win-64"]
-        - test -f $PREFIX/bin/{{ triplet }}-gcc.exe  # [cross_target_platform == "win-64"]
+        - test -f $PREFIX/bin/{{ triplet }}-gcc      # [cross_target_platform == "win-64"]
     about:
       summary: GCC bootstrap compilers for building deps
       home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
