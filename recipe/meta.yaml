@@ -33,7 +33,6 @@ source:
 
 build:
   number: {{ build_num }}
-  skip: true  # [win]
   {% if cross_target_platform == "win-64" and gcc_major|int < 13 %}
   skip: true
   {% endif %}
@@ -45,7 +44,7 @@ requirements:
 outputs:
   - name: gcc_{{ cross_target_platform }}
     build:
-      skip: true  # [not linux]
+      skip: true  # [not (linux or win)]
       run_exports:
         strong:
           - libgcc{{ runtime_suffix }} >={{ min_runtime_version }}
@@ -118,7 +117,7 @@ outputs:
   - name: gxx_{{ cross_target_platform }}
     script: install-g++.sh
     build:
-      skip: true  # [not linux]
+      skip: true  # [not (linux or win)]
       run_exports:
         strong:
           # This should be a transitive dependency, but conda-build doesn't support those
@@ -197,7 +196,7 @@ outputs:
   - name: gfortran_{{ cross_target_platform }}
     script: install-gfortran.sh
     build:
-      skip: true  # [not linux]
+      skip: true  # [not (linux or win)]
       run_exports:
         strong:
           - libgfortran{{ libgfortran_soname }} >={{ gcc_version }}
@@ -254,7 +253,7 @@ outputs:
   - name: gcc_bootstrap_{{ cross_target_platform }}
     version: "{{ gcc_version }}"
     build:
-      skip: true  # [not linux]
+      skip: true  # [not (linux or win)]
       binary_relocation: false
       detect_binary_files_with_prefix: false
       always_include_files:
@@ -281,8 +280,8 @@ outputs:
         - gcc_impl_{{ target_platform }} {{ gcc_version }}.*
     test:
       commands:
-        - test -f $PREFIX/bin/{{ triplet }}-cc       # [cross_target_platform != "win-64"]
-        - test -f $PREFIX/bin/{{ triplet }}-gcc      # [cross_target_platform == "win-64"]
+        - test -f $PREFIX/bin/{{ triplet }}-cc                 # [target_platform != "win-64"]
+        - test -f $PREFIX/Library/bin/{{ triplet }}-cc.exe     # [target_platform = "win-64"]
     about:
       summary: GCC bootstrap compilers for building deps
       home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
