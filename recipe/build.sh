@@ -52,17 +52,14 @@ else
   export CONDA_BUILD_CROSS_COMPILATION="1"
 fi
 
-if [[ "$cross_target_platform" == linux-ppc64le ]]; then
-  MESON_FAMILY=ppc64
-else
-  MESON_FAMILY=${linux_machine}
-fi
 
 TOOLS="addr2line ar as c++filt elfedit gprof ld nm objcopy objdump ranlib readelf size strings strip"
 if [[ "${cross_target_platform}" == "linux-"* ]]; then
   TOOLS="${TOOLS} dwp ld.gold"
+  CMAKE_SYSTEM_NAME="Linux"
 else
   TOOLS="${TOOLS} dlltool"
+  CMAKE_SYSTEM_NAME="Windows"
 fi
 
 if [[ "${target_platform}" == "win-"* ]]; then
@@ -71,8 +68,18 @@ else
   LIBRARY_PREFIX=""
 fi
 
+MACHINE=$(echo ${CHOST} | cut -d "-" -f1)
+MESON_FAMILY=${MACHINE}
+
+if [[ "$cross_target_platform" == linux-ppc64le ]]; then
+  MACHINE="ppc64le"
+  MESON_FAMILY="ppc64"
+fi
+
+
 find . -name "*activate*.sh" -exec sed -i.bak "s|@TOOLS@|${TOOLS}|g"                                                                "{}" \;
-find . -name "*activate*.sh" -exec sed -i.bak "s|@LINUX_MACHINE@|${linux_machine}|g"                                                "{}" \;
+find . -name "*activate*.sh" -exec sed -i.bak "s|@MACHINE@|${MACHINE}|g"                                                            "{}" \;
+find . -name "*activate*.sh" -exec sed -i.bak "s|@CMAKE_SYSTEM_NAME@|${CMAKE_SYSTEM_NAME}|g"                                        "{}" \;
 find . -name "*activate*.sh" -exec sed -i.bak "s|@MESON_FAMILY@|${MESON_FAMILY}|g"                                                  "{}" \;
 find . -name "*activate*.sh" -exec sed -i.bak "s|@CBUILD@|${CBUILD}|g"                                                              "{}" \;
 find . -name "*activate*.sh" -exec sed -i.bak "s|@CHOST@|${CHOST}|g"                                                                "{}" \;

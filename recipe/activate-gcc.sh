@@ -154,11 +154,11 @@ fi
 
 # shellcheck disable=SC2050 # templating will fix this error
 if [ "@CONDA_BUILD_CROSS_COMPILATION@" = "1" ]; then
-  _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_SYSTEM_NAME=Linux -DCMAKE_SYSTEM_PROCESSOR=@LINUX_MACHINE@"
+  _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_SYSTEM_NAME=@CMAKE_SYSTEM_NAME@ -DCMAKE_SYSTEM_PROCESSOR=@MACHINE@"
   _MESON_ARGS="${_MESON_ARGS} --cross-file ${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
   echo "[host_machine]" > "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
   echo "system = 'linux'" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
-  echo "cpu = '@LINUX_MACHINE@'" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
+  echo "cpu = '@MACHINE@'" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
   echo "cpu_family = '@MESON_FAMILY@'" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
   echo "endian = 'little'" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
   # specify path to correct binaries from build (not host) environment,

@@ -4,7 +4,6 @@ gcc_version:
   - 13.2.0
 libgfortran_soname:
   - 5
-  - 5
 binutils_version:
   - 2.40
 cross_target_platform:
@@ -35,12 +34,6 @@ cross_stdlib_version:
   - 2.17
   - 2.17
   - 12
-linux_machine:
-  - x86_64
-  - ppc64le
-  - aarch64
-  - s390x
-  - x86_64
 
 clang_version:
   - 16
@@ -52,9 +45,6 @@ zip_keys:
     - triplet
     - cross_stdlib
     - cross_stdlib_version
-    - linux_machine
-  - - gcc_version
-    - libgfortran_soname
 
 FINAL_CPPFLAGS:
   - -DNDEBUG -D_FORTIFY_SOURCE=2 -O2
