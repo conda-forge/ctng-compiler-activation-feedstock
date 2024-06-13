@@ -279,7 +279,7 @@ outputs:
     test:
       commands:
         - test -f $PREFIX/bin/{{ triplet }}-cc                 # [target_platform != "win-64"]
-        - test -f $PREFIX/Library/bin/{{ triplet }}-cc.exe     # [target_platform = "win-64"]
+        - test -f $PREFIX/Library/bin/{{ triplet }}-cc.exe     # [target_platform == "win-64"]
     about:
       summary: GCC bootstrap compilers for building deps
       home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
