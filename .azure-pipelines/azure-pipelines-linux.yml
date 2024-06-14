@@ -168,6 +168,11 @@ jobs:
         CONFIG: linux_s390x_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-s390xgcc_version13.2.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      win_64_cross_stdlibm2w64-sysrootcross_stdlib_version12cross_target_platformwin-64gcc_version13.2.0:
+        CONFIG: win_64_cross_stdlibm2w64-sysrootcross_stdlib_version12cross_target_platformwin-64gcc_version13.2.0
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+    maxParallel: 40
   timeoutInMinutes: 360
   variables: {}
 

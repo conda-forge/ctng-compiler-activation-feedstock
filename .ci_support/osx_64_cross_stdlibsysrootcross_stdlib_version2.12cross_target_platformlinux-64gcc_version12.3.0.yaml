@@ -20,8 +20,6 @@ cross_target_platform:
 - linux-64
 gcc_version:
 - 12.3.0
-linux_machine:
-- x86_64
 macos_machine:
 - x86_64-apple-darwin13.4.0
 target_platform:
@@ -30,4 +28,3 @@ zip_keys:
 - - cross_target_platform
   - cross_stdlib
   - cross_stdlib_version
-  - linux_machine
