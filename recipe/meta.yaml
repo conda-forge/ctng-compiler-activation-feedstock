@@ -24,6 +24,16 @@
 {% set runtime_suffix = "-ng" %}
 {% endif %}
 
+{% if target_platform is not defined %}
+{% set target_platform = "linux-64" %}
+{% endif %}
+
+{% if target_platform.startswith("win-") %}
+{% set library_prefix = "Library/" %}
+{% else %}
+{% set library_prefix = "" %}
+{% endif %}
+
 package:
   name: ctng-compiler-activation
   version: {{ gcc_version }}
@@ -33,8 +43,7 @@ source:
 
 build:
   number: {{ build_num }}
-  skip: true  # [win]
-  {% if cross_target_platform == "win-64" and gcc_major|int < 13 %}
+  {% if (target_platform == "win-64" and cross_target_platform != "win-64") or (cross_target_platform == "win-64" and gcc_major|int < 13) %}
   skip: true
   {% endif %}
 
@@ -45,7 +54,7 @@ requirements:
 outputs:
   - name: gcc_{{ cross_target_platform }}
     build:
-      skip: true  # [not linux]
+      skip: true  # [not (linux or win)]
       run_exports:
         strong:
           - libgcc{{ runtime_suffix }} >={{ min_runtime_version }}
@@ -66,7 +75,6 @@ outputs:
       files:
         - tests
       commands:
-        - echo {{ linux_machine }}
         - ${CC} ${CFLAGS} -Wall tests/aligned_alloc.c -c -o c_aligned.o -v
         - ${CC} ${LDFLAGS} c_aligned.o -o c_aligned     # [target_platform == cross_target_platform]
         - ./c_aligned                                   # [target_platform == cross_target_platform]
@@ -102,7 +110,6 @@ outputs:
       files:
         - tests
       commands:
-        - echo {{ linux_machine }}
         - ${CC} ${CFLAGS} -Wall tests/aligned_alloc.c -c -o c_aligned.o -v
         - ${CC} ${LDFLAGS} c_aligned.o -o c_aligned     # [target_platform == cross_target_platform]
         - ./c_aligned                                   # [target_platform == cross_target_platform]
@@ -118,7 +125,7 @@ outputs:
   - name: gxx_{{ cross_target_platform }}
     script: install-g++.sh
     build:
-      skip: true  # [not linux]
+      skip: true  # [not (linux or win)]
       run_exports:
         strong:
           # This should be a transitive dependency, but conda-build doesn't support those
@@ -197,7 +204,7 @@ outputs:
   - name: gfortran_{{ cross_target_platform }}
     script: install-gfortran.sh
     build:
-      skip: true  # [not linux]
+      skip: true  # [not (linux or win)]
       run_exports:
         strong:
           - libgfortran{{ libgfortran_soname }} >={{ gcc_version }}
@@ -254,21 +261,21 @@ outputs:
   - name: gcc_bootstrap_{{ cross_target_platform }}
     version: "{{ gcc_version }}"
     build:
-      skip: true  # [not linux]
+      skip: true  # [not (linux or win)]
       binary_relocation: false
       detect_binary_files_with_prefix: false
       always_include_files:
-        - bin/
-        - etc/
-        - lib64/
-        - lib/
-        - libexec/
-        - share/
-        - x86_64-conda-linux-gnu/
-        - powerpc64le-conda-linux-gnu/
-        - aarch64-conda-linux-gnu/
-        - s390x-conda-linux-gnu/
-        - x86_64-w64-mingw32/
+        - {{ library_prefix }}bin/
+        - {{ library_prefix }}etc/
+        - {{ library_prefix }}lib64/
+        - {{ library_prefix }}lib/
+        - {{ library_prefix }}libexec/
+        - {{ library_prefix }}share/
+        - {{ library_prefix }}x86_64-conda-linux-gnu/
+        - {{ library_prefix }}powerpc64le-conda-linux-gnu/
+        - {{ library_prefix }}aarch64-conda-linux-gnu/
+        - {{ library_prefix }}s390x-conda-linux-gnu/
+        - {{ library_prefix }}x86_64-w64-mingw32/
     requirements:
       host:
         - binutils_impl_{{ cross_target_platform }} {{ binutils_version }}.*
@@ -281,8 +288,8 @@ outputs:
         - gcc_impl_{{ target_platform }} {{ gcc_version }}.*
     test:
       commands:
-        - test -f $PREFIX/bin/{{ triplet }}-cc       # [cross_target_platform != "win-64"]
-        - test -f $PREFIX/bin/{{ triplet }}-gcc      # [cross_target_platform == "win-64"]
+        - test -f $PREFIX/bin/{{ triplet }}-cc                 # [target_platform != "win-64"]
+        - test -f $PREFIX/Library/bin/{{ triplet }}-cc.exe     # [target_platform == "win-64"]
     about:
       summary: GCC bootstrap compilers for building deps
       home: https://github.com/conda-forge/ctng-compiler-activation-feedstock

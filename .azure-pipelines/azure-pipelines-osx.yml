@@ -38,6 +38,7 @@ jobs:
       osx_64_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-s390xgcc_version13.2.0:
         CONFIG: osx_64_cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-s390xgcc_version13.2.0
         UPLOAD_PACKAGES: 'True'
+    maxParallel: 10
   timeoutInMinutes: 360
   variables: {}
 

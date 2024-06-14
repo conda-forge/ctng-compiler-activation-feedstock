@@ -56,7 +56,7 @@ _tc_activation() {
           thing=$(echo "${thing}" | sed "s,^\([^\,]*\)\,.*,\1,")
           ;;
         *)
-          newval="${CONDA_PREFIX}/bin/${tc_prefix}${thing}"
+          newval="${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/${tc_prefix}${thing}"
           thing=$(echo "${thing}" | tr 'a-z+-' 'A-ZX_')
           if [ ! -x "${newval}" ] && [ "${pass}" = "check" ]; then
             echo "ERROR: This cross-compiler package contains no program ${newval}"
@@ -84,19 +84,19 @@ _tc_activation() {
 
 # The compiler adds $PREFIX/lib to rpath, so it's better to add -L and -isystem  as well.
 if [ "${CONDA_BUILD:-0}" = "1" ]; then
-  CFLAGS_USED="@CFLAGS@ -isystem ${PREFIX}/include -fdebug-prefix-map=${SRC_DIR}=/usr/local/src/conda/${PKG_NAME}-${PKG_VERSION} -fdebug-prefix-map=${PREFIX}=/usr/local/src/conda-prefix"
-  DEBUG_CFLAGS_USED="@DEBUG_CFLAGS@ -isystem ${PREFIX}/include -fdebug-prefix-map=${SRC_DIR}=/usr/local/src/conda/${PKG_NAME}-${PKG_VERSION} -fdebug-prefix-map=${PREFIX}=/usr/local/src/conda-prefix"
-  LDFLAGS_USED="@LDFLAGS@ -Wl,-rpath,${PREFIX}/lib -Wl,-rpath-link,${PREFIX}/lib -L${PREFIX}/lib"
-  CPPFLAGS_USED="@CPPFLAGS@ -isystem ${PREFIX}/include"
-  DEBUG_CPPFLAGS_USED="@DEBUG_CPPFLAGS@ -isystem ${PREFIX}/include"
-  CMAKE_PREFIX_PATH_USED="${PREFIX}:${CONDA_PREFIX}/@CHOST@/sysroot/usr"
+  CFLAGS_USED="@CFLAGS@ -isystem ${PREFIX}@LIBRARY_PREFIX@/include -fdebug-prefix-map=${SRC_DIR}=/usr/local/src/conda/${PKG_NAME}-${PKG_VERSION} -fdebug-prefix-map=${PREFIX}=/usr/local/src/conda-prefix"
+  DEBUG_CFLAGS_USED="@DEBUG_CFLAGS@ -isystem ${PREFIX}@LIBRARY_PREFIX@/include -fdebug-prefix-map=${SRC_DIR}=/usr/local/src/conda/${PKG_NAME}-${PKG_VERSION} -fdebug-prefix-map=${PREFIX}=/usr/local/src/conda-prefix"
+  LDFLAGS_USED="@LDFLAGS@ -Wl,-rpath,${PREFIX}@LIBRARY_PREFIX@/lib -Wl,-rpath-link,${PREFIX}@LIBRARY_PREFIX@/lib -L${PREFIX}@LIBRARY_PREFIX@/lib"
+  CPPFLAGS_USED="@CPPFLAGS@ -isystem ${PREFIX}@LIBRARY_PREFIX@/include"
+  DEBUG_CPPFLAGS_USED="@DEBUG_CPPFLAGS@ -isystem ${PREFIX}@LIBRARY_PREFIX@/include"
+  CMAKE_PREFIX_PATH_USED="${PREFIX}:${CONDA_PREFIX}@LIBRARY_PREFIX@/@CHOST@/sysroot/usr"
 else
-  CFLAGS_USED="@CFLAGS@ -isystem ${CONDA_PREFIX}/include"
-  DEBUG_CFLAGS_USED="@DEBUG_CFLAGS@ -isystem ${CONDA_PREFIX}/include"
-  CPPFLAGS_USED="@CPPFLAGS@ -isystem ${CONDA_PREFIX}/include"
-  DEBUG_CPPFLAGS_USED="@DEBUG_CPPFLAGS@ -isystem ${CONDA_PREFIX}/include"
-  LDFLAGS_USED="@LDFLAGS@ -Wl,-rpath,${CONDA_PREFIX}/lib -Wl,-rpath-link,${CONDA_PREFIX}/lib -L${CONDA_PREFIX}/lib"
-  CMAKE_PREFIX_PATH_USED="${CONDA_PREFIX}:${CONDA_PREFIX}/@CHOST@/sysroot/usr"
+  CFLAGS_USED="@CFLAGS@ -isystem ${CONDA_PREFIX}@LIBRARY_PREFIX@/include"
+  DEBUG_CFLAGS_USED="@DEBUG_CFLAGS@ -isystem ${CONDA_PREFIX}@LIBRARY_PREFIX@/include"
+  CPPFLAGS_USED="@CPPFLAGS@ -isystem ${CONDA_PREFIX}@LIBRARY_PREFIX@/include"
+  DEBUG_CPPFLAGS_USED="@DEBUG_CPPFLAGS@ -isystem ${CONDA_PREFIX}@LIBRARY_PREFIX@/include"
+  LDFLAGS_USED="@LDFLAGS@ -Wl,-rpath,${CONDA_PREFIX}@LIBRARY_PREFIX@/lib -Wl,-rpath-link,${CONDA_PREFIX}@LIBRARY_PREFIX@/lib -L${CONDA_PREFIX}@LIBRARY_PREFIX@/lib"
+  CMAKE_PREFIX_PATH_USED="${CONDA_PREFIX}:${CONDA_PREFIX}@LIBRARY_PREFIX@/@CHOST@/sysroot/usr"
 fi
 
 if [ "${CONDA_BUILD:-0}" = "1" ]; then
@@ -137,42 +137,42 @@ if [ -n "${_CONDA_PYTHON_SYSCONFIGDATA_NAME_USED}" ] && [ -n "${SYS_SYSROOT}" ];
   fi
 fi
 
-_CMAKE_ARGS="-DCMAKE_AR=${CONDA_PREFIX}/bin/@CHOST@-ar -DCMAKE_CXX_COMPILER_AR=${CONDA_PREFIX}/bin/@CHOST@-gcc-ar -DCMAKE_C_COMPILER_AR=${CONDA_PREFIX}/bin/@CHOST@-gcc-ar"
-_CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_RANLIB=${CONDA_PREFIX}/bin/@CHOST@-ranlib -DCMAKE_CXX_COMPILER_RANLIB=${CONDA_PREFIX}/bin/@CHOST@-gcc-ranlib -DCMAKE_C_COMPILER_RANLIB=${CONDA_PREFIX}/bin/@CHOST@-gcc-ranlib"
-_CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_LINKER=${CONDA_PREFIX}/bin/@CHOST@-ld -DCMAKE_STRIP=${CONDA_PREFIX}/bin/@CHOST@-strip"
+_CMAKE_ARGS="-DCMAKE_AR=${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/@CHOST@-ar -DCMAKE_CXX_COMPILER_AR=${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/@CHOST@-gcc-ar -DCMAKE_C_COMPILER_AR=${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/@CHOST@-gcc-ar"
+_CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_RANLIB=${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/@CHOST@-ranlib -DCMAKE_CXX_COMPILER_RANLIB=${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/@CHOST@-gcc-ranlib -DCMAKE_C_COMPILER_RANLIB=${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/@CHOST@-gcc-ranlib"
+_CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_LINKER=${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/@CHOST@-ld -DCMAKE_STRIP=${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/@CHOST@-strip"
 _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_BUILD_TYPE=Release"
 
 _MESON_ARGS="--buildtype release"
 
 if [ "${CONDA_BUILD:-0}" = "1" ]; then
   _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_FIND_ROOT_PATH_MODE_PROGRAM=NEVER -DCMAKE_FIND_ROOT_PATH_MODE_LIBRARY=ONLY -DCMAKE_FIND_ROOT_PATH_MODE_INCLUDE=ONLY"
-  _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_FIND_ROOT_PATH=$PREFIX;${BUILD_PREFIX}/@CHOST@/sysroot"
+  _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_FIND_ROOT_PATH=$PREFIX;${BUILD_PREFIX}@LIBRARY_PREFIX@/@CHOST@/sysroot"
   _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_INSTALL_PREFIX=${PREFIX} -DCMAKE_INSTALL_LIBDIR=lib"
-  _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_PROGRAM_PATH=${BUILD_PREFIX}/bin;$PREFIX/bin"
+  _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_PROGRAM_PATH=${BUILD_PREFIX}@LIBRARY_PREFIX@/bin;$PREFIX/bin"
   _MESON_ARGS="${_MESON_ARGS} --prefix=$PREFIX -Dlibdir=lib"
 fi
 
 # shellcheck disable=SC2050 # templating will fix this error
 if [ "@CONDA_BUILD_CROSS_COMPILATION@" = "1" ]; then
-  _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_SYSTEM_NAME=Linux -DCMAKE_SYSTEM_PROCESSOR=@LINUX_MACHINE@"
-  _MESON_ARGS="${_MESON_ARGS} --cross-file ${CONDA_PREFIX}/meson_cross_file.txt"
-  echo "[host_machine]" > "${CONDA_PREFIX}/meson_cross_file.txt"
-  echo "system = 'linux'" >> "${CONDA_PREFIX}/meson_cross_file.txt"
-  echo "cpu = '@LINUX_MACHINE@'" >> "${CONDA_PREFIX}/meson_cross_file.txt"
-  echo "cpu_family = '@MESON_FAMILY@'" >> "${CONDA_PREFIX}/meson_cross_file.txt"
-  echo "endian = 'little'" >> "${CONDA_PREFIX}/meson_cross_file.txt"
+  _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_SYSTEM_NAME=@CMAKE_SYSTEM_NAME@ -DCMAKE_SYSTEM_PROCESSOR=@MACHINE@"
+  _MESON_ARGS="${_MESON_ARGS} --cross-file ${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
+  echo "[host_machine]" > "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
+  echo "system = 'linux'" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
+  echo "cpu = '@MACHINE@'" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
+  echo "cpu_family = '@MESON_FAMILY@'" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
+  echo "endian = 'little'" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
   # specify path to correct binaries from build (not host) environment,
   # which meson will not auto-discover (out of caution) if not told explicitly.
-  echo "[binaries]" >> "${CONDA_PREFIX}/meson_cross_file.txt"
-  echo "cmake = '${CONDA_PREFIX}/bin/cmake'" >> "${CONDA_PREFIX}/meson_cross_file.txt"
-  echo "pkgconfig = '${CONDA_PREFIX}/bin/pkg-config'" >> "${CONDA_PREFIX}/meson_cross_file.txt"
+  echo "[binaries]" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
+  echo "cmake = '${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/cmake'" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
+  echo "pkgconfig = '${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/pkg-config'" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
 fi
 
 _tc_activation \
   activate @CHOST@- "HOST,@CHOST@" "BUILD,@CBUILD@" \
   "CONDA_TOOLCHAIN_HOST,@CHOST@" \
   "CONDA_TOOLCHAIN_BUILD,@CBUILD@" \
-  "CC,${CONDA_PREFIX}/bin/@CC@" @COMPILERS@ \
+  "CC,${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/@CC@" @COMPILERS@ \
   "CPPFLAGS,${CPPFLAGS_USED}${CPPFLAGS:+ }${CPPFLAGS:-}" \
   "CFLAGS,${CFLAGS_USED}${CFLAGS:+ }${CFLAGS:-}" \
   "LDFLAGS,${LDFLAGS_USED}${LDFLAGS:+ }${LDFLAGS:-}" \
@@ -180,9 +180,9 @@ _tc_activation \
   "DEBUG_CFLAGS,${DEBUG_CFLAGS_USED}${DEBUG_CFLAGS:+ }${DEBUG_CFLAGS:-}" \
   "CMAKE_PREFIX_PATH,${CMAKE_PREFIX_PATH_USED}" \
   "_CONDA_PYTHON_SYSCONFIGDATA_NAME,${_CONDA_PYTHON_SYSCONFIGDATA_NAME_USED}" \
-  "CONDA_BUILD_SYSROOT,${CONDA_PREFIX}/@CHOST@/sysroot" \
+  "CONDA_BUILD_SYSROOT,${CONDA_PREFIX}@LIBRARY_PREFIX@/@CHOST@/sysroot" \
   "CONDA_BUILD_CROSS_COMPILATION,@CONDA_BUILD_CROSS_COMPILATION@" \
-  "CC_FOR_BUILD,${CONDA_PREFIX}/bin/@CC_FOR_BUILD@" \
+  "CC_FOR_BUILD,${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/@CC_FOR_BUILD@" \
   "build_alias,@CBUILD@" \
   "host_alias,@CHOST@" \
   "MESON_ARGS,${_MESON_ARGS}" \

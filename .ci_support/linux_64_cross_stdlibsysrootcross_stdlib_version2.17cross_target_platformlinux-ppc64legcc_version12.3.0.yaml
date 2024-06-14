@@ -24,8 +24,6 @@ gcc_version:
 - 12.3.0
 libgfortran_soname:
 - '5'
-linux_machine:
-- ppc64le
 target_platform:
 - linux-64
 triplet:
@@ -35,6 +33,3 @@ zip_keys:
   - triplet
   - cross_stdlib
   - cross_stdlib_version
-  - linux_machine
-- - gcc_version
-  - libgfortran_soname

@@ -56,7 +56,7 @@ _tc_activation() {
           thing=$(echo "${thing}" | sed "s,^\([^\,]*\)\,.*,\1,")
           ;;
         *)
-          newval="${CONDA_PREFIX}/bin/${tc_prefix}${thing}"
+          newval="${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/${tc_prefix}${thing}"
           if [ ! -x "${newval}" ] && [ "${pass}" = "check" ]; then
             echo "ERROR: This cross-compiler package contains no program ${newval}"
             return 1
@@ -85,11 +85,11 @@ _tc_activation() {
 # When people are using conda-build, assume that adding rpath during build, and pointing at
 #    the host env's includes and libs is helpful default behavior
 if [ "${CONDA_BUILD:-0}" = "1" ]; then
-  CXXFLAGS_USED="@CXXFLAGS@ -isystem ${PREFIX}/include -fdebug-prefix-map=${SRC_DIR}=/usr/local/src/conda/${PKG_NAME}-${PKG_VERSION} -fdebug-prefix-map=${PREFIX}=/usr/local/src/conda-prefix"
-  DEBUG_CXXFLAGS_USED="@DEBUG_CXXFLAGS@ -isystem ${PREFIX}/include -fdebug-prefix-map=${SRC_DIR}=/usr/local/src/conda/${PKG_NAME}-${PKG_VERSION} -fdebug-prefix-map=${PREFIX}=/usr/local/src/conda-prefix"
+  CXXFLAGS_USED="@CXXFLAGS@ -isystem ${PREFIX}@LIBRARY_PREFIX@/include -fdebug-prefix-map=${SRC_DIR}=/usr/local/src/conda/${PKG_NAME}-${PKG_VERSION} -fdebug-prefix-map=${PREFIX}=/usr/local/src/conda-prefix"
+  DEBUG_CXXFLAGS_USED="@DEBUG_CXXFLAGS@ -isystem ${PREFIX}@LIBRARY_PREFIX@/include -fdebug-prefix-map=${SRC_DIR}=/usr/local/src/conda/${PKG_NAME}-${PKG_VERSION} -fdebug-prefix-map=${PREFIX}=/usr/local/src/conda-prefix"
 else
-  CXXFLAGS_USED="@CXXFLAGS@ -isystem ${CONDA_PREFIX}/include"
-  DEBUG_CXXFLAGS_USED="@DEBUG_CXXFLAGS@ -isystem ${CONDA_PREFIX}/include"
+  CXXFLAGS_USED="@CXXFLAGS@ -isystem ${CONDA_PREFIX}@LIBRARY_PREFIX@/include"
+  DEBUG_CXXFLAGS_USED="@DEBUG_CXXFLAGS@ -isystem ${CONDA_PREFIX}@LIBRARY_PREFIX@/include"
 fi
 
 if [ "${CONDA_BUILD:-0}" = "1" ]; then
@@ -101,10 +101,10 @@ fi
 
 _tc_activation \
   activate @CHOST@- \
-  "CXX,${CONDA_PREFIX}/bin/@CXX@" @CXX_COMPILERS@ \
+  "CXX,${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/@CXX@" @CXX_COMPILERS@ \
   "CXXFLAGS,${CXXFLAGS_USED}${CXXFLAGS:+ }${CXXFLAGS:-}" \
   "DEBUG_CXXFLAGS,${DEBUG_CXXFLAGS_USED}${DEBUG_CXXFLAGS:+ }${DEBUG_CXXFLAGS:-}" \
-  "CXX_FOR_BUILD,${CONDA_PREFIX}/bin/@CXX_FOR_BUILD@"
+  "CXX_FOR_BUILD,${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/@CXX_FOR_BUILD@"
 
 if [ $? -ne 0 ]; then
   echo "ERROR: $(_get_sourced_filename) failed, see above for details"

@@ -56,7 +56,7 @@ _tc_activation() {
           thing=$(echo "${thing}" | sed "s,^\([^\,]*\)\,.*,\1,")
           ;;
         *)
-          newval="${CONDA_PREFIX}/bin/${tc_prefix}${thing}"
+          newval="${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/${tc_prefix}${thing}"
           if [ ! -x "${newval}" ] && [ "${pass}" = "check" ]; then
             echo "ERROR: This cross-compiler package contains no program ${newval}"
             return 1
@@ -85,9 +85,9 @@ _tc_activation() {
 # When people are using conda-build, assume that adding rpath during build, and pointing at
 #    the host env's includes and libs is helpful default behavior
 if [ "${CONDA_BUILD:-0}" = "1" ]; then
-  FFLAGS_USED="@FFLAGS@ -isystem ${PREFIX}/include -fdebug-prefix-map=${SRC_DIR}=/usr/local/src/conda/${PKG_NAME}-${PKG_VERSION} -fdebug-prefix-map=${PREFIX}=/usr/local/src/conda-prefix"
+  FFLAGS_USED="@FFLAGS@ -isystem ${PREFIX}@LIBRARY_PREFIX@/include -fdebug-prefix-map=${SRC_DIR}=/usr/local/src/conda/${PKG_NAME}-${PKG_VERSION} -fdebug-prefix-map=${PREFIX}=/usr/local/src/conda-prefix"
 else
-  FFLAGS_USED="@FFLAGS@ -isystem ${CONDA_PREFIX}/include"
+  FFLAGS_USED="@FFLAGS@ -isystem ${CONDA_PREFIX}@LIBRARY_PREFIX@/include"
 fi
 
 if [ "${CONDA_BUILD:-0}" = "1" ]; then
@@ -100,7 +100,7 @@ fi
 _tc_activation \
   activate @CHOST@- \
   gfortran f95 \
-  "FC_FOR_BUILD,${CONDA_PREFIX}/bin/@CBUILD@-gfortran" \
+  "FC_FOR_BUILD,${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/@CBUILD@-gfortran" \
   "FFLAGS,${FFLAGS_USED}${FFLAGS:+ }${FFLAGS:-}" \
   "FORTRANFLAGS,${FFLAGS_USED}${FORTRANFLAGS:+ }${FORTRANFLAGS:-}" \
   "DEBUG_FFLAGS,${FFLAGS_USED} @DEBUG_FFLAGS@${FFLAGS:+ }${FFLAGS:-}" \

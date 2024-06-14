@@ -28,8 +28,6 @@ gcc_version:
 - 12.3.0
 libgfortran_soname:
 - '5'
-linux_machine:
-- x86_64
 target_platform:
 - linux-aarch64
 triplet:
@@ -39,6 +37,3 @@ zip_keys:
   - triplet
   - cross_stdlib
   - cross_stdlib_version
-  - linux_machine
-- - gcc_version
-  - libgfortran_soname
