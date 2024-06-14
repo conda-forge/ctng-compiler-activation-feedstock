@@ -24,6 +24,10 @@
 {% set runtime_suffix = "-ng" %}
 {% endif %}
 
+{% if target_platform is not defined %}
+{% set target_platform = "linux-64" %}
+{% endif %}
+
 {% if target_platform.startswith("win-") %}
 {% set library_prefix = "Library/" %}
 {% else %}
