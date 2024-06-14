@@ -58,7 +58,7 @@ if [[ "${cross_target_platform}" == "linux-"* ]]; then
   TOOLS="${TOOLS} dwp ld.gold"
   CMAKE_SYSTEM_NAME="Linux"
 else
-  TOOLS="${TOOLS} dlltool"
+  TOOLS="${TOOLS} dlltool dllwrap windmc windres"
   CMAKE_SYSTEM_NAME="Windows"
 fi
 
