@@ -1,4 +1,4 @@
-{% set build_num = 6 %}
+{% set build_num = 7 %}
 {% set gcc_major = 13 if gcc_version is undefined else gcc_version.split(".")[0] %}
 # generally, the runtime version of libstdcxx needs to be at least as high
 # as the compiler; however, wherever libstdcxx changes the default ABI version
@@ -264,13 +264,21 @@ outputs:
         - lib/
         - libexec/
         - share/
-        - {{ triplet }}/
+        - x86_64-conda-linux-gnu/
+        - powerpc64le-conda-linux-gnu/
+        - aarch64-conda-linux-gnu/
+        - s390x-conda-linux-gnu/
+        - x86_64-w64-mingw32/
     requirements:
       host:
         - binutils_impl_{{ cross_target_platform }} {{ binutils_version }}.*
         - gfortran_impl_{{ cross_target_platform }} {{ gcc_version }}.*
         - gxx_impl_{{ cross_target_platform }} {{ gcc_version }}.*
         - gcc_impl_{{ cross_target_platform }} {{ gcc_version }}.*
+        - binutils_impl_{{ target_platform }} {{ binutils_version }}.*
+        - gfortran_impl_{{ target_platform }} {{ gcc_version }}.*
+        - gxx_impl_{{ target_platform }} {{ gcc_version }}.*
+        - gcc_impl_{{ target_platform }} {{ gcc_version }}.*
     test:
       commands:
         - test -f $PREFIX/bin/{{ triplet }}-cc       # [cross_target_platform != "win-64"]
