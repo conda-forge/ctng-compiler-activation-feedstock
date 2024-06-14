@@ -24,6 +24,12 @@
 {% set runtime_suffix = "-ng" %}
 {% endif %}
 
+{% if target_platform.startswith("win-") %}
+{% set library_prefix = "Library/" %}
+{% else %}
+{% set library_prefix = "" %}
+{% endif %}
+
 package:
   name: ctng-compiler-activation
   version: {{ gcc_version }}
@@ -255,17 +261,17 @@ outputs:
       binary_relocation: false
       detect_binary_files_with_prefix: false
       always_include_files:
-        - bin/
-        - etc/
-        - lib64/
-        - lib/
-        - libexec/
-        - share/
-        - x86_64-conda-linux-gnu/
-        - powerpc64le-conda-linux-gnu/
-        - aarch64-conda-linux-gnu/
-        - s390x-conda-linux-gnu/
-        - x86_64-w64-mingw32/
+        - {{ library_prefix }}bin/
+        - {{ library_prefix }}etc/
+        - {{ library_prefix }}lib64/
+        - {{ library_prefix }}lib/
+        - {{ library_prefix }}libexec/
+        - {{ library_prefix }}share/
+        - {{ library_prefix }}x86_64-conda-linux-gnu/
+        - {{ library_prefix }}powerpc64le-conda-linux-gnu/
+        - {{ library_prefix }}aarch64-conda-linux-gnu/
+        - {{ library_prefix }}s390x-conda-linux-gnu/
+        - {{ library_prefix }}x86_64-w64-mingw32/
     requirements:
       host:
         - binutils_impl_{{ cross_target_platform }} {{ binutils_version }}.*
