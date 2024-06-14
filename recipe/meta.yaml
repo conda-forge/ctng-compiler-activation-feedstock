@@ -33,7 +33,7 @@ source:
 
 build:
   number: {{ build_num }}
-  {% if cross_target_platform == "win-64" and gcc_major|int < 13 %}
+  {% if (target_platform == "win-64" and cross_target_platform != "win-64") or (cross_target_platform == "win-64" and gcc_major|int < 13) %}
   skip: true
   {% endif %}
 
