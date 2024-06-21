@@ -82,6 +82,10 @@ _tc_activation() {
   return 0
 }
 
+if [ "@IS_WIN@" = "1" ]; then
+  CONDA_PREFIX=$(echo "${CONDA_PREFIX:-}" | sed 's,\\,\/,g')
+fi
+
 # When people are using conda-build, assume that adding rpath during build, and pointing at
 #    the host env's includes and libs is helpful default behavior
 if [ "${CONDA_BUILD:-0}" = "1" ]; then
@@ -108,7 +112,6 @@ _tc_activation \
 
 if [ $? -ne 0 ]; then
   echo "ERROR: $(_get_sourced_filename) failed, see above for details"
-#exit 1
 else
   if [ "${CONDA_BUILD:-0}" = "1" ]; then
     if [ -f /tmp/new-env-$$.txt ]; then
@@ -120,4 +123,8 @@ else
     diff -U 0 -rN /tmp/old-env-$$.txt /tmp/new-env-$$.txt | tail -n +4 | grep "^-.*\|^+.*" | grep -v "CONDA_BACKUP_" | sort
     rm -f /tmp/old-env-$$.txt /tmp/new-env-$$.txt || true
   fi
+fi
+
+if [ "@IS_WIN@" = "1" ]; then
+  CONDA_PREFIX=$(echo "${CONDA_PREFIX:-}" | sed 's,\/,\\,g')
 fi

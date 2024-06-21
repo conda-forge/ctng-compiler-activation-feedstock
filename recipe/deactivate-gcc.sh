@@ -82,6 +82,10 @@ _tc_activation() {
   return 0
 }
 
+if [ "@IS_WIN@" = "1" ]; then
+  CONDA_PREFIX=$(echo "${CONDA_PREFIX:-}" | sed 's,\\,\/,g')
+fi
+
 if [ "${CONDA_BUILD:-0}" = "1" ]; then
   CFLAGS_USED="@CFLAGS@ -isystem ${PREFIX}@LIBRARY_PREFIX@/include -fdebug-prefix-map=${SRC_DIR}=/usr/local/src/conda/${PKG_NAME}-${PKG_VERSION} -fdebug-prefix-map=${PREFIX}=/usr/local/src/conda-prefix"
   DEBUG_CFLAGS_USED="@DEBUG_CFLAGS@ -isystem ${PREFIX}@LIBRARY_PREFIX@/include -fdebug-prefix-map=${SRC_DIR}=/usr/local/src/conda/${PKG_NAME}-${PKG_VERSION} -fdebug-prefix-map=${PREFIX}=/usr/local/src/conda-prefix"
@@ -152,4 +156,8 @@ else
     eval "precmd_functions=(\${precmd_functions:#_conda_clang_precmd})"
     eval "preexec_functions=(\${preexec_functions:#_conda_clang_preexec})"
   fi
+fi
+
+if [ "@IS_WIN@" = "1" ]; then
+  CONDA_PREFIX=$(echo "${CONDA_PREFIX:-}" | sed 's,\/,\\,g')
 fi
