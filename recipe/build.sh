@@ -52,6 +52,12 @@ else
   export CONDA_BUILD_CROSS_COMPILATION="1"
 fi
 
+if [[ "$target_platform" == "win-"* ]]; then
+  IS_WIN=1
+else
+  IS_WIN=0
+fi
+
 
 TOOLS="addr2line ar as c++filt elfedit gprof ld nm objcopy objdump ranlib readelf size strings strip"
 if [[ "${cross_target_platform}" == "linux-"* ]]; then
@@ -77,6 +83,7 @@ if [[ "$cross_target_platform" == linux-ppc64le ]]; then
 fi
 
 
+find . -name "*activate*.sh" -exec sed -i.bak "s|@IS_WIN@|${IS_WIN}|g"                                                              "{}" \;
 find . -name "*activate*.sh" -exec sed -i.bak "s|@TOOLS@|${TOOLS}|g"                                                                "{}" \;
 find . -name "*activate*.sh" -exec sed -i.bak "s|@MACHINE@|${MACHINE}|g"                                                            "{}" \;
 find . -name "*activate*.sh" -exec sed -i.bak "s|@CMAKE_SYSTEM_NAME@|${CMAKE_SYSTEM_NAME}|g"                                        "{}" \;
@@ -120,7 +127,7 @@ find . -name "*activate-clang++.sh" -exec sed -i.bak "s|@CXX_FOR_BUILD@|${CBUILD
 find . -name "*activate*.sh.bak" -exec rm "{}" \;
 
 # Check if (de-)activate scripts can be used in non-Bash shells (ignoring the commonly supported "local" keyword.)
-errors=$(find . -name "*activate*.sh" -exec shellcheck -e SC3043 --severity=info --format=gcc {} \;)
+errors=$(find . -name "*activate*.sh" -exec shellcheck -e SC3043 -e SC2050 --severity=info --format=gcc {} \;)
 echo $errors
 if [[ ${errors} != "" ]]; then
   exit 1

@@ -82,6 +82,10 @@ _tc_activation() {
   return 0
 }
 
+if [ "@IS_WIN@" = "1" ]; then
+  CONDA_PREFIX=$(echo "${CONDA_PREFIX:-}" | sed 's,\\,\/,g')
+fi
+
 # The compiler adds $PREFIX/lib to rpath, so it's better to add -L and -isystem  as well.
 if [ "${CONDA_BUILD:-0}" = "1" ]; then
   CFLAGS_USED="@CFLAGS@ -isystem ${PREFIX}@LIBRARY_PREFIX@/include -fdebug-prefix-map=${SRC_DIR}=/usr/local/src/conda/${PKG_NAME}-${PKG_VERSION} -fdebug-prefix-map=${PREFIX}=/usr/local/src/conda-prefix"
@@ -227,4 +231,8 @@ else
     }
     add-zsh-hook -Uz preexec _conda_clang_preexec
   fi
+fi
+
+if [ "@IS_WIN@" = "1" ]; then
+  CONDA_PREFIX=$(echo "${CONDA_PREFIX:-}" | sed 's,\/,\\,g')
 fi

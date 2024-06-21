@@ -82,6 +82,10 @@ _tc_activation() {
   return 0
 }
 
+if [ "@IS_WIN@" = "1" ]; then
+  CONDA_PREFIX=$(echo "${CONDA_PREFIX:-}" | sed 's,\\,\/,g')
+fi
+
 if [ "${CONDA_BUILD:-0}" = "1" ]; then
   if [ -f /tmp/old-env-$$.txt ]; then
     rm -f /tmp/old-env-$$.txt || true
@@ -106,4 +110,8 @@ else
     diff -U 0 -rN /tmp/old-env-$$.txt /tmp/new-env-$$.txt | tail -n +4 | grep "^-.*\|^+.*" | grep -v "CONDA_BACKUP_" | sort
     rm -f /tmp/old-env-$$.txt /tmp/new-env-$$.txt || true
   fi
+fi
+
+if [ "@IS_WIN@" = "1" ]; then
+  CONDA_PREFIX=$(echo "${CONDA_PREFIX:-}" | sed 's,\/,\\,g')
 fi
