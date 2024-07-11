@@ -88,6 +88,7 @@ find . -name "*activate*.sh" -exec sed -i.bak "s|@TOOLS@|${TOOLS}|g"            
 find . -name "*activate*.sh" -exec sed -i.bak "s|@MACHINE@|${MACHINE}|g"                                                            "{}" \;
 find . -name "*activate*.sh" -exec sed -i.bak "s|@CMAKE_SYSTEM_NAME@|${CMAKE_SYSTEM_NAME}|g"                                        "{}" \;
 find . -name "*activate*.sh" -exec sed -i.bak "s|@MESON_FAMILY@|${MESON_FAMILY}|g"                                                  "{}" \;
+find . -name "*activate*.sh" -exec sed -i.bak "s|@MESON_RELEASE_FLAG@|${meson_release_flag}|g"                                      "{}" \;
 find . -name "*activate*.sh" -exec sed -i.bak "s|@CBUILD@|${CBUILD}|g"                                                              "{}" \;
 find . -name "*activate*.sh" -exec sed -i.bak "s|@CHOST@|${CHOST}|g"                                                                "{}" \;
 find . -name "*activate*.sh" -exec sed -i.bak "s|@CPPFLAGS@|${FINAL_CPPFLAGS}|g"                                                    "{}" \;
