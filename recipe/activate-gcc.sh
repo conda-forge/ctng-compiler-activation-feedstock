@@ -169,7 +169,7 @@ if [ "@CONDA_BUILD_CROSS_COMPILATION@" = "1" ]; then
   # which meson will not auto-discover (out of caution) if not told explicitly.
   echo "[binaries]" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
   echo "cmake = '${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/cmake'" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
-  echo "pkgconfig = '${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/pkg-config'" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
+  echo "pkg-config = '${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/pkg-config'" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
 fi
 
 _tc_activation \
