@@ -43,6 +43,8 @@ setup_conda_rc "${FEEDSTOCK_ROOT}" "${RECIPE_ROOT}" "${CONFIG_FILE}"
 
 source run_conda_forge_build_setup
 
+# ensure we have a conda-build that contains
+# https://github.com/conda/conda-build/pull/5350
 pip install git+https://github.com/conda/conda-build.git
 
 # make the build number clobber

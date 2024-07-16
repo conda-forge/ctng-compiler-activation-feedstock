@@ -1,4 +1,4 @@
-{% set build_num = 9 %}
+{% set build_num = 0 %}
 {% set gcc_major = 13 if gcc_version is undefined else gcc_version.split(".")[0] %}
 # generally, the runtime version of libstdcxx needs to be at least as high
 # as the compiler; however, wherever libstdcxx changes the default ABI version
@@ -33,6 +33,9 @@
 {% else %}
 {% set library_prefix = "" %}
 {% endif %}
+
+# pretend this variable is used, so that smithy populates the variant configs
+# [meson_release_flag]
 
 package:
   name: ctng-compiler-activation

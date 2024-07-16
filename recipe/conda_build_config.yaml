@@ -1,7 +1,8 @@
 # cos6-specific because of PYTHON_SYSCONFIGDATA_NAME below.  Would be nice to make that more generic if possible.
 gcc_version:
-  - 12.3.0
-  - 13.2.0
+  - 14.1.0
+  - 13.3.0
+  - 12.4.0
 libgfortran_soname:
   - 5
 binutils_version:
@@ -40,11 +41,19 @@ clang_version:
   - 17
   - 18
 
+# switch over release flag style cleanly across compiler versions, see #98
+meson_release_flag:
+  - "--buildtype release"
+  - "-Dbuildtype=release"
+  - "-Dbuildtype=release"
+
 zip_keys:
   - - cross_target_platform
     - triplet
     - cross_stdlib
     - cross_stdlib_version
+  - - gcc_version
+    - meson_release_flag
 
 FINAL_CPPFLAGS:
   - -DNDEBUG -D_FORTIFY_SOURCE=2 -O2

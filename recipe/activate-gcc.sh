@@ -146,7 +146,7 @@ _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_RANLIB=${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/@
 _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_LINKER=${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/@CHOST@-ld -DCMAKE_STRIP=${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/@CHOST@-strip"
 _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_BUILD_TYPE=Release"
 
-_MESON_ARGS="--buildtype release"
+_MESON_ARGS="@MESON_RELEASE_FLAG@"
 
 if [ "${CONDA_BUILD:-0}" = "1" ]; then
   _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_FIND_ROOT_PATH_MODE_PROGRAM=NEVER -DCMAKE_FIND_ROOT_PATH_MODE_LIBRARY=ONLY -DCMAKE_FIND_ROOT_PATH_MODE_INCLUDE=ONLY"
@@ -169,7 +169,7 @@ if [ "@CONDA_BUILD_CROSS_COMPILATION@" = "1" ]; then
   # which meson will not auto-discover (out of caution) if not told explicitly.
   echo "[binaries]" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
   echo "cmake = '${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/cmake'" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
-  echo "pkgconfig = '${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/pkg-config'" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
+  echo "pkg-config = '${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/pkg-config'" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
 fi
 
 _tc_activation \
