@@ -1,4 +1,3 @@
-{% set build_num = 0 %}
 {% set gcc_major = 13 if gcc_version is undefined else gcc_version.split(".")[0] %}
 # generally, the runtime version of libstdcxx needs to be at least as high
 # as the compiler; however, wherever libstdcxx changes the default ABI version
@@ -13,6 +12,9 @@
 # https://github.com/gcc-mirror/gcc/commit/9e18a25331fa25c3907249fede65a02c6817b06e
 {% set last_symbol_bump = 12 %}
 {% set min_runtime_version = gcc_major if gcc_major|int > last_symbol_bump else last_symbol_bump %}
+
+{% set build_num = 0 %}
+{% set binutils_build_num = 10 %}
 
 {% if cross_target_platform is not defined %}
 {% set cross_target_platform = "linux-64" %}
@@ -245,6 +247,8 @@ outputs:
 
   - name: binutils_{{ cross_target_platform }}
     version: "{{ binutils_version }}"
+    build:
+      string: h{{ PKG_HASH }}_{{ binutils_build_num }}
     script: install-binutils.sh
     requirements:
       run:

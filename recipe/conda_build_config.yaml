@@ -6,6 +6,7 @@ gcc_version:
 libgfortran_soname:
   - 5
 binutils_version:
+  # reset binutils_build_number if bumping this
   - 2.40
 cross_target_platform:
   - linux-64
