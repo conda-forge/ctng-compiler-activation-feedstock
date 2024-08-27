@@ -1,4 +1,4 @@
-{% set build_num = 0 %}
+{% set build_num = 1 %}
 {% set gcc_major = 13 if gcc_version is undefined else gcc_version.split(".")[0] %}
 # generally, the runtime version of libstdcxx needs to be at least as high
 # as the compiler; however, wherever libstdcxx changes the default ABI version
@@ -16,12 +16,6 @@
 
 {% if cross_target_platform is not defined %}
 {% set cross_target_platform = "linux-64" %}
-{% endif %}
-
-{% if cross_target_platform.startswith("win-") %}
-{% set runtime_suffix = "" %}
-{% else %}
-{% set runtime_suffix = "-ng" %}
 {% endif %}
 
 {% if target_platform is not defined %}
@@ -60,7 +54,7 @@ outputs:
       skip: true  # [not (linux or win)]
       run_exports:
         strong:
-          - libgcc{{ runtime_suffix }} >={{ min_runtime_version }}
+          - libgcc >={{ min_runtime_version }}
           # Need ucrt for windows<10
           - ucrt >=10.0.20348.0  # [cross_target_platform == "win-64"]
     script: install-gcc.sh
@@ -98,7 +92,7 @@ outputs:
       skip: true  # [win or s390x or cross_target_platform in ("linux-s390x", "win-64")]
       run_exports:
         strong:
-          - libgcc{{ runtime_suffix }} >={{ min_runtime_version }}
+          - libgcc >={{ min_runtime_version }}
     requirements:
       run:
         - libgcc-devel_{{ cross_target_platform }} {{ gcc_version }}.*
@@ -133,9 +127,9 @@ outputs:
       run_exports:
         strong:
           # This should be a transitive dependency, but conda-build doesn't support those
-          - libstdcxx{{ runtime_suffix }} >={{ min_runtime_version }}
+          - libstdcxx >={{ min_runtime_version }}
           # Because transitive run_exports do not work:
-          - libgcc{{ runtime_suffix }} >={{ min_runtime_version }}
+          - libgcc >={{ min_runtime_version }}
           # Need ucrt for windows<10
           - ucrt >=10.0.20348.0  # [cross_target_platform == "win-64"]
     requirements:
@@ -172,9 +166,9 @@ outputs:
       run_exports:
         strong:
           # This should be a transitive dependency, but conda-build doesn't support those
-          - libstdcxx{{ runtime_suffix }} >={{ min_runtime_version }}
+          - libstdcxx >={{ min_runtime_version }}
           # Because transitive run_exports do not work:
-          - libgcc{{ runtime_suffix }} >={{ min_runtime_version }}
+          - libgcc >={{ min_runtime_version }}
     requirements:
       run:
         - libgcc-devel_{{ cross_target_platform }} {{ gcc_version }}.*
@@ -212,9 +206,9 @@ outputs:
       run_exports:
         strong:
           - libgfortran{{ libgfortran_soname }} >={{ gcc_version }}
-          - libgfortran{{ runtime_suffix }}
+          - libgfortran
           # Because transitive run_exports do not work:
-          - libgcc{{ runtime_suffix }} >={{ min_runtime_version }}
+          - libgcc >={{ min_runtime_version }}
           # Need ucrt for windows<10
           - ucrt >=10.0.20348.0  # [cross_target_platform == "win-64"]
     requirements:
