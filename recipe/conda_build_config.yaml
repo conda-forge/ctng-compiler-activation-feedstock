@@ -37,9 +37,9 @@ cross_stdlib_version:
   - 12
 
 clang_version:
-  - 19
-  - 18
-  - 17
+  - 19.1
+  - 18.1
+  - 17.0
 
 # switch over release flag style cleanly across compiler versions, see #98
 meson_release_flag:
