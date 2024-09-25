@@ -76,89 +76,26 @@ Package license: BSD-3-Clause
 
 Summary: GNU C++ Compiler (activation scripts)
 
-About binutils_linux-64
------------------------
-
-Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-
-Package license: BSD-3-Clause
-
-Summary: The GNU Binutils are a collection of binary tools (activation scripts)
-
-About gcc_bootstrap_linux-64
-----------------------------
-
-Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-
-Package license: GPL
-
-Summary: GCC bootstrap compilers for building deps
-
-About clang_linux-64
---------------------
-
-Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-
-Package license: BSD-3-Clause
-
-Summary: Clang Compiler (activation scripts)
-
-About gcc_linux-64
-------------------
-
-Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-
-Package license: BSD-3-Clause
-
-Summary: GNU C Compiler (activation scripts)
-
-About clangxx_linux-64
-----------------------
-
-Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-
-Package license: BSD-3-Clause
-
-Summary: Clang C++ Compiler (activation scripts)
-
-About gfortran_linux-64
------------------------
-
-Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-
-Package license: BSD-3-Clause
-
-Summary: GNU Fortran Compiler (activation scripts)
-
-About gxx_linux-64
-------------------
-
-Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-
-Package license: BSD-3-Clause
-
-Summary: GNU C++ Compiler (activation scripts)
-
-About binutils_win-64
----------------------
-
-Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-
-Package license: BSD-3-Clause
-
-Summary: The GNU Binutils are a collection of binary tools (activation scripts)
-
-About gcc_bootstrap_win-64
+About binutils_linux-s390x
 --------------------------
 
 Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
 
+Package license: BSD-3-Clause
+
+Summary: The GNU Binutils are a collection of binary tools (activation scripts)
+
+About gcc_bootstrap_linux-s390x
+-------------------------------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
 Package license: GPL
 
 Summary: GCC bootstrap compilers for building deps
 
-About gcc_win-64
-----------------
+About gcc_linux-s390x
+---------------------
 
 Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
 
@@ -166,8 +103,8 @@ Package license: BSD-3-Clause
 
 Summary: GNU C Compiler (activation scripts)
 
-About gfortran_win-64
----------------------
+About gfortran_linux-s390x
+--------------------------
 
 Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
 
@@ -175,8 +112,8 @@ Package license: BSD-3-Clause
 
 Summary: GNU Fortran Compiler (activation scripts)
 
-About gxx_win-64
-----------------
+About gxx_linux-s390x
+---------------------
 
 Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
 
@@ -247,8 +184,8 @@ Package license: BSD-3-Clause
 
 Summary: GNU C++ Compiler (activation scripts)
 
-About binutils_linux-s390x
---------------------------
+About binutils_win-64
+---------------------
 
 Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
 
@@ -256,8 +193,8 @@ Package license: BSD-3-Clause
 
 Summary: The GNU Binutils are a collection of binary tools (activation scripts)
 
-About gcc_bootstrap_linux-s390x
--------------------------------
+About gcc_bootstrap_win-64
+--------------------------
 
 Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
 
@@ -265,8 +202,8 @@ Package license: GPL
 
 Summary: GCC bootstrap compilers for building deps
 
-About gcc_linux-s390x
----------------------
+About gcc_win-64
+----------------
 
 Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
 
@@ -274,8 +211,8 @@ Package license: BSD-3-Clause
 
 Summary: GNU C Compiler (activation scripts)
 
-About gfortran_linux-s390x
---------------------------
+About gfortran_win-64
+---------------------
 
 Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
 
@@ -283,8 +220,71 @@ Package license: BSD-3-Clause
 
 Summary: GNU Fortran Compiler (activation scripts)
 
-About gxx_linux-s390x
----------------------
+About gxx_win-64
+----------------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+Package license: BSD-3-Clause
+
+Summary: GNU C++ Compiler (activation scripts)
+
+About binutils_linux-64
+-----------------------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+Package license: BSD-3-Clause
+
+Summary: The GNU Binutils are a collection of binary tools (activation scripts)
+
+About gcc_bootstrap_linux-64
+----------------------------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+Package license: GPL
+
+Summary: GCC bootstrap compilers for building deps
+
+About clang_linux-64
+--------------------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+Package license: BSD-3-Clause
+
+Summary: Clang Compiler (activation scripts)
+
+About gcc_linux-64
+------------------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+Package license: BSD-3-Clause
+
+Summary: GNU C Compiler (activation scripts)
+
+About clangxx_linux-64
+----------------------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+Package license: BSD-3-Clause
+
+Summary: Clang C++ Compiler (activation scripts)
+
+About gfortran_linux-64
+-----------------------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+Package license: BSD-3-Clause
+
+Summary: GNU Fortran Compiler (activation scripts)
+
+About gxx_linux-64
+------------------
 
 Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
 
