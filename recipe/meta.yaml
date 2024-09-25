@@ -1,4 +1,4 @@
-{% set build_num = 3 %}
+{% set build_num = 4 %}
 
 {% set gcc_major = 13 if gcc_version is undefined else gcc_version.split(".")[0] %}
 # generally, the runtime version of libstdcxx needs to be at least as high
@@ -64,7 +64,7 @@ outputs:
         - gcc_impl_{{ target_platform }} {{ gcc_version }}.*
         - gcc_impl_{{ cross_target_platform }} {{ gcc_version }}.*
         # for activation of binutils env vars
-        - {{ pin_subpackage("binutils_" ~ cross_target_platform, exact=True) }}
+        - binutils_{{ cross_target_platform }}
         - {{ c_stdlib }}_{{ target_platform }}   # [linux]
         - {{ cross_stdlib }}_{{ cross_target_platform }}
         - gendef   # [cross_target_platform == "win-64"]
@@ -98,7 +98,7 @@ outputs:
       run:
         - libgcc-devel_{{ cross_target_platform }} {{ gcc_version }}.*
         # for activation of binutils env vars
-        - {{ pin_subpackage("binutils_" ~ cross_target_platform, exact=True) }}
+        - binutils_{{ cross_target_platform }}
         - {{ cross_stdlib }}_{{ cross_target_platform }}
         - compiler-rt_{{ cross_target_platform }}
         - compiler-rt =={{ clang_version }}.*
@@ -140,7 +140,7 @@ outputs:
         # for activation of gcc env vars
         - {{ pin_subpackage("gcc_" ~ cross_target_platform, exact=True) }}
         # for activation of binutils env vars
-        - {{ pin_subpackage("binutils_" ~ cross_target_platform, exact=True) }}
+        - binutils_{{ cross_target_platform }}
         - {{ cross_stdlib }}_{{ cross_target_platform }}
     test:
       requires:
@@ -178,7 +178,7 @@ outputs:
         # for activation of gcc env vars
         - {{ pin_subpackage("clang_" ~ cross_target_platform, exact=True) }}
         # for activation of binutils env vars
-        - {{ pin_subpackage("binutils_" ~ cross_target_platform, exact=True) }}
+        - binutils_{{ cross_target_platform }}
         - {{ cross_stdlib }}_{{ cross_target_platform }}
         - compiler-rt_{{ cross_target_platform }}
         - compiler-rt =={{ clang_version }}.*
@@ -219,7 +219,7 @@ outputs:
         # for activation of gcc env vars:
         - {{ pin_subpackage("gcc_" ~ cross_target_platform, exact=True) }}
         # for activation of binutils env vars:
-        - {{ pin_subpackage("binutils_" ~ cross_target_platform, exact=True) }}
+        - binutils_{{ cross_target_platform }}
         - {{ cross_stdlib }}_{{ cross_target_platform }}
     test:
       requires:
@@ -234,25 +234,6 @@ outputs:
         - tests/fortomp/*
     about:
       summary: GNU Fortran Compiler (activation scripts)
-      home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-      license: BSD-3-Clause
-      license_file: LICENSE
-
-  - name: binutils_{{ cross_target_platform }}
-    version: "{{ binutils_version }}"
-    script: install-binutils.sh
-    requirements:
-      run:
-        - binutils_impl_{{ cross_target_platform }} {{ binutils_version }}.*
-        - {{ c_stdlib }}_{{ target_platform }}       # [linux]
-        - {{ cross_stdlib }}_{{ cross_target_platform }}
-    test:
-      requires:
-        - {{ cross_stdlib }}_{{ cross_target_platform }} {{ cross_stdlib_version }}
-      commands:
-        - test -f $LD
-    about:
-      summary: The GNU Binutils are a collection of binary tools (activation scripts)
       home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
       license: BSD-3-Clause
       license_file: LICENSE
@@ -296,7 +277,7 @@ outputs:
       license_file: GPL_LICENSE
 
 about:
-  summary: Activation scripts for gcc, g++, gfortran and binutils
+  summary: Activation scripts for gcc, g++, gfortran and clang
   home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
   license: BSD-3-Clause
   license_file: LICENSE
