@@ -13,7 +13,6 @@ FINAL_DEBUG_CXXFLAGS=FINAL_DEBUG_CXXFLAGS_${cross_target_platform_u}
 FINAL_FFLAGS=FINAL_FFLAGS_${cross_target_platform_u}
 FINAL_DEBUG_FFLAGS=FINAL_DEBUG_FFLAGS_${cross_target_platform_u}
 FINAL_LDFLAGS=FINAL_LDFLAGS_${cross_target_platform_u}
-FINAL_CONDA_PYTHON_SYSCONFIGDATA_NAME=FINAL_CONDA_PYTHON_SYSCONFIGDATA_NAME_${cross_target_platform_u}
 
 FINAL_CFLAGS="${!FINAL_CFLAGS}"
 FINAL_CXXFLAGS="${!FINAL_CXXFLAGS}"
@@ -22,7 +21,6 @@ FINAL_DEBUG_CFLAGS="${!FINAL_DEBUG_CFLAGS}"
 FINAL_DEBUG_CXXFLAGS="${!FINAL_DEBUG_CXXFLAGS}"
 FINAL_DEBUG_FFLAGS="${!FINAL_DEBUG_FFLAGS}"
 FINAL_LDFLAGS="${!FINAL_LDFLAGS}"
-FINAL_CONDA_PYTHON_SYSCONFIGDATA_NAME="${!FINAL_CONDA_PYTHON_SYSCONFIGDATA_NAME}"
 
 MAJOR_VERSION="${PKG_VERSION%%.*}"
 
@@ -100,9 +98,6 @@ find . -name "*activate*.*" -exec sed -i.bak "s|@FFLAGS@|${FINAL_FFLAGS}|g"     
 find . -name "*activate*.*" -exec sed -i.bak "s|@DEBUG_FFLAGS@|${FINAL_DEBUG_FFLAGS}|g"                                           "{}" \;
 find . -name "*activate*.*" -exec sed -i.bak "s|@LDFLAGS@|${FINAL_LDFLAGS}|g"                                                     "{}" \;
 find . -name "*activate*.*" -exec sed -i.bak "s|@LIBRARY_PREFIX@|${LIBRARY_PREFIX}|g"                                             "{}" \;
-if [[ ! -z "${FINAL_CONDA_PYTHON_SYSCONFIGDATA_NAME}" ]]; then
-  find . -name "*activate*.*" -exec sed -i.bak "s|@_CONDA_PYTHON_SYSCONFIGDATA_NAME@|${FINAL_CONDA_PYTHON_SYSCONFIGDATA_NAME}|g"    "{}" \;
-fi
 find . -name "*activate*.*" -exec sed -i.bak "s|@CONDA_BUILD_CROSS_COMPILATION@|${CONDA_BUILD_CROSS_COMPILATION}|g"                "{}" \;
 
 cp activate-gcc.sh activate-clang.sh

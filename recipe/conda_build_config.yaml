@@ -128,12 +128,3 @@ FINAL_DEBUG_FFLAGS_linux_s390x:
   - -fopenmp -ftree-vectorize -fPIC -fstack-protector-strong -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fvar-tracking-assignments -pipe
 FINAL_DEBUG_FFLAGS_win_64:
   - -fopenmp -ftree-vectorize -fPIC -fstack-protector-strong -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fvar-tracking-assignments -pipe
-
-FINAL_CONDA_PYTHON_SYSCONFIGDATA_NAME_linux_64:
-  - _sysconfigdata_x86_64_conda_linux_gnu
-FINAL_CONDA_PYTHON_SYSCONFIGDATA_NAME_linux_ppc64le:
-  - _sysconfigdata_powerpc64le_conda_linux_gnu
-FINAL_CONDA_PYTHON_SYSCONFIGDATA_NAME_linux_aarch64:
-  - _sysconfigdata_aarch64_conda_linux_gnu
-FINAL_CONDA_PYTHON_SYSCONFIGDATA_NAME_linux_s390x:
-  - _sysconfigdata_s390x_conda_linux_gnu
