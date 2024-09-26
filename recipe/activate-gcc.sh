@@ -110,37 +110,6 @@ if [ "${CONDA_BUILD:-0}" = "1" ]; then
   env > /tmp/old-env-$$.txt
 fi
 
-_CONDA_PYTHON_SYSCONFIGDATA_NAME_USED=${_CONDA_PYTHON_SYSCONFIGDATA_NAME:-@_CONDA_PYTHON_SYSCONFIGDATA_NAME@}
-if [ -n "${_CONDA_PYTHON_SYSCONFIGDATA_NAME_USED}" ] && [ -n "${SYS_SYSROOT}" ]; then
-  if find "$(dirname "$(dirname "${SYS_PYTHON}")")/lib/"python* -type f -name "${_CONDA_PYTHON_SYSCONFIGDATA_NAME_USED}.py" -exec false {} +; then
-    echo ""
-    echo "WARNING: The Python interpreter at the following prefix:"
-    echo "         $(dirname "$(dirname "${SYS_PYTHON}")")"
-    echo "         .. is not able to handle sysconfigdata-based compilation for the host:"
-    echo "         $( printf %s "${_CONDA_PYTHON_SYSCONFIGDATA_NAME_USED}" | sed s/_sysconfigdata_//g )"
-    echo ""
-    echo "         We are not preventing things from continuing here, but *this* Python will not"
-    echo "         be able to compile software for this host, and, depending on whether it has"
-    echo "         been patched to ignore missing _CONDA_PYTHON_SYSCONFIGDATA_NAME or not, may cause"
-    echo "         an exception."
-    echo ""
-    echo "         This can happen for one of three reasons:"
-    echo ""
-    echo "         1. It is out of date: Please run 'conda update python' in that environment"
-    echo ""
-    echo "         2. You are bootstrapping a sysconfigdata-based cross-capable Python and can ignore this"
-    echo "            (but please remember to copy the generated sysconfigdata back to the Python recipe's"
-    echo "             sysconfigdate folder and then rebuild it for all the systems you want to be able"
-    echo "             to use as a build machine for this host)."
-    echo ""
-    echo "         3. You are attempting your own bespoke cross-compilation host that is not supported. Have"
-    echo "            you provided your own value in the _CONDA_PYTHON_SYSCONFIGDATA_NAME environment variable but"
-    echo "            misspelt it and/or failed to add the neccessary ${_CONDA_PYTHON_SYSCONFIGDATA_NAME_USED}.py"
-    echo "            file to the Python interpreter's standard library?"
-    echo ""
-  fi
-fi
-
 _CMAKE_ARGS="-DCMAKE_AR=${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/@CHOST@-ar -DCMAKE_CXX_COMPILER_AR=${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/@CHOST@-gcc-ar -DCMAKE_C_COMPILER_AR=${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/@CHOST@-gcc-ar"
 _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_RANLIB=${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/@CHOST@-ranlib -DCMAKE_CXX_COMPILER_RANLIB=${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/@CHOST@-gcc-ranlib -DCMAKE_C_COMPILER_RANLIB=${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/@CHOST@-gcc-ranlib"
 _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_LINKER=${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/@CHOST@-ld -DCMAKE_STRIP=${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/@CHOST@-strip"
@@ -183,7 +152,6 @@ _tc_activation \
   "DEBUG_CPPFLAGS,${DEBUG_CPPFLAGS_USED}${DEBUG_CPPFLAGS:+ }${DEBUG_CPPFLAGS:-}" \
   "DEBUG_CFLAGS,${DEBUG_CFLAGS_USED}${DEBUG_CFLAGS:+ }${DEBUG_CFLAGS:-}" \
   "CMAKE_PREFIX_PATH,${CMAKE_PREFIX_PATH_USED}" \
-  "_CONDA_PYTHON_SYSCONFIGDATA_NAME,${_CONDA_PYTHON_SYSCONFIGDATA_NAME_USED}" \
   "CONDA_BUILD_SYSROOT,${CONDA_PREFIX}@LIBRARY_PREFIX@/@CHOST@/sysroot" \
   "CONDA_BUILD_CROSS_COMPILATION,@CONDA_BUILD_CROSS_COMPILATION@" \
   "CC_FOR_BUILD,${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/@CC_FOR_BUILD@" \
