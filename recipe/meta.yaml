@@ -122,7 +122,7 @@ outputs:
       license_file: LICENSE
 
   - name: gxx_{{ cross_target_platform }}
-    script: install-g++.sh
+    script: install-gxx.sh
     build:
       skip: true  # [not (linux or win)]
       run_exports:
@@ -161,7 +161,7 @@ outputs:
 
   - name: clangxx_{{ cross_target_platform }}
     version: {{ clang_version }}
-    script: install-clang++.sh
+    script: install-clangxx.sh
     build:
       skip: true  # [win or s390x or cross_target_platform in ("linux-s390x", "win-64")]
       run_exports:
