@@ -125,7 +125,7 @@ outputs:
         - {{ cross_stdlib }}_{{ cross_target_platform }}
         - compiler-rt_{{ cross_target_platform }}
         - compiler-rt =={{ clang_version }}.*
-        - clang_impl_{{ target_platform }} =={{ clang_version }}.*
+        - clang_impl_{{ cross_target_platform }} =={{ clang_version }}.*
     test:
       requires:
         - {{ cross_stdlib }}_{{ cross_target_platform }} {{ cross_stdlib_version }}
@@ -225,7 +225,7 @@ outputs:
         - {{ cross_stdlib }}_{{ cross_target_platform }}
         - compiler-rt_{{ cross_target_platform }}
         - compiler-rt =={{ clang_version }}.*
-        - clangxx_impl_{{ target_platform }} =={{ clang_version }}.*
+        - clangxx_impl_{{ cross_target_platform }} =={{ clang_version }}.*
     test:
       requires:
         - {{ cross_stdlib }}_{{ cross_target_platform }} {{ cross_stdlib_version }}
