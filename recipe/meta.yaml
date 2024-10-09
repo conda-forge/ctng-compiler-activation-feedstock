@@ -86,6 +86,29 @@ outputs:
       license: BSD-3-Clause
       license_file: LICENSE
 
+  - name: clang_impl_{{ cross_target_platform }}
+    version: {{ clang_version }}
+    script: install-clang_impl.sh
+    build:
+      # only for linux; osx builds are done on clang-compiler-activation-feedstock
+      skip: true  # [win or s390x or cross_target_platform not in ("linux-64", "linux-aarch64", "linux-ppc64le")]
+    requirements:
+      run:
+        - clang =={{ clang_version }}
+    test:
+      commands:
+        - x86_64-conda-linux-gnu-clang --version            # [linux64]
+        - x86_64-conda-linux-gnu-clang-cpp --version        # [linux64]
+        - aarch64-conda-linux-gnu-clang --version           # [aarch64]
+        - aarch64-conda-linux-gnu-clang-cpp --version       # [aarch64]
+        - powerpc64le-conda-linux-gnu-clang --version       # [ppc64le]
+        - powerpc64le-conda-linux-gnu-clang-cpp --version   # [ppc64le]
+    about:
+      summary: Clang Compiler (activation scripts)
+      home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+      license: BSD-3-Clause
+      license_file: LICENSE
+
   - name: clang_{{ cross_target_platform }}
     version: {{ clang_version }}
     script: install-clang.sh
@@ -155,6 +178,26 @@ outputs:
         - test -d ${CONDA_BUILD_SYSROOT} || exit 1
     about:
       summary: GNU C++ Compiler (activation scripts)
+      home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+      license: BSD-3-Clause
+      license_file: LICENSE
+
+  - name: clangxx_impl_{{ cross_target_platform }}
+    version: {{ clang_version }}
+    script: install-clangxx_impl.sh
+    build:
+      # only for linux; osx builds are done on clang-compiler-activation-feedstock
+      skip: true  # [win or s390x or cross_target_platform not in ("linux-64", "linux-aarch64", "linux-ppc64le")]
+    requirements:
+      run:
+        - clangxx =={{ clang_version }}
+    test:
+      commands:
+        - x86_64-conda-linux-gnu-clang++ --version          # [linux64]
+        - aarch64-conda-linux-gnu-clang++ --version         # [aarch64]
+        - powerpc64le-conda-linux-gnu-clang++ --version     # [ppc64le]
+    about:
+      summary: Clang C++ Compiler (activation scripts)
       home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
       license: BSD-3-Clause
       license_file: LICENSE
