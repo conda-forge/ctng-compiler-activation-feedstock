@@ -13,150 +13,6 @@ Package license: BSD-3-Clause
 
 Summary: Activation scripts for gcc, g++, gfortran and clang
 
-About clang_linux-aarch64
--------------------------
-
-Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-
-Package license: BSD-3-Clause
-
-Summary: Clang Compiler (activation scripts)
-
-About gcc_bootstrap_linux-aarch64
----------------------------------
-
-Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-
-Package license: GPL
-
-Summary: GCC bootstrap compilers for building deps
-
-About gcc_linux-aarch64
------------------------
-
-Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-
-Package license: BSD-3-Clause
-
-Summary: GNU C Compiler (activation scripts)
-
-About clangxx_linux-aarch64
----------------------------
-
-Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-
-Package license: BSD-3-Clause
-
-Summary: Clang C++ Compiler (activation scripts)
-
-About gfortran_linux-aarch64
-----------------------------
-
-Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-
-Package license: BSD-3-Clause
-
-Summary: GNU Fortran Compiler (activation scripts)
-
-About gxx_linux-aarch64
------------------------
-
-Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-
-Package license: BSD-3-Clause
-
-Summary: GNU C++ Compiler (activation scripts)
-
-About gcc_bootstrap_linux-s390x
--------------------------------
-
-Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-
-Package license: GPL
-
-Summary: GCC bootstrap compilers for building deps
-
-About gcc_linux-s390x
----------------------
-
-Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-
-Package license: BSD-3-Clause
-
-Summary: GNU C Compiler (activation scripts)
-
-About gfortran_linux-s390x
---------------------------
-
-Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-
-Package license: BSD-3-Clause
-
-Summary: GNU Fortran Compiler (activation scripts)
-
-About gxx_linux-s390x
----------------------
-
-Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-
-Package license: BSD-3-Clause
-
-Summary: GNU C++ Compiler (activation scripts)
-
-About clang_linux-ppc64le
--------------------------
-
-Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-
-Package license: BSD-3-Clause
-
-Summary: Clang Compiler (activation scripts)
-
-About gcc_bootstrap_linux-ppc64le
----------------------------------
-
-Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-
-Package license: GPL
-
-Summary: GCC bootstrap compilers for building deps
-
-About gcc_linux-ppc64le
------------------------
-
-Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-
-Package license: BSD-3-Clause
-
-Summary: GNU C Compiler (activation scripts)
-
-About clangxx_linux-ppc64le
----------------------------
-
-Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-
-Package license: BSD-3-Clause
-
-Summary: Clang C++ Compiler (activation scripts)
-
-About gfortran_linux-ppc64le
-----------------------------
-
-Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-
-Package license: BSD-3-Clause
-
-Summary: GNU Fortran Compiler (activation scripts)
-
-About gxx_linux-ppc64le
------------------------
-
-Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-
-Package license: BSD-3-Clause
-
-Summary: GNU C++ Compiler (activation scripts)
-
 About clang_linux-64
 --------------------
 
@@ -240,6 +96,150 @@ Summary: GNU Fortran Compiler (activation scripts)
 
 About gxx_win-64
 ----------------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+Package license: BSD-3-Clause
+
+Summary: GNU C++ Compiler (activation scripts)
+
+About clang_linux-ppc64le
+-------------------------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+Package license: BSD-3-Clause
+
+Summary: Clang Compiler (activation scripts)
+
+About gcc_bootstrap_linux-ppc64le
+---------------------------------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+Package license: GPL
+
+Summary: GCC bootstrap compilers for building deps
+
+About gcc_linux-ppc64le
+-----------------------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+Package license: BSD-3-Clause
+
+Summary: GNU C Compiler (activation scripts)
+
+About clangxx_linux-ppc64le
+---------------------------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+Package license: BSD-3-Clause
+
+Summary: Clang C++ Compiler (activation scripts)
+
+About gfortran_linux-ppc64le
+----------------------------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+Package license: BSD-3-Clause
+
+Summary: GNU Fortran Compiler (activation scripts)
+
+About gxx_linux-ppc64le
+-----------------------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+Package license: BSD-3-Clause
+
+Summary: GNU C++ Compiler (activation scripts)
+
+About clang_linux-aarch64
+-------------------------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+Package license: BSD-3-Clause
+
+Summary: Clang Compiler (activation scripts)
+
+About gcc_bootstrap_linux-aarch64
+---------------------------------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+Package license: GPL
+
+Summary: GCC bootstrap compilers for building deps
+
+About gcc_linux-aarch64
+-----------------------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+Package license: BSD-3-Clause
+
+Summary: GNU C Compiler (activation scripts)
+
+About clangxx_linux-aarch64
+---------------------------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+Package license: BSD-3-Clause
+
+Summary: Clang C++ Compiler (activation scripts)
+
+About gfortran_linux-aarch64
+----------------------------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+Package license: BSD-3-Clause
+
+Summary: GNU Fortran Compiler (activation scripts)
+
+About gxx_linux-aarch64
+-----------------------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+Package license: BSD-3-Clause
+
+Summary: GNU C++ Compiler (activation scripts)
+
+About gcc_bootstrap_linux-s390x
+-------------------------------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+Package license: GPL
+
+Summary: GCC bootstrap compilers for building deps
+
+About gcc_linux-s390x
+---------------------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+Package license: BSD-3-Clause
+
+Summary: GNU C Compiler (activation scripts)
+
+About gfortran_linux-s390x
+--------------------------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+Package license: BSD-3-Clause
+
+Summary: GNU Fortran Compiler (activation scripts)
+
+About gxx_linux-s390x
+---------------------
 
 Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
 
