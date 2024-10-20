@@ -13,50 +13,23 @@ Package license: BSD-3-Clause
 
 Summary: Activation scripts for gcc, g++, gfortran and clang
 
-About gcc_bootstrap_linux-s390x
--------------------------------
-
-Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-
-Package license: GPL
-
-Summary: GCC bootstrap compilers for building deps
-
-About gcc_linux-s390x
----------------------
-
-Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-
-Package license: BSD-3-Clause
-
-Summary: GNU C Compiler (activation scripts)
-
-About gfortran_linux-s390x
---------------------------
-
-Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-
-Package license: BSD-3-Clause
-
-Summary: GNU Fortran Compiler (activation scripts)
-
-About gxx_linux-s390x
----------------------
-
-Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-
-Package license: BSD-3-Clause
-
-Summary: GNU C++ Compiler (activation scripts)
-
-About clang_linux-aarch64
--------------------------
+About clang_impl_linux-aarch64
+------------------------------
 
 Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
 
 Package license: BSD-3-Clause
 
 Summary: Clang Compiler (activation scripts)
+
+About clangxx_impl_linux-aarch64
+--------------------------------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+Package license: BSD-3-Clause
+
+Summary: Clang C++ Compiler (activation scripts)
 
 About gcc_bootstrap_linux-aarch64
 ---------------------------------
@@ -76,14 +49,14 @@ Package license: BSD-3-Clause
 
 Summary: GNU C Compiler (activation scripts)
 
-About clangxx_linux-aarch64
----------------------------
+About clang_linux-aarch64
+-------------------------
 
 Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
 
 Package license: BSD-3-Clause
 
-Summary: Clang C++ Compiler (activation scripts)
+Summary: Clang Compiler (activation scripts)
 
 About gfortran_linux-aarch64
 ----------------------------
@@ -103,34 +76,7 @@ Package license: BSD-3-Clause
 
 Summary: GNU C++ Compiler (activation scripts)
 
-About clang_linux-ppc64le
--------------------------
-
-Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-
-Package license: BSD-3-Clause
-
-Summary: Clang Compiler (activation scripts)
-
-About gcc_bootstrap_linux-ppc64le
----------------------------------
-
-Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-
-Package license: GPL
-
-Summary: GCC bootstrap compilers for building deps
-
-About gcc_linux-ppc64le
------------------------
-
-Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-
-Package license: BSD-3-Clause
-
-Summary: GNU C Compiler (activation scripts)
-
-About clangxx_linux-ppc64le
+About clangxx_linux-aarch64
 ---------------------------
 
 Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
@@ -139,32 +85,23 @@ Package license: BSD-3-Clause
 
 Summary: Clang C++ Compiler (activation scripts)
 
-About gfortran_linux-ppc64le
-----------------------------
-
-Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-
-Package license: BSD-3-Clause
-
-Summary: GNU Fortran Compiler (activation scripts)
-
-About gxx_linux-ppc64le
------------------------
-
-Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-
-Package license: BSD-3-Clause
-
-Summary: GNU C++ Compiler (activation scripts)
-
-About clang_linux-64
---------------------
+About clang_impl_linux-64
+-------------------------
 
 Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
 
 Package license: BSD-3-Clause
 
 Summary: Clang Compiler (activation scripts)
+
+About clangxx_impl_linux-64
+---------------------------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+Package license: BSD-3-Clause
+
+Summary: Clang C++ Compiler (activation scripts)
 
 About gcc_bootstrap_linux-64
 ----------------------------
@@ -184,14 +121,14 @@ Package license: BSD-3-Clause
 
 Summary: GNU C Compiler (activation scripts)
 
-About clangxx_linux-64
-----------------------
+About clang_linux-64
+--------------------
 
 Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
 
 Package license: BSD-3-Clause
 
-Summary: Clang C++ Compiler (activation scripts)
+Summary: Clang Compiler (activation scripts)
 
 About gfortran_linux-64
 -----------------------
@@ -210,6 +147,15 @@ Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
 Package license: BSD-3-Clause
 
 Summary: GNU C++ Compiler (activation scripts)
+
+About clangxx_linux-64
+----------------------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+Package license: BSD-3-Clause
+
+Summary: Clang C++ Compiler (activation scripts)
 
 About gcc_bootstrap_win-64
 --------------------------
@@ -247,6 +193,114 @@ Package license: BSD-3-Clause
 
 Summary: GNU C++ Compiler (activation scripts)
 
+About clang_impl_linux-ppc64le
+------------------------------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+Package license: BSD-3-Clause
+
+Summary: Clang Compiler (activation scripts)
+
+About clangxx_impl_linux-ppc64le
+--------------------------------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+Package license: BSD-3-Clause
+
+Summary: Clang C++ Compiler (activation scripts)
+
+About gcc_bootstrap_linux-ppc64le
+---------------------------------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+Package license: GPL
+
+Summary: GCC bootstrap compilers for building deps
+
+About gcc_linux-ppc64le
+-----------------------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+Package license: BSD-3-Clause
+
+Summary: GNU C Compiler (activation scripts)
+
+About clang_linux-ppc64le
+-------------------------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+Package license: BSD-3-Clause
+
+Summary: Clang Compiler (activation scripts)
+
+About gfortran_linux-ppc64le
+----------------------------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+Package license: BSD-3-Clause
+
+Summary: GNU Fortran Compiler (activation scripts)
+
+About gxx_linux-ppc64le
+-----------------------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+Package license: BSD-3-Clause
+
+Summary: GNU C++ Compiler (activation scripts)
+
+About clangxx_linux-ppc64le
+---------------------------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+Package license: BSD-3-Clause
+
+Summary: Clang C++ Compiler (activation scripts)
+
+About gcc_bootstrap_linux-s390x
+-------------------------------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+Package license: GPL
+
+Summary: GCC bootstrap compilers for building deps
+
+About gcc_linux-s390x
+---------------------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+Package license: BSD-3-Clause
+
+Summary: GNU C Compiler (activation scripts)
+
+About gfortran_linux-s390x
+--------------------------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+Package license: BSD-3-Clause
+
+Summary: GNU Fortran Compiler (activation scripts)
+
+About gxx_linux-s390x
+---------------------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+Package license: BSD-3-Clause
+
+Summary: GNU C++ Compiler (activation scripts)
+
 Current build status
 ====================
 
@@ -265,612 +319,1452 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletx86_64-conda-linux-gnu</td>
+              <td>linux_64_clang_version17.0cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletx86_64-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version17.0cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletx86_64-conda-linux-gnu</td>
+              <td>linux_64_clang_version17.0cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletx86_64-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version17.0cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_releasetripletx86_64-conda-linux-gnu</td>
+              <td>linux_64_clang_version17.0cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_releasetripletx86_64-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version17.0cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletaarch64-conda-linux-gnu</td>
+              <td>linux_64_clang_version17.0cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletaarch64-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version17.0cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletaarch64-conda-linux-gnu</td>
+              <td>linux_64_clang_version17.0cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletaarch64-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version17.0cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_releasetripletaarch64-conda-linux-gnu</td>
+              <td>linux_64_clang_version17.0cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_releasetripletaarch64-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version17.0cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletpowerpc64le-conda-linux-gnu</td>
+              <td>linux_64_clang_version17.0cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletpowerpc64le-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version17.0cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletpowerpc64le-conda-linux-gnu</td>
+              <td>linux_64_clang_version17.0cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletpowerpc64le-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version17.0cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_releasetripletpowerpc64le-conda-linux-gnu</td>
+              <td>linux_64_clang_version17.0cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_releasetripletpowerpc64le-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version17.0cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cross_target_platformlinux-s390xgcc_version12.4.0meson_release_flag-Dbuildtype=releasetriplets390x-conda-linux-gnu</td>
+              <td>linux_64_clang_version17.0cross_target_platformlinux-s390xgcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformlinux-s390xgcc_version12.4.0meson_release_flag-Dbuildtype=releasetriplets390x-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version17.0cross_target_platformlinux-s390xgcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cross_target_platformlinux-s390xgcc_version13.3.0meson_release_flag-Dbuildtype=releasetriplets390x-conda-linux-gnu</td>
+              <td>linux_64_clang_version17.0cross_target_platformlinux-s390xgcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformlinux-s390xgcc_version13.3.0meson_release_flag-Dbuildtype=releasetriplets390x-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version17.0cross_target_platformlinux-s390xgcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cross_target_platformlinux-s390xgcc_version14.2.0meson_release_flag--buildtype_releasetriplets390x-conda-linux-gnu</td>
+              <td>linux_64_clang_version17.0cross_target_platformlinux-s390xgcc_version14.2.0meson_release_flag--buildtype_release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformlinux-s390xgcc_version14.2.0meson_release_flag--buildtype_releasetriplets390x-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version17.0cross_target_platformlinux-s390xgcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cross_target_platformwin-64gcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletx86_64-w64-mingw32</td>
+              <td>linux_64_clang_version17.0cross_target_platformwin-64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformwin-64gcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletx86_64-w64-mingw32" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version17.0cross_target_platformwin-64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cross_target_platformwin-64gcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletx86_64-w64-mingw32</td>
+              <td>linux_64_clang_version17.0cross_target_platformwin-64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformwin-64gcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletx86_64-w64-mingw32" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version17.0cross_target_platformwin-64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cross_target_platformwin-64gcc_version14.2.0meson_release_flag--buildtype_releasetripletx86_64-w64-mingw32</td>
+              <td>linux_64_clang_version17.0cross_target_platformwin-64gcc_version14.2.0meson_release_flag--buildtype_release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformwin-64gcc_version14.2.0meson_release_flag--buildtype_releasetripletx86_64-w64-mingw32" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version17.0cross_target_platformwin-64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletx86_64-conda-linux-gnu</td>
+              <td>linux_64_clang_version18.1cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletx86_64-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version18.1cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletx86_64-conda-linux-gnu</td>
+              <td>linux_64_clang_version18.1cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletx86_64-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version18.1cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_releasetripletx86_64-conda-linux-gnu</td>
+              <td>linux_64_clang_version18.1cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_releasetripletx86_64-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version18.1cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletaarch64-conda-linux-gnu</td>
+              <td>linux_64_clang_version18.1cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletaarch64-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version18.1cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletaarch64-conda-linux-gnu</td>
+              <td>linux_64_clang_version18.1cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletaarch64-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version18.1cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_releasetripletaarch64-conda-linux-gnu</td>
+              <td>linux_64_clang_version18.1cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_releasetripletaarch64-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version18.1cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletpowerpc64le-conda-linux-gnu</td>
+              <td>linux_64_clang_version18.1cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletpowerpc64le-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version18.1cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletpowerpc64le-conda-linux-gnu</td>
+              <td>linux_64_clang_version18.1cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletpowerpc64le-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version18.1cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_releasetripletpowerpc64le-conda-linux-gnu</td>
+              <td>linux_64_clang_version18.1cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_releasetripletpowerpc64le-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version18.1cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_cross_target_platformlinux-s390xgcc_version12.4.0meson_release_flag-Dbuildtype=releasetriplets390x-conda-linux-gnu</td>
+              <td>linux_64_clang_version18.1cross_target_platformlinux-s390xgcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cross_target_platformlinux-s390xgcc_version12.4.0meson_release_flag-Dbuildtype=releasetriplets390x-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version18.1cross_target_platformlinux-s390xgcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_cross_target_platformlinux-s390xgcc_version13.3.0meson_release_flag-Dbuildtype=releasetriplets390x-conda-linux-gnu</td>
+              <td>linux_64_clang_version18.1cross_target_platformlinux-s390xgcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cross_target_platformlinux-s390xgcc_version13.3.0meson_release_flag-Dbuildtype=releasetriplets390x-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version18.1cross_target_platformlinux-s390xgcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_cross_target_platformlinux-s390xgcc_version14.2.0meson_release_flag--buildtype_releasetriplets390x-conda-linux-gnu</td>
+              <td>linux_64_clang_version18.1cross_target_platformlinux-s390xgcc_version14.2.0meson_release_flag--buildtype_release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cross_target_platformlinux-s390xgcc_version14.2.0meson_release_flag--buildtype_releasetriplets390x-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version18.1cross_target_platformlinux-s390xgcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_cross_target_platformwin-64gcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletx86_64-w64-mingw32</td>
+              <td>linux_64_clang_version18.1cross_target_platformwin-64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cross_target_platformwin-64gcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletx86_64-w64-mingw32" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version18.1cross_target_platformwin-64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_cross_target_platformwin-64gcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletx86_64-w64-mingw32</td>
+              <td>linux_64_clang_version18.1cross_target_platformwin-64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cross_target_platformwin-64gcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletx86_64-w64-mingw32" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version18.1cross_target_platformwin-64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_cross_target_platformwin-64gcc_version14.2.0meson_release_flag--buildtype_releasetripletx86_64-w64-mingw32</td>
+              <td>linux_64_clang_version18.1cross_target_platformwin-64gcc_version14.2.0meson_release_flag--buildtype_release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cross_target_platformwin-64gcc_version14.2.0meson_release_flag--buildtype_releasetripletx86_64-w64-mingw32" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version18.1cross_target_platformwin-64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletx86_64-conda-linux-gnu</td>
+              <td>linux_64_clang_version19.1cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletx86_64-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version19.1cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletx86_64-conda-linux-gnu</td>
+              <td>linux_64_clang_version19.1cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletx86_64-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version19.1cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_releasetripletx86_64-conda-linux-gnu</td>
+              <td>linux_64_clang_version19.1cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_releasetripletx86_64-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version19.1cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletaarch64-conda-linux-gnu</td>
+              <td>linux_64_clang_version19.1cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletaarch64-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version19.1cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletaarch64-conda-linux-gnu</td>
+              <td>linux_64_clang_version19.1cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletaarch64-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version19.1cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_releasetripletaarch64-conda-linux-gnu</td>
+              <td>linux_64_clang_version19.1cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_releasetripletaarch64-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version19.1cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletpowerpc64le-conda-linux-gnu</td>
+              <td>linux_64_clang_version19.1cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletpowerpc64le-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version19.1cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletpowerpc64le-conda-linux-gnu</td>
+              <td>linux_64_clang_version19.1cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletpowerpc64le-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version19.1cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_releasetripletpowerpc64le-conda-linux-gnu</td>
+              <td>linux_64_clang_version19.1cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_releasetripletpowerpc64le-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version19.1cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_cross_target_platformlinux-s390xgcc_version12.4.0meson_release_flag-Dbuildtype=releasetriplets390x-conda-linux-gnu</td>
+              <td>linux_64_clang_version19.1cross_target_platformlinux-s390xgcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_cross_target_platformlinux-s390xgcc_version12.4.0meson_release_flag-Dbuildtype=releasetriplets390x-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version19.1cross_target_platformlinux-s390xgcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_cross_target_platformlinux-s390xgcc_version13.3.0meson_release_flag-Dbuildtype=releasetriplets390x-conda-linux-gnu</td>
+              <td>linux_64_clang_version19.1cross_target_platformlinux-s390xgcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_cross_target_platformlinux-s390xgcc_version13.3.0meson_release_flag-Dbuildtype=releasetriplets390x-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version19.1cross_target_platformlinux-s390xgcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_cross_target_platformlinux-s390xgcc_version14.2.0meson_release_flag--buildtype_releasetriplets390x-conda-linux-gnu</td>
+              <td>linux_64_clang_version19.1cross_target_platformlinux-s390xgcc_version14.2.0meson_release_flag--buildtype_release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_cross_target_platformlinux-s390xgcc_version14.2.0meson_release_flag--buildtype_releasetriplets390x-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version19.1cross_target_platformlinux-s390xgcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_cross_target_platformwin-64gcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletx86_64-w64-mingw32</td>
+              <td>linux_64_clang_version19.1cross_target_platformwin-64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_cross_target_platformwin-64gcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletx86_64-w64-mingw32" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version19.1cross_target_platformwin-64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_cross_target_platformwin-64gcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletx86_64-w64-mingw32</td>
+              <td>linux_64_clang_version19.1cross_target_platformwin-64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_cross_target_platformwin-64gcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletx86_64-w64-mingw32" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version19.1cross_target_platformwin-64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_cross_target_platformwin-64gcc_version14.2.0meson_release_flag--buildtype_releasetripletx86_64-w64-mingw32</td>
+              <td>linux_64_clang_version19.1cross_target_platformwin-64gcc_version14.2.0meson_release_flag--buildtype_release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_cross_target_platformwin-64gcc_version14.2.0meson_release_flag--buildtype_releasetripletx86_64-w64-mingw32" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_clang_version19.1cross_target_platformwin-64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_s390x_cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletx86_64-conda-linux-gnu</td>
+              <td>linux_aarch64_clang_version17.0cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletx86_64-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version17.0cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_s390x_cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletx86_64-conda-linux-gnu</td>
+              <td>linux_aarch64_clang_version17.0cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletx86_64-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version17.0cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_s390x_cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_releasetripletx86_64-conda-linux-gnu</td>
+              <td>linux_aarch64_clang_version17.0cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_releasetripletx86_64-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version17.0cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_s390x_cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletaarch64-conda-linux-gnu</td>
+              <td>linux_aarch64_clang_version17.0cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletaarch64-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version17.0cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_s390x_cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletaarch64-conda-linux-gnu</td>
+              <td>linux_aarch64_clang_version17.0cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletaarch64-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version17.0cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_s390x_cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_releasetripletaarch64-conda-linux-gnu</td>
+              <td>linux_aarch64_clang_version17.0cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_releasetripletaarch64-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version17.0cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_s390x_cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletpowerpc64le-conda-linux-gnu</td>
+              <td>linux_aarch64_clang_version17.0cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletpowerpc64le-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version17.0cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_s390x_cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletpowerpc64le-conda-linux-gnu</td>
+              <td>linux_aarch64_clang_version17.0cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletpowerpc64le-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version17.0cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_s390x_cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_releasetripletpowerpc64le-conda-linux-gnu</td>
+              <td>linux_aarch64_clang_version17.0cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_releasetripletpowerpc64le-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version17.0cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_s390x_cross_target_platformlinux-s390xgcc_version12.4.0meson_release_flag-Dbuildtype=releasetriplets390x-conda-linux-gnu</td>
+              <td>linux_aarch64_clang_version17.0cross_target_platformlinux-s390xgcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_cross_target_platformlinux-s390xgcc_version12.4.0meson_release_flag-Dbuildtype=releasetriplets390x-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version17.0cross_target_platformlinux-s390xgcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_s390x_cross_target_platformlinux-s390xgcc_version13.3.0meson_release_flag-Dbuildtype=releasetriplets390x-conda-linux-gnu</td>
+              <td>linux_aarch64_clang_version17.0cross_target_platformlinux-s390xgcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_cross_target_platformlinux-s390xgcc_version13.3.0meson_release_flag-Dbuildtype=releasetriplets390x-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version17.0cross_target_platformlinux-s390xgcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_s390x_cross_target_platformlinux-s390xgcc_version14.2.0meson_release_flag--buildtype_releasetriplets390x-conda-linux-gnu</td>
+              <td>linux_aarch64_clang_version17.0cross_target_platformlinux-s390xgcc_version14.2.0meson_release_flag--buildtype_release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_cross_target_platformlinux-s390xgcc_version14.2.0meson_release_flag--buildtype_releasetriplets390x-conda-linux-gnu" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version17.0cross_target_platformlinux-s390xgcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_s390x_cross_target_platformwin-64gcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletx86_64-w64-mingw32</td>
+              <td>linux_aarch64_clang_version17.0cross_target_platformwin-64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_cross_target_platformwin-64gcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletx86_64-w64-mingw32" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version17.0cross_target_platformwin-64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_s390x_cross_target_platformwin-64gcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletx86_64-w64-mingw32</td>
+              <td>linux_aarch64_clang_version17.0cross_target_platformwin-64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_cross_target_platformwin-64gcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletx86_64-w64-mingw32" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version17.0cross_target_platformwin-64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_s390x_cross_target_platformwin-64gcc_version14.2.0meson_release_flag--buildtype_releasetripletx86_64-w64-mingw32</td>
+              <td>linux_aarch64_clang_version17.0cross_target_platformwin-64gcc_version14.2.0meson_release_flag--buildtype_release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_cross_target_platformwin-64gcc_version14.2.0meson_release_flag--buildtype_releasetripletx86_64-w64-mingw32" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version17.0cross_target_platformwin-64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_clang_version16cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>linux_aarch64_clang_version18.1cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version16cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version18.1cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_clang_version16cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>linux_aarch64_clang_version18.1cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version16cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version18.1cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_clang_version16cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>linux_aarch64_clang_version18.1cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version16cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version18.1cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_clang_version16cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>linux_aarch64_clang_version18.1cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version16cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version18.1cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_clang_version16cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>linux_aarch64_clang_version18.1cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version16cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version18.1cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_clang_version16cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>linux_aarch64_clang_version18.1cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version16cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version18.1cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_clang_version16cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>linux_aarch64_clang_version18.1cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version16cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version18.1cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_clang_version16cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>linux_aarch64_clang_version18.1cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version16cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version18.1cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_clang_version16cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>linux_aarch64_clang_version18.1cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version16cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version18.1cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_clang_version17cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>linux_aarch64_clang_version18.1cross_target_platformlinux-s390xgcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version17cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version18.1cross_target_platformlinux-s390xgcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_clang_version17cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>linux_aarch64_clang_version18.1cross_target_platformlinux-s390xgcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version17cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version18.1cross_target_platformlinux-s390xgcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_clang_version17cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>linux_aarch64_clang_version18.1cross_target_platformlinux-s390xgcc_version14.2.0meson_release_flag--buildtype_release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version17cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version18.1cross_target_platformlinux-s390xgcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_clang_version17cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>linux_aarch64_clang_version18.1cross_target_platformwin-64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version17cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version18.1cross_target_platformwin-64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_clang_version17cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>linux_aarch64_clang_version18.1cross_target_platformwin-64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version17cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version18.1cross_target_platformwin-64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_clang_version17cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>linux_aarch64_clang_version18.1cross_target_platformwin-64gcc_version14.2.0meson_release_flag--buildtype_release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version17cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version18.1cross_target_platformwin-64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_clang_version17cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>linux_aarch64_clang_version19.1cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version17cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version19.1cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_clang_version17cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>linux_aarch64_clang_version19.1cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version17cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version19.1cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_clang_version17cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>linux_aarch64_clang_version19.1cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version17cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version19.1cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_clang_version18cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>linux_aarch64_clang_version19.1cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version18cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version19.1cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_clang_version18cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>linux_aarch64_clang_version19.1cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version18cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version19.1cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_clang_version18cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>linux_aarch64_clang_version19.1cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version18cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version19.1cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_clang_version18cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>linux_aarch64_clang_version19.1cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version18cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version19.1cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_clang_version18cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>linux_aarch64_clang_version19.1cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version18cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version19.1cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_clang_version18cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>linux_aarch64_clang_version19.1cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version18cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version19.1cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_clang_version18cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>linux_aarch64_clang_version19.1cross_target_platformlinux-s390xgcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version18cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version19.1cross_target_platformlinux-s390xgcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_clang_version18cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>linux_aarch64_clang_version19.1cross_target_platformlinux-s390xgcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version18cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version19.1cross_target_platformlinux-s390xgcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_clang_version18cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>linux_aarch64_clang_version19.1cross_target_platformlinux-s390xgcc_version14.2.0meson_release_flag--buildtype_release</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version18cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version19.1cross_target_platformlinux-s390xgcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64_clang_version19.1cross_target_platformwin-64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version19.1cross_target_platformwin-64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64_clang_version19.1cross_target_platformwin-64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version19.1cross_target_platformwin-64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_aarch64_clang_version19.1cross_target_platformwin-64gcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_clang_version19.1cross_target_platformwin-64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version17.0cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version17.0cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version17.0cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version17.0cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version17.0cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version17.0cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version17.0cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version17.0cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version17.0cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version17.0cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version17.0cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version17.0cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version17.0cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version17.0cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version17.0cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version17.0cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version17.0cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version17.0cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version17.0cross_target_platformlinux-s390xgcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version17.0cross_target_platformlinux-s390xgcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version17.0cross_target_platformlinux-s390xgcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version17.0cross_target_platformlinux-s390xgcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version17.0cross_target_platformlinux-s390xgcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version17.0cross_target_platformlinux-s390xgcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version17.0cross_target_platformwin-64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version17.0cross_target_platformwin-64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version17.0cross_target_platformwin-64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version17.0cross_target_platformwin-64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version17.0cross_target_platformwin-64gcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version17.0cross_target_platformwin-64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version18.1cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version18.1cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version18.1cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version18.1cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version18.1cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version18.1cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version18.1cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version18.1cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version18.1cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version18.1cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version18.1cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version18.1cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version18.1cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version18.1cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version18.1cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version18.1cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version18.1cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version18.1cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version18.1cross_target_platformlinux-s390xgcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version18.1cross_target_platformlinux-s390xgcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version18.1cross_target_platformlinux-s390xgcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version18.1cross_target_platformlinux-s390xgcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version18.1cross_target_platformlinux-s390xgcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version18.1cross_target_platformlinux-s390xgcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version18.1cross_target_platformwin-64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version18.1cross_target_platformwin-64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version18.1cross_target_platformwin-64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version18.1cross_target_platformwin-64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version18.1cross_target_platformwin-64gcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version18.1cross_target_platformwin-64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version19.1cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version19.1cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version19.1cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version19.1cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version19.1cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version19.1cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version19.1cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version19.1cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version19.1cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version19.1cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version19.1cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version19.1cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version19.1cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version19.1cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version19.1cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version19.1cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version19.1cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version19.1cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version19.1cross_target_platformlinux-s390xgcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version19.1cross_target_platformlinux-s390xgcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version19.1cross_target_platformlinux-s390xgcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version19.1cross_target_platformlinux-s390xgcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version19.1cross_target_platformlinux-s390xgcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version19.1cross_target_platformlinux-s390xgcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version19.1cross_target_platformwin-64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version19.1cross_target_platformwin-64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version19.1cross_target_platformwin-64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version19.1cross_target_platformwin-64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_ppc64le_clang_version19.1cross_target_platformwin-64gcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_clang_version19.1cross_target_platformwin-64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version17.0cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version17.0cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version17.0cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version17.0cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version17.0cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version17.0cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version17.0cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version17.0cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version17.0cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version17.0cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version17.0cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version17.0cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version17.0cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version17.0cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version17.0cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version17.0cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version17.0cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version17.0cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version17.0cross_target_platformlinux-s390xgcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version17.0cross_target_platformlinux-s390xgcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version17.0cross_target_platformlinux-s390xgcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version17.0cross_target_platformlinux-s390xgcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version17.0cross_target_platformlinux-s390xgcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version17.0cross_target_platformlinux-s390xgcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version17.0cross_target_platformwin-64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version17.0cross_target_platformwin-64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version17.0cross_target_platformwin-64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version17.0cross_target_platformwin-64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version17.0cross_target_platformwin-64gcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version17.0cross_target_platformwin-64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version18.1cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version18.1cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version18.1cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version18.1cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version18.1cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version18.1cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version18.1cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version18.1cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version18.1cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version18.1cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version18.1cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version18.1cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version18.1cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version18.1cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version18.1cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version18.1cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version18.1cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version18.1cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version18.1cross_target_platformlinux-s390xgcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version18.1cross_target_platformlinux-s390xgcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version18.1cross_target_platformlinux-s390xgcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version18.1cross_target_platformlinux-s390xgcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version18.1cross_target_platformlinux-s390xgcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version18.1cross_target_platformlinux-s390xgcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version18.1cross_target_platformwin-64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version18.1cross_target_platformwin-64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version18.1cross_target_platformwin-64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version18.1cross_target_platformwin-64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version18.1cross_target_platformwin-64gcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version18.1cross_target_platformwin-64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version19.1cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version19.1cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version19.1cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version19.1cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version19.1cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version19.1cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version19.1cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version19.1cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version19.1cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version19.1cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version19.1cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version19.1cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version19.1cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version19.1cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version19.1cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version19.1cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version19.1cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version19.1cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version19.1cross_target_platformlinux-s390xgcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version19.1cross_target_platformlinux-s390xgcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version19.1cross_target_platformlinux-s390xgcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version19.1cross_target_platformlinux-s390xgcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version19.1cross_target_platformlinux-s390xgcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version19.1cross_target_platformlinux-s390xgcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version19.1cross_target_platformwin-64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version19.1cross_target_platformwin-64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version19.1cross_target_platformwin-64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version19.1cross_target_platformwin-64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_s390x_clang_version19.1cross_target_platformwin-64gcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_s390x_clang_version19.1cross_target_platformwin-64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_clang_version17.0cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version17.0cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_clang_version17.0cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version17.0cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_clang_version17.0cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version17.0cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_clang_version17.0cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version17.0cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_clang_version17.0cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version17.0cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_clang_version17.0cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version17.0cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_clang_version17.0cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version17.0cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_clang_version17.0cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version17.0cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_clang_version17.0cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version17.0cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_clang_version18.1cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version18.1cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_clang_version18.1cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version18.1cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_clang_version18.1cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version18.1cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_clang_version18.1cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version18.1cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_clang_version18.1cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version18.1cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_clang_version18.1cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version18.1cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_clang_version18.1cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version18.1cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_clang_version18.1cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version18.1cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_clang_version18.1cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version18.1cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_clang_version19.1cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version19.1cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_clang_version19.1cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version19.1cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_clang_version19.1cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version19.1cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_clang_version19.1cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version19.1cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_clang_version19.1cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version19.1cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_clang_version19.1cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version19.1cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_clang_version19.1cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version19.1cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_clang_version19.1cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version19.1cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_clang_version19.1cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_clang_version19.1cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -900,9 +1794,15 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-clang_impl_linux--64-green.svg)](https://anaconda.org/conda-forge/clang_impl_linux-64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/clang_impl_linux-64.svg)](https://anaconda.org/conda-forge/clang_impl_linux-64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/clang_impl_linux-64.svg)](https://anaconda.org/conda-forge/clang_impl_linux-64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/clang_impl_linux-64.svg)](https://anaconda.org/conda-forge/clang_impl_linux-64) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-clang_impl_linux--aarch64-green.svg)](https://anaconda.org/conda-forge/clang_impl_linux-aarch64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/clang_impl_linux-aarch64.svg)](https://anaconda.org/conda-forge/clang_impl_linux-aarch64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/clang_impl_linux-aarch64.svg)](https://anaconda.org/conda-forge/clang_impl_linux-aarch64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/clang_impl_linux-aarch64.svg)](https://anaconda.org/conda-forge/clang_impl_linux-aarch64) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-clang_impl_linux--ppc64le-green.svg)](https://anaconda.org/conda-forge/clang_impl_linux-ppc64le) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/clang_impl_linux-ppc64le.svg)](https://anaconda.org/conda-forge/clang_impl_linux-ppc64le) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/clang_impl_linux-ppc64le.svg)](https://anaconda.org/conda-forge/clang_impl_linux-ppc64le) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/clang_impl_linux-ppc64le.svg)](https://anaconda.org/conda-forge/clang_impl_linux-ppc64le) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-clang_linux--64-green.svg)](https://anaconda.org/conda-forge/clang_linux-64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/clang_linux-64.svg)](https://anaconda.org/conda-forge/clang_linux-64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/clang_linux-64.svg)](https://anaconda.org/conda-forge/clang_linux-64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/clang_linux-64.svg)](https://anaconda.org/conda-forge/clang_linux-64) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-clang_linux--aarch64-green.svg)](https://anaconda.org/conda-forge/clang_linux-aarch64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/clang_linux-aarch64.svg)](https://anaconda.org/conda-forge/clang_linux-aarch64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/clang_linux-aarch64.svg)](https://anaconda.org/conda-forge/clang_linux-aarch64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/clang_linux-aarch64.svg)](https://anaconda.org/conda-forge/clang_linux-aarch64) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-clang_linux--ppc64le-green.svg)](https://anaconda.org/conda-forge/clang_linux-ppc64le) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/clang_linux-ppc64le.svg)](https://anaconda.org/conda-forge/clang_linux-ppc64le) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/clang_linux-ppc64le.svg)](https://anaconda.org/conda-forge/clang_linux-ppc64le) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/clang_linux-ppc64le.svg)](https://anaconda.org/conda-forge/clang_linux-ppc64le) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-clangxx_impl_linux--64-green.svg)](https://anaconda.org/conda-forge/clangxx_impl_linux-64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/clangxx_impl_linux-64.svg)](https://anaconda.org/conda-forge/clangxx_impl_linux-64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/clangxx_impl_linux-64.svg)](https://anaconda.org/conda-forge/clangxx_impl_linux-64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/clangxx_impl_linux-64.svg)](https://anaconda.org/conda-forge/clangxx_impl_linux-64) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-clangxx_impl_linux--aarch64-green.svg)](https://anaconda.org/conda-forge/clangxx_impl_linux-aarch64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/clangxx_impl_linux-aarch64.svg)](https://anaconda.org/conda-forge/clangxx_impl_linux-aarch64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/clangxx_impl_linux-aarch64.svg)](https://anaconda.org/conda-forge/clangxx_impl_linux-aarch64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/clangxx_impl_linux-aarch64.svg)](https://anaconda.org/conda-forge/clangxx_impl_linux-aarch64) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-clangxx_impl_linux--ppc64le-green.svg)](https://anaconda.org/conda-forge/clangxx_impl_linux-ppc64le) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/clangxx_impl_linux-ppc64le.svg)](https://anaconda.org/conda-forge/clangxx_impl_linux-ppc64le) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/clangxx_impl_linux-ppc64le.svg)](https://anaconda.org/conda-forge/clangxx_impl_linux-ppc64le) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/clangxx_impl_linux-ppc64le.svg)](https://anaconda.org/conda-forge/clangxx_impl_linux-ppc64le) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-clangxx_linux--64-green.svg)](https://anaconda.org/conda-forge/clangxx_linux-64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/clangxx_linux-64.svg)](https://anaconda.org/conda-forge/clangxx_linux-64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/clangxx_linux-64.svg)](https://anaconda.org/conda-forge/clangxx_linux-64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/clangxx_linux-64.svg)](https://anaconda.org/conda-forge/clangxx_linux-64) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-clangxx_linux--aarch64-green.svg)](https://anaconda.org/conda-forge/clangxx_linux-aarch64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/clangxx_linux-aarch64.svg)](https://anaconda.org/conda-forge/clangxx_linux-aarch64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/clangxx_linux-aarch64.svg)](https://anaconda.org/conda-forge/clangxx_linux-aarch64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/clangxx_linux-aarch64.svg)](https://anaconda.org/conda-forge/clangxx_linux-aarch64) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-clangxx_linux--ppc64le-green.svg)](https://anaconda.org/conda-forge/clangxx_linux-ppc64le) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/clangxx_linux-ppc64le.svg)](https://anaconda.org/conda-forge/clangxx_linux-ppc64le) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/clangxx_linux-ppc64le.svg)](https://anaconda.org/conda-forge/clangxx_linux-ppc64le) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/clangxx_linux-ppc64le.svg)](https://anaconda.org/conda-forge/clangxx_linux-ppc64le) |
@@ -937,41 +1837,41 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `clang_linux-64, clang_linux-aarch64, clang_linux-ppc64le, clangxx_linux-64, clangxx_linux-aarch64, clangxx_linux-ppc64le, gcc_bootstrap_linux-64, gcc_bootstrap_linux-aarch64, gcc_bootstrap_linux-ppc64le, gcc_bootstrap_linux-s390x, gcc_bootstrap_win-64, gcc_linux-64, gcc_linux-aarch64, gcc_linux-ppc64le, gcc_linux-s390x, gcc_win-64, gfortran_linux-64, gfortran_linux-aarch64, gfortran_linux-ppc64le, gfortran_linux-s390x, gfortran_win-64, gxx_linux-64, gxx_linux-aarch64, gxx_linux-ppc64le, gxx_linux-s390x, gxx_win-64` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `clang_impl_linux-64, clang_impl_linux-aarch64, clang_impl_linux-ppc64le, clang_linux-64, clang_linux-aarch64, clang_linux-ppc64le, clangxx_impl_linux-64, clangxx_impl_linux-aarch64, clangxx_impl_linux-ppc64le, clangxx_linux-64, clangxx_linux-aarch64, clangxx_linux-ppc64le, gcc_bootstrap_linux-64, gcc_bootstrap_linux-aarch64, gcc_bootstrap_linux-ppc64le, gcc_bootstrap_linux-s390x, gcc_bootstrap_win-64, gcc_linux-64, gcc_linux-aarch64, gcc_linux-ppc64le, gcc_linux-s390x, gcc_win-64, gfortran_linux-64, gfortran_linux-aarch64, gfortran_linux-ppc64le, gfortran_linux-s390x, gfortran_win-64, gxx_linux-64, gxx_linux-aarch64, gxx_linux-ppc64le, gxx_linux-s390x, gxx_win-64` can be installed with `conda`:
 
 ```
-conda install clang_linux-64 clang_linux-aarch64 clang_linux-ppc64le clangxx_linux-64 clangxx_linux-aarch64 clangxx_linux-ppc64le gcc_bootstrap_linux-64 gcc_bootstrap_linux-aarch64 gcc_bootstrap_linux-ppc64le gcc_bootstrap_linux-s390x gcc_bootstrap_win-64 gcc_linux-64 gcc_linux-aarch64 gcc_linux-ppc64le gcc_linux-s390x gcc_win-64 gfortran_linux-64 gfortran_linux-aarch64 gfortran_linux-ppc64le gfortran_linux-s390x gfortran_win-64 gxx_linux-64 gxx_linux-aarch64 gxx_linux-ppc64le gxx_linux-s390x gxx_win-64
-```
-
-or with `mamba`:
-
-```
-mamba install clang_linux-64 clang_linux-aarch64 clang_linux-ppc64le clangxx_linux-64 clangxx_linux-aarch64 clangxx_linux-ppc64le gcc_bootstrap_linux-64 gcc_bootstrap_linux-aarch64 gcc_bootstrap_linux-ppc64le gcc_bootstrap_linux-s390x gcc_bootstrap_win-64 gcc_linux-64 gcc_linux-aarch64 gcc_linux-ppc64le gcc_linux-s390x gcc_win-64 gfortran_linux-64 gfortran_linux-aarch64 gfortran_linux-ppc64le gfortran_linux-s390x gfortran_win-64 gxx_linux-64 gxx_linux-aarch64 gxx_linux-ppc64le gxx_linux-s390x gxx_win-64
-```
-
-It is possible to list all of the versions of `clang_linux-64` available on your platform with `conda`:
-
-```
-conda search clang_linux-64 --channel conda-forge
+conda install clang_impl_linux-64 clang_impl_linux-aarch64 clang_impl_linux-ppc64le clang_linux-64 clang_linux-aarch64 clang_linux-ppc64le clangxx_impl_linux-64 clangxx_impl_linux-aarch64 clangxx_impl_linux-ppc64le clangxx_linux-64 clangxx_linux-aarch64 clangxx_linux-ppc64le gcc_bootstrap_linux-64 gcc_bootstrap_linux-aarch64 gcc_bootstrap_linux-ppc64le gcc_bootstrap_linux-s390x gcc_bootstrap_win-64 gcc_linux-64 gcc_linux-aarch64 gcc_linux-ppc64le gcc_linux-s390x gcc_win-64 gfortran_linux-64 gfortran_linux-aarch64 gfortran_linux-ppc64le gfortran_linux-s390x gfortran_win-64 gxx_linux-64 gxx_linux-aarch64 gxx_linux-ppc64le gxx_linux-s390x gxx_win-64
 ```
 
 or with `mamba`:
 
 ```
-mamba search clang_linux-64 --channel conda-forge
+mamba install clang_impl_linux-64 clang_impl_linux-aarch64 clang_impl_linux-ppc64le clang_linux-64 clang_linux-aarch64 clang_linux-ppc64le clangxx_impl_linux-64 clangxx_impl_linux-aarch64 clangxx_impl_linux-ppc64le clangxx_linux-64 clangxx_linux-aarch64 clangxx_linux-ppc64le gcc_bootstrap_linux-64 gcc_bootstrap_linux-aarch64 gcc_bootstrap_linux-ppc64le gcc_bootstrap_linux-s390x gcc_bootstrap_win-64 gcc_linux-64 gcc_linux-aarch64 gcc_linux-ppc64le gcc_linux-s390x gcc_win-64 gfortran_linux-64 gfortran_linux-aarch64 gfortran_linux-ppc64le gfortran_linux-s390x gfortran_win-64 gxx_linux-64 gxx_linux-aarch64 gxx_linux-ppc64le gxx_linux-s390x gxx_win-64
+```
+
+It is possible to list all of the versions of `clang_impl_linux-64` available on your platform with `conda`:
+
+```
+conda search clang_impl_linux-64 --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search clang_impl_linux-64 --channel conda-forge
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search clang_linux-64 --channel conda-forge
+mamba repoquery search clang_impl_linux-64 --channel conda-forge
 
-# List packages depending on `clang_linux-64`:
-mamba repoquery whoneeds clang_linux-64 --channel conda-forge
+# List packages depending on `clang_impl_linux-64`:
+mamba repoquery whoneeds clang_impl_linux-64 --channel conda-forge
 
-# List dependencies of `clang_linux-64`:
-mamba repoquery depends clang_linux-64 --channel conda-forge
+# List dependencies of `clang_impl_linux-64`:
+mamba repoquery depends clang_impl_linux-64 --channel conda-forge
 ```
 
 
