@@ -8,8 +8,5 @@ if [[ "$target_platform" != "$cross_target_platform" ]]; then
   # Set clang symlink with target
   mkdir -p ${PREFIX}/bin
   ln -sf ${PREFIX}/bin/clang ${PREFIX}/bin/${CHOST}-clang
-  # Set sysroot. The other option is to use `CONDA_BUILD_SYSROOT` env variable
-  # but this is better than using an env variable.
-  echo "--sysroot ${PREFIX}/${CHOST}/sysroot" >> ${PREFIX}/bin/${CHOST}-clang.cfg
 fi
 
