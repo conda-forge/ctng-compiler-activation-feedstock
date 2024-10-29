@@ -191,7 +191,9 @@ outputs:
       skip: true  # [win or s390x or cross_target_platform not in ("linux-64", "linux-aarch64", "linux-ppc64le")]
     requirements:
       run:
-        - {{ pin_subpackage("clang_impl" ~ cross_target_platform, exact=True) }}
+        - {{ pin_subpackage("clang_impl_" ~ cross_target_platform, exact=True) }}
+        # C++ compiler on linux needs a stdlib
+        - libstdcxx-devel_{{ cross_target_platform }} =={{ gcc_version }}.*
         - clangxx =={{ clang_version }}.*
     test:
       commands:
