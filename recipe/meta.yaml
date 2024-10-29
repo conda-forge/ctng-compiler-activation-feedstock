@@ -94,6 +94,10 @@ outputs:
       skip: true  # [win or s390x or cross_target_platform not in ("linux-64", "linux-aarch64", "linux-ppc64le")]
     requirements:
       run:
+        - libgcc-devel_{{ cross_target_platform }} {{ gcc_version }}.*
+        - {{ cross_stdlib }}_{{ cross_target_platform }}
+        - compiler-rt_{{ cross_target_platform }}
+        - compiler-rt =={{ clang_version }}.*
         - clang =={{ clang_version }}.*
     test:
       commands:
@@ -119,12 +123,8 @@ outputs:
           - libgcc >={{ min_runtime_version }}
     requirements:
       run:
-        - libgcc-devel_{{ cross_target_platform }} {{ gcc_version }}.*
         # for activation of binutils env vars
         - binutils_{{ cross_target_platform }}
-        - {{ cross_stdlib }}_{{ cross_target_platform }}
-        - compiler-rt_{{ cross_target_platform }}
-        - compiler-rt =={{ clang_version }}.*
         - clang_impl_{{ cross_target_platform }} =={{ clang_version }}.*
     test:
       requires:
@@ -190,6 +190,12 @@ outputs:
       skip: true  # [win or s390x or cross_target_platform not in ("linux-64", "linux-aarch64", "linux-ppc64le")]
     requirements:
       run:
+        - libgcc-devel_{{ cross_target_platform }} {{ gcc_version }}.*
+        # C++ compiler on linux needs a stdlib
+        - libstdcxx-devel_{{ cross_target_platform }}  {{ gcc_version }}.*
+        - {{ cross_stdlib }}_{{ cross_target_platform }}
+        - compiler-rt_{{ cross_target_platform }}
+        - compiler-rt =={{ clang_version }}.*
         - clangxx =={{ clang_version }}.*
     test:
       commands:
@@ -215,16 +221,8 @@ outputs:
           - libgcc >={{ min_runtime_version }}
     requirements:
       run:
-        - libgcc-devel_{{ cross_target_platform }} {{ gcc_version }}.*
-        # C++ compiler on linux needs a stdlib
-        - libstdcxx-devel_{{ cross_target_platform }}  {{ gcc_version }}.*
         # for activation of gcc env vars
         - {{ pin_subpackage("clang_" ~ cross_target_platform, exact=True) }}
-        # for activation of binutils env vars
-        - binutils_{{ cross_target_platform }}
-        - {{ cross_stdlib }}_{{ cross_target_platform }}
-        - compiler-rt_{{ cross_target_platform }}
-        - compiler-rt =={{ clang_version }}.*
         - clangxx_impl_{{ cross_target_platform }} =={{ clang_version }}.*
     test:
       requires:
