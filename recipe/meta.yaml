@@ -96,6 +96,7 @@ outputs:
       run:
         - libgcc-devel_{{ cross_target_platform }} {{ gcc_version }}.*
         - {{ cross_stdlib }}_{{ cross_target_platform }}
+        - binutils_impl_{{ cross_target_platform }}
         - compiler-rt_{{ cross_target_platform }}
         - compiler-rt =={{ clang_version }}.*
         - clang =={{ clang_version }}.*
@@ -190,12 +191,7 @@ outputs:
       skip: true  # [win or s390x or cross_target_platform not in ("linux-64", "linux-aarch64", "linux-ppc64le")]
     requirements:
       run:
-        - libgcc-devel_{{ cross_target_platform }} {{ gcc_version }}.*
-        # C++ compiler on linux needs a stdlib
-        - libstdcxx-devel_{{ cross_target_platform }}  {{ gcc_version }}.*
-        - {{ cross_stdlib }}_{{ cross_target_platform }}
-        - compiler-rt_{{ cross_target_platform }}
-        - compiler-rt =={{ clang_version }}.*
+        - {{ pin_subpackage("clang_impl" ~ cross_target_platform, exact=True) }}
         - clangxx =={{ clang_version }}.*
     test:
       commands:
