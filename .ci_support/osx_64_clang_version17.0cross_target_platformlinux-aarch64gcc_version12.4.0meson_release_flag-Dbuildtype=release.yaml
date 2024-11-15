@@ -7,13 +7,13 @@ channel_sources:
 channel_targets:
 - conda-forge main
 clang_version:
-- '18'
+- '17.0'
 cross_stdlib:
 - sysroot
 cross_stdlib_version:
-- '2.12'
+- '2.17'
 cross_target_platform:
-- linux-64
+- linux-aarch64
 gcc_version:
 - 12.4.0
 macos_machine:

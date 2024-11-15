@@ -7,7 +7,7 @@ channel_sources:
 channel_targets:
 - conda-forge main
 clang_version:
-- '16'
+- '17.0'
 cross_stdlib:
 - sysroot
 cross_stdlib_version:

@@ -7,7 +7,7 @@ channel_sources:
 channel_targets:
 - conda-forge main
 clang_version:
-- '16'
+- '17.0'
 cross_stdlib:
 - sysroot
 cross_stdlib_version:
@@ -15,11 +15,11 @@ cross_stdlib_version:
 cross_target_platform:
 - linux-64
 gcc_version:
-- 12.4.0
+- 14.2.0
 macos_machine:
 - x86_64-apple-darwin13.4.0
 meson_release_flag:
-- -Dbuildtype=release
+- --buildtype release
 target_platform:
 - osx-64
 zip_keys:

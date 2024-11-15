@@ -5,89 +5,89 @@
 jobs:
 - job: osx
   pool:
-    vmImage: macOS-12
+    vmImage: macOS-13
   strategy:
     matrix:
-      ? osx_64_clang_version16cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release
-      : CONFIG: osx_64_clang_version16cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release
+      osx_64_clang_version17.0cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release:
+        CONFIG: osx_64_clang_version17.0cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version16cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release
-      : CONFIG: osx_64_clang_version16cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release
+      osx_64_clang_version17.0cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release:
+        CONFIG: osx_64_clang_version17.0cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version16cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release
-      : CONFIG: osx_64_clang_version16cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release
+      osx_64_clang_version17.0cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release:
+        CONFIG: osx_64_clang_version17.0cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version16cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release
-      : CONFIG: osx_64_clang_version16cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release
+      osx_64_clang_version17.0cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release:
+        CONFIG: osx_64_clang_version17.0cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version16cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release
-      : CONFIG: osx_64_clang_version16cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release
+      osx_64_clang_version17.0cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release:
+        CONFIG: osx_64_clang_version17.0cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version16cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release
-      : CONFIG: osx_64_clang_version16cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release
+      osx_64_clang_version17.0cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release:
+        CONFIG: osx_64_clang_version17.0cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version16cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release
-      : CONFIG: osx_64_clang_version16cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release
+      osx_64_clang_version17.0cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release:
+        CONFIG: osx_64_clang_version17.0cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version16cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release
-      : CONFIG: osx_64_clang_version16cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release
+      osx_64_clang_version17.0cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release:
+        CONFIG: osx_64_clang_version17.0cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version16cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release
-      : CONFIG: osx_64_clang_version16cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release
+      osx_64_clang_version17.0cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release:
+        CONFIG: osx_64_clang_version17.0cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version17cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release
-      : CONFIG: osx_64_clang_version17cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release
+      osx_64_clang_version18.1cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release:
+        CONFIG: osx_64_clang_version18.1cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version17cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release
-      : CONFIG: osx_64_clang_version17cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release
+      osx_64_clang_version18.1cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release:
+        CONFIG: osx_64_clang_version18.1cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version17cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release
-      : CONFIG: osx_64_clang_version17cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release
+      osx_64_clang_version18.1cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release:
+        CONFIG: osx_64_clang_version18.1cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version17cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release
-      : CONFIG: osx_64_clang_version17cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release
+      osx_64_clang_version18.1cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release:
+        CONFIG: osx_64_clang_version18.1cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version17cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release
-      : CONFIG: osx_64_clang_version17cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release
+      osx_64_clang_version18.1cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release:
+        CONFIG: osx_64_clang_version18.1cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version17cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release
-      : CONFIG: osx_64_clang_version17cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release
+      osx_64_clang_version18.1cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release:
+        CONFIG: osx_64_clang_version18.1cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version17cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release
-      : CONFIG: osx_64_clang_version17cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release
+      osx_64_clang_version18.1cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release:
+        CONFIG: osx_64_clang_version18.1cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version17cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release
-      : CONFIG: osx_64_clang_version17cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release
+      osx_64_clang_version18.1cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release:
+        CONFIG: osx_64_clang_version18.1cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version17cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release
-      : CONFIG: osx_64_clang_version17cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release
+      osx_64_clang_version18.1cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release:
+        CONFIG: osx_64_clang_version18.1cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version18cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release
-      : CONFIG: osx_64_clang_version18cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release
+      osx_64_clang_version19.1cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release:
+        CONFIG: osx_64_clang_version19.1cross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=release
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version18cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release
-      : CONFIG: osx_64_clang_version18cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release
+      osx_64_clang_version19.1cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release:
+        CONFIG: osx_64_clang_version19.1cross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=release
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version18cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release
-      : CONFIG: osx_64_clang_version18cross_stdlibsysrootcross_stdlib_version2.12cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release
+      osx_64_clang_version19.1cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release:
+        CONFIG: osx_64_clang_version19.1cross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_release
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version18cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release
-      : CONFIG: osx_64_clang_version18cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release
+      osx_64_clang_version19.1cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release:
+        CONFIG: osx_64_clang_version19.1cross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=release
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version18cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release
-      : CONFIG: osx_64_clang_version18cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release
+      osx_64_clang_version19.1cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release:
+        CONFIG: osx_64_clang_version19.1cross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=release
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version18cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release
-      : CONFIG: osx_64_clang_version18cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release
+      osx_64_clang_version19.1cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release:
+        CONFIG: osx_64_clang_version19.1cross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_release
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version18cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release
-      : CONFIG: osx_64_clang_version18cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release
+      osx_64_clang_version19.1cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release:
+        CONFIG: osx_64_clang_version19.1cross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=release
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version18cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release
-      : CONFIG: osx_64_clang_version18cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release
+      osx_64_clang_version19.1cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release:
+        CONFIG: osx_64_clang_version19.1cross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=release
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version18cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release
-      : CONFIG: osx_64_clang_version18cross_stdlibsysrootcross_stdlib_version2.17cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release
+      osx_64_clang_version19.1cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release:
+        CONFIG: osx_64_clang_version19.1cross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_release
         UPLOAD_PACKAGES: 'True'
     maxParallel: 15
   timeoutInMinutes: 360
