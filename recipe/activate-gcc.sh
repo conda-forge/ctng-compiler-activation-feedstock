@@ -170,6 +170,9 @@ if [ "@CONDA_BUILD_CROSS_COMPILATION@" = "1" ]; then
   echo "[binaries]" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
   echo "cmake = '${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/cmake'" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
   echo "pkg-config = '${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/pkg-config'" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
+  if [ "${CROSSCOMPILING_EMULATOR}" != "" ]; then
+    echo "exe_wrapper = '${CROSSCOMPILING_EMULATOR}'" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
+  fi
 fi
 
 _tc_activation \
