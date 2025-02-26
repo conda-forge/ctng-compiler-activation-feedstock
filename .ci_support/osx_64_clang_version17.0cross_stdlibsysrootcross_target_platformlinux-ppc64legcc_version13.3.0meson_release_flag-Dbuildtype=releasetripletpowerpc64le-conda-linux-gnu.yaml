@@ -22,8 +22,11 @@ meson_release_flag:
 - -Dbuildtype=release
 target_platform:
 - osx-64
+triplet:
+- powerpc64le-conda-linux-gnu
 zip_keys:
 - - cross_target_platform
+  - triplet
   - cross_stdlib
   - cross_stdlib_version
 - - gcc_version

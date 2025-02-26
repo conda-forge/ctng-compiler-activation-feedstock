@@ -7,7 +7,7 @@ channel_sources:
 channel_targets:
 - conda-forge main
 clang_version:
-- '19.1'
+- '18.1'
 cross_stdlib:
 - sysroot
 cross_stdlib_version:
@@ -22,8 +22,11 @@ meson_release_flag:
 - --buildtype release
 target_platform:
 - osx-64
+triplet:
+- aarch64-conda-linux-gnu
 zip_keys:
 - - cross_target_platform
+  - triplet
   - cross_stdlib
   - cross_stdlib_version
 - - gcc_version
