@@ -1,4 +1,4 @@
-{% set build_num = 7 %}
+{% set build_num = 8 %}
 
 {% set gcc_major = 13 if gcc_version is undefined else gcc_version.split(".")[0] %}
 # generally, the runtime version of libstdcxx needs to be at least as high
@@ -41,7 +41,7 @@ source:
 
 build:
   number: {{ build_num }}
-  {% if (target_platform == "win-64" and cross_target_platform != "win-64") or (cross_target_platform == "win-64" and gcc_major|int < 13) %}
+  {% if (target_platform == "win-64" and cross_target_platform != "win-64") or (cross_target_platform == "win-64" and gcc_major|int < 13) or cross_target_platform == "linux-s390x" or s390x %}
   skip: true
   {% endif %}
 
@@ -102,12 +102,8 @@ outputs:
         - clang =={{ clang_version }}.*
     test:
       commands:
-        - x86_64-conda-linux-gnu-clang --version            # [linux64]
-        - x86_64-conda-linux-gnu-clang-cpp --version        # [linux64]
-        - aarch64-conda-linux-gnu-clang --version           # [aarch64]
-        - aarch64-conda-linux-gnu-clang-cpp --version       # [aarch64]
-        - powerpc64le-conda-linux-gnu-clang --version       # [ppc64le]
-        - powerpc64le-conda-linux-gnu-clang-cpp --version   # [ppc64le]
+        - {{ triplet }}-clang --version
+        - {{ triplet }}-clang-cpp --version
     about:
       summary: Clang Compiler (activation scripts)
       home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
