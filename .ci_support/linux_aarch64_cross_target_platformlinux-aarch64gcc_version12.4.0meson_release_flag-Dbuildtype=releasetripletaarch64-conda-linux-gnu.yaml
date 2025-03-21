@@ -9,9 +9,9 @@ channel_sources:
 channel_targets:
 - conda-forge main
 clang_version:
-- '17.0'
 - '18.1'
 - '19.1'
+- '20.1'
 cross_stdlib:
 - sysroot
 cross_stdlib_version:
