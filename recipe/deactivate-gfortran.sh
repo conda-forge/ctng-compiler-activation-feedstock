@@ -85,7 +85,7 @@ _tc_activation() {
 # When people are using conda-build, assume that adding rpath during build, and pointing at
 #    the host env's includes and libs is helpful default behavior
 if [ "${CONDA_BUILD:-0}" = "1" ]; then
-  FFLAGS_USED="@FFLAGS@ -isystem ${PREFIX}@LIBRARY_PREFIX@/include -fdebug-prefix-map=${SRC_DIR}=/usr/local/src/conda/${PKG_NAME}-${PKG_VERSION} -fdebug-prefix-map=${PREFIX}=/usr/local/src/conda-prefix"
+  FFLAGS_USED="@FFLAGS@ -isystem ${PREFIX}@LIBRARY_PREFIX@/include -fdebug-prefix-map=${SRC_DIR}=/usr/local/src/conda/${PKG_NAME} -fdebug-prefix-map=${PREFIX}=/usr/local/src/conda-prefix"
 else
   FFLAGS_USED="@FFLAGS@ -isystem ${CONDA_PREFIX}@LIBRARY_PREFIX@/include"
 fi
