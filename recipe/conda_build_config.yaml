@@ -43,7 +43,7 @@ clang_version:
 
 # switch over release flag style cleanly across compiler versions, see #98
 meson_release_flag:
-  - "--buildtype release"
+  - "-Dbuildtype=release"
   - "-Dbuildtype=release"
   - "-Dbuildtype=release"
 
