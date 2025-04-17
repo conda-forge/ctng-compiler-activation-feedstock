@@ -41,19 +41,11 @@ clang_version:
   - 19.1
   - 18.1
 
-# switch over release flag style cleanly across compiler versions, see #98
-meson_release_flag:
-  - "-Dbuildtype=release"
-  - "-Dbuildtype=release"
-  - "-Dbuildtype=release"
-
 zip_keys:
   - - cross_target_platform
     - triplet
     - cross_stdlib
     - cross_stdlib_version
-  - - gcc_version
-    - meson_release_flag
 
 FINAL_CPPFLAGS:
   - -DNDEBUG -D_FORTIFY_SOURCE=2 -O2

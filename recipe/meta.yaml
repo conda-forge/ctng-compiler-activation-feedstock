@@ -29,9 +29,6 @@
 {% set library_prefix = "" %}
 {% endif %}
 
-# pretend this variable is used, so that smithy populates the variant configs
-# [meson_release_flag]
-
 package:
   name: ctng-compiler-activation
   version: {{ gcc_version }}
