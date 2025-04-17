@@ -1,4 +1,4 @@
-{% set build_num = 9 %}
+{% set build_num = 10 %}
 
 {% set gcc_major = 13 if gcc_version is undefined else gcc_version.split(".")[0] %}
 # generally, the runtime version of libstdcxx needs to be at least as high
@@ -215,6 +215,9 @@ outputs:
         # for activation of gcc env vars
         - {{ pin_subpackage("clang_" ~ cross_target_platform, exact=True) }}
         - clangxx_impl_{{ cross_target_platform }} =={{ clang_version }}.*
+        # the dependency below is redundant, but we need to ensure different hashes
+        # since the clang_{impl_,}_<target> outputs depend on a specific gcc version
+        - libstdcxx-devel_{{ cross_target_platform }} =={{ gcc_version }}.*
     test:
       requires:
         - {{ cross_stdlib }}_{{ cross_target_platform }} {{ cross_stdlib_version }}
