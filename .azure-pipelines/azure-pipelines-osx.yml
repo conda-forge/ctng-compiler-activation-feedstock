@@ -8,86 +8,86 @@ jobs:
     vmImage: macOS-13
   strategy:
     matrix:
-      ? osx_64_clang_version18.1cross_stdlibsysrootcross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletx86_64-conda-linux-gnu
-      : CONFIG: osx_64_clang_version18.1cross_stdlibsysrootcross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletx86_64-conda-linux-gnu
+      osx_64_clang_version18.1cross_target_platformlinux-64gcc_version12.4.0:
+        CONFIG: osx_64_clang_version18.1cross_target_platformlinux-64gcc_version12.4.0
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version18.1cross_stdlibsysrootcross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletx86_64-conda-linux-gnu
-      : CONFIG: osx_64_clang_version18.1cross_stdlibsysrootcross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletx86_64-conda-linux-gnu
+      osx_64_clang_version18.1cross_target_platformlinux-64gcc_version13.3.0:
+        CONFIG: osx_64_clang_version18.1cross_target_platformlinux-64gcc_version13.3.0
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version18.1cross_stdlibsysrootcross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_releasetripletx86_64-conda-linux-gnu
-      : CONFIG: osx_64_clang_version18.1cross_stdlibsysrootcross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_releasetripletx86_64-conda-linux-gnu
+      osx_64_clang_version18.1cross_target_platformlinux-64gcc_version14.2.0:
+        CONFIG: osx_64_clang_version18.1cross_target_platformlinux-64gcc_version14.2.0
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version18.1cross_stdlibsysrootcross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletaarch64-conda-linux-gnu
-      : CONFIG: osx_64_clang_version18.1cross_stdlibsysrootcross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletaarch64-conda-linux-gnu
+      osx_64_clang_version18.1cross_target_platformlinux-aarch64gcc_version12.4.0:
+        CONFIG: osx_64_clang_version18.1cross_target_platformlinux-aarch64gcc_version12.4.0
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version18.1cross_stdlibsysrootcross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletaarch64-conda-linux-gnu
-      : CONFIG: osx_64_clang_version18.1cross_stdlibsysrootcross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletaarch64-conda-linux-gnu
+      osx_64_clang_version18.1cross_target_platformlinux-aarch64gcc_version13.3.0:
+        CONFIG: osx_64_clang_version18.1cross_target_platformlinux-aarch64gcc_version13.3.0
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version18.1cross_stdlibsysrootcross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_releasetripletaarch64-conda-linux-gnu
-      : CONFIG: osx_64_clang_version18.1cross_stdlibsysrootcross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_releasetripletaarch64-conda-linux-gnu
+      osx_64_clang_version18.1cross_target_platformlinux-aarch64gcc_version14.2.0:
+        CONFIG: osx_64_clang_version18.1cross_target_platformlinux-aarch64gcc_version14.2.0
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version18.1cross_stdlibsysrootcross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletpowerpc64le-conda-linux-gnu
-      : CONFIG: osx_64_clang_version18.1cross_stdlibsysrootcross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletpowerpc64le-conda-linux-gnu
+      osx_64_clang_version18.1cross_target_platformlinux-ppc64legcc_version12.4.0:
+        CONFIG: osx_64_clang_version18.1cross_target_platformlinux-ppc64legcc_version12.4.0
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version18.1cross_stdlibsysrootcross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletpowerpc64le-conda-linux-gnu
-      : CONFIG: osx_64_clang_version18.1cross_stdlibsysrootcross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletpowerpc64le-conda-linux-gnu
+      osx_64_clang_version18.1cross_target_platformlinux-ppc64legcc_version13.3.0:
+        CONFIG: osx_64_clang_version18.1cross_target_platformlinux-ppc64legcc_version13.3.0
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version18.1cross_stdlibsysrootcross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_releasetripletpowerpc64le-conda-linux-gnu
-      : CONFIG: osx_64_clang_version18.1cross_stdlibsysrootcross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_releasetripletpowerpc64le-conda-linux-gnu
+      osx_64_clang_version18.1cross_target_platformlinux-ppc64legcc_version14.2.0:
+        CONFIG: osx_64_clang_version18.1cross_target_platformlinux-ppc64legcc_version14.2.0
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version19.1cross_stdlibsysrootcross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletx86_64-conda-linux-gnu
-      : CONFIG: osx_64_clang_version19.1cross_stdlibsysrootcross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletx86_64-conda-linux-gnu
+      osx_64_clang_version19.1cross_target_platformlinux-64gcc_version12.4.0:
+        CONFIG: osx_64_clang_version19.1cross_target_platformlinux-64gcc_version12.4.0
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version19.1cross_stdlibsysrootcross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletx86_64-conda-linux-gnu
-      : CONFIG: osx_64_clang_version19.1cross_stdlibsysrootcross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletx86_64-conda-linux-gnu
+      osx_64_clang_version19.1cross_target_platformlinux-64gcc_version13.3.0:
+        CONFIG: osx_64_clang_version19.1cross_target_platformlinux-64gcc_version13.3.0
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version19.1cross_stdlibsysrootcross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_releasetripletx86_64-conda-linux-gnu
-      : CONFIG: osx_64_clang_version19.1cross_stdlibsysrootcross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_releasetripletx86_64-conda-linux-gnu
+      osx_64_clang_version19.1cross_target_platformlinux-64gcc_version14.2.0:
+        CONFIG: osx_64_clang_version19.1cross_target_platformlinux-64gcc_version14.2.0
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version19.1cross_stdlibsysrootcross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletaarch64-conda-linux-gnu
-      : CONFIG: osx_64_clang_version19.1cross_stdlibsysrootcross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletaarch64-conda-linux-gnu
+      osx_64_clang_version19.1cross_target_platformlinux-aarch64gcc_version12.4.0:
+        CONFIG: osx_64_clang_version19.1cross_target_platformlinux-aarch64gcc_version12.4.0
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version19.1cross_stdlibsysrootcross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletaarch64-conda-linux-gnu
-      : CONFIG: osx_64_clang_version19.1cross_stdlibsysrootcross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletaarch64-conda-linux-gnu
+      osx_64_clang_version19.1cross_target_platformlinux-aarch64gcc_version13.3.0:
+        CONFIG: osx_64_clang_version19.1cross_target_platformlinux-aarch64gcc_version13.3.0
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version19.1cross_stdlibsysrootcross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_releasetripletaarch64-conda-linux-gnu
-      : CONFIG: osx_64_clang_version19.1cross_stdlibsysrootcross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_releasetripletaarch64-conda-linux-gnu
+      osx_64_clang_version19.1cross_target_platformlinux-aarch64gcc_version14.2.0:
+        CONFIG: osx_64_clang_version19.1cross_target_platformlinux-aarch64gcc_version14.2.0
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version19.1cross_stdlibsysrootcross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletpowerpc64le-conda-linux-gnu
-      : CONFIG: osx_64_clang_version19.1cross_stdlibsysrootcross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletpowerpc64le-conda-linux-gnu
+      osx_64_clang_version19.1cross_target_platformlinux-ppc64legcc_version12.4.0:
+        CONFIG: osx_64_clang_version19.1cross_target_platformlinux-ppc64legcc_version12.4.0
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version19.1cross_stdlibsysrootcross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletpowerpc64le-conda-linux-gnu
-      : CONFIG: osx_64_clang_version19.1cross_stdlibsysrootcross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletpowerpc64le-conda-linux-gnu
+      osx_64_clang_version19.1cross_target_platformlinux-ppc64legcc_version13.3.0:
+        CONFIG: osx_64_clang_version19.1cross_target_platformlinux-ppc64legcc_version13.3.0
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version19.1cross_stdlibsysrootcross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_releasetripletpowerpc64le-conda-linux-gnu
-      : CONFIG: osx_64_clang_version19.1cross_stdlibsysrootcross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_releasetripletpowerpc64le-conda-linux-gnu
+      osx_64_clang_version19.1cross_target_platformlinux-ppc64legcc_version14.2.0:
+        CONFIG: osx_64_clang_version19.1cross_target_platformlinux-ppc64legcc_version14.2.0
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version20.1cross_stdlibsysrootcross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletx86_64-conda-linux-gnu
-      : CONFIG: osx_64_clang_version20.1cross_stdlibsysrootcross_target_platformlinux-64gcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletx86_64-conda-linux-gnu
+      osx_64_clang_version20.1cross_target_platformlinux-64gcc_version12.4.0:
+        CONFIG: osx_64_clang_version20.1cross_target_platformlinux-64gcc_version12.4.0
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version20.1cross_stdlibsysrootcross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletx86_64-conda-linux-gnu
-      : CONFIG: osx_64_clang_version20.1cross_stdlibsysrootcross_target_platformlinux-64gcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletx86_64-conda-linux-gnu
+      osx_64_clang_version20.1cross_target_platformlinux-64gcc_version13.3.0:
+        CONFIG: osx_64_clang_version20.1cross_target_platformlinux-64gcc_version13.3.0
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version20.1cross_stdlibsysrootcross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_releasetripletx86_64-conda-linux-gnu
-      : CONFIG: osx_64_clang_version20.1cross_stdlibsysrootcross_target_platformlinux-64gcc_version14.2.0meson_release_flag--buildtype_releasetripletx86_64-conda-linux-gnu
+      osx_64_clang_version20.1cross_target_platformlinux-64gcc_version14.2.0:
+        CONFIG: osx_64_clang_version20.1cross_target_platformlinux-64gcc_version14.2.0
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version20.1cross_stdlibsysrootcross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletaarch64-conda-linux-gnu
-      : CONFIG: osx_64_clang_version20.1cross_stdlibsysrootcross_target_platformlinux-aarch64gcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletaarch64-conda-linux-gnu
+      osx_64_clang_version20.1cross_target_platformlinux-aarch64gcc_version12.4.0:
+        CONFIG: osx_64_clang_version20.1cross_target_platformlinux-aarch64gcc_version12.4.0
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version20.1cross_stdlibsysrootcross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletaarch64-conda-linux-gnu
-      : CONFIG: osx_64_clang_version20.1cross_stdlibsysrootcross_target_platformlinux-aarch64gcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletaarch64-conda-linux-gnu
+      osx_64_clang_version20.1cross_target_platformlinux-aarch64gcc_version13.3.0:
+        CONFIG: osx_64_clang_version20.1cross_target_platformlinux-aarch64gcc_version13.3.0
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version20.1cross_stdlibsysrootcross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_releasetripletaarch64-conda-linux-gnu
-      : CONFIG: osx_64_clang_version20.1cross_stdlibsysrootcross_target_platformlinux-aarch64gcc_version14.2.0meson_release_flag--buildtype_releasetripletaarch64-conda-linux-gnu
+      osx_64_clang_version20.1cross_target_platformlinux-aarch64gcc_version14.2.0:
+        CONFIG: osx_64_clang_version20.1cross_target_platformlinux-aarch64gcc_version14.2.0
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version20.1cross_stdlibsysrootcross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletpowerpc64le-conda-linux-gnu
-      : CONFIG: osx_64_clang_version20.1cross_stdlibsysrootcross_target_platformlinux-ppc64legcc_version12.4.0meson_release_flag-Dbuildtype=releasetripletpowerpc64le-conda-linux-gnu
+      osx_64_clang_version20.1cross_target_platformlinux-ppc64legcc_version12.4.0:
+        CONFIG: osx_64_clang_version20.1cross_target_platformlinux-ppc64legcc_version12.4.0
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version20.1cross_stdlibsysrootcross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletpowerpc64le-conda-linux-gnu
-      : CONFIG: osx_64_clang_version20.1cross_stdlibsysrootcross_target_platformlinux-ppc64legcc_version13.3.0meson_release_flag-Dbuildtype=releasetripletpowerpc64le-conda-linux-gnu
+      osx_64_clang_version20.1cross_target_platformlinux-ppc64legcc_version13.3.0:
+        CONFIG: osx_64_clang_version20.1cross_target_platformlinux-ppc64legcc_version13.3.0
         UPLOAD_PACKAGES: 'True'
-      ? osx_64_clang_version20.1cross_stdlibsysrootcross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_releasetripletpowerpc64le-conda-linux-gnu
-      : CONFIG: osx_64_clang_version20.1cross_stdlibsysrootcross_target_platformlinux-ppc64legcc_version14.2.0meson_release_flag--buildtype_releasetripletpowerpc64le-conda-linux-gnu
+      osx_64_clang_version20.1cross_target_platformlinux-ppc64legcc_version14.2.0:
+        CONFIG: osx_64_clang_version20.1cross_target_platformlinux-ppc64legcc_version14.2.0
         UPLOAD_PACKAGES: 'True'
     maxParallel: 21
   timeoutInMinutes: 360
