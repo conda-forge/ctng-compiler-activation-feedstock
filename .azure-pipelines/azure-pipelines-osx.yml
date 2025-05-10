@@ -8,17 +8,14 @@ jobs:
     vmImage: macOS-13
   strategy:
     matrix:
-      osx_64_clang_version18.1cross_target_platformlinux-64gcc_version12.4.0:
-        CONFIG: osx_64_clang_version18.1cross_target_platformlinux-64gcc_version12.4.0
-        UPLOAD_PACKAGES: 'True'
       osx_64_clang_version18.1cross_target_platformlinux-64gcc_version13.3.0:
         CONFIG: osx_64_clang_version18.1cross_target_platformlinux-64gcc_version13.3.0
         UPLOAD_PACKAGES: 'True'
       osx_64_clang_version18.1cross_target_platformlinux-64gcc_version14.2.0:
         CONFIG: osx_64_clang_version18.1cross_target_platformlinux-64gcc_version14.2.0
         UPLOAD_PACKAGES: 'True'
-      osx_64_clang_version18.1cross_target_platformlinux-aarch64gcc_version12.4.0:
-        CONFIG: osx_64_clang_version18.1cross_target_platformlinux-aarch64gcc_version12.4.0
+      osx_64_clang_version18.1cross_target_platformlinux-64gcc_version15.1.0:
+        CONFIG: osx_64_clang_version18.1cross_target_platformlinux-64gcc_version15.1.0
         UPLOAD_PACKAGES: 'True'
       osx_64_clang_version18.1cross_target_platformlinux-aarch64gcc_version13.3.0:
         CONFIG: osx_64_clang_version18.1cross_target_platformlinux-aarch64gcc_version13.3.0
@@ -26,8 +23,8 @@ jobs:
       osx_64_clang_version18.1cross_target_platformlinux-aarch64gcc_version14.2.0:
         CONFIG: osx_64_clang_version18.1cross_target_platformlinux-aarch64gcc_version14.2.0
         UPLOAD_PACKAGES: 'True'
-      osx_64_clang_version18.1cross_target_platformlinux-ppc64legcc_version12.4.0:
-        CONFIG: osx_64_clang_version18.1cross_target_platformlinux-ppc64legcc_version12.4.0
+      osx_64_clang_version18.1cross_target_platformlinux-aarch64gcc_version15.1.0:
+        CONFIG: osx_64_clang_version18.1cross_target_platformlinux-aarch64gcc_version15.1.0
         UPLOAD_PACKAGES: 'True'
       osx_64_clang_version18.1cross_target_platformlinux-ppc64legcc_version13.3.0:
         CONFIG: osx_64_clang_version18.1cross_target_platformlinux-ppc64legcc_version13.3.0
@@ -35,8 +32,8 @@ jobs:
       osx_64_clang_version18.1cross_target_platformlinux-ppc64legcc_version14.2.0:
         CONFIG: osx_64_clang_version18.1cross_target_platformlinux-ppc64legcc_version14.2.0
         UPLOAD_PACKAGES: 'True'
-      osx_64_clang_version19.1cross_target_platformlinux-64gcc_version12.4.0:
-        CONFIG: osx_64_clang_version19.1cross_target_platformlinux-64gcc_version12.4.0
+      osx_64_clang_version18.1cross_target_platformlinux-ppc64legcc_version15.1.0:
+        CONFIG: osx_64_clang_version18.1cross_target_platformlinux-ppc64legcc_version15.1.0
         UPLOAD_PACKAGES: 'True'
       osx_64_clang_version19.1cross_target_platformlinux-64gcc_version13.3.0:
         CONFIG: osx_64_clang_version19.1cross_target_platformlinux-64gcc_version13.3.0
@@ -44,8 +41,8 @@ jobs:
       osx_64_clang_version19.1cross_target_platformlinux-64gcc_version14.2.0:
         CONFIG: osx_64_clang_version19.1cross_target_platformlinux-64gcc_version14.2.0
         UPLOAD_PACKAGES: 'True'
-      osx_64_clang_version19.1cross_target_platformlinux-aarch64gcc_version12.4.0:
-        CONFIG: osx_64_clang_version19.1cross_target_platformlinux-aarch64gcc_version12.4.0
+      osx_64_clang_version19.1cross_target_platformlinux-64gcc_version15.1.0:
+        CONFIG: osx_64_clang_version19.1cross_target_platformlinux-64gcc_version15.1.0
         UPLOAD_PACKAGES: 'True'
       osx_64_clang_version19.1cross_target_platformlinux-aarch64gcc_version13.3.0:
         CONFIG: osx_64_clang_version19.1cross_target_platformlinux-aarch64gcc_version13.3.0
@@ -53,8 +50,8 @@ jobs:
       osx_64_clang_version19.1cross_target_platformlinux-aarch64gcc_version14.2.0:
         CONFIG: osx_64_clang_version19.1cross_target_platformlinux-aarch64gcc_version14.2.0
         UPLOAD_PACKAGES: 'True'
-      osx_64_clang_version19.1cross_target_platformlinux-ppc64legcc_version12.4.0:
-        CONFIG: osx_64_clang_version19.1cross_target_platformlinux-ppc64legcc_version12.4.0
+      osx_64_clang_version19.1cross_target_platformlinux-aarch64gcc_version15.1.0:
+        CONFIG: osx_64_clang_version19.1cross_target_platformlinux-aarch64gcc_version15.1.0
         UPLOAD_PACKAGES: 'True'
       osx_64_clang_version19.1cross_target_platformlinux-ppc64legcc_version13.3.0:
         CONFIG: osx_64_clang_version19.1cross_target_platformlinux-ppc64legcc_version13.3.0
@@ -62,8 +59,8 @@ jobs:
       osx_64_clang_version19.1cross_target_platformlinux-ppc64legcc_version14.2.0:
         CONFIG: osx_64_clang_version19.1cross_target_platformlinux-ppc64legcc_version14.2.0
         UPLOAD_PACKAGES: 'True'
-      osx_64_clang_version20.1cross_target_platformlinux-64gcc_version12.4.0:
-        CONFIG: osx_64_clang_version20.1cross_target_platformlinux-64gcc_version12.4.0
+      osx_64_clang_version19.1cross_target_platformlinux-ppc64legcc_version15.1.0:
+        CONFIG: osx_64_clang_version19.1cross_target_platformlinux-ppc64legcc_version15.1.0
         UPLOAD_PACKAGES: 'True'
       osx_64_clang_version20.1cross_target_platformlinux-64gcc_version13.3.0:
         CONFIG: osx_64_clang_version20.1cross_target_platformlinux-64gcc_version13.3.0
@@ -71,8 +68,8 @@ jobs:
       osx_64_clang_version20.1cross_target_platformlinux-64gcc_version14.2.0:
         CONFIG: osx_64_clang_version20.1cross_target_platformlinux-64gcc_version14.2.0
         UPLOAD_PACKAGES: 'True'
-      osx_64_clang_version20.1cross_target_platformlinux-aarch64gcc_version12.4.0:
-        CONFIG: osx_64_clang_version20.1cross_target_platformlinux-aarch64gcc_version12.4.0
+      osx_64_clang_version20.1cross_target_platformlinux-64gcc_version15.1.0:
+        CONFIG: osx_64_clang_version20.1cross_target_platformlinux-64gcc_version15.1.0
         UPLOAD_PACKAGES: 'True'
       osx_64_clang_version20.1cross_target_platformlinux-aarch64gcc_version13.3.0:
         CONFIG: osx_64_clang_version20.1cross_target_platformlinux-aarch64gcc_version13.3.0
@@ -80,8 +77,8 @@ jobs:
       osx_64_clang_version20.1cross_target_platformlinux-aarch64gcc_version14.2.0:
         CONFIG: osx_64_clang_version20.1cross_target_platformlinux-aarch64gcc_version14.2.0
         UPLOAD_PACKAGES: 'True'
-      osx_64_clang_version20.1cross_target_platformlinux-ppc64legcc_version12.4.0:
-        CONFIG: osx_64_clang_version20.1cross_target_platformlinux-ppc64legcc_version12.4.0
+      osx_64_clang_version20.1cross_target_platformlinux-aarch64gcc_version15.1.0:
+        CONFIG: osx_64_clang_version20.1cross_target_platformlinux-aarch64gcc_version15.1.0
         UPLOAD_PACKAGES: 'True'
       osx_64_clang_version20.1cross_target_platformlinux-ppc64legcc_version13.3.0:
         CONFIG: osx_64_clang_version20.1cross_target_platformlinux-ppc64legcc_version13.3.0
@@ -89,7 +86,10 @@ jobs:
       osx_64_clang_version20.1cross_target_platformlinux-ppc64legcc_version14.2.0:
         CONFIG: osx_64_clang_version20.1cross_target_platformlinux-ppc64legcc_version14.2.0
         UPLOAD_PACKAGES: 'True'
-    maxParallel: 21
+      osx_64_clang_version20.1cross_target_platformlinux-ppc64legcc_version15.1.0:
+        CONFIG: osx_64_clang_version20.1cross_target_platformlinux-ppc64legcc_version15.1.0
+        UPLOAD_PACKAGES: 'True'
+    maxParallel: 20
   timeoutInMinutes: 360
   variables: {}
 
