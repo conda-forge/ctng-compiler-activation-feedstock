@@ -1,4 +1,3 @@
-# cos6-specific because of PYTHON_SYSCONFIGDATA_NAME below.  Would be nice to make that more generic if possible.
 gcc_version:
   - 15.1.0
   - 14.3.0
@@ -145,12 +144,10 @@ FINAL_DEBUG_FFLAGS_win_64:
   - -fopenmp -ftree-vectorize -fPIC -fstack-protector-strong -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fvar-tracking-assignments -pipe
 
 FINAL_CONDA_PYTHON_SYSCONFIGDATA_NAME_linux_64:
-  - _sysconfigdata_x86_64_conda_cos6_linux_gnu
-FINAL_CONDA_PYTHON_SYSCONFIGDATA_NAME_linux_32:
-  - _sysconfigdata_i686_conda_cos6_linux_gnu
+  - _sysconfigdata_x86_64_conda_linux_gnu
 FINAL_CONDA_PYTHON_SYSCONFIGDATA_NAME_linux_ppc64le:
-  - _sysconfigdata_powerpc64le_conda_cos7_linux_gnu
+  - _sysconfigdata_powerpc64le_conda_linux_gnu
 FINAL_CONDA_PYTHON_SYSCONFIGDATA_NAME_linux_aarch64:
-  - _sysconfigdata_aarch64_conda_cos7_linux_gnu
+  - _sysconfigdata_aarch64_conda_linux_gnu
 FINAL_CONDA_PYTHON_SYSCONFIGDATA_NAME_linux_s390x:
   - _sysconfigdata_s390x_conda_linux_gnu
