@@ -1,7 +1,7 @@
 gcc_version:
   - 15.1.0
   - 14.3.0
-  - 13.3.0
+  - 13.4.0
 libgfortran_soname:
   - 5
 binutils_version:
