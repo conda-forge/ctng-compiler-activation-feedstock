@@ -29,6 +29,14 @@
 {% set library_prefix = "" %}
 {% endif %}
 
+{% if cross_target_platform.startswith("win-") %}
+{% set cross_stdlib = "m2w64-sysroot" %}
+{% set cross_stdlib_version = "12" %}
+{% else %}
+{% set cross_stdlib = "sysroot" %}
+{% set cross_stdlib_version = "2.17" %}
+{% endif %}
+
 package:
   name: ctng-compiler-activation
   version: {{ gcc_version }}
@@ -99,8 +107,10 @@ outputs:
         - clang =={{ clang_version }}.*
     test:
       commands:
-        - {{ triplet }}-clang --version
-        - {{ triplet }}-clang-cpp --version
+        - ${CONDA_TOOLCHAIN_HOST}-clang --version   # [unix]
+        - if not exist "%LIBRARY_BIN%\\%CONDA_TOOLCHAIN_HOST%-clang" exit 1    # [win]
+        - ${CONDA_TOOLCHAIN_HOST}-clang-cpp --version   # [unix]
+        - if not exist "%LIBRARY_BIN%\\%CONDA_TOOLCHAIN_HOST%-clang-cpp" exit 1    # [win]
     about:
       summary: Clang Compiler (activation scripts)
       home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
@@ -303,8 +313,8 @@ outputs:
         - gcc_impl_{{ target_platform }} {{ gcc_version }}.*
     test:
       commands:
-        - test -f $PREFIX/bin/{{ triplet }}-cc                 # [target_platform != "win-64"]
-        - test -f $PREFIX/Library/bin/{{ triplet }}-cc.exe     # [target_platform == "win-64"]
+        - test -f $PREFIX/bin/${CONDA_TOOLCHAIN_HOST}-cc                 # [target_platform != "win-64"]
+        - test -f $PREFIX/Library/bin/x86_64-w64-mingw32-cc.exe          # [target_platform == "win-64"]
     about:
       summary: GCC bootstrap compilers for building deps
       home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
