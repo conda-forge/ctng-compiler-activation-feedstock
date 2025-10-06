@@ -1,64 +1,10 @@
-About ctng-compiler-activation-feedstock
-========================================
+About clang_impl_linux-64-feedstock
+===================================
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/ctng-compiler-activation-feedstock/blob/main/LICENSE.txt)
 
 
-About ctng-compiler-activation
-------------------------------
-
-Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-
-Package license: BSD-3-Clause
-
-Summary: Activation scripts for gcc, g++, gfortran and clang
-
 About clang_impl_linux-64
--------------------------
-
-Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-
-Package license: BSD-3-Clause
-
-Summary: Clang Compiler (activation scripts)
-
-About clang_impl_linux-aarch64
-------------------------------
-
-Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-
-Package license: BSD-3-Clause
-
-Summary: Clang Compiler (activation scripts)
-
-About clang_impl_linux-ppc64le
-------------------------------
-
-Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-
-Package license: BSD-3-Clause
-
-Summary: Clang Compiler (activation scripts)
-
-About clang_linux-64
---------------------
-
-Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-
-Package license: BSD-3-Clause
-
-Summary: Clang Compiler (activation scripts)
-
-About clang_linux-aarch64
--------------------------
-
-Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-
-Package license: BSD-3-Clause
-
-Summary: Clang Compiler (activation scripts)
-
-About clang_linux-ppc64le
 -------------------------
 
 Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
@@ -126,7 +72,7 @@ About gcc_bootstrap_linux-64
 
 Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
 
-Package license: GPL
+Package license: NGPL
 
 Summary: GCC bootstrap compilers for building deps
 
@@ -135,7 +81,7 @@ About gcc_bootstrap_linux-aarch64
 
 Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
 
-Package license: GPL
+Package license: NGPL
 
 Summary: GCC bootstrap compilers for building deps
 
@@ -144,7 +90,7 @@ About gcc_bootstrap_linux-ppc64le
 
 Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
 
-Package license: GPL
+Package license: NGPL
 
 Summary: GCC bootstrap compilers for building deps
 
@@ -153,7 +99,7 @@ About gcc_bootstrap_win-64
 
 Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
 
-Package license: GPL
+Package license: NGPL
 
 Summary: GCC bootstrap compilers for building deps
 
@@ -786,10 +732,10 @@ Current release info
 | [![Conda Recipe](https://img.shields.io/badge/recipe-gxx__linux--ppc64le-green.svg)](https://anaconda.org/conda-forge/gxx_linux-ppc64le) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gxx_linux-ppc64le.svg)](https://anaconda.org/conda-forge/gxx_linux-ppc64le) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gxx_linux-ppc64le.svg)](https://anaconda.org/conda-forge/gxx_linux-ppc64le) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gxx_linux-ppc64le.svg)](https://anaconda.org/conda-forge/gxx_linux-ppc64le) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-gxx__win--64-green.svg)](https://anaconda.org/conda-forge/gxx_win-64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gxx_win-64.svg)](https://anaconda.org/conda-forge/gxx_win-64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gxx_win-64.svg)](https://anaconda.org/conda-forge/gxx_win-64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gxx_win-64.svg)](https://anaconda.org/conda-forge/gxx_win-64) |
 
-Installing ctng-compiler-activation
-===================================
+Installing clang_impl_linux-64
+==============================
 
-Installing `ctng-compiler-activation` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `clang_impl_linux-64` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
@@ -855,12 +801,12 @@ it is possible to build and upload installable packages to the
 [conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
 channel for Linux, Windows and OSX respectively.
 
-To manage the continuous integration and simplify feedstock maintenance
+To manage the continuous integration and simplify feedstock maintenance,
 [conda-smithy](https://github.com/conda-forge/conda-smithy) has been developed.
 Using the ``conda-forge.yml`` within this repository, it is possible to re-render all of
 this feedstock's supporting files (e.g. the CI configuration files) with ``conda smithy rerender``.
 
-For more information please check the [conda-forge documentation](https://conda-forge.org/docs/).
+For more information, please check the [conda-forge documentation](https://conda-forge.org/docs/).
 
 Terminology
 ===========
@@ -875,19 +821,19 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating ctng-compiler-activation-feedstock
-===========================================
+Updating clang_impl_linux-64-feedstock
+======================================
 
-If you would like to improve the ctng-compiler-activation recipe or build a new
+If you would like to improve the clang_impl_linux-64 recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/ctng-compiler-activation-feedstock are
+Note that all branches in the conda-forge/clang_impl_linux-64-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
-on branches in forks and branches in the main repository should only be used to
+on branches in forks, and branches in the main repository should only be used to
 build distinct package versions.
 
 In order to produce a uniquely identifiable distribution:
