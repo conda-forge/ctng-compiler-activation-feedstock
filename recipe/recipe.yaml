@@ -17,6 +17,7 @@ context:
   gcc_major: ${{ (gcc_version | split("."))[0] | int }}
   last_symbol_bump: 12
   min_runtime_version: ${{ gcc_major if ((gcc_major | int) > (last_symbol_bump | int)) else last_symbol_bump }}
+  default_skip: ${{ (target_platform == "win-64" and cross_target_platform != "win-64") or (cross_target_platform == "win-64" and gcc_major|int < 13) or cross_target_platform == "linux-s390x" or s390x }}
 
 recipe:
   name: ctng-compiler-activation
@@ -27,13 +28,12 @@ source:
 
 build:
   number: ${{ build_num }}
-  skip: true
 
 outputs:
   - package:
       name: gcc_${{ cross_target_platform }}
     build:
-      skip: not (linux or win)
+      skip: default_skip or not (linux or win)
       script: install-gcc.sh
     requirements:
       build:
@@ -81,7 +81,7 @@ outputs:
       version: ${{ clang_version }}
     build:
       # only for linux; osx builds are done on clang-compiler-activation-feedstock
-      skip: win or s390x or cross_target_platform not in ("linux-64", "linux-aarch64", "linux-ppc64le")
+      skip: default_skip or win or s390x or cross_target_platform not in ("linux-64", "linux-aarch64", "linux-ppc64le")
       script: install-clang_impl.sh
     requirements:
       build:
@@ -108,7 +108,7 @@ outputs:
       name: clang_${{ cross_target_platform }}
       version: ${{ clang_version }}
     build:
-      skip: win or s390x or cross_target_platform in ("linux-s390x", "win-64")
+      skip: default_skip or win or s390x or cross_target_platform in ("linux-s390x", "win-64")
       script: install-clang.sh
     requirements:
       build:
@@ -145,7 +145,7 @@ outputs:
   - package:
       name: gxx_${{ cross_target_platform }}
     build:
-      skip: not (linux or win)
+      skip: default_skip or not (linux or win)
       script: install-g++.sh
     requirements:
       build:
@@ -191,7 +191,7 @@ outputs:
       version: ${{ clang_version }}
     build:
       # only for linux; osx builds are done on clang-compiler-activation-feedstock
-      skip: win or s390x or cross_target_platform not in ("linux-64", "linux-aarch64", "linux-ppc64le")
+      skip: default_skip or win or s390x or cross_target_platform not in ("linux-64", "linux-aarch64", "linux-ppc64le")
       script: install-clangxx_impl.sh
     requirements:
       build:
@@ -220,7 +220,7 @@ outputs:
       name: clangxx_${{ cross_target_platform }}
       version: ${{ clang_version }}
     build:
-      skip: win or s390x or cross_target_platform in ("linux-s390x", "win-64")
+      skip: default_skip or win or s390x or cross_target_platform in ("linux-s390x", "win-64")
       script: install-clang++.sh
     requirements:
       build:
@@ -261,7 +261,7 @@ outputs:
   - package:
       name: gfortran_${{ cross_target_platform }}
     build:
-      skip: not (linux or win)
+      skip: default_skip or not (linux or win)
       script: install-gfortran.sh
     requirements:
       build:
@@ -308,7 +308,7 @@ outputs:
       name: gcc_bootstrap_${{ cross_target_platform }}
       version: ${{ gcc_version }}
     build:
-      skip: not (linux or win)
+      skip: default_skip or not (linux or win)
       always_include_files:
         - ${{ library_prefix }}bin/
         - ${{ library_prefix }}etc/
@@ -354,6 +354,7 @@ about:
   homepage: https://github.com/conda-forge/ctng-compiler-activation-feedstock
 
 extra:
+  feedstock-name: ctng-compiler-activation
   recipe-maintainers:
     - isuruf
     - beckermr
