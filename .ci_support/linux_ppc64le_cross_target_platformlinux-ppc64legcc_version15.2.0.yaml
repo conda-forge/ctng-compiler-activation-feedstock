@@ -15,17 +15,17 @@ cross_stdlib:
 cross_stdlib_version:
 - '2.17'
 cross_target_platform:
-- linux-aarch64
+- linux-ppc64le
 docker_image:
 - quay.io/condaforge/linux-anvil-x86_64:alma9
 gcc_version:
-- 15.1.0
+- 15.2.0
 libgfortran_soname:
 - '5'
 target_platform:
-- linux-64
+- linux-ppc64le
 triplet:
-- aarch64-conda-linux-gnu
+- powerpc64le-conda-linux-gnu
 zip_keys:
 - - cross_target_platform
   - triplet
