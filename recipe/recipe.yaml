@@ -60,7 +60,7 @@ outputs:
             - tests
         requirements:
           run:
-            - ${{ cross_stdlib }}_${{ cross_target_platform }} ${{ cross_stdlib_version }}
+            - ${{ cross_stdlib }}_${{ cross_target_platform }} ${{ cross_stdlib_version }}.*
         script:
           - ${CC} ${CFLAGS} -Wall tests/aligned_alloc.c -c -o c_aligned.o -v
           - if: target_platform == cross_target_platform
@@ -127,7 +127,7 @@ outputs:
             - tests
         requirements:
           run:
-            - ${{ cross_stdlib }}_${{ cross_target_platform }} ${{ cross_stdlib_version }}
+            - ${{ cross_stdlib }}_${{ cross_target_platform }} ${{ cross_stdlib_version }}.*
         script:
           - ${CC} ${CFLAGS} -Wall tests/aligned_alloc.c -c -o c_aligned.o -v
           - if: target_platform == cross_target_platform
@@ -171,7 +171,7 @@ outputs:
             - tests
         requirements:
           run:
-            - ${{ cross_stdlib }}_${{ cross_target_platform }} ${{ cross_stdlib_version }}
+            - ${{ cross_stdlib }}_${{ cross_target_platform }} ${{ cross_stdlib_version }}.*
         script:
           - ${CXX} ${CXXFLAGS} -Wall tests/aligned_alloc.cpp -c -o cpp_aligned.o
           - if: target_platform == cross_target_platform
@@ -243,7 +243,7 @@ outputs:
             - tests
         requirements:
           run:
-            - ${{ cross_stdlib }}_${{ cross_target_platform }} ${{ cross_stdlib_version }}
+            - ${{ cross_stdlib }}_${{ cross_target_platform }} ${{ cross_stdlib_version }}.*
         script:
           - ${CXX} ${CXXFLAGS} -Wall tests/aligned_alloc.cpp -c -o cpp_aligned.o
           - if: target_platform == cross_target_platform
@@ -292,7 +292,7 @@ outputs:
               then: cmake >=3.11
             - if: x86_64 or aarch64 or ppc64le
               then: make
-            - ${{ cross_stdlib }}_${{ cross_target_platform }} ${{ cross_stdlib_version }}
+            - ${{ cross_stdlib }}_${{ cross_target_platform }} ${{ cross_stdlib_version }}.*
         script:
           - ${FC} --version
           - pushd tests/fortomp
