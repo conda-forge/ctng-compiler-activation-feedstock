@@ -1,0 +1,369 @@
+schema_version: 1
+
+context:
+  build_num: 12
+  gcc_version: ${{ gcc_version | default("13.1.0") }}
+  gcc_major: ${{ (gcc_version | split("."))[0] | int }}
+  default_skip: ${{ (target_platform == "win-64" and cross_target_platform != "win-64") or (cross_target_platform == "win-64" and gcc_major|int < 13) or cross_target_platform == "linux-s390x" or s390x }}
+
+  # generally, the runtime version of libstdcxx needs to be at least as high
+  # as the compiler; however, wherever libstdcxx changes the default ABI version
+  # of a symbol, we need to ensure at least that version at runtime also for
+  # packages built with older compilers (because that build environment will
+  # pull in the newest libstdcxx, and then depend on that new symbol version).
+  # C.f. https://johannst.github.io/notes/development/symbolver.html resp.
+  # check if some symbol changed ABI (and thus got reversioned) at the bottom of
+  # https://gcc.gnu.org/onlinedocs/libstdc++/manual/api.html
+  # In this case, libstdcxx last changed the default version of an ELF symbol
+  # in v12, therefore this is the lowest we can go for GCC <=12, see #97 or
+  # https://github.com/gcc-mirror/gcc/commit/9e18a25331fa25c3907249fede65a02c6817b06e
+  last_symbol_bump: 12
+  min_runtime_version: ${{ gcc_major if ((gcc_major | int) > (last_symbol_bump | int)) else last_symbol_bump }}
+
+recipe:
+  name: ctng-compiler-activation
+  version: ${{ gcc_version }}
+
+source:
+  path: .
+
+build:
+  number: ${{ build_num }}
+
+outputs:
+  - package:
+      name: gcc_${{ cross_target_platform }}
+    build:
+      skip: default_skip or not (linux or win)
+      script: install-gcc.sh
+    requirements:
+      build:
+        - if: not (aarch64 or ppc64le)
+          then: shellcheck
+      run:
+        - gcc_impl_${{ target_platform }} ${{ gcc_version }}.*
+        - gcc_impl_${{ cross_target_platform }} ${{ gcc_version }}.*
+        # for activation of binutils env vars
+        - binutils_${{ cross_target_platform }}
+        - if: linux
+          then: ${{ c_stdlib }}_${{ target_platform }}
+        - ${{ cross_stdlib }}_${{ cross_target_platform }}
+        - if: cross_target_platform == "win-64"
+          then: gendef
+      run_exports:
+        strong:
+          - libgcc >=${{ min_runtime_version }}
+          # Need ucrt for windows<10
+          - if: cross_target_platform == "win-64"
+            then: ucrt >=10.0.20348.0
+    tests:
+      - files:
+          recipe:
+            - tests
+        requirements:
+          run:
+            - ${{ cross_stdlib }}_${{ cross_target_platform }} ${{ cross_stdlib_version }}.*
+        script:
+          - ${CC} ${CFLAGS} -Wall tests/aligned_alloc.c -c -o c_aligned.o -v
+          - if: target_platform == cross_target_platform
+            then: ${CC} ${LDFLAGS} c_aligned.o -o c_aligned
+          - if: target_platform == cross_target_platform
+            then: ./c_aligned
+          # CONDA_BUILD_SYSROOT is defined for clang++ to find correct C++ headers, see issue 8
+          - test -z "${CONDA_BUILD_SYSROOT+x}" && echo "CONDA_BUILD_SYSROOT is not set" && exit 1
+          - test -d ${CONDA_BUILD_SYSROOT} || exit 1
+          - echo ${FINAL_CFLAGS_linux_64}
+    about:
+      summary: GNU C Compiler (activation scripts)
+      license: BSD-3-Clause
+      license_file: LICENSE
+      homepage: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+  - package:
+      name: clang_impl_${{ cross_target_platform }}
+      version: ${{ clang_version }}
+    build:
+      # only for linux; osx builds are done on clang-compiler-activation-feedstock
+      skip: default_skip or win or s390x or cross_target_platform not in ("linux-64", "linux-aarch64", "linux-ppc64le")
+      script: install-clang_impl.sh
+    requirements:
+      build:
+        - if: not (aarch64 or ppc64le)
+          then: shellcheck
+      run:
+        - libgcc-devel_${{ cross_target_platform }} ${{ gcc_version }}.*
+        - ${{ cross_stdlib }}_${{ cross_target_platform }}
+        - binutils_impl_${{ cross_target_platform }}
+        - compiler-rt_${{ cross_target_platform }}
+        - compiler-rt ${{ clang_version }}.*
+        - clang ${{ clang_version }}.*
+    tests:
+      - script:
+          - ${{ triplet }}-clang --version
+          - ${{ triplet }}-clang-cpp --version
+    about:
+      summary: Clang Compiler (activation scripts)
+      license: BSD-3-Clause
+      license_file: LICENSE
+      homepage: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+  - package:
+      name: clang_${{ cross_target_platform }}
+      version: ${{ clang_version }}
+    build:
+      skip: default_skip or win or s390x or cross_target_platform in ("linux-s390x", "win-64")
+      script: install-clang.sh
+    requirements:
+      build:
+        - if: not (aarch64 or ppc64le)
+          then: shellcheck
+      run:
+        # for activation of binutils env vars
+        - binutils_${{ cross_target_platform }}
+        - clang_impl_${{ cross_target_platform }} ${{ clang_version }}.*
+      run_exports:
+        strong:
+          - libgcc >=${{ min_runtime_version }}
+    tests:
+      - files:
+          recipe:
+            - tests
+        requirements:
+          run:
+            - ${{ cross_stdlib }}_${{ cross_target_platform }} ${{ cross_stdlib_version }}.*
+        script:
+          - ${CC} ${CFLAGS} -Wall tests/aligned_alloc.c -c -o c_aligned.o -v
+          - if: target_platform == cross_target_platform
+            then: ${CC} ${LDFLAGS} c_aligned.o -o c_aligned
+          - if: target_platform == cross_target_platform
+            then: ./c_aligned
+          # CONDA_BUILD_SYSROOT is defined for clang++ to find correct C++ headers, see issue 8
+          - test -z "${CONDA_BUILD_SYSROOT+x}" && echo "CONDA_BUILD_SYSROOT is not set" && exit 1
+          - test -d ${CONDA_BUILD_SYSROOT} || exit 1
+    about:
+      summary: Clang Compiler (activation scripts)
+      license: BSD-3-Clause
+      license_file: LICENSE
+      homepage: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+  - package:
+      name: gxx_${{ cross_target_platform }}
+    build:
+      skip: default_skip or not (linux or win)
+      script: install-g++.sh
+    requirements:
+      build:
+        - if: not (aarch64 or ppc64le)
+          then: shellcheck
+      run:
+        - gxx_impl_${{ target_platform }} ${{ gcc_version }}.*
+        - gxx_impl_${{ cross_target_platform }} ${{ gcc_version }}.*
+        # for activation of gcc env vars
+        - ${{ pin_subpackage("gcc_" ~ cross_target_platform, exact=True) }}
+        # for activation of binutils env vars
+        - binutils_${{ cross_target_platform }}
+        - ${{ cross_stdlib }}_${{ cross_target_platform }}
+      run_exports:
+        strong:
+          # This should be a transitive dependency, but conda-build doesn't support those
+          - libstdcxx >=${{ min_runtime_version }}
+          # Because transitive run_exports do not work:
+          - libgcc >=${{ min_runtime_version }}
+          # Need ucrt for windows<10
+          - if: cross_target_platform == "win-64"
+            then: ucrt >=10.0.20348.0
+    tests:
+      - files:
+          recipe:
+            - tests
+        requirements:
+          run:
+            - ${{ cross_stdlib }}_${{ cross_target_platform }} ${{ cross_stdlib_version }}.*
+        script:
+          - ${CXX} ${CXXFLAGS} -Wall tests/aligned_alloc.cpp -c -o cpp_aligned.o
+          - if: target_platform == cross_target_platform
+            then: ${CXX} ${LDFLAGS} cpp_aligned.o -o cpp_aligned
+          - if: target_platform == cross_target_platform
+            then: ./cpp_aligned
+          - test -z "${CONDA_BUILD_SYSROOT+x}" && echo "CONDA_BUILD_SYSROOT is not set" && exit 1
+          - test -d ${CONDA_BUILD_SYSROOT} || exit 1
+    about:
+      summary: GNU C++ Compiler (activation scripts)
+      license: BSD-3-Clause
+      license_file: LICENSE
+      homepage: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+  - package:
+      name: clangxx_impl_${{ cross_target_platform }}
+      version: ${{ clang_version }}
+    build:
+      # only for linux; osx builds are done on clang-compiler-activation-feedstock
+      skip: default_skip or win or s390x or cross_target_platform not in ("linux-64", "linux-aarch64", "linux-ppc64le")
+      script: install-clangxx_impl.sh
+    requirements:
+      build:
+        - if: not (aarch64 or ppc64le)
+          then: shellcheck
+      run:
+        - ${{ pin_subpackage("clang_impl_" ~ cross_target_platform, exact=True) }}
+        # C++ compiler on linux needs a stdlib
+        - libstdcxx-devel_${{ cross_target_platform }} ${{ gcc_version }}.*
+        - clangxx ${{ clang_version }}.*
+    tests:
+      - script:
+          - if: linux64
+            then: x86_64-conda-linux-gnu-clang++ --version
+          - if: aarch64
+            then: aarch64-conda-linux-gnu-clang++ --version
+          - if: ppc64le
+            then: powerpc64le-conda-linux-gnu-clang++ --version
+    about:
+      summary: Clang C++ Compiler (activation scripts)
+      license: BSD-3-Clause
+      license_file: LICENSE
+      homepage: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+  - package:
+      name: clangxx_${{ cross_target_platform }}
+      version: ${{ clang_version }}
+    build:
+      skip: default_skip or win or s390x or cross_target_platform in ("linux-s390x", "win-64")
+      script: install-clang++.sh
+    requirements:
+      build:
+        - if: not (aarch64 or ppc64le)
+          then: shellcheck
+      run:
+        # for activation of gcc env vars
+        - ${{ pin_subpackage("clang_" ~ cross_target_platform, exact=True) }}
+        - clangxx_impl_${{ cross_target_platform }} ${{ clang_version }}.*
+        # the dependency below is redundant, but we need to ensure different hashes
+        # since the clang_{impl_,}_<target> outputs depend on a specific gcc version
+        - libstdcxx-devel_${{ cross_target_platform }} ${{ gcc_version }}.*
+      run_exports:
+        strong:
+          # This should be a transitive dependency, but conda-build doesn't support those
+          - libstdcxx >=${{ min_runtime_version }}
+          # Because transitive run_exports do not work:
+          - libgcc >=${{ min_runtime_version }}
+    tests:
+      - files:
+          recipe:
+            - tests
+        requirements:
+          run:
+            - ${{ cross_stdlib }}_${{ cross_target_platform }} ${{ cross_stdlib_version }}.*
+        script:
+          - ${CXX} ${CXXFLAGS} -Wall tests/aligned_alloc.cpp -c -o cpp_aligned.o
+          - if: target_platform == cross_target_platform
+            then: ${CXX} ${LDFLAGS} cpp_aligned.o -o cpp_aligned
+          - if: target_platform == cross_target_platform
+            then: ./cpp_aligned
+          - test -z "${CONDA_BUILD_SYSROOT+x}" && echo "CONDA_BUILD_SYSROOT is not set" && exit 1
+          - test -d ${CONDA_BUILD_SYSROOT} || exit 1
+    about:
+      summary: Clang C++ Compiler (activation scripts)
+      license: BSD-3-Clause
+      license_file: LICENSE
+      homepage: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+  - package:
+      name: gfortran_${{ cross_target_platform }}
+    build:
+      skip: default_skip or not (linux or win)
+      script: install-gfortran.sh
+    requirements:
+      build:
+        - if: not (aarch64 or ppc64le)
+          then: shellcheck
+      run:
+        - gfortran_impl_${{ cross_target_platform }} ${{ gcc_version }}.*
+        - gfortran_impl_${{ target_platform }} ${{ gcc_version }}.*
+        # for activation of gcc env vars:
+        - ${{ pin_subpackage("gcc_" ~ cross_target_platform, exact=True) }}
+        # for activation of binutils env vars:
+        - binutils_${{ cross_target_platform }}
+        - ${{ cross_stdlib }}_${{ cross_target_platform }}
+      run_exports:
+        strong:
+          - libgfortran${{ libgfortran_soname }} >=${{ gcc_version }}
+          - libgfortran
+          - libgcc >=${{ min_runtime_version }}
+          - if: cross_target_platform == "win-64"
+            then: ucrt >=10.0.20348.0
+    tests:
+      - files:
+          recipe:
+            - tests/fortomp/*
+        requirements:
+          run:
+            - if: x86_64 or aarch64 or ppc64le
+              then: cmake >=3.11
+            - if: x86_64 or aarch64 or ppc64le
+              then: make
+            - ${{ cross_stdlib }}_${{ cross_target_platform }} ${{ cross_stdlib_version }}.*
+        script:
+          - ${FC} --version
+          - pushd tests/fortomp
+          - if: target_platform == cross_target_platform and (x86_64 or aarch64 or ppc64le)
+            then: sh test_fort.sh
+    about:
+      summary: GNU Fortran Compiler (activation scripts)
+      license: BSD-3-Clause
+      license_file: LICENSE
+      homepage: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+  - package:
+      name: gcc_bootstrap_${{ cross_target_platform }}
+      version: ${{ gcc_version }}
+    build:
+      skip: default_skip or not (linux or win)
+      always_include_files:
+        - ${{ library_prefix }}bin/
+        - ${{ library_prefix }}etc/
+        - ${{ library_prefix }}lib64/
+        - ${{ library_prefix }}lib/
+        - ${{ library_prefix }}libexec/
+        - ${{ library_prefix }}share/
+        - ${{ library_prefix }}x86_64-conda-linux-gnu/
+        - ${{ library_prefix }}powerpc64le-conda-linux-gnu/
+        - ${{ library_prefix }}aarch64-conda-linux-gnu/
+        - ${{ library_prefix }}s390x-conda-linux-gnu/
+        - ${{ library_prefix }}x86_64-w64-mingw32/
+      prefix_detection:
+        ignore_binary_files: false
+      dynamic_linking:
+        binary_relocation: false
+    requirements:
+      host:
+        - binutils_impl_${{ cross_target_platform }} ${{ binutils_version }}.*
+        - gfortran_impl_${{ cross_target_platform }} ${{ gcc_version }}.*
+        - gxx_impl_${{ cross_target_platform }} ${{ gcc_version }}.*
+        - gcc_impl_${{ cross_target_platform }} ${{ gcc_version }}.*
+        - binutils_impl_${{ target_platform }} ${{ binutils_version }}.*
+        - gfortran_impl_${{ target_platform }} ${{ gcc_version }}.*
+        - gxx_impl_${{ target_platform }} ${{ gcc_version }}.*
+        - gcc_impl_${{ target_platform }} ${{ gcc_version }}.*
+    tests:
+      - script:
+          - if: target_platform != "win-64"
+            then: test -f $PREFIX/bin/${{ triplet }}-cc
+          - if: target_platform == "win-64"
+            then: test -f $PREFIX/Library/bin/${{ triplet }}-cc.exe
+    about:
+      summary: GCC bootstrap compilers for building deps
+      license: NGPL
+      license_file: GPL_LICENSE
+      homepage: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+about:
+  summary: Activation scripts for gcc, g++, gfortran and clang
+  license: BSD-3-Clause
+  license_file: LICENSE
+  homepage: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+extra:
+  feedstock-name: ctng-compiler-activation
+  recipe-maintainers:
+    - isuruf
+    - beckermr

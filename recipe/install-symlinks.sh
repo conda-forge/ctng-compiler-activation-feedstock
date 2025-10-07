@@ -1,5 +1,6 @@
 #!/bin/bash
 
+source ${RECIPE_DIR}/build_scripts.sh
 source ${RECIPE_DIR}/get_cpu_arch.sh
 
 if [[ "${PKG_NAME}" == "gcc" ]]; then

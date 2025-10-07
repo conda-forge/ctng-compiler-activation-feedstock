@@ -1,3 +1,4 @@
+source ${RECIPE_DIR}/build_scripts.sh
 source $RECIPE_DIR/get_cpu_arch.sh
 
 mkdir -p ${PREFIX}/etc/conda/{de,}activate.d
