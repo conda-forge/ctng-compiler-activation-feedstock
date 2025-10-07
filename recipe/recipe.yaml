@@ -1,23 +1,24 @@
-# generally, the runtime version of libstdcxx needs to be at least as high
-# as the compiler; however, wherever libstdcxx changes the default ABI version
-# of a symbol, we need to ensure at least that version at runtime also for
-# packages built with older compilers (because that build environment will
-# pull in the newest libstdcxx, and then depend on that new symbol version).
-# C.f. https://johannst.github.io/notes/development/symbolver.html resp.
-# check if some symbol changed ABI (and thus got reversioned) at the bottom of
-# https://gcc.gnu.org/onlinedocs/libstdc++/manual/api.html
-# In this case, libstdcxx last changed the default version of an ELF symbol
-# in v12, therefore this is the lowest we can go for GCC <=12, see #97 or
-# https://github.com/gcc-mirror/gcc/commit/9e18a25331fa25c3907249fede65a02c6817b06e
 schema_version: 1
 
 context:
   build_num: 12
   gcc_version: ${{ gcc_version | default("13.1.0") }}
   gcc_major: ${{ (gcc_version | split("."))[0] | int }}
+  default_skip: ${{ (target_platform == "win-64" and cross_target_platform != "win-64") or (cross_target_platform == "win-64" and gcc_major|int < 13) or cross_target_platform == "linux-s390x" or s390x }}
+
+  # generally, the runtime version of libstdcxx needs to be at least as high
+  # as the compiler; however, wherever libstdcxx changes the default ABI version
+  # of a symbol, we need to ensure at least that version at runtime also for
+  # packages built with older compilers (because that build environment will
+  # pull in the newest libstdcxx, and then depend on that new symbol version).
+  # C.f. https://johannst.github.io/notes/development/symbolver.html resp.
+  # check if some symbol changed ABI (and thus got reversioned) at the bottom of
+  # https://gcc.gnu.org/onlinedocs/libstdc++/manual/api.html
+  # In this case, libstdcxx last changed the default version of an ELF symbol
+  # in v12, therefore this is the lowest we can go for GCC <=12, see #97 or
+  # https://github.com/gcc-mirror/gcc/commit/9e18a25331fa25c3907249fede65a02c6817b06e
   last_symbol_bump: 12
   min_runtime_version: ${{ gcc_major if ((gcc_major | int) > (last_symbol_bump | int)) else last_symbol_bump }}
-  default_skip: ${{ (target_platform == "win-64" and cross_target_platform != "win-64") or (cross_target_platform == "win-64" and gcc_major|int < 13) or cross_target_platform == "linux-s390x" or s390x }}
 
 recipe:
   name: ctng-compiler-activation
@@ -52,6 +53,7 @@ outputs:
       run_exports:
         strong:
           - libgcc >=${{ min_runtime_version }}
+          # Need ucrt for windows<10
           - if: cross_target_platform == "win-64"
             then: ucrt >=10.0.20348.0
     tests:
@@ -67,6 +69,7 @@ outputs:
             then: ${CC} ${LDFLAGS} c_aligned.o -o c_aligned
           - if: target_platform == cross_target_platform
             then: ./c_aligned
+          # CONDA_BUILD_SYSROOT is defined for clang++ to find correct C++ headers, see issue 8
           - test -z "${CONDA_BUILD_SYSROOT+x}" && echo "CONDA_BUILD_SYSROOT is not set" && exit 1
           - test -d ${CONDA_BUILD_SYSROOT} || exit 1
           - echo ${FINAL_CFLAGS_linux_64}
@@ -134,6 +137,7 @@ outputs:
             then: ${CC} ${LDFLAGS} c_aligned.o -o c_aligned
           - if: target_platform == cross_target_platform
             then: ./c_aligned
+          # CONDA_BUILD_SYSROOT is defined for clang++ to find correct C++ headers, see issue 8
           - test -z "${CONDA_BUILD_SYSROOT+x}" && echo "CONDA_BUILD_SYSROOT is not set" && exit 1
           - test -d ${CONDA_BUILD_SYSROOT} || exit 1
     about:
@@ -161,8 +165,11 @@ outputs:
         - ${{ cross_stdlib }}_${{ cross_target_platform }}
       run_exports:
         strong:
+          # This should be a transitive dependency, but conda-build doesn't support those
           - libstdcxx >=${{ min_runtime_version }}
+          # Because transitive run_exports do not work:
           - libgcc >=${{ min_runtime_version }}
+          # Need ucrt for windows<10
           - if: cross_target_platform == "win-64"
             then: ucrt >=10.0.20348.0
     tests:
@@ -235,7 +242,9 @@ outputs:
         - libstdcxx-devel_${{ cross_target_platform }} ${{ gcc_version }}.*
       run_exports:
         strong:
+          # This should be a transitive dependency, but conda-build doesn't support those
           - libstdcxx >=${{ min_runtime_version }}
+          # Because transitive run_exports do not work:
           - libgcc >=${{ min_runtime_version }}
     tests:
       - files:
