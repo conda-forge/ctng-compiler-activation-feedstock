@@ -53,11 +53,19 @@ FINAL_DEBUG_FFLAGS_win_64="-fopenmp -ftree-vectorize -fPIC -fstack-protector-str
 
 cross_target_platform_u=${cross_target_platform/-/_}
 
-FINAL_CFLAGS=FINAL_CFLAGS_${cross_target_platform_u}
+# Select flags based on build_type
+if [ "${build_type:-release}" = "debug" ]; then
+  FINAL_CFLAGS=FINAL_DEBUG_CFLAGS_${cross_target_platform_u}
+  FINAL_CXXFLAGS=FINAL_DEBUG_CXXFLAGS_${cross_target_platform_u}
+  FINAL_FFLAGS=FINAL_DEBUG_FFLAGS_${cross_target_platform_u}
+else
+  FINAL_CFLAGS=FINAL_CFLAGS_${cross_target_platform_u}
+  FINAL_CXXFLAGS=FINAL_CXXFLAGS_${cross_target_platform_u}
+  FINAL_FFLAGS=FINAL_FFLAGS_${cross_target_platform_u}
+fi
+
 FINAL_DEBUG_CFLAGS=FINAL_DEBUG_CFLAGS_${cross_target_platform_u}
-FINAL_CXXFLAGS=FINAL_CXXFLAGS_${cross_target_platform_u}
 FINAL_DEBUG_CXXFLAGS=FINAL_DEBUG_CXXFLAGS_${cross_target_platform_u}
-FINAL_FFLAGS=FINAL_FFLAGS_${cross_target_platform_u}
 FINAL_DEBUG_FFLAGS=FINAL_DEBUG_FFLAGS_${cross_target_platform_u}
 FINAL_LDFLAGS=FINAL_LDFLAGS_${cross_target_platform_u}
 
@@ -131,6 +139,15 @@ if [[ "$cross_target_platform" == linux-ppc64le ]]; then
 fi
 
 
+# Set build type template variables
+if [ "${build_type:-release}" = "debug" ]; then
+  CMAKE_BUILD_TYPE="Debug"
+  MESON_BUILDTYPE="debug"
+else
+  CMAKE_BUILD_TYPE="Release"
+  MESON_BUILDTYPE="release"
+fi
+
 find . -name "*activate*.*" -exec sed -i.bak "s|@IS_WIN@|${IS_WIN}|g"                                                              "{}" \;
 find . -name "*activate*.*" -exec sed -i.bak "s|@TOOLS@|${TOOLS}|g"                                                                "{}" \;
 find . -name "*activate*.*" -exec sed -i.bak "s|@MACHINE@|${MACHINE}|g"                                                            "{}" \;
@@ -146,6 +163,8 @@ find . -name "*activate*.*" -exec sed -i.bak "s|@CXXFLAGS@|${FINAL_CXXFLAGS}|g" 
 find . -name "*activate*.*" -exec sed -i.bak "s|@DEBUG_CXXFLAGS@|${FINAL_DEBUG_CXXFLAGS}|g"                                       "{}" \;
 find . -name "*activate*.*" -exec sed -i.bak "s|@FFLAGS@|${FINAL_FFLAGS}|g"                                                       "{}" \;
 find . -name "*activate*.*" -exec sed -i.bak "s|@DEBUG_FFLAGS@|${FINAL_DEBUG_FFLAGS}|g"                                           "{}" \;
+find . -name "*activate*.*" -exec sed -i.bak "s|@CMAKE_BUILD_TYPE@|${CMAKE_BUILD_TYPE}|g"                                          "{}" \;
+find . -name "*activate*.*" -exec sed -i.bak "s|@MESON_BUILDTYPE@|${MESON_BUILDTYPE}|g"                                           "{}" \;
 find . -name "*activate*.*" -exec sed -i.bak "s|@LDFLAGS@|${FINAL_LDFLAGS}|g"                                                     "{}" \;
 find . -name "*activate*.*" -exec sed -i.bak "s|@LIBRARY_PREFIX@|${LIBRARY_PREFIX}|g"                                             "{}" \;
 find . -name "*activate*.*" -exec sed -i.bak "s|@CONDA_BUILD_CROSS_COMPILATION@|${CONDA_BUILD_CROSS_COMPILATION}|g"                "{}" \;

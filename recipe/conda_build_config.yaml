@@ -40,6 +40,10 @@ clang_version:
   - 20.1
   - 19.1
 
+build_type:
+  - release
+  - debug
+
 zip_keys:
   - - cross_target_platform
     - triplet
