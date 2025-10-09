@@ -670,24 +670,45 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>win_64_cross_target_platformwin-64gcc_version13.4.0</td>
+              <td>win_64_build_typedebugcross_target_platformwin-64gcc_version13.4.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=win&configuration=win%20win_64_cross_target_platformwin-64gcc_version13.4.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=win&configuration=win%20win_64_build_typedebugcross_target_platformwin-64gcc_version13.4.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>win_64_cross_target_platformwin-64gcc_version14.3.0</td>
+              <td>win_64_build_typedebugcross_target_platformwin-64gcc_version14.3.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=win&configuration=win%20win_64_cross_target_platformwin-64gcc_version14.3.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=win&configuration=win%20win_64_build_typedebugcross_target_platformwin-64gcc_version14.3.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>win_64_cross_target_platformwin-64gcc_version15.2.0</td>
+              <td>win_64_build_typedebugcross_target_platformwin-64gcc_version15.2.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=win&configuration=win%20win_64_cross_target_platformwin-64gcc_version15.2.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=win&configuration=win%20win_64_build_typedebugcross_target_platformwin-64gcc_version15.2.0" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_build_typereleasecross_target_platformwin-64gcc_version13.4.0</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=win&configuration=win%20win_64_build_typereleasecross_target_platformwin-64gcc_version13.4.0" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_build_typereleasecross_target_platformwin-64gcc_version14.3.0</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=win&configuration=win%20win_64_build_typereleasecross_target_platformwin-64gcc_version14.3.0" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_build_typereleasecross_target_platformwin-64gcc_version15.2.0</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=win&configuration=win%20win_64_build_typereleasecross_target_platformwin-64gcc_version15.2.0" alt="variant">
                 </a>
               </td>
             </tr>
