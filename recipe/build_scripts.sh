@@ -32,23 +32,23 @@ FINAL_LDFLAGS_win_64="-Wl,-O2 -Wl,--sort-common"
 
 FINAL_DEBUG_CPPFLAGS="-D_DEBUG -D_FORTIFY_SOURCE=2 -Og"
 
-FINAL_DEBUG_CFLAGS_linux_64="-march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -ffunction-sections -pipe"
-FINAL_DEBUG_CFLAGS_linux_ppc64le="-mcpu=power8 -mtune=power8 -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
-FINAL_DEBUG_CFLAGS_linux_aarch64="-ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
-FINAL_DEBUG_CFLAGS_linux_s390x="-ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
-FINAL_DEBUG_CFLAGS_win_64="-ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
+FINAL_DEBUG_CFLAGS_linux_64="-march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -ffunction-sections -pipe"
+FINAL_DEBUG_CFLAGS_linux_ppc64le="-mcpu=power8 -mtune=power8 -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -pipe"
+FINAL_DEBUG_CFLAGS_linux_aarch64="-ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -pipe"
+FINAL_DEBUG_CFLAGS_linux_s390x="-ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -pipe"
+FINAL_DEBUG_CFLAGS_win_64="-ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -pipe"
 
-FINAL_DEBUG_CXXFLAGS_linux_64="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -ffunction-sections -pipe"
-FINAL_DEBUG_CXXFLAGS_linux_ppc64le="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -mcpu=power8 -mtune=power8 -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
-FINAL_DEBUG_CXXFLAGS_linux_aarch64="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
-FINAL_DEBUG_CXXFLAGS_linux_s390x="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
-FINAL_DEBUG_CXXFLAGS_win_64="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
+FINAL_DEBUG_CXXFLAGS_linux_64="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -ffunction-sections -pipe"
+FINAL_DEBUG_CXXFLAGS_linux_ppc64le="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -mcpu=power8 -mtune=power8 -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -pipe"
+FINAL_DEBUG_CXXFLAGS_linux_aarch64="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -pipe"
+FINAL_DEBUG_CXXFLAGS_linux_s390x="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -pipe"
+FINAL_DEBUG_CXXFLAGS_win_64="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -pipe"
 
-FINAL_DEBUG_FFLAGS_linux_64="-fopenmp -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fimplicit-none -fvar-tracking-assignments -ffunction-sections -pipe"
-FINAL_DEBUG_FFLAGS_linux_ppc64le="-fopenmp -mcpu=power8 -mtune=power8 -ftree-vectorize -fPIC -fstack-protector-strong -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fvar-tracking-assignments -pipe"
-FINAL_DEBUG_FFLAGS_linux_aarch64="-fopenmp -ftree-vectorize -fPIC -fstack-protector-strong -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fvar-tracking-assignments -pipe"
-FINAL_DEBUG_FFLAGS_linux_s390x="-fopenmp -ftree-vectorize -fPIC -fstack-protector-strong -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fvar-tracking-assignments -pipe"
-FINAL_DEBUG_FFLAGS_win_64="-fopenmp -ftree-vectorize -fPIC -fstack-protector-strong -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fvar-tracking-assignments -pipe"
+FINAL_DEBUG_FFLAGS_linux_64="-fopenmp -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fimplicit-none -ffunction-sections -pipe"
+FINAL_DEBUG_FFLAGS_linux_ppc64le="-fopenmp -mcpu=power8 -mtune=power8 -ftree-vectorize -fPIC -fstack-protector-strong -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -pipe"
+FINAL_DEBUG_FFLAGS_linux_aarch64="-fopenmp -ftree-vectorize -fPIC -fstack-protector-strong -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -pipe"
+FINAL_DEBUG_FFLAGS_linux_s390x="-fopenmp -ftree-vectorize -fPIC -fstack-protector-strong -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -pipe"
+FINAL_DEBUG_FFLAGS_win_64="-fopenmp -ftree-vectorize -fPIC -fstack-protector-strong -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -pipe"
 
 
 cross_target_platform_u=${cross_target_platform/-/_}
