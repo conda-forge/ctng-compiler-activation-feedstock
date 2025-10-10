@@ -35,7 +35,7 @@ outputs:
       name: gcc_${{ cross_target_platform }}
     build:
       skip: default_skip or not (linux or win)
-      string: "${{ build_type }}_${{ PKG_HASH }}_${{ PKG_BUILDNUM }}"
+      string: "${{ build_type }}_h${{ PKG_HASH }}_${{ PKG_BUILDNUM }}"
       script: install-gcc.sh
     requirements:
       build:
