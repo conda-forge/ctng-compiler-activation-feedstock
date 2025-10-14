@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  build_num: 12
+  build_num: 13
   gcc_version: ${{ gcc_version | default("13.1.0") }}
   gcc_major: ${{ (gcc_version | split("."))[0] | int }}
   default_skip: ${{ (target_platform == "win-64" and cross_target_platform != "win-64") or (cross_target_platform == "win-64" and gcc_major|int < 13) or cross_target_platform == "linux-s390x" or s390x }}
@@ -35,7 +35,10 @@ outputs:
       name: gcc_${{ cross_target_platform }}
     build:
       skip: default_skip or not (linux or win)
+      string: "${{ build_type }}_h${{ PKG_HASH }}_${{ PKG_BUILDNUM }}"
       script: install-gcc.sh
+      variant:
+        down_prioritize_variant: ${{ 1 if build_type == "debug" else 0 }}
     requirements:
       build:
         - if: not (aarch64 or ppc64le)
@@ -113,6 +116,9 @@ outputs:
     build:
       skip: default_skip or win or s390x or cross_target_platform in ("linux-s390x", "win-64")
       script: install-clang.sh
+      string: "${{ build_type }}_${{ PKG_HASH }}_${{ PKG_BUILDNUM }}"
+      variant:
+        down_prioritize_variant: ${{ 1 if build_type == "debug" else 0 }}
     requirements:
       build:
         - if: not (aarch64 or ppc64le)
@@ -151,6 +157,9 @@ outputs:
     build:
       skip: default_skip or not (linux or win)
       script: install-g++.sh
+      string: "${{ build_type }}_${{ PKG_HASH }}_${{ PKG_BUILDNUM }}"
+      variant:
+        down_prioritize_variant: ${{ 1 if build_type == "debug" else 0 }}
     requirements:
       build:
         - if: not (aarch64 or ppc64le)
@@ -229,6 +238,9 @@ outputs:
     build:
       skip: default_skip or win or s390x or cross_target_platform in ("linux-s390x", "win-64")
       script: install-clang++.sh
+      string: "${{ build_type }}_${{ PKG_HASH }}_${{ PKG_BUILDNUM }}"
+      variant:
+        down_prioritize_variant: ${{ 1 if build_type == "debug" else 0 }}
     requirements:
       build:
         - if: not (aarch64 or ppc64le)
@@ -272,6 +284,9 @@ outputs:
     build:
       skip: default_skip or not (linux or win)
       script: install-gfortran.sh
+      string: "${{ build_type }}_${{ PKG_HASH }}_${{ PKG_BUILDNUM }}"
+      variant:
+        down_prioritize_variant: ${{ 1 if build_type == "debug" else 0 }}
     requirements:
       build:
         - if: not (aarch64 or ppc64le)
@@ -317,7 +332,7 @@ outputs:
       name: gcc_bootstrap_${{ cross_target_platform }}
       version: ${{ gcc_version }}
     build:
-      skip: default_skip or not (linux or win)
+      skip: default_skip or not (linux or win) or build_type != "release"
       always_include_files:
         - ${{ library_prefix }}bin/
         - ${{ library_prefix }}etc/

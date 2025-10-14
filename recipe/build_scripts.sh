@@ -32,32 +32,40 @@ FINAL_LDFLAGS_win_64="-Wl,-O2 -Wl,--sort-common"
 
 FINAL_DEBUG_CPPFLAGS="-D_DEBUG -D_FORTIFY_SOURCE=2 -Og"
 
-FINAL_DEBUG_CFLAGS_linux_64="-march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -ffunction-sections -pipe"
-FINAL_DEBUG_CFLAGS_linux_ppc64le="-mcpu=power8 -mtune=power8 -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
-FINAL_DEBUG_CFLAGS_linux_aarch64="-ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
-FINAL_DEBUG_CFLAGS_linux_s390x="-ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
-FINAL_DEBUG_CFLAGS_win_64="-ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
+FINAL_DEBUG_CFLAGS_linux_64="-march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -ffunction-sections -pipe"
+FINAL_DEBUG_CFLAGS_linux_ppc64le="-mcpu=power8 -mtune=power8 -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -pipe"
+FINAL_DEBUG_CFLAGS_linux_aarch64="-ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -pipe"
+FINAL_DEBUG_CFLAGS_linux_s390x="-ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -pipe"
+FINAL_DEBUG_CFLAGS_win_64="-ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -pipe"
 
-FINAL_DEBUG_CXXFLAGS_linux_64="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -ffunction-sections -pipe"
-FINAL_DEBUG_CXXFLAGS_linux_ppc64le="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -mcpu=power8 -mtune=power8 -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
-FINAL_DEBUG_CXXFLAGS_linux_aarch64="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
-FINAL_DEBUG_CXXFLAGS_linux_s390x="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
-FINAL_DEBUG_CXXFLAGS_win_64="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
+FINAL_DEBUG_CXXFLAGS_linux_64="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -ffunction-sections -pipe"
+FINAL_DEBUG_CXXFLAGS_linux_ppc64le="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -mcpu=power8 -mtune=power8 -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -pipe"
+FINAL_DEBUG_CXXFLAGS_linux_aarch64="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -pipe"
+FINAL_DEBUG_CXXFLAGS_linux_s390x="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -pipe"
+FINAL_DEBUG_CXXFLAGS_win_64="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -pipe"
 
-FINAL_DEBUG_FFLAGS_linux_64="-fopenmp -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fimplicit-none -fvar-tracking-assignments -ffunction-sections -pipe"
-FINAL_DEBUG_FFLAGS_linux_ppc64le="-fopenmp -mcpu=power8 -mtune=power8 -ftree-vectorize -fPIC -fstack-protector-strong -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fvar-tracking-assignments -pipe"
-FINAL_DEBUG_FFLAGS_linux_aarch64="-fopenmp -ftree-vectorize -fPIC -fstack-protector-strong -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fvar-tracking-assignments -pipe"
-FINAL_DEBUG_FFLAGS_linux_s390x="-fopenmp -ftree-vectorize -fPIC -fstack-protector-strong -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fvar-tracking-assignments -pipe"
-FINAL_DEBUG_FFLAGS_win_64="-fopenmp -ftree-vectorize -fPIC -fstack-protector-strong -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fvar-tracking-assignments -pipe"
+FINAL_DEBUG_FFLAGS_linux_64="-fopenmp -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fimplicit-none -ffunction-sections -pipe"
+FINAL_DEBUG_FFLAGS_linux_ppc64le="-fopenmp -mcpu=power8 -mtune=power8 -ftree-vectorize -fPIC -fstack-protector-strong -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -pipe"
+FINAL_DEBUG_FFLAGS_linux_aarch64="-fopenmp -ftree-vectorize -fPIC -fstack-protector-strong -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -pipe"
+FINAL_DEBUG_FFLAGS_linux_s390x="-fopenmp -ftree-vectorize -fPIC -fstack-protector-strong -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -pipe"
+FINAL_DEBUG_FFLAGS_win_64="-fopenmp -ftree-vectorize -fPIC -fstack-protector-strong -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -pipe"
 
 
 cross_target_platform_u=${cross_target_platform/-/_}
 
-FINAL_CFLAGS=FINAL_CFLAGS_${cross_target_platform_u}
+# Select flags based on build_type
+if [ "${build_type:-release}" = "debug" ]; then
+  FINAL_CFLAGS=FINAL_DEBUG_CFLAGS_${cross_target_platform_u}
+  FINAL_CXXFLAGS=FINAL_DEBUG_CXXFLAGS_${cross_target_platform_u}
+  FINAL_FFLAGS=FINAL_DEBUG_FFLAGS_${cross_target_platform_u}
+else
+  FINAL_CFLAGS=FINAL_CFLAGS_${cross_target_platform_u}
+  FINAL_CXXFLAGS=FINAL_CXXFLAGS_${cross_target_platform_u}
+  FINAL_FFLAGS=FINAL_FFLAGS_${cross_target_platform_u}
+fi
+
 FINAL_DEBUG_CFLAGS=FINAL_DEBUG_CFLAGS_${cross_target_platform_u}
-FINAL_CXXFLAGS=FINAL_CXXFLAGS_${cross_target_platform_u}
 FINAL_DEBUG_CXXFLAGS=FINAL_DEBUG_CXXFLAGS_${cross_target_platform_u}
-FINAL_FFLAGS=FINAL_FFLAGS_${cross_target_platform_u}
 FINAL_DEBUG_FFLAGS=FINAL_DEBUG_FFLAGS_${cross_target_platform_u}
 FINAL_LDFLAGS=FINAL_LDFLAGS_${cross_target_platform_u}
 
@@ -131,6 +139,15 @@ if [[ "$cross_target_platform" == linux-ppc64le ]]; then
 fi
 
 
+# Set build type template variables
+if [ "${build_type:-release}" = "debug" ]; then
+  CMAKE_BUILD_TYPE="Debug"
+  MESON_BUILDTYPE="debug"
+else
+  CMAKE_BUILD_TYPE="Release"
+  MESON_BUILDTYPE="release"
+fi
+
 find . -name "*activate*.*" -exec sed -i.bak "s|@IS_WIN@|${IS_WIN}|g"                                                              "{}" \;
 find . -name "*activate*.*" -exec sed -i.bak "s|@TOOLS@|${TOOLS}|g"                                                                "{}" \;
 find . -name "*activate*.*" -exec sed -i.bak "s|@MACHINE@|${MACHINE}|g"                                                            "{}" \;
@@ -146,6 +163,8 @@ find . -name "*activate*.*" -exec sed -i.bak "s|@CXXFLAGS@|${FINAL_CXXFLAGS}|g" 
 find . -name "*activate*.*" -exec sed -i.bak "s|@DEBUG_CXXFLAGS@|${FINAL_DEBUG_CXXFLAGS}|g"                                       "{}" \;
 find . -name "*activate*.*" -exec sed -i.bak "s|@FFLAGS@|${FINAL_FFLAGS}|g"                                                       "{}" \;
 find . -name "*activate*.*" -exec sed -i.bak "s|@DEBUG_FFLAGS@|${FINAL_DEBUG_FFLAGS}|g"                                           "{}" \;
+find . -name "*activate*.*" -exec sed -i.bak "s|@CMAKE_BUILD_TYPE@|${CMAKE_BUILD_TYPE}|g"                                          "{}" \;
+find . -name "*activate*.*" -exec sed -i.bak "s|@MESON_BUILDTYPE@|${MESON_BUILDTYPE}|g"                                           "{}" \;
 find . -name "*activate*.*" -exec sed -i.bak "s|@LDFLAGS@|${FINAL_LDFLAGS}|g"                                                     "{}" \;
 find . -name "*activate*.*" -exec sed -i.bak "s|@LIBRARY_PREFIX@|${LIBRARY_PREFIX}|g"                                             "{}" \;
 find . -name "*activate*.*" -exec sed -i.bak "s|@CONDA_BUILD_CROSS_COMPILATION@|${CONDA_BUILD_CROSS_COMPILATION}|g"                "{}" \;

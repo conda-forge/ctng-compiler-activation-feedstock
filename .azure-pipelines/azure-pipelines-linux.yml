@@ -152,16 +152,28 @@ jobs:
         CONFIG: linux_ppc64le_cross_target_platformwin-64gcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      win_64_cross_target_platformwin-64gcc_version13.4.0:
-        CONFIG: win_64_cross_target_platformwin-64gcc_version13.4.0
+      win_64_build_typedebugcross_target_platformwin-64gcc_version13.4.0:
+        CONFIG: win_64_build_typedebugcross_target_platformwin-64gcc_version13.4.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      win_64_cross_target_platformwin-64gcc_version14.3.0:
-        CONFIG: win_64_cross_target_platformwin-64gcc_version14.3.0
+      win_64_build_typedebugcross_target_platformwin-64gcc_version14.3.0:
+        CONFIG: win_64_build_typedebugcross_target_platformwin-64gcc_version14.3.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      win_64_cross_target_platformwin-64gcc_version15.2.0:
-        CONFIG: win_64_cross_target_platformwin-64gcc_version15.2.0
+      win_64_build_typedebugcross_target_platformwin-64gcc_version15.2.0:
+        CONFIG: win_64_build_typedebugcross_target_platformwin-64gcc_version15.2.0
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
+      win_64_build_typereleasecross_target_platformwin-64gcc_version13.4.0:
+        CONFIG: win_64_build_typereleasecross_target_platformwin-64gcc_version13.4.0
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
+      win_64_build_typereleasecross_target_platformwin-64gcc_version14.3.0:
+        CONFIG: win_64_build_typereleasecross_target_platformwin-64gcc_version14.3.0
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
+      win_64_build_typereleasecross_target_platformwin-64gcc_version15.2.0:
+        CONFIG: win_64_build_typereleasecross_target_platformwin-64gcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
     maxParallel: 30
