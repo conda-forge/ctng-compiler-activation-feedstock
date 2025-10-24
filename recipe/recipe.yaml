@@ -340,6 +340,12 @@ outputs:
         - gfortran_${{ cross_target_platform }} ${{ gcc_version }}.*
         - gxx_${{ cross_target_platform }} ${{ gcc_version }}.*
         - gcc_${{ cross_target_platform }} ${{ gcc_version }}.*
+      ignore_run_exports:
+        from_package:
+          - binutils_${{ cross_target_platform }} ${{ binutils_version }}.*
+          - gfortran_${{ cross_target_platform }} ${{ gcc_version }}.*
+          - gxx_${{ cross_target_platform }} ${{ gcc_version }}.*
+          - gcc_${{ cross_target_platform }} ${{ gcc_version }}.*
     tests:
       - script:
           - if: target_platform != "win-64"
