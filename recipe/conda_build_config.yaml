@@ -5,7 +5,7 @@ gcc_version:
 libgfortran_soname:
   - 5
 binutils_version:
-  - 2.40
+  - 2.44
 cross_target_platform:
   - linux-64
   - linux-ppc64le

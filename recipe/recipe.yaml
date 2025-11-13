@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  build_num: 12
+  build_num: 13
   gcc_version: ${{ gcc_version | default("13.1.0") }}
   gcc_major: ${{ (gcc_version | split("."))[0] | int }}
   default_skip: ${{ (target_platform == "win-64" and cross_target_platform != "win-64") or (cross_target_platform == "win-64" and gcc_major|int < 13) or cross_target_platform == "linux-s390x" or s390x }}
@@ -336,14 +336,16 @@ outputs:
         binary_relocation: false
     requirements:
       host:
-        - binutils_impl_${{ cross_target_platform }} ${{ binutils_version }}.*
-        - gfortran_impl_${{ cross_target_platform }} ${{ gcc_version }}.*
-        - gxx_impl_${{ cross_target_platform }} ${{ gcc_version }}.*
-        - gcc_impl_${{ cross_target_platform }} ${{ gcc_version }}.*
-        - binutils_impl_${{ target_platform }} ${{ binutils_version }}.*
-        - gfortran_impl_${{ target_platform }} ${{ gcc_version }}.*
-        - gxx_impl_${{ target_platform }} ${{ gcc_version }}.*
-        - gcc_impl_${{ target_platform }} ${{ gcc_version }}.*
+        - binutils_${{ cross_target_platform }} ${{ binutils_version }}.*
+        - gfortran_${{ cross_target_platform }} ${{ gcc_version }}.*
+        - gxx_${{ cross_target_platform }} ${{ gcc_version }}.*
+        - gcc_${{ cross_target_platform }} ${{ gcc_version }}.*
+      ignore_run_exports:
+        from_package:
+          - binutils_${{ cross_target_platform }} ${{ binutils_version }}.*
+          - gfortran_${{ cross_target_platform }} ${{ gcc_version }}.*
+          - gxx_${{ cross_target_platform }} ${{ gcc_version }}.*
+          - gcc_${{ cross_target_platform }} ${{ gcc_version }}.*
     tests:
       - script:
           - if: target_platform != "win-64"

@@ -56,7 +56,7 @@ _tc_activation() {
           thing=$(echo "${thing}" | sed "s,^\([^\,]*\)\,.*,\1,")
           ;;
         *)
-          newval="${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/${tc_prefix}${thing}"
+          newval="${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/${tc_prefix}${thing}@EXE_EXT@"
           if [ ! -x "${newval}" ] && [ "${pass}" = "check" ]; then
             echo "ERROR: This cross-compiler package contains no program ${newval}"
             return 1
@@ -81,6 +81,10 @@ _tc_activation() {
   done
   return 0
 }
+
+if [ "@IS_WIN@" = "1" ]; then
+  CONDA_PREFIX=$(echo "${CONDA_PREFIX:-}" | sed 's,\\,\/,g')
+fi
 
 # When people are using conda-build, assume that adding rpath during build, and pointing at
 #    the host env's includes and libs is helpful default behavior
@@ -126,4 +130,8 @@ else
     diff -U 0 -rN /tmp/old-env-$$.txt /tmp/new-env-$$.txt | tail -n +4 | grep "^-.*\|^+.*" | grep -v "CONDA_BACKUP_" | sort
     rm -f /tmp/old-env-$$.txt /tmp/new-env-$$.txt || true
   fi
+fi
+
+if [ "@IS_WIN@" = "1" ]; then
+  CONDA_PREFIX=$(echo "${CONDA_PREFIX:-}" | sed 's,\/,\\,g')
 fi
