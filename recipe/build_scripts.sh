@@ -118,8 +118,10 @@ fi
 
 if [[ "${target_platform}" == "win-"* ]]; then
   LIBRARY_PREFIX="/Library"
+  EXE_EXT=".exe"
 else
   LIBRARY_PREFIX=""
+  EXE_EXT=""
 fi
 
 MACHINE=$(echo ${CHOST} | cut -d "-" -f1)
@@ -147,6 +149,7 @@ find . -name "*activate*.*" -exec sed -i.bak "s|@DEBUG_CXXFLAGS@|${FINAL_DEBUG_C
 find . -name "*activate*.*" -exec sed -i.bak "s|@FFLAGS@|${FINAL_FFLAGS}|g"                                                       "{}" \;
 find . -name "*activate*.*" -exec sed -i.bak "s|@DEBUG_FFLAGS@|${FINAL_DEBUG_FFLAGS}|g"                                           "{}" \;
 find . -name "*activate*.*" -exec sed -i.bak "s|@LDFLAGS@|${FINAL_LDFLAGS}|g"                                                     "{}" \;
+find . -name "*activate*.*" -exec sed -i.bak "s|@EXE_EXT@|${EXE_EXT}|g"                                                           "{}" \;
 find . -name "*activate*.*" -exec sed -i.bak "s|@LIBRARY_PREFIX@|${LIBRARY_PREFIX}|g"                                             "{}" \;
 find . -name "*activate*.*" -exec sed -i.bak "s|@CONDA_BUILD_CROSS_COMPILATION@|${CONDA_BUILD_CROSS_COMPILATION}|g"                "{}" \;
 
