@@ -1,10 +1,10 @@
 schema_version: 1
 
 context:
-  build_num: 13
+  build_num: 14
   gcc_version: ${{ gcc_version | default("13.1.0") }}
   gcc_major: ${{ (gcc_version | split("."))[0] | int }}
-  default_skip: ${{ (target_platform == "win-64" and cross_target_platform != "win-64") or (cross_target_platform == "win-64" and gcc_major|int < 13) or cross_target_platform == "linux-s390x" or s390x }}
+  default_skip: ${{ (target_platform == "win-64" and cross_target_platform != "win-64") or (cross_target_platform == "win-64" and gcc_major|int < 13) or cross_target_platform == "linux-s390x" or s390x or (cross_target_platform in ("osx-64", "osx-arm64") and gcc_major|int < 15) }}
 
   # generally, the runtime version of libstdcxx needs to be at least as high
   # as the compiler; however, wherever libstdcxx changes the default ABI version
@@ -34,7 +34,7 @@ outputs:
   - package:
       name: gcc_${{ cross_target_platform }}
     build:
-      skip: default_skip or not (linux or win)
+      skip: default_skip
       script: install-gcc.sh
     requirements:
       build:
@@ -47,7 +47,8 @@ outputs:
         - binutils_${{ cross_target_platform }}
         - if: linux
           then: ${{ c_stdlib }}_${{ target_platform }}
-        - ${{ cross_stdlib }}_${{ cross_target_platform }}
+        - if: cross_stdlib != "None"
+          then: ${{ cross_stdlib }}_${{ cross_target_platform }}
         - if: cross_target_platform == "win-64"
           then: gendef
       run_exports:
@@ -62,7 +63,8 @@ outputs:
             - tests
         requirements:
           run:
-            - ${{ cross_stdlib }}_${{ cross_target_platform }} ${{ cross_stdlib_version }}.*
+            - if: cross_stdlib != "None"
+              then: ${{ cross_stdlib }}_${{ cross_target_platform }} ${{ cross_stdlib_version }}.*
         script:
           - ${CC} ${CFLAGS} -Wall tests/aligned_alloc.c -c -o c_aligned.o -v
           - if: target_platform == cross_target_platform
@@ -92,7 +94,8 @@ outputs:
           then: shellcheck
       run:
         - libgcc-devel_${{ cross_target_platform }} ${{ gcc_version }}.*
-        - ${{ cross_stdlib }}_${{ cross_target_platform }}
+        - if: cross_stdlib != "None"
+          then: ${{ cross_stdlib }}_${{ cross_target_platform }}
         - binutils_impl_${{ cross_target_platform }}
         - compiler-rt_${{ cross_target_platform }}
         - compiler-rt ${{ clang_version }}.*
@@ -111,7 +114,7 @@ outputs:
       name: clang_${{ cross_target_platform }}
       version: ${{ clang_version }}
     build:
-      skip: default_skip or win or s390x or cross_target_platform in ("linux-s390x", "win-64")
+      skip: default_skip or win or s390x or cross_target_platform not in ("linux-64", "linux-aarch64", "linux-ppc64le")
       script: install-clang.sh
     requirements:
       build:
@@ -130,7 +133,8 @@ outputs:
             - tests
         requirements:
           run:
-            - ${{ cross_stdlib }}_${{ cross_target_platform }} ${{ cross_stdlib_version }}.*
+            - if: cross_stdlib != "None"
+              then: ${{ cross_stdlib }}_${{ cross_target_platform }} ${{ cross_stdlib_version }}.*
         script:
           - ${CC} ${CFLAGS} -Wall tests/aligned_alloc.c -c -o c_aligned.o -v
           - if: target_platform == cross_target_platform
@@ -149,7 +153,7 @@ outputs:
   - package:
       name: gxx_${{ cross_target_platform }}
     build:
-      skip: default_skip or not (linux or win)
+      skip: default_skip
       script: install-g++.sh
     requirements:
       build:
@@ -162,7 +166,8 @@ outputs:
         - ${{ pin_subpackage("gcc_" ~ cross_target_platform, exact=True) }}
         # for activation of binutils env vars
         - binutils_${{ cross_target_platform }}
-        - ${{ cross_stdlib }}_${{ cross_target_platform }}
+        - if: cross_stdlib != "None"
+          then: ${{ cross_stdlib }}_${{ cross_target_platform }}
       run_exports:
         strong:
           # This should be a transitive dependency, but conda-build doesn't support those
@@ -178,7 +183,8 @@ outputs:
             - tests
         requirements:
           run:
-            - ${{ cross_stdlib }}_${{ cross_target_platform }} ${{ cross_stdlib_version }}.*
+            - if: cross_stdlib != "None"
+              then: ${{ cross_stdlib }}_${{ cross_target_platform }} ${{ cross_stdlib_version }}.*
         script:
           - ${CXX} ${CXXFLAGS} -Wall tests/aligned_alloc.cpp -c -o cpp_aligned.o
           - if: target_platform == cross_target_platform
@@ -227,7 +233,7 @@ outputs:
       name: clangxx_${{ cross_target_platform }}
       version: ${{ clang_version }}
     build:
-      skip: default_skip or win or s390x or cross_target_platform in ("linux-s390x", "win-64")
+      skip: default_skip or win or s390x or cross_target_platform not in ("linux-64", "linux-aarch64", "linux-ppc64le")
       script: install-clang++.sh
     requirements:
       build:
@@ -252,7 +258,8 @@ outputs:
             - tests
         requirements:
           run:
-            - ${{ cross_stdlib }}_${{ cross_target_platform }} ${{ cross_stdlib_version }}.*
+            - if: cross_stdlib != "None"
+              then: ${{ cross_stdlib }}_${{ cross_target_platform }} ${{ cross_stdlib_version }}.*
         script:
           - ${CXX} ${CXXFLAGS} -Wall tests/aligned_alloc.cpp -c -o cpp_aligned.o
           - if: target_platform == cross_target_platform
@@ -270,7 +277,7 @@ outputs:
   - package:
       name: gfortran_${{ cross_target_platform }}
     build:
-      skip: default_skip or not (linux or win)
+      skip: default_skip
       script: install-gfortran.sh
     requirements:
       build:
@@ -283,7 +290,8 @@ outputs:
         - ${{ pin_subpackage("gcc_" ~ cross_target_platform, exact=True) }}
         # for activation of binutils env vars:
         - binutils_${{ cross_target_platform }}
-        - ${{ cross_stdlib }}_${{ cross_target_platform }}
+        - if: cross_stdlib != "None"
+          then: ${{ cross_stdlib }}_${{ cross_target_platform }}
       run_exports:
         strong:
           - libgfortran${{ libgfortran_soname }} >=${{ gcc_version }}
@@ -301,7 +309,8 @@ outputs:
               then: cmake >=3.11
             - if: x86_64 or aarch64 or ppc64le
               then: make
-            - ${{ cross_stdlib }}_${{ cross_target_platform }} ${{ cross_stdlib_version }}.*
+            - if: cross_stdlib != "None"
+              then: ${{ cross_stdlib }}_${{ cross_target_platform }} ${{ cross_stdlib_version }}.*
         script:
           - ${FC} --version
           - pushd tests/fortomp
@@ -317,7 +326,7 @@ outputs:
       name: gcc_bootstrap_${{ cross_target_platform }}
       version: ${{ gcc_version }}
     build:
-      skip: default_skip or not (linux or win)
+      skip: default_skip
       always_include_files:
         - ${{ library_prefix }}bin/
         - ${{ library_prefix }}etc/
@@ -340,6 +349,8 @@ outputs:
         - gfortran_${{ cross_target_platform }} ${{ gcc_version }}.*
         - gxx_${{ cross_target_platform }} ${{ gcc_version }}.*
         - gcc_${{ cross_target_platform }} ${{ gcc_version }}.*
+        - if: cross_stdlib != "None"
+          then: ${{ cross_stdlib }}_${{ cross_target_platform }} ${{ cross_stdlib_version }}.*
       ignore_run_exports:
         from_package:
           - binutils_${{ cross_target_platform }} ${{ binutils_version }}.*
