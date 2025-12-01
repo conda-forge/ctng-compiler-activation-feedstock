@@ -1,0 +1,33 @@
+binutils_version:
+- '2.44'
+c_stdlib:
+- sysroot
+channel_sources:
+- conda-forge
+channel_targets:
+- conda-forge main
+clang_version:
+- '19.1'
+- '20.1'
+- '21.1'
+cross_stdlib:
+- None
+cross_stdlib_version:
+- None
+cross_target_platform:
+- osx-arm64
+docker_image:
+- quay.io/condaforge/linux-anvil-x86_64:alma9
+gcc_version:
+- 14.3.0
+libgfortran_soname:
+- '5'
+target_platform:
+- linux-ppc64le
+triplet:
+- arm64-apple-darwin20.0.0
+zip_keys:
+- - cross_target_platform
+  - triplet
+  - cross_stdlib
+  - cross_stdlib_version

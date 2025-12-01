@@ -8,235 +8,235 @@ jobs:
     vmImage: ubuntu-latest
   strategy:
     matrix:
-      linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version13.4.0:
-        CONFIG: linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version13.4.0
+      linux_64_cross_target_platformlinux-64gcc_version13.4.0:
+        CONFIG: linux_64_cross_target_platformlinux-64gcc_version13.4.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version14.3.0:
-        CONFIG: linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version14.3.0
+      linux_64_cross_target_platformlinux-64gcc_version14.3.0:
+        CONFIG: linux_64_cross_target_platformlinux-64gcc_version14.3.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version15.2.0:
-        CONFIG: linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version15.2.0
+      linux_64_cross_target_platformlinux-64gcc_version15.2.0:
+        CONFIG: linux_64_cross_target_platformlinux-64gcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version13.4.0:
-        CONFIG: linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version13.4.0
+      linux_64_cross_target_platformlinux-aarch64gcc_version13.4.0:
+        CONFIG: linux_64_cross_target_platformlinux-aarch64gcc_version13.4.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version14.3.0:
-        CONFIG: linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version14.3.0
+      linux_64_cross_target_platformlinux-aarch64gcc_version14.3.0:
+        CONFIG: linux_64_cross_target_platformlinux-aarch64gcc_version14.3.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version15.2.0:
-        CONFIG: linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version15.2.0
+      linux_64_cross_target_platformlinux-aarch64gcc_version15.2.0:
+        CONFIG: linux_64_cross_target_platformlinux-aarch64gcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version13.4.0:
-        CONFIG: linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version13.4.0
+      linux_64_cross_target_platformlinux-ppc64legcc_version13.4.0:
+        CONFIG: linux_64_cross_target_platformlinux-ppc64legcc_version13.4.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version14.3.0:
-        CONFIG: linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version14.3.0
+      linux_64_cross_target_platformlinux-ppc64legcc_version14.3.0:
+        CONFIG: linux_64_cross_target_platformlinux-ppc64legcc_version14.3.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version15.2.0:
-        CONFIG: linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version15.2.0
+      linux_64_cross_target_platformlinux-ppc64legcc_version15.2.0:
+        CONFIG: linux_64_cross_target_platformlinux-ppc64legcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version13.4.0:
-        CONFIG: linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version13.4.0
+      linux_64_cross_target_platformosx-64gcc_version13.4.0:
+        CONFIG: linux_64_cross_target_platformosx-64gcc_version13.4.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version14.3.0:
-        CONFIG: linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version14.3.0
+      linux_64_cross_target_platformosx-64gcc_version14.3.0:
+        CONFIG: linux_64_cross_target_platformosx-64gcc_version14.3.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version15.2.0:
-        CONFIG: linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version15.2.0
+      linux_64_cross_target_platformosx-64gcc_version15.2.0:
+        CONFIG: linux_64_cross_target_platformosx-64gcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      ? linux_64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version13.4.0
-      : CONFIG: linux_64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version13.4.0
+      linux_64_cross_target_platformosx-arm64gcc_version13.4.0:
+        CONFIG: linux_64_cross_target_platformosx-arm64gcc_version13.4.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      ? linux_64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version14.3.0
-      : CONFIG: linux_64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version14.3.0
+      linux_64_cross_target_platformosx-arm64gcc_version14.3.0:
+        CONFIG: linux_64_cross_target_platformosx-arm64gcc_version14.3.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      ? linux_64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version15.2.0
-      : CONFIG: linux_64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version15.2.0
+      linux_64_cross_target_platformosx-arm64gcc_version15.2.0:
+        CONFIG: linux_64_cross_target_platformosx-arm64gcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      ? linux_64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version13.4.0
-      : CONFIG: linux_64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version13.4.0
+      linux_64_cross_target_platformwin-64gcc_version13.4.0:
+        CONFIG: linux_64_cross_target_platformwin-64gcc_version13.4.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      ? linux_64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version14.3.0
-      : CONFIG: linux_64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version14.3.0
+      linux_64_cross_target_platformwin-64gcc_version14.3.0:
+        CONFIG: linux_64_cross_target_platformwin-64gcc_version14.3.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      ? linux_64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version15.2.0
-      : CONFIG: linux_64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version15.2.0
+      linux_64_cross_target_platformwin-64gcc_version15.2.0:
+        CONFIG: linux_64_cross_target_platformwin-64gcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version13.4.0:
-        CONFIG: linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version13.4.0
+      linux_aarch64_cross_target_platformlinux-64gcc_version13.4.0:
+        CONFIG: linux_aarch64_cross_target_platformlinux-64gcc_version13.4.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version14.3.0:
-        CONFIG: linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version14.3.0
+      linux_aarch64_cross_target_platformlinux-64gcc_version14.3.0:
+        CONFIG: linux_aarch64_cross_target_platformlinux-64gcc_version14.3.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version15.2.0:
-        CONFIG: linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version15.2.0
+      linux_aarch64_cross_target_platformlinux-64gcc_version15.2.0:
+        CONFIG: linux_aarch64_cross_target_platformlinux-64gcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version13.4.0:
-        CONFIG: linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version13.4.0
+      linux_aarch64_cross_target_platformlinux-aarch64gcc_version13.4.0:
+        CONFIG: linux_aarch64_cross_target_platformlinux-aarch64gcc_version13.4.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version14.3.0:
-        CONFIG: linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version14.3.0
+      linux_aarch64_cross_target_platformlinux-aarch64gcc_version14.3.0:
+        CONFIG: linux_aarch64_cross_target_platformlinux-aarch64gcc_version14.3.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version15.2.0:
-        CONFIG: linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version15.2.0
+      linux_aarch64_cross_target_platformlinux-aarch64gcc_version15.2.0:
+        CONFIG: linux_aarch64_cross_target_platformlinux-aarch64gcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version13.4.0:
-        CONFIG: linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version13.4.0
+      linux_aarch64_cross_target_platformlinux-ppc64legcc_version13.4.0:
+        CONFIG: linux_aarch64_cross_target_platformlinux-ppc64legcc_version13.4.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version14.3.0:
-        CONFIG: linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version14.3.0
+      linux_aarch64_cross_target_platformlinux-ppc64legcc_version14.3.0:
+        CONFIG: linux_aarch64_cross_target_platformlinux-ppc64legcc_version14.3.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version15.2.0:
-        CONFIG: linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version15.2.0
+      linux_aarch64_cross_target_platformlinux-ppc64legcc_version15.2.0:
+        CONFIG: linux_aarch64_cross_target_platformlinux-ppc64legcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version13.4.0:
-        CONFIG: linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version13.4.0
+      linux_aarch64_cross_target_platformosx-64gcc_version13.4.0:
+        CONFIG: linux_aarch64_cross_target_platformosx-64gcc_version13.4.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version14.3.0:
-        CONFIG: linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version14.3.0
+      linux_aarch64_cross_target_platformosx-64gcc_version14.3.0:
+        CONFIG: linux_aarch64_cross_target_platformosx-64gcc_version14.3.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version15.2.0:
-        CONFIG: linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version15.2.0
+      linux_aarch64_cross_target_platformosx-64gcc_version15.2.0:
+        CONFIG: linux_aarch64_cross_target_platformosx-64gcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      ? linux_aarch64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version13.4.0
-      : CONFIG: linux_aarch64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version13.4.0
+      linux_aarch64_cross_target_platformosx-arm64gcc_version13.4.0:
+        CONFIG: linux_aarch64_cross_target_platformosx-arm64gcc_version13.4.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      ? linux_aarch64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version14.3.0
-      : CONFIG: linux_aarch64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version14.3.0
+      linux_aarch64_cross_target_platformosx-arm64gcc_version14.3.0:
+        CONFIG: linux_aarch64_cross_target_platformosx-arm64gcc_version14.3.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      ? linux_aarch64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version15.2.0
-      : CONFIG: linux_aarch64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version15.2.0
+      linux_aarch64_cross_target_platformosx-arm64gcc_version15.2.0:
+        CONFIG: linux_aarch64_cross_target_platformosx-arm64gcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      ? linux_aarch64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version13.4.0
-      : CONFIG: linux_aarch64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version13.4.0
+      linux_aarch64_cross_target_platformwin-64gcc_version13.4.0:
+        CONFIG: linux_aarch64_cross_target_platformwin-64gcc_version13.4.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      ? linux_aarch64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version14.3.0
-      : CONFIG: linux_aarch64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version14.3.0
+      linux_aarch64_cross_target_platformwin-64gcc_version14.3.0:
+        CONFIG: linux_aarch64_cross_target_platformwin-64gcc_version14.3.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      ? linux_aarch64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version15.2.0
-      : CONFIG: linux_aarch64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version15.2.0
+      linux_aarch64_cross_target_platformwin-64gcc_version15.2.0:
+        CONFIG: linux_aarch64_cross_target_platformwin-64gcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version13.4.0:
-        CONFIG: linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version13.4.0
+      linux_ppc64le_cross_target_platformlinux-64gcc_version13.4.0:
+        CONFIG: linux_ppc64le_cross_target_platformlinux-64gcc_version13.4.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version14.3.0:
-        CONFIG: linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version14.3.0
+      linux_ppc64le_cross_target_platformlinux-64gcc_version14.3.0:
+        CONFIG: linux_ppc64le_cross_target_platformlinux-64gcc_version14.3.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version15.2.0:
-        CONFIG: linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version15.2.0
+      linux_ppc64le_cross_target_platformlinux-64gcc_version15.2.0:
+        CONFIG: linux_ppc64le_cross_target_platformlinux-64gcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version13.4.0:
-        CONFIG: linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version13.4.0
+      linux_ppc64le_cross_target_platformlinux-aarch64gcc_version13.4.0:
+        CONFIG: linux_ppc64le_cross_target_platformlinux-aarch64gcc_version13.4.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version14.3.0:
-        CONFIG: linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version14.3.0
+      linux_ppc64le_cross_target_platformlinux-aarch64gcc_version14.3.0:
+        CONFIG: linux_ppc64le_cross_target_platformlinux-aarch64gcc_version14.3.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version15.2.0:
-        CONFIG: linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version15.2.0
+      linux_ppc64le_cross_target_platformlinux-aarch64gcc_version15.2.0:
+        CONFIG: linux_ppc64le_cross_target_platformlinux-aarch64gcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version13.4.0:
-        CONFIG: linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version13.4.0
+      linux_ppc64le_cross_target_platformlinux-ppc64legcc_version13.4.0:
+        CONFIG: linux_ppc64le_cross_target_platformlinux-ppc64legcc_version13.4.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version14.3.0:
-        CONFIG: linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version14.3.0
+      linux_ppc64le_cross_target_platformlinux-ppc64legcc_version14.3.0:
+        CONFIG: linux_ppc64le_cross_target_platformlinux-ppc64legcc_version14.3.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version15.2.0:
-        CONFIG: linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version15.2.0
+      linux_ppc64le_cross_target_platformlinux-ppc64legcc_version15.2.0:
+        CONFIG: linux_ppc64le_cross_target_platformlinux-ppc64legcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version13.4.0:
-        CONFIG: linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version13.4.0
+      linux_ppc64le_cross_target_platformosx-64gcc_version13.4.0:
+        CONFIG: linux_ppc64le_cross_target_platformosx-64gcc_version13.4.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version14.3.0:
-        CONFIG: linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version14.3.0
+      linux_ppc64le_cross_target_platformosx-64gcc_version14.3.0:
+        CONFIG: linux_ppc64le_cross_target_platformosx-64gcc_version14.3.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version15.2.0:
-        CONFIG: linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version15.2.0
+      linux_ppc64le_cross_target_platformosx-64gcc_version15.2.0:
+        CONFIG: linux_ppc64le_cross_target_platformosx-64gcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      ? linux_ppc64le_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version13.4.0
-      : CONFIG: linux_ppc64le_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version13.4.0
+      linux_ppc64le_cross_target_platformosx-arm64gcc_version13.4.0:
+        CONFIG: linux_ppc64le_cross_target_platformosx-arm64gcc_version13.4.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      ? linux_ppc64le_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version14.3.0
-      : CONFIG: linux_ppc64le_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version14.3.0
+      linux_ppc64le_cross_target_platformosx-arm64gcc_version14.3.0:
+        CONFIG: linux_ppc64le_cross_target_platformosx-arm64gcc_version14.3.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      ? linux_ppc64le_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version15.2.0
-      : CONFIG: linux_ppc64le_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version15.2.0
+      linux_ppc64le_cross_target_platformosx-arm64gcc_version15.2.0:
+        CONFIG: linux_ppc64le_cross_target_platformosx-arm64gcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      ? linux_ppc64le_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version13.4.0
-      : CONFIG: linux_ppc64le_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version13.4.0
+      linux_ppc64le_cross_target_platformwin-64gcc_version13.4.0:
+        CONFIG: linux_ppc64le_cross_target_platformwin-64gcc_version13.4.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      ? linux_ppc64le_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version14.3.0
-      : CONFIG: linux_ppc64le_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version14.3.0
+      linux_ppc64le_cross_target_platformwin-64gcc_version14.3.0:
+        CONFIG: linux_ppc64le_cross_target_platformwin-64gcc_version14.3.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      ? linux_ppc64le_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version15.2.0
-      : CONFIG: linux_ppc64le_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version15.2.0
+      linux_ppc64le_cross_target_platformwin-64gcc_version15.2.0:
+        CONFIG: linux_ppc64le_cross_target_platformwin-64gcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      win_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version13.4.0:
-        CONFIG: win_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version13.4.0
+      win_64_cross_stdlibm2w64-sysrootcross_stdlib_version12cross_target_platformwin-64gcc_version13.4.0:
+        CONFIG: win_64_cross_stdlibm2w64-sysrootcross_stdlib_version12cross_target_platformwin-64gcc_version13.4.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      win_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version14.3.0:
-        CONFIG: win_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version14.3.0
+      win_64_cross_stdlibm2w64-sysrootcross_stdlib_version12cross_target_platformwin-64gcc_version14.3.0:
+        CONFIG: win_64_cross_stdlibm2w64-sysrootcross_stdlib_version12cross_target_platformwin-64gcc_version14.3.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      win_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version15.2.0:
-        CONFIG: win_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version15.2.0
+      win_64_cross_stdlibm2w64-sysrootcross_stdlib_version12cross_target_platformwin-64gcc_version15.2.0:
+        CONFIG: win_64_cross_stdlibm2w64-sysrootcross_stdlib_version12cross_target_platformwin-64gcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-    maxParallel: 31
+    maxParallel: 38
   timeoutInMinutes: 360
   variables: {}
 

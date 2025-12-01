@@ -301,654 +301,528 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version13.4.0</td>
+              <td>linux_64_cross_target_platformlinux-64gcc_version13.4.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version13.4.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformlinux-64gcc_version13.4.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version14.3.0</td>
+              <td>linux_64_cross_target_platformlinux-64gcc_version14.3.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version14.3.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformlinux-64gcc_version14.3.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version15.2.0</td>
+              <td>linux_64_cross_target_platformlinux-64gcc_version15.2.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version15.2.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformlinux-64gcc_version15.2.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version13.4.0</td>
+              <td>linux_64_cross_target_platformlinux-aarch64gcc_version13.4.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version13.4.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformlinux-aarch64gcc_version13.4.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version14.3.0</td>
+              <td>linux_64_cross_target_platformlinux-aarch64gcc_version14.3.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version14.3.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformlinux-aarch64gcc_version14.3.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version15.2.0</td>
+              <td>linux_64_cross_target_platformlinux-aarch64gcc_version15.2.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version15.2.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformlinux-aarch64gcc_version15.2.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version13.4.0</td>
+              <td>linux_64_cross_target_platformlinux-ppc64legcc_version13.4.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version13.4.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformlinux-ppc64legcc_version13.4.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version14.3.0</td>
+              <td>linux_64_cross_target_platformlinux-ppc64legcc_version14.3.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version14.3.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformlinux-ppc64legcc_version14.3.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version15.2.0</td>
+              <td>linux_64_cross_target_platformlinux-ppc64legcc_version15.2.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version15.2.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformlinux-ppc64legcc_version15.2.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version13.4.0</td>
+              <td>linux_64_cross_target_platformosx-64gcc_version13.4.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version13.4.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformosx-64gcc_version13.4.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version14.3.0</td>
+              <td>linux_64_cross_target_platformosx-64gcc_version14.3.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version14.3.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformosx-64gcc_version14.3.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version15.2.0</td>
+              <td>linux_64_cross_target_platformosx-64gcc_version15.2.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version15.2.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformosx-64gcc_version15.2.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version13.4.0</td>
+              <td>linux_64_cross_target_platformosx-arm64gcc_version13.4.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version13.4.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformosx-arm64gcc_version13.4.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version14.3.0</td>
+              <td>linux_64_cross_target_platformosx-arm64gcc_version14.3.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version14.3.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformosx-arm64gcc_version14.3.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version15.2.0</td>
+              <td>linux_64_cross_target_platformosx-arm64gcc_version15.2.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version15.2.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformosx-arm64gcc_version15.2.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version13.4.0</td>
+              <td>linux_64_cross_target_platformwin-64gcc_version13.4.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version13.4.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformwin-64gcc_version13.4.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version14.3.0</td>
+              <td>linux_64_cross_target_platformwin-64gcc_version14.3.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version14.3.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformwin-64gcc_version14.3.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version15.2.0</td>
+              <td>linux_64_cross_target_platformwin-64gcc_version15.2.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version15.2.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformwin-64gcc_version15.2.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version13.4.0</td>
+              <td>linux_aarch64_cross_target_platformlinux-64gcc_version13.4.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version13.4.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cross_target_platformlinux-64gcc_version13.4.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version14.3.0</td>
+              <td>linux_aarch64_cross_target_platformlinux-64gcc_version14.3.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version14.3.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cross_target_platformlinux-64gcc_version14.3.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version15.2.0</td>
+              <td>linux_aarch64_cross_target_platformlinux-64gcc_version15.2.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version15.2.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cross_target_platformlinux-64gcc_version15.2.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version13.4.0</td>
+              <td>linux_aarch64_cross_target_platformlinux-aarch64gcc_version13.4.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version13.4.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cross_target_platformlinux-aarch64gcc_version13.4.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version14.3.0</td>
+              <td>linux_aarch64_cross_target_platformlinux-aarch64gcc_version14.3.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version14.3.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cross_target_platformlinux-aarch64gcc_version14.3.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version15.2.0</td>
+              <td>linux_aarch64_cross_target_platformlinux-aarch64gcc_version15.2.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version15.2.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cross_target_platformlinux-aarch64gcc_version15.2.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version13.4.0</td>
+              <td>linux_aarch64_cross_target_platformlinux-ppc64legcc_version13.4.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version13.4.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cross_target_platformlinux-ppc64legcc_version13.4.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version14.3.0</td>
+              <td>linux_aarch64_cross_target_platformlinux-ppc64legcc_version14.3.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version14.3.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cross_target_platformlinux-ppc64legcc_version14.3.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version15.2.0</td>
+              <td>linux_aarch64_cross_target_platformlinux-ppc64legcc_version15.2.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version15.2.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cross_target_platformlinux-ppc64legcc_version15.2.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version13.4.0</td>
+              <td>linux_aarch64_cross_target_platformosx-64gcc_version13.4.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version13.4.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cross_target_platformosx-64gcc_version13.4.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version14.3.0</td>
+              <td>linux_aarch64_cross_target_platformosx-64gcc_version14.3.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version14.3.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cross_target_platformosx-64gcc_version14.3.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version15.2.0</td>
+              <td>linux_aarch64_cross_target_platformosx-64gcc_version15.2.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version15.2.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cross_target_platformosx-64gcc_version15.2.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version13.4.0</td>
+              <td>linux_aarch64_cross_target_platformosx-arm64gcc_version13.4.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version13.4.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cross_target_platformosx-arm64gcc_version13.4.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version14.3.0</td>
+              <td>linux_aarch64_cross_target_platformosx-arm64gcc_version14.3.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version14.3.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cross_target_platformosx-arm64gcc_version14.3.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version15.2.0</td>
+              <td>linux_aarch64_cross_target_platformosx-arm64gcc_version15.2.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version15.2.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cross_target_platformosx-arm64gcc_version15.2.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version13.4.0</td>
+              <td>linux_aarch64_cross_target_platformwin-64gcc_version13.4.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version13.4.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cross_target_platformwin-64gcc_version13.4.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version14.3.0</td>
+              <td>linux_aarch64_cross_target_platformwin-64gcc_version14.3.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version14.3.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cross_target_platformwin-64gcc_version14.3.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_aarch64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version15.2.0</td>
+              <td>linux_aarch64_cross_target_platformwin-64gcc_version15.2.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version15.2.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_cross_target_platformwin-64gcc_version15.2.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version13.4.0</td>
+              <td>linux_ppc64le_cross_target_platformlinux-64gcc_version13.4.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version13.4.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_cross_target_platformlinux-64gcc_version13.4.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version14.3.0</td>
+              <td>linux_ppc64le_cross_target_platformlinux-64gcc_version14.3.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version14.3.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_cross_target_platformlinux-64gcc_version14.3.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version15.2.0</td>
+              <td>linux_ppc64le_cross_target_platformlinux-64gcc_version15.2.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version15.2.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_cross_target_platformlinux-64gcc_version15.2.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version13.4.0</td>
+              <td>linux_ppc64le_cross_target_platformlinux-aarch64gcc_version13.4.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version13.4.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_cross_target_platformlinux-aarch64gcc_version13.4.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version14.3.0</td>
+              <td>linux_ppc64le_cross_target_platformlinux-aarch64gcc_version14.3.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version14.3.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_cross_target_platformlinux-aarch64gcc_version14.3.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version15.2.0</td>
+              <td>linux_ppc64le_cross_target_platformlinux-aarch64gcc_version15.2.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version15.2.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_cross_target_platformlinux-aarch64gcc_version15.2.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version13.4.0</td>
+              <td>linux_ppc64le_cross_target_platformlinux-ppc64legcc_version13.4.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version13.4.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_cross_target_platformlinux-ppc64legcc_version13.4.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version14.3.0</td>
+              <td>linux_ppc64le_cross_target_platformlinux-ppc64legcc_version14.3.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version14.3.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_cross_target_platformlinux-ppc64legcc_version14.3.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version15.2.0</td>
+              <td>linux_ppc64le_cross_target_platformlinux-ppc64legcc_version15.2.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version15.2.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_cross_target_platformlinux-ppc64legcc_version15.2.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version13.4.0</td>
+              <td>linux_ppc64le_cross_target_platformosx-64gcc_version13.4.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version13.4.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_cross_target_platformosx-64gcc_version13.4.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version14.3.0</td>
+              <td>linux_ppc64le_cross_target_platformosx-64gcc_version14.3.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version14.3.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_cross_target_platformosx-64gcc_version14.3.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version15.2.0</td>
+              <td>linux_ppc64le_cross_target_platformosx-64gcc_version15.2.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version15.2.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_cross_target_platformosx-64gcc_version15.2.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version13.4.0</td>
+              <td>linux_ppc64le_cross_target_platformosx-arm64gcc_version13.4.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version13.4.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_cross_target_platformosx-arm64gcc_version13.4.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version14.3.0</td>
+              <td>linux_ppc64le_cross_target_platformosx-arm64gcc_version14.3.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version14.3.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_cross_target_platformosx-arm64gcc_version14.3.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version15.2.0</td>
+              <td>linux_ppc64le_cross_target_platformosx-arm64gcc_version15.2.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version15.2.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_cross_target_platformosx-arm64gcc_version15.2.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version13.4.0</td>
+              <td>linux_ppc64le_cross_target_platformwin-64gcc_version13.4.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version13.4.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_cross_target_platformwin-64gcc_version13.4.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version14.3.0</td>
+              <td>linux_ppc64le_cross_target_platformwin-64gcc_version14.3.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version14.3.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_cross_target_platformwin-64gcc_version14.3.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_ppc64le_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version15.2.0</td>
+              <td>linux_ppc64le_cross_target_platformwin-64gcc_version15.2.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version15.2.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_cross_target_platformwin-64gcc_version15.2.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version13.4.0</td>
+              <td>osx_64_cross_target_platformlinux-64gcc_version13.4.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version13.4.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_cross_target_platformlinux-64gcc_version13.4.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version14.3.0</td>
+              <td>osx_64_cross_target_platformlinux-64gcc_version14.3.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version14.3.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_cross_target_platformlinux-64gcc_version14.3.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version15.2.0</td>
+              <td>osx_64_cross_target_platformlinux-64gcc_version15.2.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version15.2.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_cross_target_platformlinux-64gcc_version15.2.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version13.4.0</td>
+              <td>osx_64_cross_target_platformlinux-aarch64gcc_version13.4.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version13.4.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_cross_target_platformlinux-aarch64gcc_version13.4.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version14.3.0</td>
+              <td>osx_64_cross_target_platformlinux-aarch64gcc_version14.3.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version14.3.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_cross_target_platformlinux-aarch64gcc_version14.3.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version15.2.0</td>
+              <td>osx_64_cross_target_platformlinux-aarch64gcc_version15.2.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version15.2.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_cross_target_platformlinux-aarch64gcc_version15.2.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version13.4.0</td>
+              <td>osx_64_cross_target_platformlinux-ppc64legcc_version13.4.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version13.4.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_cross_target_platformlinux-ppc64legcc_version13.4.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version14.3.0</td>
+              <td>osx_64_cross_target_platformlinux-ppc64legcc_version14.3.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version14.3.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_cross_target_platformlinux-ppc64legcc_version14.3.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version15.2.0</td>
+              <td>osx_64_cross_target_platformlinux-ppc64legcc_version15.2.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version15.2.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_cross_target_platformlinux-ppc64legcc_version15.2.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version13.4.0</td>
+              <td>osx_64_cross_target_platformosx-64gcc_version13.4.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version13.4.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_cross_target_platformosx-64gcc_version13.4.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version14.3.0</td>
+              <td>osx_64_cross_target_platformosx-64gcc_version14.3.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version14.3.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_cross_target_platformosx-64gcc_version14.3.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version15.2.0</td>
+              <td>osx_64_cross_target_platformosx-64gcc_version15.2.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version15.2.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_cross_target_platformosx-64gcc_version15.2.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version13.4.0</td>
+              <td>osx_64_cross_target_platformosx-arm64gcc_version13.4.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version13.4.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_cross_target_platformosx-arm64gcc_version13.4.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version14.3.0</td>
+              <td>osx_64_cross_target_platformosx-arm64gcc_version14.3.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version14.3.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_cross_target_platformosx-arm64gcc_version14.3.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version15.2.0</td>
+              <td>osx_64_cross_target_platformosx-arm64gcc_version15.2.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version15.2.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_cross_target_platformosx-arm64gcc_version15.2.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version13.4.0</td>
+              <td>osx_64_cross_target_platformwin-64gcc_version13.4.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version13.4.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_cross_target_platformwin-64gcc_version13.4.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version14.3.0</td>
+              <td>osx_64_cross_target_platformwin-64gcc_version14.3.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version14.3.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_cross_target_platformwin-64gcc_version14.3.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version15.2.0</td>
+              <td>osx_64_cross_target_platformwin-64gcc_version15.2.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version15.2.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_cross_target_platformwin-64gcc_version15.2.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version13.4.0</td>
+              <td>win_64_cross_stdlibm2w64-sysrootcross_stdlib_version12cross_target_platformwin-64gcc_version13.4.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version13.4.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=win&configuration=win%20win_64_cross_stdlibm2w64-sysrootcross_stdlib_version12cross_target_platformwin-64gcc_version13.4.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version14.3.0</td>
+              <td>win_64_cross_stdlibm2w64-sysrootcross_stdlib_version12cross_target_platformwin-64gcc_version14.3.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version14.3.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=win&configuration=win%20win_64_cross_stdlibm2w64-sysrootcross_stdlib_version12cross_target_platformwin-64gcc_version14.3.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version15.2.0</td>
+              <td>win_64_cross_stdlibm2w64-sysrootcross_stdlib_version12cross_target_platformwin-64gcc_version15.2.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-64gcc_version15.2.0" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version13.4.0</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version13.4.0" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version14.3.0</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version14.3.0" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version15.2.0</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-aarch64gcc_version15.2.0" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version13.4.0</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version13.4.0" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version14.3.0</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version14.3.0" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version15.2.0</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformlinux-ppc64legcc_version15.2.0" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version13.4.0</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version13.4.0" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version14.3.0</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version14.3.0" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version15.2.0</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version15.2.0" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version13.4.0</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version13.4.0" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version14.3.0</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version14.3.0" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version15.2.0</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-64gcc_version15.2.0" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version13.4.0</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version13.4.0" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version14.3.0</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version14.3.0" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version15.2.0</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_channel_sourcesconda-forgeconda-forgelabelgcc-experimentalchannel_targetsconda-forge_gcc-experimentalcross_target_platformosx-arm64gcc_version15.2.0" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version13.4.0</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=win&configuration=win%20win_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version13.4.0" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version14.3.0</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=win&configuration=win%20win_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version14.3.0" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version15.2.0</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7960&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=win&configuration=win%20win_64_channel_sourcesconda-forgechannel_targetsconda-forge_maincross_target_platformwin-64gcc_version15.2.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/ctng-compiler-activation-feedstock?branchName=main&jobName=win&configuration=win%20win_64_cross_stdlibm2w64-sysrootcross_stdlib_version12cross_target_platformwin-64gcc_version15.2.0" alt="variant">
                 </a>
               </td>
             </tr>
@@ -1004,14 +878,14 @@ Current release info
 Installing ctng-compiler-activation
 ===================================
 
-Installing `ctng-compiler-activation` from the `conda-forge/label/gcc-experimental` channel can be achieved by adding `conda-forge/label/gcc-experimental` to your channels with:
+Installing `ctng-compiler-activation` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
-conda config --add channels conda-forge/label/gcc-experimental
+conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge/label/gcc-experimental` channel has been enabled, `clang_impl_linux-64, clang_impl_linux-aarch64, clang_impl_linux-ppc64le, clang_linux-64, clang_linux-aarch64, clang_linux-ppc64le, clangxx_impl_linux-64, clangxx_impl_linux-aarch64, clangxx_impl_linux-ppc64le, clangxx_linux-64, clangxx_linux-aarch64, clangxx_linux-ppc64le, gcc_bootstrap_linux-64, gcc_bootstrap_linux-aarch64, gcc_bootstrap_linux-ppc64le, gcc_bootstrap_osx-64, gcc_bootstrap_osx-arm64, gcc_bootstrap_win-64, gcc_linux-64, gcc_linux-aarch64, gcc_linux-ppc64le, gcc_osx-64, gcc_osx-arm64, gcc_win-64, gfortran_linux-64, gfortran_linux-aarch64, gfortran_linux-ppc64le, gfortran_osx-64, gfortran_osx-arm64, gfortran_win-64, gxx_linux-64, gxx_linux-aarch64, gxx_linux-ppc64le, gxx_osx-64, gxx_osx-arm64, gxx_win-64` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `clang_impl_linux-64, clang_impl_linux-aarch64, clang_impl_linux-ppc64le, clang_linux-64, clang_linux-aarch64, clang_linux-ppc64le, clangxx_impl_linux-64, clangxx_impl_linux-aarch64, clangxx_impl_linux-ppc64le, clangxx_linux-64, clangxx_linux-aarch64, clangxx_linux-ppc64le, gcc_bootstrap_linux-64, gcc_bootstrap_linux-aarch64, gcc_bootstrap_linux-ppc64le, gcc_bootstrap_osx-64, gcc_bootstrap_osx-arm64, gcc_bootstrap_win-64, gcc_linux-64, gcc_linux-aarch64, gcc_linux-ppc64le, gcc_osx-64, gcc_osx-arm64, gcc_win-64, gfortran_linux-64, gfortran_linux-aarch64, gfortran_linux-ppc64le, gfortran_osx-64, gfortran_osx-arm64, gfortran_win-64, gxx_linux-64, gxx_linux-aarch64, gxx_linux-ppc64le, gxx_osx-64, gxx_osx-arm64, gxx_win-64` can be installed with `conda`:
 
 ```
 conda install clang_impl_linux-64 clang_impl_linux-aarch64 clang_impl_linux-ppc64le clang_linux-64 clang_linux-aarch64 clang_linux-ppc64le clangxx_impl_linux-64 clangxx_impl_linux-aarch64 clangxx_impl_linux-ppc64le clangxx_linux-64 clangxx_linux-aarch64 clangxx_linux-ppc64le gcc_bootstrap_linux-64 gcc_bootstrap_linux-aarch64 gcc_bootstrap_linux-ppc64le gcc_bootstrap_osx-64 gcc_bootstrap_osx-arm64 gcc_bootstrap_win-64 gcc_linux-64 gcc_linux-aarch64 gcc_linux-ppc64le gcc_osx-64 gcc_osx-arm64 gcc_win-64 gfortran_linux-64 gfortran_linux-aarch64 gfortran_linux-ppc64le gfortran_osx-64 gfortran_osx-arm64 gfortran_win-64 gxx_linux-64 gxx_linux-aarch64 gxx_linux-ppc64le gxx_osx-64 gxx_osx-arm64 gxx_win-64
@@ -1026,26 +900,26 @@ mamba install clang_impl_linux-64 clang_impl_linux-aarch64 clang_impl_linux-ppc6
 It is possible to list all of the versions of `clang_impl_linux-64` available on your platform with `conda`:
 
 ```
-conda search clang_impl_linux-64 --channel conda-forge/label/gcc-experimental
+conda search clang_impl_linux-64 --channel conda-forge
 ```
 
 or with `mamba`:
 
 ```
-mamba search clang_impl_linux-64 --channel conda-forge/label/gcc-experimental
+mamba search clang_impl_linux-64 --channel conda-forge
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search clang_impl_linux-64 --channel conda-forge/label/gcc-experimental
+mamba repoquery search clang_impl_linux-64 --channel conda-forge
 
 # List packages depending on `clang_impl_linux-64`:
-mamba repoquery whoneeds clang_impl_linux-64 --channel conda-forge/label/gcc-experimental
+mamba repoquery whoneeds clang_impl_linux-64 --channel conda-forge
 
 # List dependencies of `clang_impl_linux-64`:
-mamba repoquery depends clang_impl_linux-64 --channel conda-forge/label/gcc-experimental
+mamba repoquery depends clang_impl_linux-64 --channel conda-forge
 ```
 
 
