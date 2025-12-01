@@ -190,14 +190,14 @@ cp activate-g++.sh activate-clang++.sh
 cp deactivate-gcc.sh deactivate-clang.sh
 cp deactivate-g++.sh deactivate-clang++.sh
 
-GCC_EXTRA="
-\"GCC,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CHOST}-gcc\"
-\"GCC_AR,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CHOST}-gcc-ar\"
-\"GCC_NM,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CHOST}-gcc-nm\"
-\"GCC_RANLIB,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CHOST}-gcc-ranlib\"
+GCC_EXTRA=" \
+\"GCC,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CHOST}-gcc\" \
+\"GCC_AR,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CHOST}-gcc-ar\" \
+\"GCC_NM,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CHOST}-gcc-nm\" \
+\"GCC_RANLIB,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CHOST}-gcc-ranlib\" \
 "
-GXX_EXTRA="
-\"GXX,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CHOST}-g++\"
+GXX_EXTRA=" \
+\"GXX,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CHOST}-g++\" \
 "
 find . -name "*activate-gcc.sh" -exec sed -i.bak "s|@C_EXTRA@|"${GCC_EXTRA}"|g"                         "{}" \;
 find . -name "*activate-gcc.sh" -exec sed -i.bak "s|@CPP@|${CHOST}-cpp|g"                               "{}" \;
@@ -211,15 +211,15 @@ find . -name "*activate-g++.sh" -exec sed -i.bak "s|@CXX@|${CHOST}-c++|g"       
 find . -name "*activate-g++.sh" -exec sed -i.bak "s|@CXX_FOR_BUILD@|${CBUILD}-c++|g"                    "{}" \;
 find . -name "*activate-g++.sh" -exec sed -i.bak "s|@CXX_EXTRA@|"${GXX_EXTRA}"|g"                       "{}" \;
 
-CLANG_EXTRA='
-\"CLANG,\${CONDA_PREFIX}{LIBRARY_PREFIX}/bin/${CHOST}-clang\"
-\"OBJC,\${CONDA_PREFIX}{LIBRARY_PREFIX}/bin/${CHOST}-clang\"
-\"OBJC_FOR_BUILD,\${CONDA_PREFIX}{LIBRARY_PREFIX}/bin/${CBUILD}-clang\"
-\"ac_cv_func_malloc_0_nonnull,yes\"
-\"ac_cv_func_realloc_0_nonnull,yes\"
-'
-CLANGXX_EXTRA='
-\"CLANGXX,\${CONDA_PREFIX}{LIBRARY_PREFIX}/bin/${CHOST}-clang++\"
+CLANG_EXTRA=" \
+\"CLANG,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CHOST}-clang\" \
+\"OBJC,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CHOST}-clang\" \
+\"OBJC_FOR_BUILD,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CBUILD}-clang\" \
+\"ac_cv_func_malloc_0_nonnull,yes\" \
+\"ac_cv_func_realloc_0_nonnull,yes\" \
+"
+CLANGXX_EXTRA=" \
+\"CLANGXX,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CHOST}-clang++\" \
 "
 find . -name "*activate-clang.sh" -exec sed -i.bak "s|@C_EXTRA@|"${CLANG_EXTRA}"|g"                     "{}" \;
 find . -name "*activate-clang.sh" -exec sed -i.bak "s|@CPP@|${CHOST}-clang-cpp|g"                       "{}" \;
