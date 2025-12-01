@@ -371,6 +371,7 @@ outputs:
           - gfortran_${{ cross_target_platform }} ${{ gcc_version }}.*
           - gxx_${{ cross_target_platform }} ${{ gcc_version }}.*
           - gcc_${{ cross_target_platform }} ${{ gcc_version }}.*
+          - ${{ cross_stdlib }}_${{ cross_target_platform }} ${{ cross_stdlib_version }}.*
     tests:
       - script:
           - if: target_platform != "win-64"
