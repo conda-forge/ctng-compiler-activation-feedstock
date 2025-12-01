@@ -17,81 +17,40 @@ _get_sourced_filename() {
     fi
 }
 
-# The arguments to this are:
-# 1. activation nature {activate|deactivate}
-# 2. toolchain nature {build|host|ccc}
-# 3. machine (should match -dumpmachine)
-# 4. prefix (including any final -)
-# 5+ program (or environment var comma value)
-# The format for 5+ is name{,,value}. If value is specified
-#  then name taken to be an environment variable, otherwise
-#  it is taken to be a program. In this case, which is used
-#  to find the full filename during activation. The original
-#  value is stored in environment variable CONDA_BACKUP_NAME
-#  For deactivation, the distinction is irrelevant as in all
-#  cases NAME simply gets reset to CONDA_BACKUP_NAME.  It is
-#  a fatal error if a program is identified but not present.
-_tc_activation() {
-  local act_nature="$1"; shift
-  local tc_prefix="$1"; shift
+# The arguments to this are space separated environment
+#  variable names. The value in CONDA_BACKUP_ is restore
+#  and the CONDA_BACKUP_ is removed.
+_tc_deactivation() {
   local thing
   local newval
   local from
   local to
   local pass
 
-  if [ "${act_nature}" = "activate" ]; then
-    from=""
-    to="CONDA_BACKUP_"
-  else
-    from="CONDA_BACKUP_"
-    to=""
-  fi
+  from="CONDA_BACKUP_"
+  to=""
 
-  for pass in check apply; do
-    for thing in "$@"; do
-      case "${thing}" in
-        *,*)
-          newval=$(echo "${thing}" | sed "s,^[^\,]*\,\(.*\),\1,")
-          thing=$(echo "${thing}" | sed "s,^\([^\,]*\)\,.*,\1,")
-          ;;
-        *)
-          newval="${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/${tc_prefix}${thing}@EXE_EXT@"
-          if [ ! -x "${newval}" ] && [ "${pass}" = "check" ]; then
-            echo "ERROR: This cross-compiler package contains no program ${newval}"
-            return 1
-          fi
-          ;;
-      esac
-      if [ "${pass}" = "apply" ]; then
-        thing=$(echo "${thing}" | tr 'a-z+-' 'A-ZX_')
-        eval oldval="\$${from}$thing"
-        if [ -n "${oldval}" ]; then
-          eval export "${to}'${thing}'=\"${oldval}\""
-        else
-          eval unset '${to}${thing}'
-        fi
-        if [ -n "${newval}" ]; then
-          eval export "'${from}${thing}=${newval}'"
-        else
-          eval unset '${from}${thing}'
-        fi
-      fi
-    done
+  for thing in "$@"; do
+    case "${thing}" in
+      *,*)
+        thing="${thing%%,*}"
+        ;;
+      *)
+        ;;
+    esac
+    eval oldval="\$${from}$thing"
+    if [ -n "${oldval}" ]; then
+      eval export "${to}'${thing}'=\"${oldval}\""
+    else
+      eval unset '${to}${thing}'
+    fi
+    eval unset '${from}${thing}'
   done
   return 0
 }
 
 if [ "@IS_WIN@" = "1" ]; then
   CONDA_PREFIX=$(echo "${CONDA_PREFIX:-}" | sed 's,\\,\/,g')
-fi
-
-# When people are using conda-build, assume that adding rpath during build, and pointing at
-#    the host env's includes and libs is helpful default behavior
-if [ "${CONDA_BUILD:-0}" = "1" ]; then
-  FFLAGS_USED="@FFLAGS@ -isystem ${PREFIX}@LIBRARY_PREFIX@/include -fdebug-prefix-map=${SRC_DIR}=/usr/local/src/conda/${PKG_NAME}-${PKG_VERSION} -fdebug-prefix-map=${PREFIX}=/usr/local/src/conda-prefix"
-else
-  FFLAGS_USED="@FFLAGS@ -isystem ${CONDA_PREFIX}@LIBRARY_PREFIX@/include"
 fi
 
 if [ "${CONDA_BUILD:-0}" = "1" ]; then
@@ -101,21 +60,17 @@ if [ "${CONDA_BUILD:-0}" = "1" ]; then
   env > /tmp/old-env-$$.txt
 fi
 
-_tc_activation \
-  deactivate @CHOST@- \
-  gfortran f95 \
-  "FC_FOR_BUILD,${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/@CBUILD@-gfortran" \
-  "FFLAGS,${FFLAGS_USED}${FFLAGS:+ }${FFLAGS:-}" \
-  "FORTRANFLAGS,${FFLAGS_USED}${FORTRANFLAGS:+ }${FORTRANFLAGS:-}" \
-  "DEBUG_FFLAGS,${FFLAGS_USED} @DEBUG_FFLAGS@${FFLAGS:+ }${FFLAGS:-}" \
-  "DEBUG_FORTRANFLAGS,${FFLAGS_USED} @DEBUG_FFLAGS@${FORTRANFLAGS:+ }${FORTRANFLAGS:-}" \
-
-# extra ones - have a dependency on the previous ones, so done after.
-_tc_activation \
-  deactivate @CHOST@- \
-  "FC,${FC:-${GFORTRAN}}" \
-  "F77,${F77:-${GFORTRAN}}" \
-  "F90,${F90:-${GFORTRAN}}"
+_tc_deactivation \
+  "GFORTRAN" \
+  "F95" \
+  "FC" \
+  "F77" \
+  "F90" \
+  "FC_FOR_BUILD" \
+  "FFLAGS" \
+  "FORTRANFLAGS" \
+  "DEBUG_FFLAGS" \
+  "DEBUG_FORTRANFLAGS" \
 
 if [ $? -ne 0 ]; then
   echo "ERROR: $(_get_sourced_filename) failed, see above for details"

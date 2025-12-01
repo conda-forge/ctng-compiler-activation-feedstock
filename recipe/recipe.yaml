@@ -44,7 +44,9 @@ outputs:
         - gcc_impl_${{ target_platform }} ${{ gcc_version }}.*
         - gcc_impl_${{ cross_target_platform }} ${{ gcc_version }}.*
         # for activation of binutils env vars
-        - binutils_${{ cross_target_platform }}
+        - if: cross_target_platform not in ("osx-64", "osx-arm64")
+          then: binutils_${{ cross_target_platform }}
+          else: cctools_${{ cross_target_platform }}
         - if: linux
           then: ${{ c_stdlib }}_${{ target_platform }}
         - if: cross_stdlib != "None"
@@ -165,7 +167,9 @@ outputs:
         # for activation of gcc env vars
         - ${{ pin_subpackage("gcc_" ~ cross_target_platform, exact=True) }}
         # for activation of binutils env vars
-        - binutils_${{ cross_target_platform }}
+        - if: cross_target_platform not in ("osx-64", "osx-arm64")
+          then: binutils_${{ cross_target_platform }}
+          else: cctools_${{ cross_target_platform }}
         - if: cross_stdlib != "None"
           then: ${{ cross_stdlib }}_${{ cross_target_platform }}
       run_exports:
@@ -289,7 +293,9 @@ outputs:
         # for activation of gcc env vars:
         - ${{ pin_subpackage("gcc_" ~ cross_target_platform, exact=True) }}
         # for activation of binutils env vars:
-        - binutils_${{ cross_target_platform }}
+        - if: cross_target_platform not in ("osx-64", "osx-arm64")
+          then: binutils_${{ cross_target_platform }}
+          else: cctools_${{ cross_target_platform }}
         - if: cross_stdlib != "None"
           then: ${{ cross_stdlib }}_${{ cross_target_platform }}
       run_exports:
@@ -345,7 +351,9 @@ outputs:
         binary_relocation: false
     requirements:
       host:
-        - binutils_${{ cross_target_platform }} ${{ binutils_version }}.*
+        - if: cross_target_platform not in ("osx-64", "osx-arm64")
+          then: binutils_${{ cross_target_platform }}
+          else: cctools_${{ cross_target_platform }}
         - gfortran_${{ cross_target_platform }} ${{ gcc_version }}.*
         - gxx_${{ cross_target_platform }} ${{ gcc_version }}.*
         - gcc_${{ cross_target_platform }} ${{ gcc_version }}.*

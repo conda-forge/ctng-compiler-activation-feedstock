@@ -1,4 +1,4 @@
-#!/bin/bash
+a!/bin/bash
 
 set -ex
 
@@ -38,6 +38,14 @@ FINAL_LDFLAGS_win_64="-Wl,-O2 -Wl,--sort-common"
 FINAL_LDFLAGS_osx_64="-Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs"
 FINAL_LDFLAGS_osx_arm64="-Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs"
 
+FINAL_LDFLAGS_LD_linux_64="-O2 --sort-common --as-needed -z relro -z now --disable-new-dtags --gc-sections --allow-shlib-undefined"
+FINAL_LDFLAGS_LD_linux_ppc64le="-O2 --sort-common --as-needed -z relro -z now --allow-shlib-undefined"
+FINAL_LDFLAGS_LD_linux_aarch64="-O2 --sort-common --as-needed -z relro -z now --allow-shlib-undefined"
+FINAL_LDFLAGS_LD_linux_s390x="-O2 --sort-common --as-needed -z relro -z now --allow-shlib-undefined"
+FINAL_LDFLAGS_LD_win_64="-O2 --sort-common"
+FINAL_LDFLAGS_LD_osx_64="-headerpad_max_install_names -dead_strip_dylibs"
+FINAL_LDFLAGS_LD_osx_arm64="-headerpad_max_install_names -dead_strip_dylibs"
+
 FINAL_DEBUG_CPPFLAGS="-D_DEBUG -D_FORTIFY_SOURCE=2 -Og"
 
 FINAL_DEBUG_CFLAGS_linux_64="-march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -ffunction-sections -pipe"
@@ -73,6 +81,7 @@ FINAL_DEBUG_CXXFLAGS=FINAL_DEBUG_CXXFLAGS_${cross_target_platform_u}
 FINAL_FFLAGS=FINAL_FFLAGS_${cross_target_platform_u}
 FINAL_DEBUG_FFLAGS=FINAL_DEBUG_FFLAGS_${cross_target_platform_u}
 FINAL_LDFLAGS=FINAL_LDFLAGS_${cross_target_platform_u}
+FINAL_LDFLAGS_LD=FINAL_LDFLAGS_LD_${cross_target_platform_u}
 
 echo "FINAL_CFLAGS_linux_64: ${FINAL_CFLAGS_linux_64}"
 
@@ -84,6 +93,7 @@ FINAL_DEBUG_CFLAGS="${!FINAL_DEBUG_CFLAGS}"
 FINAL_DEBUG_CXXFLAGS="${!FINAL_DEBUG_CXXFLAGS}"
 FINAL_DEBUG_FFLAGS="${!FINAL_DEBUG_FFLAGS}"
 FINAL_LDFLAGS="${!FINAL_LDFLAGS}"
+FINAL_LDFLAGS_LD="${!FINAL_LDFLAGS_LD}"
 
 MAJOR_VERSION="${PKG_VERSION%%.*}"
 
@@ -122,11 +132,13 @@ fi
 
 if [[ "${cross_target_platform}" == "linux-"* ]]; then
   CMAKE_SYSTEM_NAME="Linux"
-elif [[ "${cross_target_platform}" == "linux-"* ]]; then
+elif [[ "${cross_target_platform}" == "win-"* ]]; then
   CMAKE_SYSTEM_NAME="Windows"
 else
   CMAKE_SYSTEM_NAME="Darwin"
 fi
+
+MESON_NAME=$(echo "$CMAKE_SYSTEM_NAME" | tr '[:upper:]' '[:lower:]')
 
 if [[ "${target_platform}" == "win-"* ]]; then
   LIBRARY_PREFIX="/Library"
@@ -144,11 +156,18 @@ if [[ "$cross_target_platform" == linux-ppc64le ]]; then
   MESON_FAMILY="ppc64"
 fi
 
+if [[ "${cross_target_platform}" == "osx-64" ]]; then
+  uname_kernel_release=13.4.0
+elif [[ "${cross_target_platform}" == "osx-arm64" ]]; then
+  uname_kernel_release=20.0.0
+fi
 
+find . -name "*activate*.*" -exec sed -i.bak "s|@UNAME_KERNEL_RELEASE@|${uname_kernel_release}|g"                                  "{}" \;
 find . -name "*activate*.*" -exec sed -i.bak "s|@IS_WIN@|${IS_WIN}|g"                                                              "{}" \;
 find . -name "*activate*.*" -exec sed -i.bak "s|@TOOLS@|${TOOLS}|g"                                                                "{}" \;
 find . -name "*activate*.*" -exec sed -i.bak "s|@MACHINE@|${MACHINE}|g"                                                            "{}" \;
 find . -name "*activate*.*" -exec sed -i.bak "s|@CMAKE_SYSTEM_NAME@|${CMAKE_SYSTEM_NAME}|g"                                        "{}" \;
+find . -name "*activate*.*" -exec sed -i.bak "s|@MESON_SYSTEM@|${MESON_SYSTEM}|g"                                                  "{}" \;
 find . -name "*activate*.*" -exec sed -i.bak "s|@MESON_FAMILY@|${MESON_FAMILY}|g"                                                  "{}" \;
 find . -name "*activate*.*" -exec sed -i.bak "s|@CBUILD@|${CBUILD}|g"                                                              "{}" \;
 find . -name "*activate*.*" -exec sed -i.bak "s|@CHOST@|${CHOST}|g"                                                                "{}" \;
@@ -161,6 +180,7 @@ find . -name "*activate*.*" -exec sed -i.bak "s|@DEBUG_CXXFLAGS@|${FINAL_DEBUG_C
 find . -name "*activate*.*" -exec sed -i.bak "s|@FFLAGS@|${FINAL_FFLAGS}|g"                                                       "{}" \;
 find . -name "*activate*.*" -exec sed -i.bak "s|@DEBUG_FFLAGS@|${FINAL_DEBUG_FFLAGS}|g"                                           "{}" \;
 find . -name "*activate*.*" -exec sed -i.bak "s|@LDFLAGS@|${FINAL_LDFLAGS}|g"                                                     "{}" \;
+find . -name "*activate*.*" -exec sed -i.bak "s|@LDFLAGS_LD@|${FINAL_LDFLAGS_LD}|g"                                               "{}" \;
 find . -name "*activate*.*" -exec sed -i.bak "s|@EXE_EXT@|${EXE_EXT}|g"                                                           "{}" \;
 find . -name "*activate*.*" -exec sed -i.bak "s|@LIBRARY_PREFIX@|${LIBRARY_PREFIX}|g"                                             "{}" \;
 find . -name "*activate*.*" -exec sed -i.bak "s|@CONDA_BUILD_CROSS_COMPILATION@|${CONDA_BUILD_CROSS_COMPILATION}|g"                "{}" \;
@@ -170,18 +190,47 @@ cp activate-g++.sh activate-clang++.sh
 cp deactivate-gcc.sh deactivate-clang.sh
 cp deactivate-g++.sh deactivate-clang++.sh
 
-find . -name "*activate-gcc.sh" -exec sed -i.bak "s|@COMPILERS@|cpp gcc gcc-ar gcc-nm gcc-ranlib|g"     "{}" \;
-find . -name "*activate-g++.sh" -exec sed -i.bak "s|@CXX_COMPILERS@|g++|g"                              "{}" \;
+GCC_EXTRA="
+\"GCC,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CHOST}-gcc\"
+\"GCC_AR,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CHOST}-gcc-ar\"
+\"GCC_NM,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CHOST}-gcc-nm\"
+\"GCC_RANLIB,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CHOST}-gcc-ranlib\"
+"
+GXX_EXTRA="
+\"GXX,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CHOST}-g++\"
+"
+find . -name "*activate-gcc.sh" -exec sed -i.bak "s|@C_EXTRA@|"${GCC_EXTRA}"|g"                         "{}" \;
+find . -name "*activate-gcc.sh" -exec sed -i.bak "s|@CPP@|${CHOST}-cpp|g"                               "{}" \;
+find . -name "*activate-gcc.sh" -exec sed -i.bak "s|@CPP_FOR_BUILD@|${CBUILD}-cpp|g"                    "{}" \;
+find . -name "*activate-gcc.sh" -exec sed -i.bak "s|@AR@|${CHOST}-gcc-ar|g"                             "{}" \;
+find . -name "*activate-gcc.sh" -exec sed -i.bak "s|@NM@|${CHOST}-gcc-nm|g"                             "{}" \;
+find . -name "*activate-gcc.sh" -exec sed -i.bak "s|@RANLIB@|${CHOST}-gcc-ranlib|g"                     "{}" \;
 find . -name "*activate-gcc.sh" -exec sed -i.bak "s|@CC@|${CHOST}-cc|g"                                 "{}" \;
-find . -name "*activate-g++.sh" -exec sed -i.bak "s|@CXX@|${CHOST}-c++|g"                               "{}" \;
 find . -name "*activate-gcc.sh" -exec sed -i.bak "s|@CC_FOR_BUILD@|${CBUILD}-cc|g"                      "{}" \;
+find . -name "*activate-g++.sh" -exec sed -i.bak "s|@CXX@|${CHOST}-c++|g"                               "{}" \;
 find . -name "*activate-g++.sh" -exec sed -i.bak "s|@CXX_FOR_BUILD@|${CBUILD}-c++|g"                    "{}" \;
+find . -name "*activate-g++.sh" -exec sed -i.bak "s|@CXX_EXTRA@|"${GXX_EXTRA}"|g"                       "{}" \;
 
-find . -name "*activate-clang.sh" -exec sed -i.bak "s|@COMPILERS@|clang|g"                              "{}" \;
-find . -name "*activate-clang++.sh" -exec sed -i.bak "s|@CXX_COMPILERS@|clang++|g"                      "{}" \;
+CLANG_EXTRA='
+\"CLANG,\${CONDA_PREFIX}{LIBRARY_PREFIX}/bin/${CHOST}-clang\"
+\"OBJC,\${CONDA_PREFIX}{LIBRARY_PREFIX}/bin/${CHOST}-clang\"
+\"OBJC_FOR_BUILD,\${CONDA_PREFIX}{LIBRARY_PREFIX}/bin/${CBUILD}-clang\"
+\"ac_cv_func_malloc_0_nonnull,yes\"
+\"ac_cv_func_realloc_0_nonnull,yes\"
+'
+CLANGXX_EXTRA='
+\"CLANGXX,\${CONDA_PREFIX}{LIBRARY_PREFIX}/bin/${CHOST}-clang++\"
+"
+find . -name "*activate-clang.sh" -exec sed -i.bak "s|@C_EXTRA@|"${CLANG_EXTRA}"|g"                     "{}" \;
+find . -name "*activate-clang.sh" -exec sed -i.bak "s|@CPP@|${CHOST}-clang-cpp|g"                       "{}" \;
+find . -name "*activate-clang.sh" -exec sed -i.bak "s|@CPP_FOR_BUILD@|${CBUILD}-clang-cpp|g"            "{}" \;
+find . -name "*activate-clang.sh" -exec sed -i.bak "s|@AR@|${CHOST}-ar|g"                               "{}" \;
+find . -name "*activate-clang.sh" -exec sed -i.bak "s|@NM@|${CHOST}-nm|g"                               "{}" \;
+find . -name "*activate-clang.sh" -exec sed -i.bak "s|@RANLIB@|${CHOST}-ranlib|g"                       "{}" \;
 find . -name "*activate-clang.sh" -exec sed -i.bak "s|@CC@|${CHOST}-clang|g"                            "{}" \;
-find . -name "*activate-clang++.sh" -exec sed -i.bak "s|@CXX@|${CHOST}-clang++|g"                       "{}" \;
 find . -name "*activate-clang.sh" -exec sed -i.bak "s|@CC_FOR_BUILD@|${CBUILD}-clang|g"                 "{}" \;
+find . -name "*activate-clang++.sh" -exec sed -i.bak "s|@CXX_EXTRA@|"${CLANGXX_EXTRA}"|g"               "{}" \;
+find . -name "*activate-clang++.sh" -exec sed -i.bak "s|@CXX@|${CHOST}-clang++|g"                       "{}" \;
 find . -name "*activate-clang++.sh" -exec sed -i.bak "s|@CXX_FOR_BUILD@|${CBUILD}-clang++|g"            "{}" \;
 
 find . -name "*activate*.sh.bak" -exec rm "{}" \;
