@@ -7,7 +7,7 @@ _get_sourced_filename() {
     if [ -n "${BASH_SOURCE+x}" ] && [ -n "${BASH_SOURCE[0]}" ]; then
         # shellcheck disable=SC3054 # non-POSIX array access is guarded
         basename "${BASH_SOURCE[0]}"
-    elif [ -n "$ZSH_NAME" ] && [ -n "${(%):-%x}" ]; then
+    elif [ -n "${ZSH_NAME+x}" ] && [ -n "${(%):-%x}" ]; then
         # in zsh use prompt-style expansion to introspect the same information
         # see http://stackoverflow.com/questions/9901210/bash-source0-equivalent-in-zsh
         # shellcheck disable=SC2296  # bad '(' is guarded
@@ -25,7 +25,6 @@ _tc_activation() {
   local newval
   local from
   local to
-  local pass
 
   from=""
   to="CONDA_BACKUP_"

@@ -7,7 +7,7 @@ _get_sourced_filename() {
     if [ -n "${BASH_SOURCE+x}" ] && [ -n "${BASH_SOURCE[0]}" ]; then
         # shellcheck disable=SC3054 # non-POSIX array access is guarded
         basename "${BASH_SOURCE[0]}"
-    elif [ -n "$ZSH_NAME" ] && [ -n "${(%):-%x}" ]; then
+    elif [ -n "${ZSH_NAME+x}" ] && [ -n "${(%):-%x}" ]; then
         # in zsh use prompt-style expansion to introspect the same information
         # see http://stackoverflow.com/questions/9901210/bash-source0-equivalent-in-zsh
         # shellcheck disable=SC2296  # bad '(' is guarded
@@ -25,7 +25,6 @@ _tc_activation() {
   local newval
   local from
   local to
-  local pass
 
   from=""
   to="CONDA_BACKUP_"
@@ -52,12 +51,11 @@ _tc_activation() {
   return 0
 }
 
-function activate_compiler() {
 if [ "@IS_WIN@" = "1" ]; then
   CONDA_PREFIX=$(echo "${CONDA_PREFIX:-}" | sed 's,\\,\/,g')
 fi
 
-# The compiler adds $PREFIX/lib to rpath, so it's better to add -L and -isystem  as well.
+# The compiler adds ${PREFIX}/lib to rpath, so it's better to add -L and -isystem  as well.
 if [ "${CONDA_BUILD:-0}" = "1" ]; then
   CFLAGS_USED="@CFLAGS@ -isystem ${PREFIX}@LIBRARY_PREFIX@/include -fdebug-prefix-map=${SRC_DIR}=/usr/local/src/conda/${PKG_NAME}-${PKG_VERSION} -fdebug-prefix-map=${PREFIX}=/usr/local/src/conda-prefix"
   DEBUG_CFLAGS_USED="@DEBUG_CFLAGS@ -isystem ${PREFIX}@LIBRARY_PREFIX@/include -fdebug-prefix-map=${SRC_DIR}=/usr/local/src/conda/${PKG_NAME}-${PKG_VERSION} -fdebug-prefix-map=${PREFIX}=/usr/local/src/conda-prefix"
@@ -65,7 +63,6 @@ if [ "${CONDA_BUILD:-0}" = "1" ]; then
   if [ "@CMAKE_SYSTEM_NAME@" = "Linux" ]; then
     LDFLAGS_USED="@LDFLAGS@ -Wl,-rpath,${PREFIX}@LIBRARY_PREFIX@/lib -Wl,-rpath-link,${PREFIX}@LIBRARY_PREFIX@/lib -L${PREFIX}@LIBRARY_PREFIX@/lib"
     LDFLAGS_LD_USED="@LDFLAGS_LD@ -rpath ${PREFIX}@LIBRARY_PREFIX@/lib -rpath-link ${PREFIX}@LIBRARY_PREFIX@/lib -L${PREFIX}@LIBRARY_PREFIX@/lib"
-  # shellcheck disable=SC2050 # templating will fix this error
   elif [ "@CMAKE_SYSTEM_NAME@" = "Darwin" ]; then
     LDFLAGS_USED="@LDFLAGS@ -Wl,-rpath,${PREFIX}@LIBRARY_PREFIX@/lib -L${PREFIX}@LIBRARY_PREFIX@/lib"
     LDFLAGS_LD_USED="@LDFLAGS_LD@ -rpath ${PREFIX}@LIBRARY_PREFIX@/lib -L${PREFIX}@LIBRARY_PREFIX@/lib"
@@ -89,7 +86,6 @@ else
   if [ "@CMAKE_SYSTEM_NAME@" = "Linux" ]; then
     LDFLAGS_USED="@LDFLAGS@ -Wl,-rpath,${CONDA_PREFIX}@LIBRARY_PREFIX@/lib -Wl,-rpath-link,${CONDA_PREFIX}@LIBRARY_PREFIX@/lib -L${CONDA_PREFIX}@LIBRARY_PREFIX@/lib"
     LDFLAGS_LD_USED="@LDFLAGS_LD@ -rpath ${CONDA_PREFIX}@LIBRARY_PREFIX@/lib -rpath-link ${CONDA_PREFIX}@LIBRARY_PREFIX@/lib -L${CONDA_PREFIX}@LIBRARY_PREFIX@/lib"
-  # shellcheck disable=SC2050 # templating will fix this error
   elif [ "@CMAKE_SYSTEM_NAME@" = "Darwin" ]; then
     LDFLAGS_USED="@LDFLAGS@ -Wl,-rpath,${CONDA_PREFIX}@LIBRARY_PREFIX@/lib -L${CONDA_PREFIX}@LIBRARY_PREFIX@/lib"
     LDFLAGS_LD_USED="@LDFLAGS_LD@ -rpath ${CONDA_PREFIX}@LIBRARY_PREFIX@/lib -L${CONDA_PREFIX}@LIBRARY_PREFIX@/lib"
@@ -133,11 +129,11 @@ if [ "${CONDA_BUILD:-0}" = "1" ]; then
     _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_FIND_FRAMEWORK=LAST -DCMAKE_FIND_APPBUNDLE=LAST"
   else
     _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_FIND_ROOT_PATH_MODE_PROGRAM=NEVER -DCMAKE_FIND_ROOT_PATH_MODE_LIBRARY=ONLY -DCMAKE_FIND_ROOT_PATH_MODE_INCLUDE=ONLY"
-    _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_FIND_ROOT_PATH=$PREFIX;${BUILD_PREFIX}@LIBRARY_PREFIX@/@CHOST@/sysroot"
+    _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_FIND_ROOT_PATH=${PREFIX};${BUILD_PREFIX}@LIBRARY_PREFIX@/@CHOST@/sysroot"
   fi
   _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_INSTALL_PREFIX=${PREFIX} -DCMAKE_INSTALL_LIBDIR=lib"
-  _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_PROGRAM_PATH=${BUILD_PREFIX}@LIBRARY_PREFIX@/bin;$PREFIX/bin"
-  _MESON_ARGS="${_MESON_ARGS} --prefix="$PREFIX" -Dlibdir=lib"
+  _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_PROGRAM_PATH=${BUILD_PREFIX}@LIBRARY_PREFIX@/bin;${PREFIX}/bin"
+  _MESON_ARGS="${_MESON_ARGS} --prefix=${PREFIX} -Dlibdir=lib"
 fi
 
 # shellcheck disable=SC2050 # templating will fix this error
@@ -159,10 +155,10 @@ if [ "@CONDA_BUILD_CROSS_COMPILATION@" = "1" ]; then
   echo "cmake = '${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/cmake'" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
   echo "pkg-config = '${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/pkg-config'" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
   if [ "@MESON_SYSTEM@" = "darwin" ]; then
-${DEBUG_CPPFLAGS:+ }${DEBUG_CPPFLAGS:-}    # meson guesses whether it can run binaries in cross-compilation based on some heuristics,
+    # meson guesses whether it can run binaries in cross-compilation based on some heuristics,
     # and those can be wrong; see https://mesonbuild.com/Cross-compilation.html#properties
-    echo "[properties]" >> ${CONDA_PREFIX}/meson_cross_file.txt
-    echo "needs_exe_wrapper = true" >> ${CONDA_PREFIX}/meson_cross_file.txt
+    echo "[properties]" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
+    echo "needs_exe_wrapper = true" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
   fi
 fi
 
@@ -182,7 +178,7 @@ _tc_activation \
   "LDFLAGS_LD,${LDFLAGS_LD_USED}${LDFLAGS_LD:+ }${LDFLAGS_LD:-}" \
   "DEBUG_CPPFLAGS,${DEBUG_CPPFLAGS_USED}${DEBUG_CPPFLAGS:+ }${DEBUG_CPPFLAGS:-}" \
   "DEBUG_CFLAGS,${DEBUG_CFLAGS_USED}${DEBUG_CFLAGS:+ }${DEBUG_CFLAGS:-}" \
-  "CMAKE_PREFIX_PATH,${CMAKE_PREFIX_PATH_USED}"${CMAKE_PREFIX_PATH:+:}${CMAKE_PREFIX_PATH:-} \
+  "CMAKE_PREFIX_PATH,${CMAKE_PREFIX_PATH_USED}${CMAKE_PREFIX_PATH:+:}${CMAKE_PREFIX_PATH:-}" \
   "CONDA_BUILD_CROSS_COMPILATION,@CONDA_BUILD_CROSS_COMPILATION@" \
   "build_alias,@CBUILD@" \
   "host_alias,@CHOST@" \
@@ -238,11 +234,4 @@ fi
 
 if [ "@IS_WIN@" = "1" ]; then
   CONDA_PREFIX=$(echo "${CONDA_PREFIX:-}" | sed 's,\/,\\,g')
-fi
-}
-
-if [ "${CONDA_BUILD_STATE:-0}" = "BUILD" ] && [ "${target_platform:-@TARGET_PLATFORM@}" != "@TARGET_PLATFORM@" ]; then
-  echo "Not activating environment because this compiler is not expected."
-else
-  activate_compiler
 fi

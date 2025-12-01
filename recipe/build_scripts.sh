@@ -162,28 +162,28 @@ elif [[ "${cross_target_platform}" == "osx-arm64" ]]; then
   uname_kernel_release=20.0.0
 fi
 
-find . -name "*activate*.*" -exec sed -i.bak "s|@UNAME_KERNEL_RELEASE@|${uname_kernel_release}|g"                                  "{}" \;
-find . -name "*activate*.*" -exec sed -i.bak "s|@IS_WIN@|${IS_WIN}|g"                                                              "{}" \;
-find . -name "*activate*.*" -exec sed -i.bak "s|@TOOLS@|${TOOLS}|g"                                                                "{}" \;
-find . -name "*activate*.*" -exec sed -i.bak "s|@MACHINE@|${MACHINE}|g"                                                            "{}" \;
-find . -name "*activate*.*" -exec sed -i.bak "s|@CMAKE_SYSTEM_NAME@|${CMAKE_SYSTEM_NAME}|g"                                        "{}" \;
-find . -name "*activate*.*" -exec sed -i.bak "s|@MESON_SYSTEM@|${MESON_SYSTEM}|g"                                                  "{}" \;
-find . -name "*activate*.*" -exec sed -i.bak "s|@MESON_FAMILY@|${MESON_FAMILY}|g"                                                  "{}" \;
-find . -name "*activate*.*" -exec sed -i.bak "s|@CBUILD@|${CBUILD}|g"                                                              "{}" \;
-find . -name "*activate*.*" -exec sed -i.bak "s|@CHOST@|${CHOST}|g"                                                                "{}" \;
-find . -name "*activate*.*" -exec sed -i.bak "s|@CPPFLAGS@|${FINAL_CPPFLAGS}|g"                                                    "{}" \;
-find . -name "*activate*.*" -exec sed -i.bak "s|@DEBUG_CPPFLAGS@|${FINAL_DEBUG_CPPFLAGS}|g"                                        "{}" \;
-find . -name "*activate*.*" -exec sed -i.bak "s|@CFLAGS@|${FINAL_CFLAGS}|g"                                                       "{}" \;
-find . -name "*activate*.*" -exec sed -i.bak "s|@DEBUG_CFLAGS@|${FINAL_DEBUG_CFLAGS}|g"                                           "{}" \;
-find . -name "*activate*.*" -exec sed -i.bak "s|@CXXFLAGS@|${FINAL_CXXFLAGS}|g"                                                   "{}" \;
-find . -name "*activate*.*" -exec sed -i.bak "s|@DEBUG_CXXFLAGS@|${FINAL_DEBUG_CXXFLAGS}|g"                                       "{}" \;
-find . -name "*activate*.*" -exec sed -i.bak "s|@FFLAGS@|${FINAL_FFLAGS}|g"                                                       "{}" \;
-find . -name "*activate*.*" -exec sed -i.bak "s|@DEBUG_FFLAGS@|${FINAL_DEBUG_FFLAGS}|g"                                           "{}" \;
-find . -name "*activate*.*" -exec sed -i.bak "s|@LDFLAGS@|${FINAL_LDFLAGS}|g"                                                     "{}" \;
-find . -name "*activate*.*" -exec sed -i.bak "s|@LDFLAGS_LD@|${FINAL_LDFLAGS_LD}|g"                                               "{}" \;
-find . -name "*activate*.*" -exec sed -i.bak "s|@EXE_EXT@|${EXE_EXT}|g"                                                           "{}" \;
-find . -name "*activate*.*" -exec sed -i.bak "s|@LIBRARY_PREFIX@|${LIBRARY_PREFIX}|g"                                             "{}" \;
-find . -name "*activate*.*" -exec sed -i.bak "s|@CONDA_BUILD_CROSS_COMPILATION@|${CONDA_BUILD_CROSS_COMPILATION}|g"                "{}" \;
+find . -name "*activate*.*" -not -name "*.bak" -exec sed -i.bak "s|@UNAME_KERNEL_RELEASE@|${uname_kernel_release}|g"                      "{}" \;
+find . -name "*activate*.*" -not -name "*.bak" -exec sed -i.bak "s|@IS_WIN@|${IS_WIN}|g"                                                  "{}" \;
+find . -name "*activate*.*" -not -name "*.bak" -exec sed -i.bak "s|@TOOLS@|${TOOLS}|g"                                                    "{}" \;
+find . -name "*activate*.*" -not -name "*.bak" -exec sed -i.bak "s|@MACHINE@|${MACHINE}|g"                                                "{}" \;
+find . -name "*activate*.*" -not -name "*.bak" -exec sed -i.bak "s|@CMAKE_SYSTEM_NAME@|${CMAKE_SYSTEM_NAME}|g"                            "{}" \;
+find . -name "*activate*.*" -not -name "*.bak" -exec sed -i.bak "s|@MESON_SYSTEM@|${MESON_SYSTEM}|g"                                      "{}" \;
+find . -name "*activate*.*" -not -name "*.bak" -exec sed -i.bak "s|@MESON_FAMILY@|${MESON_FAMILY}|g"                                      "{}" \;
+find . -name "*activate*.*" -not -name "*.bak" -exec sed -i.bak "s|@CBUILD@|${CBUILD}|g"                                                  "{}" \;
+find . -name "*activate*.*" -not -name "*.bak" -exec sed -i.bak "s|@CHOST@|${CHOST}|g"                                                    "{}" \;
+find . -name "*activate*.*" -not -name "*.bak" -exec sed -i.bak "s|@CPPFLAGS@|${FINAL_CPPFLAGS}|g"                                        "{}" \;
+find . -name "*activate*.*" -not -name "*.bak" -exec sed -i.bak "s|@DEBUG_CPPFLAGS@|${FINAL_DEBUG_CPPFLAGS}|g"                            "{}" \;
+find . -name "*activate*.*" -not -name "*.bak" -exec sed -i.bak "s|@CFLAGS@|${FINAL_CFLAGS}|g"                                            "{}" \;
+find . -name "*activate*.*" -not -name "*.bak" -exec sed -i.bak "s|@DEBUG_CFLAGS@|${FINAL_DEBUG_CFLAGS}|g"                                "{}" \;
+find . -name "*activate*.*" -not -name "*.bak" -exec sed -i.bak "s|@CXXFLAGS@|${FINAL_CXXFLAGS}|g"                                        "{}" \;
+find . -name "*activate*.*" -not -name "*.bak" -exec sed -i.bak "s|@DEBUG_CXXFLAGS@|${FINAL_DEBUG_CXXFLAGS}|g"                            "{}" \;
+find . -name "*activate*.*" -not -name "*.bak" -exec sed -i.bak "s|@FFLAGS@|${FINAL_FFLAGS}|g"                                            "{}" \;
+find . -name "*activate*.*" -not -name "*.bak" -exec sed -i.bak "s|@DEBUG_FFLAGS@|${FINAL_DEBUG_FFLAGS}|g"                                "{}" \;
+find . -name "*activate*.*" -not -name "*.bak" -exec sed -i.bak "s|@LDFLAGS@|${FINAL_LDFLAGS}|g"                                          "{}" \;
+find . -name "*activate*.*" -not -name "*.bak" -exec sed -i.bak "s|@LDFLAGS_LD@|${FINAL_LDFLAGS_LD}|g"                                    "{}" \;
+find . -name "*activate*.*" -not -name "*.bak" -exec sed -i.bak "s|@EXE_EXT@|${EXE_EXT}|g"                                                "{}" \;
+find . -name "*activate*.*" -not -name "*.bak" -exec sed -i.bak "s|@LIBRARY_PREFIX@|${LIBRARY_PREFIX}|g"                                  "{}" \;
+find . -name "*activate*.*" -not -name "*.bak" -exec sed -i.bak "s|@CONDA_BUILD_CROSS_COMPILATION@|${CONDA_BUILD_CROSS_COMPILATION}|g"    "{}" \;
 
 cp activate-gcc.sh activate-clang.sh
 cp activate-g++.sh activate-clang++.sh
