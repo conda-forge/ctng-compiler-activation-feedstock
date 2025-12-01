@@ -199,7 +199,7 @@ GCC_EXTRA=" \
 GXX_EXTRA=" \
 \"GXX,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CHOST}-g++\" \
 "
-find . -name "*activate-gcc.sh" -exec sed -i.bak "s|@C_EXTRA@|"${GCC_EXTRA}"|g"                         "{}" \;
+find . -name "*activate-gcc.sh" -exec sed -i.bak "s|@C_EXTRA@|${GCC_EXTRA}|g"                           "{}" \;
 find . -name "*activate-gcc.sh" -exec sed -i.bak "s|@CPP@|${CHOST}-cpp|g"                               "{}" \;
 find . -name "*activate-gcc.sh" -exec sed -i.bak "s|@CPP_FOR_BUILD@|${CBUILD}-cpp|g"                    "{}" \;
 find . -name "*activate-gcc.sh" -exec sed -i.bak "s|@AR@|${CHOST}-gcc-ar|g"                             "{}" \;
@@ -209,7 +209,7 @@ find . -name "*activate-gcc.sh" -exec sed -i.bak "s|@CC@|${CHOST}-cc|g"         
 find . -name "*activate-gcc.sh" -exec sed -i.bak "s|@CC_FOR_BUILD@|${CBUILD}-cc|g"                      "{}" \;
 find . -name "*activate-g++.sh" -exec sed -i.bak "s|@CXX@|${CHOST}-c++|g"                               "{}" \;
 find . -name "*activate-g++.sh" -exec sed -i.bak "s|@CXX_FOR_BUILD@|${CBUILD}-c++|g"                    "{}" \;
-find . -name "*activate-g++.sh" -exec sed -i.bak "s|@CXX_EXTRA@|"${GXX_EXTRA}"|g"                       "{}" \;
+find . -name "*activate-g++.sh" -exec sed -i.bak "s|@CXX_EXTRA@|${GXX_EXTRA}|g"                         "{}" \;
 
 CLANG_EXTRA=" \
 \"CLANG,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CHOST}-clang\" \
@@ -221,7 +221,7 @@ CLANG_EXTRA=" \
 CLANGXX_EXTRA=" \
 \"CLANGXX,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CHOST}-clang++\" \
 "
-find . -name "*activate-clang.sh" -exec sed -i.bak "s|@C_EXTRA@|"${CLANG_EXTRA}"|g"                     "{}" \;
+find . -name "*activate-clang.sh" -exec sed -i.bak "s|@C_EXTRA@|${CLANG_EXTRA}|g"                       "{}" \;
 find . -name "*activate-clang.sh" -exec sed -i.bak "s|@CPP@|${CHOST}-clang-cpp|g"                       "{}" \;
 find . -name "*activate-clang.sh" -exec sed -i.bak "s|@CPP_FOR_BUILD@|${CBUILD}-clang-cpp|g"            "{}" \;
 find . -name "*activate-clang.sh" -exec sed -i.bak "s|@AR@|${CHOST}-ar|g"                               "{}" \;
@@ -229,7 +229,7 @@ find . -name "*activate-clang.sh" -exec sed -i.bak "s|@NM@|${CHOST}-nm|g"       
 find . -name "*activate-clang.sh" -exec sed -i.bak "s|@RANLIB@|${CHOST}-ranlib|g"                       "{}" \;
 find . -name "*activate-clang.sh" -exec sed -i.bak "s|@CC@|${CHOST}-clang|g"                            "{}" \;
 find . -name "*activate-clang.sh" -exec sed -i.bak "s|@CC_FOR_BUILD@|${CBUILD}-clang|g"                 "{}" \;
-find . -name "*activate-clang++.sh" -exec sed -i.bak "s|@CXX_EXTRA@|"${CLANGXX_EXTRA}"|g"               "{}" \;
+find . -name "*activate-clang++.sh" -exec sed -i.bak "s|@CXX_EXTRA@|${CLANGXX_EXTRA}|g"                 "{}" \;
 find . -name "*activate-clang++.sh" -exec sed -i.bak "s|@CXX@|${CHOST}-clang++|g"                       "{}" \;
 find . -name "*activate-clang++.sh" -exec sed -i.bak "s|@CXX_FOR_BUILD@|${CBUILD}-clang++|g"            "{}" \;
 
