@@ -42,23 +42,6 @@ cross_stdlib_version:
   - 12
   - None
   - None
-channel_sources:
-- conda-forge
-- conda-forge
-- conda-forge
-- conda-forge
-- conda-forge
-- conda-forge,conda-forge/label/gcc-experimental
-- conda-forge,conda-forge/label/gcc-experimental
-channel_targets:
-- conda-forge main
-- conda-forge main
-- conda-forge main
-- conda-forge main
-- conda-forge main
-- conda-forge gcc-experimental
-- conda-forge gcc-experimental
-
 clang_version:
   - 21.1
   - 20.1
@@ -69,5 +52,3 @@ zip_keys:
     - triplet
     - cross_stdlib
     - cross_stdlib_version
-    - channel_sources
-    - channel_targets

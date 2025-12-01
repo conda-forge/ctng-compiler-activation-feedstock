@@ -169,13 +169,17 @@ outputs:
         # for activation of binutils env vars
         - if: cross_target_platform not in ("osx-64", "osx-arm64")
           then: binutils_${{ cross_target_platform }}
-          else: cctools_${{ cross_target_platform }}
+          else:
+            - cctools_${{ cross_target_platform }}
+            - libcxx-devel ${{ clang_version }}.*
         - if: cross_stdlib != "None"
           then: ${{ cross_stdlib }}_${{ cross_target_platform }}
       run_exports:
         strong:
           # This should be a transitive dependency, but conda-build doesn't support those
-          - libstdcxx >=${{ min_runtime_version }}
+          - if: cross_target_platform in ("osx-64", "osx-arm64")
+            then: libcxx >=${{ clang_version }}
+            else: libstdcxx >=${{ min_runtime_version }}
           # Because transitive run_exports do not work:
           - libgcc >=${{ min_runtime_version }}
           # Need ucrt for windows<10
@@ -253,7 +257,9 @@ outputs:
       run_exports:
         strong:
           # This should be a transitive dependency, but conda-build doesn't support those
-          - libstdcxx >=${{ min_runtime_version }}
+          - if: cross_target_platform in ("osx-64", "osx-arm64")
+            then: libcxx >=${{ clang_version }}
+            else: libstdcxx >=${{ min_runtime_version }}
           # Because transitive run_exports do not work:
           - libgcc >=${{ min_runtime_version }}
     tests:
