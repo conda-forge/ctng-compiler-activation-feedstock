@@ -7,7 +7,7 @@ _get_sourced_filename() {
     if [ -n "${BASH_SOURCE+x}" ] && [ -n "${BASH_SOURCE[0]}" ]; then
         # shellcheck disable=SC3054 # non-POSIX array access is guarded
         basename "${BASH_SOURCE[0]}"
-    elif [ -n "$ZSH_NAME" ] && [ -n "${(%):-%x}" ]; then
+    elif [ -n "${ZSH_NAME+x}" ] && [ -n "${(%):-%x}" ]; then
         # in zsh use prompt-style expansion to introspect the same information
         # see http://stackoverflow.com/questions/9901210/bash-source0-equivalent-in-zsh
         # shellcheck disable=SC2296  # bad '(' is guarded
@@ -17,67 +17,36 @@ _get_sourced_filename() {
     fi
 }
 
-# The arguments to this are:
-# 1. activation nature {activate|deactivate}
-# 2. toolchain nature {build|host|ccc}
-# 3. machine (should match -dumpmachine)
-# 4. prefix (including any final -)
-# 5+ program (or environment var comma value)
-# The format for 5+ is name{,,value}. If value is specified
-#  then name taken to be an environment variable, otherwise
-#  it is taken to be a program. In this case, which is used
-#  to find the full filename during activation. The original
-#  value is stored in environment variable CONDA_BACKUP_NAME
-#  For deactivation, the distinction is irrelevant as in all
-#  cases NAME simply gets reset to CONDA_BACKUP_NAME.  It is
-#  a fatal error if a program is identified but not present.
+# The format for args are name,value. name is the name of
+#  the environment variable. The original value is stored
+#  in environment variable CONDA_BACKUP_NAME
 _tc_activation() {
-  local act_nature="$1"; shift
-  local tc_prefix="$1"; shift
   local thing
   local newval
   local from
   local to
-  local pass
 
-  if [ "${act_nature}" = "activate" ]; then
-    from=""
-    to="CONDA_BACKUP_"
-  else
-    from="CONDA_BACKUP_"
-    to=""
-  fi
+  from=""
+  to="CONDA_BACKUP_"
 
-  for pass in check apply; do
-    for thing in "$@"; do
-      case "${thing}" in
-        *,*)
-          newval=$(echo "${thing}" | sed "s,^[^\,]*\,\(.*\),\1,")
-          thing=$(echo "${thing}" | sed "s,^\([^\,]*\)\,.*,\1,")
-          ;;
-        *)
-          newval="${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/${tc_prefix}${thing}@EXE_EXT@"
-          if [ ! -x "${newval}" ] && [ "${pass}" = "check" ]; then
-            echo "ERROR: This cross-compiler package contains no program ${newval}"
-            return 1
-          fi
-          ;;
-      esac
-      if [ "${pass}" = "apply" ]; then
-        thing=$(echo "${thing}" | tr 'a-z+-' 'A-ZX_')
-        eval oldval="\$${from}$thing"
-        if [ -n "${oldval}" ]; then
-          eval export "${to}'${thing}'=\"${oldval}\""
-        else
-          eval unset '${to}${thing}'
-        fi
-        if [ -n "${newval}" ]; then
-          eval export "'${from}${thing}=${newval}'"
-        else
-          eval unset '${from}${thing}'
-        fi
-      fi
-    done
+  for thing in "$@"; do
+    case "${thing}" in
+      *,*)
+        newval="${thing#*,}"
+        thing="${thing%%,*}"
+        ;;
+      *)
+        echo "ERROR: unrecognized argument to activation function"
+        return 1
+        ;;
+    esac
+    eval oldval="\$$thing"
+    if [ -n "${oldval}" ]; then
+      eval export "${to}'${thing}'=\"${oldval}\""
+    else
+      eval unset '${to}${thing}'
+    fi
+    eval export "'${from}${thing}=${newval}'"
   done
   return 0
 }
@@ -104,11 +73,9 @@ if [ "${CONDA_BUILD:-0}" = "1" ]; then
 fi
 
 _tc_activation \
-  activate @CHOST@- \
-  "CXX,${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/@CXX@" @CXX_COMPILERS@ \
+  @CXX_EXTRA@ \
   "CXXFLAGS,${CXXFLAGS_USED}${CXXFLAGS:+ }${CXXFLAGS:-}" \
-  "DEBUG_CXXFLAGS,${DEBUG_CXXFLAGS_USED}${DEBUG_CXXFLAGS:+ }${DEBUG_CXXFLAGS:-}" \
-  "CXX_FOR_BUILD,${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/@CXX_FOR_BUILD@"
+  "DEBUG_CXXFLAGS,${DEBUG_CXXFLAGS_USED}${DEBUG_CXXFLAGS:+ }${DEBUG_CXXFLAGS:-}"
 
 if [ $? -ne 0 ]; then
   echo "ERROR: $(_get_sourced_filename) failed, see above for details"

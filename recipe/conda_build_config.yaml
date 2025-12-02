@@ -1,3 +1,5 @@
+MACOSX_SDK_VERSION:
+  - 14.5
 gcc_version:
   - 15.2.0
   - 14.3.0
@@ -12,12 +14,16 @@ cross_target_platform:
   - linux-aarch64
   - linux-s390x
   - win-64
+  - osx-64
+  - osx-arm64
 triplet:
   - x86_64-conda-linux-gnu
   - powerpc64le-conda-linux-gnu
   - aarch64-conda-linux-gnu
   - s390x-conda-linux-gnu
   - x86_64-w64-mingw32
+  - x86_64-apple-darwin13.4.0
+  - arm64-apple-darwin20.0.0
 c_stdlib:          # [win]
   - m2w64-sysroot  # [win]
 c_stdlib_version:  # [win]
@@ -28,13 +34,16 @@ cross_stdlib:
   - sysroot
   - sysroot
   - m2w64-sysroot
+  - None
+  - None
 cross_stdlib_version:
   - 2.17
   - 2.17
   - 2.17
   - 2.17
   - 12
-
+  - None
+  - None
 clang_version:
   - 21.1
   - 20.1
