@@ -59,10 +59,9 @@ if [ "${CONDA_BUILD:-0}" = "1" ]; then
 fi
 
 _tc_deactivation \
-  "CXX" @CXX_EXTRA@ \
+  @CXX_EXTRA@ \
   "CXXFLAGS" \
-  "DEBUG_CXXFLAGS" \
-  "CXX_FOR_BUILD"
+  "DEBUG_CXXFLAGS"
 
 if [ $? -ne 0 ]; then
   echo "ERROR: $(_get_sourced_filename) failed, see above for details"

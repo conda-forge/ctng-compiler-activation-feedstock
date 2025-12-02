@@ -191,47 +191,54 @@ cp deactivate-gcc.sh deactivate-clang.sh
 cp deactivate-g++.sh deactivate-clang++.sh
 
 GCC_EXTRA=" \
+\"CC,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CHOST}-cc\" \
+\"CPP,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CHOST}-cpp\" \
+\"CC_FOR_BUILD,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CBUILD}-cc\" \
+\"CPP_FOR_BUILD,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CBUILD}-cpp\" \
 \"GCC,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CHOST}-gcc\" \
 \"GCC_AR,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CHOST}-gcc-ar\" \
 \"GCC_NM,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CHOST}-gcc-nm\" \
 \"GCC_RANLIB,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CHOST}-gcc-ranlib\" \
 "
 GXX_EXTRA=" \
+\"CXX,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CHOST}-c++\" \
+\"CXX_FOR_BUILD,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CBUILD}-c++\" \
 \"GXX,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CHOST}-g++\" \
 "
+
+if [[ "${CHOST}" == *darwin* || ("${gcc_version}" != "14.3.0" && "${gcc_version}" != "13.4.0") ]]; then
+  GCC_EXTRA=${GCC_EXTRA//\${CONDA_PREFIX\}\/bin\//}
+  GXX_EXTRA=${GXX_EXTRA//\${CONDA_PREFIX\}\/bin\//}
+  find . -name "*activate-gfortran.sh" -exec sed -i.bak 's|${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/||g'     "{}" \;
+fi
+
 find . -name "*activate-gcc.sh" -exec sed -i.bak "s|@C_EXTRA@|${GCC_EXTRA}|g"                           "{}" \;
-find . -name "*activate-gcc.sh" -exec sed -i.bak "s|@CPP@|${CHOST}-cpp|g"                               "{}" \;
-find . -name "*activate-gcc.sh" -exec sed -i.bak "s|@CPP_FOR_BUILD@|${CBUILD}-cpp|g"                    "{}" \;
 find . -name "*activate-gcc.sh" -exec sed -i.bak "s|@AR@|${CHOST}-gcc-ar|g"                             "{}" \;
 find . -name "*activate-gcc.sh" -exec sed -i.bak "s|@NM@|${CHOST}-gcc-nm|g"                             "{}" \;
 find . -name "*activate-gcc.sh" -exec sed -i.bak "s|@RANLIB@|${CHOST}-gcc-ranlib|g"                     "{}" \;
-find . -name "*activate-gcc.sh" -exec sed -i.bak "s|@CC@|${CHOST}-cc|g"                                 "{}" \;
-find . -name "*activate-gcc.sh" -exec sed -i.bak "s|@CC_FOR_BUILD@|${CBUILD}-cc|g"                      "{}" \;
-find . -name "*activate-g++.sh" -exec sed -i.bak "s|@CXX@|${CHOST}-c++|g"                               "{}" \;
-find . -name "*activate-g++.sh" -exec sed -i.bak "s|@CXX_FOR_BUILD@|${CBUILD}-c++|g"                    "{}" \;
 find . -name "*activate-g++.sh" -exec sed -i.bak "s|@CXX_EXTRA@|${GXX_EXTRA}|g"                         "{}" \;
 
 CLANG_EXTRA=" \
-\"CLANG,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CHOST}-clang\" \
-\"OBJC,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CHOST}-clang\" \
-\"OBJC_FOR_BUILD,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CBUILD}-clang\" \
+\"CC,${CHOST}-clang\" \
+\"CPP,${CHOST}-clang-cpp\" \
+\"OBJC,${CHOST}-clang\" \
+\"CC_FOR_BUILD,${CBUILD}-clang\" \
+\"CPP_FOR_BUILD,${CBUILD}-clang-cpp\" \
+\"OBJC_FOR_BUILD,${CBUILD}-clang\" \
+\"CLANG,${CHOST}-clang\" \
 \"ac_cv_func_malloc_0_nonnull,yes\" \
 \"ac_cv_func_realloc_0_nonnull,yes\" \
 "
 CLANGXX_EXTRA=" \
-\"CLANGXX,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CHOST}-clang++\" \
+\"CXX,${CHOST}-clang++\" \
+\"CXX_FOR_BUILD,${CBUILD}-clang++\" \
+\"CLANGXX,${CHOST}-clang++\" \
 "
 find . -name "*activate-clang.sh" -exec sed -i.bak "s|@C_EXTRA@|${CLANG_EXTRA}|g"                       "{}" \;
-find . -name "*activate-clang.sh" -exec sed -i.bak "s|@CPP@|${CHOST}-clang-cpp|g"                       "{}" \;
-find . -name "*activate-clang.sh" -exec sed -i.bak "s|@CPP_FOR_BUILD@|${CBUILD}-clang-cpp|g"            "{}" \;
 find . -name "*activate-clang.sh" -exec sed -i.bak "s|@AR@|${CHOST}-ar|g"                               "{}" \;
 find . -name "*activate-clang.sh" -exec sed -i.bak "s|@NM@|${CHOST}-nm|g"                               "{}" \;
 find . -name "*activate-clang.sh" -exec sed -i.bak "s|@RANLIB@|${CHOST}-ranlib|g"                       "{}" \;
-find . -name "*activate-clang.sh" -exec sed -i.bak "s|@CC@|${CHOST}-clang|g"                            "{}" \;
-find . -name "*activate-clang.sh" -exec sed -i.bak "s|@CC_FOR_BUILD@|${CBUILD}-clang|g"                 "{}" \;
 find . -name "*activate-clang++.sh" -exec sed -i.bak "s|@CXX_EXTRA@|${CLANGXX_EXTRA}|g"                 "{}" \;
-find . -name "*activate-clang++.sh" -exec sed -i.bak "s|@CXX@|${CHOST}-clang++|g"                       "{}" \;
-find . -name "*activate-clang++.sh" -exec sed -i.bak "s|@CXX_FOR_BUILD@|${CBUILD}-clang++|g"            "{}" \;
 
 find . -name "*activate*.sh.bak" -exec rm "{}" \;
 

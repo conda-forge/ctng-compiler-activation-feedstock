@@ -73,10 +73,6 @@ _tc_deactivation \
   "BUILD" \
   "CONDA_TOOLCHAIN_HOST" \
   "CONDA_TOOLCHAIN_BUILD" \
-  "CC" \
-  "CPP" \
-  "CC_FOR_BUILD" \
-  "CPP_FOR_BUILD" \
   @C_EXTRA@ \
   "CPPFLAGS" \
   "CFLAGS" \
