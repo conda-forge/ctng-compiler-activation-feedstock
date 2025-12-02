@@ -4,7 +4,7 @@ context:
   build_num: 14
   gcc_version: ${{ gcc_version | default("13.1.0") }}
   gcc_major: ${{ (gcc_version | split("."))[0] | int }}
-  default_skip: ${{ (target_platform == "win-64" and cross_target_platform != "win-64") or (cross_target_platform == "win-64" and gcc_major|int < 13) or cross_target_platform == "linux-s390x" or s390x or ((cross_target_platform in ("osx-64", "osx-arm64") or osx) and gcc_major|int < 15) }}
+  default_skip: ${{ (target_platform == "win-64" and cross_target_platform != "win-64") or (cross_target_platform == "win-64" and gcc_major|int < 13) or cross_target_platform == "linux-s390x" or s390x or ((cross_target_platform in ("osx-64", "osx-arm64") or osx) and gcc_major|int < 14) }}
 
   # generally, the runtime version of libstdcxx needs to be at least as high
   # as the compiler; however, wherever libstdcxx changes the default ABI version
@@ -167,11 +167,11 @@ outputs:
         # for activation of gcc env vars
         - ${{ pin_subpackage("gcc_" ~ cross_target_platform, exact=True) }}
         # for activation of binutils env vars
-        - if: cross_target_platform not in ("osx-64", "osx-arm64")
-          then: binutils_${{ cross_target_platform }}
-          else:
+        - if: cross_target_platform in ("osx-64", "osx-arm64")
+          then:
             - cctools_${{ cross_target_platform }}
-            - libcxx-devel ${{ clang_version }}.*
+            - libcxx-headers ${{ clang_version }}.*
+          else: binutils_${{ cross_target_platform }}
         - if: cross_stdlib != "None"
           then: ${{ cross_stdlib }}_${{ cross_target_platform }}
       run_exports:
