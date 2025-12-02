@@ -4,7 +4,7 @@ context:
   build_num: 14
   gcc_version: ${{ gcc_version | default("13.1.0") }}
   gcc_major: ${{ (gcc_version | split("."))[0] | int }}
-  default_skip: ${{ (target_platform == "win-64" and cross_target_platform != "win-64") or (cross_target_platform == "win-64" and gcc_major|int < 13) or cross_target_platform == "linux-s390x" or s390x or ((cross_target_platform in ("osx-64", "osx-arm64") or osx) and gcc_major|int < 14) }}
+  default_skip: ${{ (target_platform == "win-64" and cross_target_platform != "win-64") or (cross_target_platform == "win-64" and gcc_major|int < 13) or cross_target_platform == "linux-s390x" or s390x or ((cross_target_platform in ("osx-64", "osx-arm64") or osx) and gcc_major|int < 15) }}
 
   # generally, the runtime version of libstdcxx needs to be at least as high
   # as the compiler; however, wherever libstdcxx changes the default ABI version
