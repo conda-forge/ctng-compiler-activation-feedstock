@@ -152,17 +152,18 @@ if [ "@CONDA_BUILD_CROSS_COMPILATION@" = "1" ]; then
   echo "cpu = '@MACHINE@'" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
   echo "cpu_family = '@MESON_FAMILY@'" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
   echo "endian = 'little'" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
-  # specify path to correct binaries from build (not host) environment,
-  # which meson will not auto-discover (out of caution) if not told explicitly.
-  echo "[binaries]" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
-  echo "cmake = '${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/cmake'" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
-  echo "pkg-config = '${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/pkg-config'" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
   if [ "@MESON_SYSTEM@" = "darwin" ]; then
     # meson guesses whether it can run binaries in cross-compilation based on some heuristics,
     # and those can be wrong; see https://mesonbuild.com/Cross-compilation.html#properties
     echo "[properties]" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
     echo "needs_exe_wrapper = true" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
   fi
+  # specify path to correct binaries from build (not host) environment,
+  # which meson will not auto-discover (out of caution) if not told explicitly.
+  # keep binaries as the last section as some recipes edit this file and is expected.
+  echo "[binaries]" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
+  echo "cmake = '${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/cmake'" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
+  echo "pkg-config = '${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/pkg-config'" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
 fi
 
 _tc_activation \
