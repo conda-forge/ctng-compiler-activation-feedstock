@@ -146,7 +146,7 @@ if [ "@CONDA_BUILD_CROSS_COMPILATION@" = "1" ]; then
   if [ "@CMAKE_SYSTEM_NAME@" = "Darwin" ]; then
     _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_SYSTEM_VERSION=@UNAME_KERNEL_RELEASE@"
   fi
-  _MESON_ARGS="${_MESON_ARGS} --cross-file ${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
+  _MESON_ARGS="${_MESON_ARGS} --cross-file=${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
   echo "[host_machine]" > "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
   echo "system = '@MESON_SYSTEM@'" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
   echo "cpu = '@MACHINE@'" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
