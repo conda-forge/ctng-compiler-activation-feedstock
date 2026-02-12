@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ex
+set -exu
 
 source $RECIPE_DIR/get_cpu_arch.sh
 
@@ -70,7 +70,7 @@ FINAL_DEBUG_FFLAGS_linux_aarch64="-fopenmp -ftree-vectorize -fPIC -fstack-protec
 FINAL_DEBUG_FFLAGS_linux_s390x="-fopenmp -ftree-vectorize -fPIC -fstack-protector-strong -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fvar-tracking-assignments -pipe"
 FINAL_DEBUG_FFLAGS_win_64="-fopenmp -ftree-vectorize -fPIC -fstack-protector-strong -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fvar-tracking-assignments -pipe"
 FINAL_DEBUG_FFLAGS_osx_64="-march=core2 -mtune=haswell -ftree-vectorize -fPIC -fstack-protector -O2 -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fimplicit-none -fvar-tracking-assignments"
-FINAL_DEBUG_FFLAGS_osx_64="-march=armv8.3-a -ftree-vectorize -fPIC -fno-stack-protector -O2 -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fimplicit-none -fvar-tracking-assignments"
+FINAL_DEBUG_FFLAGS_osx_arm64="-march=armv8.3-a -ftree-vectorize -fPIC -fno-stack-protector -O2 -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fimplicit-none -fvar-tracking-assignments"
 
 cross_target_platform_u=${cross_target_platform/-/_}
 
@@ -138,7 +138,7 @@ else
   CMAKE_SYSTEM_NAME="Darwin"
 fi
 
-MESON_NAME=$(echo "$CMAKE_SYSTEM_NAME" | tr '[:upper:]' '[:lower:]')
+MESON_SYSTEM=$(echo "$CMAKE_SYSTEM_NAME" | tr '[:upper:]' '[:lower:]')
 
 if [[ "${target_platform}" == "win-"* ]]; then
   LIBRARY_PREFIX="/Library"
@@ -160,11 +160,12 @@ if [[ "${cross_target_platform}" == "osx-64" ]]; then
   uname_kernel_release=13.4.0
 elif [[ "${cross_target_platform}" == "osx-arm64" ]]; then
   uname_kernel_release=20.0.0
+else
+  uname_kernel_release=0
 fi
 
 find . -name "*activate*.*" -not -name "*.bak" -exec sed -i.bak "s|@UNAME_KERNEL_RELEASE@|${uname_kernel_release}|g"                      "{}" \;
 find . -name "*activate*.*" -not -name "*.bak" -exec sed -i.bak "s|@IS_WIN@|${IS_WIN}|g"                                                  "{}" \;
-find . -name "*activate*.*" -not -name "*.bak" -exec sed -i.bak "s|@TOOLS@|${TOOLS}|g"                                                    "{}" \;
 find . -name "*activate*.*" -not -name "*.bak" -exec sed -i.bak "s|@MACHINE@|${MACHINE}|g"                                                "{}" \;
 find . -name "*activate*.*" -not -name "*.bak" -exec sed -i.bak "s|@CMAKE_SYSTEM_NAME@|${CMAKE_SYSTEM_NAME}|g"                            "{}" \;
 find . -name "*activate*.*" -not -name "*.bak" -exec sed -i.bak "s|@MESON_SYSTEM@|${MESON_SYSTEM}|g"                                      "{}" \;
