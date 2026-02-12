@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ex
+set -exu
 
 source $RECIPE_DIR/get_cpu_arch.sh
 
@@ -138,7 +138,7 @@ else
   CMAKE_SYSTEM_NAME="Darwin"
 fi
 
-MESON_NAME=$(echo "$CMAKE_SYSTEM_NAME" | tr '[:upper:]' '[:lower:]')
+MESON_SYSTEM=$(echo "$CMAKE_SYSTEM_NAME" | tr '[:upper:]' '[:lower:]')
 
 if [[ "${target_platform}" == "win-"* ]]; then
   LIBRARY_PREFIX="/Library"
