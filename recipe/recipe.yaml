@@ -126,6 +126,8 @@ outputs:
         # for activation of binutils env vars
         - binutils_${{ cross_target_platform }}
         - clang_impl_${{ cross_target_platform }} ${{ clang_version }}.*
+        # need to ensure libgcc-devel_<target> matching the run-exports is used
+        - libgcc-devel_${{ cross_target_platform }} ${{ gcc_version }}.*
       run_exports:
         strong:
           - libgcc >=${{ min_runtime_version }}
