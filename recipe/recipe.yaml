@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  build_num: 21
+  build_num: 22
   gcc_version: ${{ gcc_version | default("13.1.0") }}
   gcc_major: ${{ (gcc_version | split("."))[0] | int }}
   default_skip: ${{ (target_platform == "win-64" and cross_target_platform != "win-64") or (cross_target_platform == "win-64" and gcc_major|int < 13) or cross_target_platform == "linux-s390x" or s390x or ((cross_target_platform in ("osx-64", "osx-arm64") or osx) and gcc_major|int < 15) }}
@@ -19,6 +19,7 @@ context:
   # https://github.com/gcc-mirror/gcc/commit/9e18a25331fa25c3907249fede65a02c6817b06e
   last_symbol_bump: 12
   min_runtime_version: ${{ gcc_major if ((gcc_major | int) > (last_symbol_bump | int)) else last_symbol_bump }}
+  library_prefix: ${{ "Library/" if win else "" }}
 
 recipe:
   name: ctng-compiler-activation
@@ -126,6 +127,8 @@ outputs:
         # for activation of binutils env vars
         - binutils_${{ cross_target_platform }}
         - clang_impl_${{ cross_target_platform }} ${{ clang_version }}.*
+        # need to ensure libgcc-devel_<target> matching the run-exports is used
+        - libgcc-devel_${{ cross_target_platform }} ${{ gcc_version }}.*
       run_exports:
         strong:
           - libgcc >=${{ min_runtime_version }}
@@ -222,6 +225,7 @@ outputs:
         - ${{ pin_subpackage("clang_impl_" ~ cross_target_platform, exact=True) }}
         # C++ compiler on linux needs a stdlib
         - libstdcxx-devel_${{ cross_target_platform }} ${{ gcc_version }}.*
+        - libgcc-devel_${{ cross_target_platform }} ${{ gcc_version }}.*
         - clangxx ${{ clang_version }}.*
     tests:
       - script:
