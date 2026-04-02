@@ -12,6 +12,7 @@ clang_version:
 - '19.1'
 - '20.1'
 - '21.1'
+- '22.1'
 cross_stdlib:
 - None
 cross_stdlib_version:
