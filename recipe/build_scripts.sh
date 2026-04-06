@@ -232,7 +232,9 @@ CLANG_EXTRA=" \
 "
 CLANGXX_EXTRA=" \
 \"CXX,${CHOST}-clang++\" \
+\"OBJCXX,${CHOST}-clang++\" \
 \"CXX_FOR_BUILD,${CBUILD}-clang++\" \
+\"OBJCXX_FOR_BUILD,${CBUILD}-clang++\" \
 \"CLANGXX,${CHOST}-clang++\" \
 "
 find . -name "*activate-clang.sh" -exec sed -i.bak "s|@C_EXTRA@|${CLANG_EXTRA}|g"                       "{}" \;
