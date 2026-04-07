@@ -5,46 +5,57 @@
 jobs:
 - job: osx
   pool:
-    vmImage: macOS-15
+    vmImage: $(VMIMAGE)
   strategy:
     matrix:
       osx_64_cross_target_platformlinux-64gcc_version15.2.0:
         CONFIG: osx_64_cross_target_platformlinux-64gcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
       osx_64_cross_target_platformlinux-aarch64gcc_version15.2.0:
         CONFIG: osx_64_cross_target_platformlinux-aarch64gcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
       osx_64_cross_target_platformlinux-ppc64legcc_version15.2.0:
         CONFIG: osx_64_cross_target_platformlinux-ppc64legcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
       osx_64_cross_target_platformosx-64gcc_version15.2.0:
         CONFIG: osx_64_cross_target_platformosx-64gcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
       osx_64_cross_target_platformosx-arm64gcc_version15.2.0:
         CONFIG: osx_64_cross_target_platformosx-arm64gcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
       osx_64_cross_target_platformwin-64gcc_version15.2.0:
         CONFIG: osx_64_cross_target_platformwin-64gcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
       osx_arm64_cross_target_platformlinux-64gcc_version15.2.0:
         CONFIG: osx_arm64_cross_target_platformlinux-64gcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
       osx_arm64_cross_target_platformlinux-aarch64gcc_version15.2.0:
         CONFIG: osx_arm64_cross_target_platformlinux-aarch64gcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
       osx_arm64_cross_target_platformlinux-ppc64legcc_version15.2.0:
         CONFIG: osx_arm64_cross_target_platformlinux-ppc64legcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
       osx_arm64_cross_target_platformosx-64gcc_version15.2.0:
         CONFIG: osx_arm64_cross_target_platformosx-64gcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
       osx_arm64_cross_target_platformosx-arm64gcc_version15.2.0:
         CONFIG: osx_arm64_cross_target_platformosx-arm64gcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
       osx_arm64_cross_target_platformwin-64gcc_version15.2.0:
         CONFIG: osx_arm64_cross_target_platformwin-64gcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
-    maxParallel: 11
+        VMIMAGE: macOS-15
   timeoutInMinutes: 360
   variables: {}
 
