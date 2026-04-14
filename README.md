@@ -13,15 +13,6 @@ Package license: BSD-3-Clause
 
 Summary: Clang Compiler (activation scripts)
 
-About clangxx_impl_linux-64
----------------------------
-
-Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
-
-Package license: BSD-3-Clause
-
-Summary: Clang C++ Compiler (activation scripts)
-
 About clangxx_impl_linux-aarch64
 --------------------------------
 
@@ -282,6 +273,15 @@ Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
 Package license: BSD-3-Clause
 
 Summary: GNU C++ Compiler (activation scripts)
+
+About clangxx_impl_linux-64
+---------------------------
+
+Home: https://github.com/conda-forge/ctng-compiler-activation-feedstock
+
+Package license: BSD-3-Clause
+
+Summary: Clang C++ Compiler (activation scripts)
 
 Current build status
 ====================
