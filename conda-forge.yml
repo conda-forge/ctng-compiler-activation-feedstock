@@ -13,3 +13,10 @@ conda_build:
 conda_build_tool: rattler-build
 azure:
   free_disk_space: true
+provider:
+  osx_64: azure
+  osx_arm64: azure
+  linux_64: azure
+  linux_aarch64: azure
+  linux_ppc64le: azure
+  win_64: azure
