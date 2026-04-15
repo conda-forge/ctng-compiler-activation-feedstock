@@ -11,5 +11,16 @@ github:
 conda_build:
   pkg_format: '2'
 conda_build_tool: rattler-build
+remote_ci_setup:
+  - "rattler-build<0.62.0"
+  - conda-build
+  - conda-forge-ci-setup
 azure:
   free_disk_space: true
+provider:
+  osx_64: azure
+  osx_arm64: azure
+  linux_64: azure
+  linux_aarch64: azure
+  linux_ppc64le: azure
+  win_64: azure
