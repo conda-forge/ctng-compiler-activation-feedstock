@@ -1,10 +1,10 @@
 schema_version: 1
 
 context:
-  build_num: 24
+  build_num: 25
   gcc_version: ${{ gcc_version | default("13.1.0") }}
   gcc_major: ${{ (gcc_version | split("."))[0] | int }}
-  default_skip: ${{ (target_platform == "win-64" and cross_target_platform != "win-64") or (cross_target_platform == "win-64" and gcc_major|int < 13) or cross_target_platform == "linux-s390x" or s390x or ((cross_target_platform in ("osx-64", "osx-arm64") or osx) and gcc_major|int < 15) }}
+  default_skip: ${{ (target_platform == "win-64" and cross_target_platform != "win-64") or (cross_target_platform == "win-64" and gcc_major|int < 13) or cross_target_platform == "linux-s390x" or s390x or ((cross_target_platform in ("linux-riscv64", "osx-64", "osx-arm64") or osx) and gcc_major|int < 15) }}
 
   # generally, the runtime version of libstdcxx needs to be at least as high
   # as the compiler; however, wherever libstdcxx changes the default ABI version
@@ -39,7 +39,7 @@ outputs:
       script: install-gcc.sh
     requirements:
       build:
-        - if: not (aarch64 or ppc64le)
+        - if: not (aarch64 or ppc64le or riscv64)
           then: shellcheck
       run:
         - gcc_impl_${{ target_platform }} ${{ gcc_version }}.*
@@ -95,11 +95,11 @@ outputs:
     build:
       # only for linux; osx builds are done on clang-compiler-activation-feedstock
       # native builds are skipped as they are done on clangdev-feedstock (see https://github.com/conda-forge/clangdev-feedstock/pull/405/changes)
-      skip: default_skip or win or s390x or cross_target_platform not in ("linux-64", "linux-aarch64", "linux-ppc64le") or target_platform == cross_target_platform
+      skip: default_skip or win or s390x or riscv64 or cross_target_platform not in ("linux-64", "linux-aarch64", "linux-ppc64le") or target_platform == cross_target_platform
       script: install-clang_impl.sh
     requirements:
       build:
-        - if: not (aarch64 or ppc64le)
+        - if: not (aarch64 or ppc64le or riscv64)
           then: shellcheck
       run:
         - libgcc-devel_${{ cross_target_platform }} ${{ gcc_version }}.*
@@ -123,11 +123,11 @@ outputs:
       name: clang_${{ cross_target_platform }}
       version: ${{ clang_version }}
     build:
-      skip: default_skip or win or s390x or cross_target_platform not in ("linux-64", "linux-aarch64", "linux-ppc64le")
+      skip: default_skip or win or s390x or riscv64 or cross_target_platform not in ("linux-64", "linux-aarch64", "linux-ppc64le") or target_platform == cross_target_platform
       script: install-clang.sh
     requirements:
       build:
-        - if: not (aarch64 or ppc64le)
+        - if: not (aarch64 or ppc64le or riscv64)
           then: shellcheck
       run:
         # for activation of binutils env vars
@@ -173,7 +173,7 @@ outputs:
       script: install-g++.sh
     requirements:
       build:
-        - if: not (aarch64 or ppc64le)
+        - if: not (aarch64 or ppc64le or riscv64)
           then: shellcheck
       run:
         - gxx_impl_${{ target_platform }} ${{ gcc_version }}.*
@@ -232,11 +232,11 @@ outputs:
     build:
       # only for linux; osx builds are done on clang-compiler-activation-feedstock
       # native builds are skipped as they are done on clangdev-feedstock (see https://github.com/conda-forge/clangdev-feedstock/pull/405/changes)
-      skip: default_skip or win or s390x or cross_target_platform not in ("linux-64", "linux-aarch64", "linux-ppc64le") or target_platform == cross_target_platform
+      skip: default_skip or win or s390x or riscv64 or cross_target_platform not in ("linux-64", "linux-aarch64", "linux-ppc64le") or target_platform == cross_target_platform
       script: install-clangxx_impl.sh
     requirements:
       build:
-        - if: not (aarch64 or ppc64le)
+        - if: not (aarch64 or ppc64le or riscv64)
           then: shellcheck
       run:
         - ${{ pin_subpackage("clang_impl_" ~ cross_target_platform, exact=True) }}
@@ -262,11 +262,11 @@ outputs:
       name: clangxx_${{ cross_target_platform }}
       version: ${{ clang_version }}
     build:
-      skip: default_skip or win or s390x or cross_target_platform not in ("linux-64", "linux-aarch64", "linux-ppc64le")
+      skip: default_skip or win or s390x or riscv64 or cross_target_platform not in ("linux-64", "linux-aarch64", "linux-ppc64le")
       script: install-clang++.sh
     requirements:
       build:
-        - if: not (aarch64 or ppc64le)
+        - if: not (aarch64 or ppc64le or riscv64)
           then: shellcheck
       run:
         # for activation of gcc env vars
@@ -317,7 +317,7 @@ outputs:
       script: install-gfortran.sh
     requirements:
       build:
-        - if: not (aarch64 or ppc64le)
+        - if: not (aarch64 or ppc64le or riscv64)
           then: shellcheck
       run:
         - gfortran_impl_${{ cross_target_platform }} ${{ gcc_version }}.*
@@ -378,6 +378,7 @@ outputs:
         - ${{ library_prefix }}powerpc64le-conda-linux-gnu/
         - ${{ library_prefix }}aarch64-conda-linux-gnu/
         - ${{ library_prefix }}s390x-conda-linux-gnu/
+        - ${{ library_prefix }}riscv64-conda-linux-gnu/
         - ${{ library_prefix }}x86_64-w64-mingw32/
       prefix_detection:
         ignore_binary_files: false

@@ -10,6 +10,8 @@ get_triplet() {
     CPU_ARCH="s390x"
   elif [[ "$1" == *"-arm64" ]]; then
     CPU_ARCH="arm64"
+  elif [[ "$1" == *"-riscv64" ]]; then
+    CPU_ARCH="riscv64"
   else
     echo "Unknown architecture"
     exit 1
