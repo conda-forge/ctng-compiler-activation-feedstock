@@ -13,6 +13,7 @@ cross_target_platform:
   - linux-ppc64le
   - linux-aarch64
   - linux-s390x
+  - linux-riscv64
   - win-64
   - osx-64
   - osx-arm64
@@ -21,6 +22,7 @@ triplet:
   - powerpc64le-conda-linux-gnu
   - aarch64-conda-linux-gnu
   - s390x-conda-linux-gnu
+  - riscv64-conda-linux-gnu
   - x86_64-w64-mingw32
   - x86_64-apple-darwin13.4.0
   - arm64-apple-darwin20.0.0
@@ -33,6 +35,7 @@ cross_stdlib:
   - sysroot
   - sysroot
   - sysroot
+  - sysroot
   - m2w64-sysroot
   - None
   - None
@@ -41,6 +44,7 @@ cross_stdlib_version:
   - 2.17
   - 2.17
   - 2.17
+  - 2.39
   - 12
   - None
   - None
