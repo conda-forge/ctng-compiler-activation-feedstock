@@ -1,9 +1,11 @@
+MACOSX_DEPLOYMENT_TARGET:
+- '11.0'
 MACOSX_SDK_VERSION:
 - '14.5'
 binutils_version:
 - '2.44'
 c_stdlib:
-- m2w64-sysroot
+- macosx_deployment_target
 channel_sources:
 - conda-forge
 channel_targets:
@@ -14,21 +16,21 @@ clang_version:
 - '21.1'
 - '22.1'
 cross_stdlib:
-- m2w64-sysroot
+- sysroot
 cross_stdlib_version:
-- '12'
+- '2.39'
 cross_target_platform:
-- win-64
-docker_image:
-- quay.io/condaforge/linux-anvil-x86_64:alma9
+- linux-riscv64
 gcc_version:
-- 13.4.0
+- 15.2.0
 libgfortran_soname:
 - '5'
+macos_machine:
+- x86_64-apple-darwin13.4.0
 target_platform:
-- win-64
+- osx-64
 triplet:
-- x86_64-w64-mingw32
+- riscv64-conda-linux-gnu
 zip_keys:
 - - cross_target_platform
   - triplet
