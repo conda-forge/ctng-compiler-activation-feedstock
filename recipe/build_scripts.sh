@@ -6,32 +6,36 @@ source $RECIPE_DIR/get_cpu_arch.sh
 
 FINAL_CPPFLAGS="-DNDEBUG -D_FORTIFY_SOURCE=2 -O2"
 
-FINAL_CFLAGS_linux_64="-march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe"
-FINAL_CFLAGS_linux_ppc64le="-mcpu=power8 -mtune=power8 -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O3 -pipe"
-FINAL_CFLAGS_linux_aarch64="-ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O3 -pipe"
-FINAL_CFLAGS_linux_s390x="-ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O3 -pipe"
-FINAL_CFLAGS_linux_riscv64="-march=rv64imafdc -mabi=lp64d -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O3 -pipe"
-FINAL_CFLAGS_win_64="-ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O3 -pipe"
-FINAL_CFLAGS_osx_64="-march=core2 -mtune=haswell -mssse3 -ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe"
-FINAL_CFLAGS_osx_arm64="-ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe"
+# -fno-merge-constants is needed because merging constants can corrupt string
+# constants that share storage with the conda prefix when binaries are
+# relocated at install time, see
+# https://github.com/conda-forge/ctng-compiler-activation-feedstock/issues/63
+FINAL_CFLAGS_linux_64="-march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -fno-merge-constants -O2 -ffunction-sections -pipe"
+FINAL_CFLAGS_linux_ppc64le="-mcpu=power8 -mtune=power8 -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -fno-merge-constants -O3 -pipe"
+FINAL_CFLAGS_linux_aarch64="-ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -fno-merge-constants -O3 -pipe"
+FINAL_CFLAGS_linux_s390x="-ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -fno-merge-constants -O3 -pipe"
+FINAL_CFLAGS_linux_riscv64="-march=rv64imafdc -mabi=lp64d -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -fno-merge-constants -O3 -pipe"
+FINAL_CFLAGS_win_64="-ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -fno-merge-constants -O3 -pipe"
+FINAL_CFLAGS_osx_64="-march=core2 -mtune=haswell -mssse3 -ftree-vectorize -fPIC -fstack-protector-strong -fno-merge-constants -O2 -pipe"
+FINAL_CFLAGS_osx_arm64="-ftree-vectorize -fPIC -fstack-protector-strong -fno-merge-constants -O2 -pipe"
 
-FINAL_CXXFLAGS_linux_64="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe"
-FINAL_CXXFLAGS_linux_ppc64le="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -mcpu=power8 -mtune=power8 -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O3 -pipe"
-FINAL_CXXFLAGS_linux_aarch64="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O3 -pipe"
-FINAL_CXXFLAGS_linux_s390x="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O3 -pipe"
-FINAL_CXXFLAGS_linux_riscv64="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=rv64imafdc -mabi=lp64d -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O3 -pipe"
-FINAL_CXXFLAGS_win_64="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O3 -pipe"
-FINAL_CXXFLAGS_osx_64="-march=core2 -mtune=haswell -mssse3 -ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe -stdlib=libc++ -fvisibility-inlines-hidden -fmessage-length=0"
-FINAL_CXXFLAGS_osx_arm64="-ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe -stdlib=libc++ -fvisibility-inlines-hidden -fmessage-length=0"
+FINAL_CXXFLAGS_linux_64="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -fno-merge-constants -O2 -ffunction-sections -pipe"
+FINAL_CXXFLAGS_linux_ppc64le="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -mcpu=power8 -mtune=power8 -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -fno-merge-constants -O3 -pipe"
+FINAL_CXXFLAGS_linux_aarch64="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -fno-merge-constants -O3 -pipe"
+FINAL_CXXFLAGS_linux_s390x="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -fno-merge-constants -O3 -pipe"
+FINAL_CXXFLAGS_linux_riscv64="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=rv64imafdc -mabi=lp64d -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -fno-merge-constants -O3 -pipe"
+FINAL_CXXFLAGS_win_64="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -fno-merge-constants -O3 -pipe"
+FINAL_CXXFLAGS_osx_64="-march=core2 -mtune=haswell -mssse3 -ftree-vectorize -fPIC -fstack-protector-strong -fno-merge-constants -O2 -pipe -stdlib=libc++ -fvisibility-inlines-hidden -fmessage-length=0"
+FINAL_CXXFLAGS_osx_arm64="-ftree-vectorize -fPIC -fstack-protector-strong -fno-merge-constants -O2 -pipe -stdlib=libc++ -fvisibility-inlines-hidden -fmessage-length=0"
 
-FINAL_FFLAGS_linux_64="-fopenmp -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe"
-FINAL_FFLAGS_linux_ppc64le="-fopenmp -mcpu=power8 -mtune=power8 -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O3 -pipe"
-FINAL_FFLAGS_linux_aarch64="-fopenmp -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O3 -pipe"
-FINAL_FFLAGS_linux_s390x="-fopenmp -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O3 -pipe"
-FINAL_FFLAGS_linux_riscv64="-fopenmp -march=rv64imafdc -mabi=lp64d -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O3 -pipe"
-FINAL_FFLAGS_win_64="-fopenmp -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O3 -pipe"
-FINAL_FFLAGS_osx_64="-march=core2 -mtune=haswell -ftree-vectorize -fPIC -fstack-protector -O2 -pipe"
-FINAL_FFLAGS_osx_arm64="-march=armv8.3-a -ftree-vectorize -fPIC -fno-stack-protector -O2 -pipe"
+FINAL_FFLAGS_linux_64="-fopenmp -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -fno-merge-constants -O2 -ffunction-sections -pipe"
+FINAL_FFLAGS_linux_ppc64le="-fopenmp -mcpu=power8 -mtune=power8 -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -fno-merge-constants -O3 -pipe"
+FINAL_FFLAGS_linux_aarch64="-fopenmp -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -fno-merge-constants -O3 -pipe"
+FINAL_FFLAGS_linux_s390x="-fopenmp -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -fno-merge-constants -O3 -pipe"
+FINAL_FFLAGS_linux_riscv64="-fopenmp -march=rv64imafdc -mabi=lp64d -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -fno-merge-constants -O3 -pipe"
+FINAL_FFLAGS_win_64="-fopenmp -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -fno-merge-constants -O3 -pipe"
+FINAL_FFLAGS_osx_64="-march=core2 -mtune=haswell -ftree-vectorize -fPIC -fstack-protector -fno-merge-constants -O2 -pipe"
+FINAL_FFLAGS_osx_arm64="-march=armv8.3-a -ftree-vectorize -fPIC -fno-stack-protector -fno-merge-constants -O2 -pipe"
 
 FINAL_LDFLAGS_linux_64="-Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,--allow-shlib-undefined"
 FINAL_LDFLAGS_linux_ppc64le="-Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--allow-shlib-undefined"
@@ -53,32 +57,32 @@ FINAL_LDFLAGS_LD_osx_arm64="-headerpad_max_install_names -dead_strip_dylibs"
 
 FINAL_DEBUG_CPPFLAGS="-D_DEBUG -D_FORTIFY_SOURCE=2 -Og"
 
-FINAL_DEBUG_CFLAGS_linux_64="-march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -ffunction-sections -pipe"
-FINAL_DEBUG_CFLAGS_linux_ppc64le="-mcpu=power8 -mtune=power8 -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
-FINAL_DEBUG_CFLAGS_linux_aarch64="-ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
-FINAL_DEBUG_CFLAGS_linux_s390x="-ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
-FINAL_DEBUG_CFLAGS_linux_riscv64="-march=rv64imafdc -mabi=lp64d -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
-FINAL_DEBUG_CFLAGS_win_64="-ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
-FINAL_DEBUG_CFLAGS_osx_64="-Og -g -Wall -Wextra"
-FINAL_DEBUG_CFLAGS_osx_arm64="-Og -g -Wall -Wextra"
+FINAL_DEBUG_CFLAGS_linux_64="-march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -fno-merge-constants -Og -g -Wall -Wextra -fvar-tracking-assignments -ffunction-sections -pipe"
+FINAL_DEBUG_CFLAGS_linux_ppc64le="-mcpu=power8 -mtune=power8 -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -fno-merge-constants -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
+FINAL_DEBUG_CFLAGS_linux_aarch64="-ftree-vectorize -fPIC -fstack-protector-all -fno-plt -fno-merge-constants -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
+FINAL_DEBUG_CFLAGS_linux_s390x="-ftree-vectorize -fPIC -fstack-protector-all -fno-plt -fno-merge-constants -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
+FINAL_DEBUG_CFLAGS_linux_riscv64="-march=rv64imafdc -mabi=lp64d -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -fno-merge-constants -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
+FINAL_DEBUG_CFLAGS_win_64="-ftree-vectorize -fPIC -fstack-protector-all -fno-plt -fno-merge-constants -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
+FINAL_DEBUG_CFLAGS_osx_64="-fno-merge-constants -Og -g -Wall -Wextra"
+FINAL_DEBUG_CFLAGS_osx_arm64="-fno-merge-constants -Og -g -Wall -Wextra"
 
-FINAL_DEBUG_CXXFLAGS_linux_64="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -ffunction-sections -pipe"
-FINAL_DEBUG_CXXFLAGS_linux_ppc64le="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -mcpu=power8 -mtune=power8 -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
-FINAL_DEBUG_CXXFLAGS_linux_aarch64="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
-FINAL_DEBUG_CXXFLAGS_linux_s390x="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
-FINAL_DEBUG_CXXFLAGS_linux_riscv64="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=rv64imafdc -mabi=lp64d -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
-FINAL_DEBUG_CXXFLAGS_win_64="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
-FINAL_DEBUG_CXXFLAGS_osx_64="-Og -g -Wall -Wextra"
-FINAL_DEBUG_CXXFLAGS_osx_arm64="-Og -g -Wall -Wextra"
+FINAL_DEBUG_CXXFLAGS_linux_64="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -fno-merge-constants -Og -g -Wall -Wextra -fvar-tracking-assignments -ffunction-sections -pipe"
+FINAL_DEBUG_CXXFLAGS_linux_ppc64le="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -mcpu=power8 -mtune=power8 -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -fno-merge-constants -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
+FINAL_DEBUG_CXXFLAGS_linux_aarch64="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -fno-merge-constants -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
+FINAL_DEBUG_CXXFLAGS_linux_s390x="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -fno-merge-constants -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
+FINAL_DEBUG_CXXFLAGS_linux_riscv64="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=rv64imafdc -mabi=lp64d -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -fno-merge-constants -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
+FINAL_DEBUG_CXXFLAGS_win_64="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -fno-merge-constants -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
+FINAL_DEBUG_CXXFLAGS_osx_64="-fno-merge-constants -Og -g -Wall -Wextra"
+FINAL_DEBUG_CXXFLAGS_osx_arm64="-fno-merge-constants -Og -g -Wall -Wextra"
 
-FINAL_DEBUG_FFLAGS_linux_64="-fopenmp -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fimplicit-none -fvar-tracking-assignments -ffunction-sections -pipe"
-FINAL_DEBUG_FFLAGS_linux_ppc64le="-fopenmp -mcpu=power8 -mtune=power8 -ftree-vectorize -fPIC -fstack-protector-strong -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fvar-tracking-assignments -pipe"
-FINAL_DEBUG_FFLAGS_linux_aarch64="-fopenmp -ftree-vectorize -fPIC -fstack-protector-strong -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fvar-tracking-assignments -pipe"
-FINAL_DEBUG_FFLAGS_linux_s390x="-fopenmp -ftree-vectorize -fPIC -fstack-protector-strong -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fvar-tracking-assignments -pipe"
-FINAL_DEBUG_FFLAGS_linux_riscv64="-fopenmp -march=rv64imafdc -mabi=lp64d -ftree-vectorize -fPIC -fstack-protector-strong -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fvar-tracking-assignments -pipe"
-FINAL_DEBUG_FFLAGS_win_64="-fopenmp -ftree-vectorize -fPIC -fstack-protector-strong -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fvar-tracking-assignments -pipe"
-FINAL_DEBUG_FFLAGS_osx_64="-march=core2 -mtune=haswell -ftree-vectorize -fPIC -fstack-protector -O2 -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fimplicit-none -fvar-tracking-assignments"
-FINAL_DEBUG_FFLAGS_osx_arm64="-march=armv8.3-a -ftree-vectorize -fPIC -fno-stack-protector -O2 -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fimplicit-none -fvar-tracking-assignments"
+FINAL_DEBUG_FFLAGS_linux_64="-fopenmp -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -fno-merge-constants -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fimplicit-none -fvar-tracking-assignments -ffunction-sections -pipe"
+FINAL_DEBUG_FFLAGS_linux_ppc64le="-fopenmp -mcpu=power8 -mtune=power8 -ftree-vectorize -fPIC -fstack-protector-strong -pipe -fno-merge-constants -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fvar-tracking-assignments -pipe"
+FINAL_DEBUG_FFLAGS_linux_aarch64="-fopenmp -ftree-vectorize -fPIC -fstack-protector-strong -pipe -fno-merge-constants -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fvar-tracking-assignments -pipe"
+FINAL_DEBUG_FFLAGS_linux_s390x="-fopenmp -ftree-vectorize -fPIC -fstack-protector-strong -pipe -fno-merge-constants -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fvar-tracking-assignments -pipe"
+FINAL_DEBUG_FFLAGS_linux_riscv64="-fopenmp -march=rv64imafdc -mabi=lp64d -ftree-vectorize -fPIC -fstack-protector-strong -pipe -fno-merge-constants -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fvar-tracking-assignments -pipe"
+FINAL_DEBUG_FFLAGS_win_64="-fopenmp -ftree-vectorize -fPIC -fstack-protector-strong -pipe -fno-merge-constants -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fvar-tracking-assignments -pipe"
+FINAL_DEBUG_FFLAGS_osx_64="-march=core2 -mtune=haswell -ftree-vectorize -fPIC -fstack-protector -fno-merge-constants -O2 -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fimplicit-none -fvar-tracking-assignments"
+FINAL_DEBUG_FFLAGS_osx_arm64="-march=armv8.3-a -ftree-vectorize -fPIC -fno-stack-protector -fno-merge-constants -O2 -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fimplicit-none -fvar-tracking-assignments"
 
 cross_target_platform_u=${cross_target_platform/-/_}
 
@@ -198,6 +202,10 @@ cp activate-gcc.sh activate-clang.sh
 cp activate-g++.sh activate-clang++.sh
 cp deactivate-gcc.sh deactivate-clang.sh
 cp deactivate-g++.sh deactivate-clang++.sh
+
+# clang does not support -fno-merge-constants (and does not perform the
+# problematic optimisation, see issue #63)
+sed -i.bak "s| -fno-merge-constants||g" activate-clang.sh activate-clang++.sh
 
 GCC_EXTRA=" \
 \"CC,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CHOST}-cc\" \
