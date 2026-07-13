@@ -3,7 +3,7 @@ MACOSX_SDK_VERSION:
 binutils_version:
 - '2.44'
 c_stdlib:
-- m2w64-sysroot
+- sysroot
 channel_sources:
 - conda-forge
 channel_targets:
@@ -14,21 +14,21 @@ clang_version:
 - '21.1'
 - '22.1'
 cross_stdlib:
-- m2w64-sysroot
+- sysroot
 cross_stdlib_version:
-- '12'
+- '2.39'
 cross_target_platform:
-- win-64
+- linux-riscv64
 docker_image:
 - quay.io/condaforge/linux-anvil-x86_64:alma9
 gcc_version:
-- 13.4.0
+- 15.2.0
 libgfortran_soname:
 - '5'
 target_platform:
-- win-64
+- linux-aarch64
 triplet:
-- x86_64-w64-mingw32
+- riscv64-conda-linux-gnu
 zip_keys:
 - - cross_target_platform
   - triplet
