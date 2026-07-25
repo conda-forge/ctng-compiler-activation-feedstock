@@ -12,5 +12,7 @@ github:
 conda_build:
   pkg_format: '2'
 conda_build_tool: rattler-build
-azure:
-  free_disk_space: true
+workflow_settings:
+  free_disk_space: quick
+  store_build_artifacts:
+  - value: true
