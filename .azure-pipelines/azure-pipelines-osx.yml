@@ -16,8 +16,9 @@ jobs:
         free_disk_space: quick
         pagefile_size: 0
         resize_partitions: false
-        store_build_artifacts: false
+        store_build_artifacts: true
         tools_install_dir: ~/miniforge3
+        CONFIG_SHORT: osx_64_cross_target_platformlinux-64gcc__ha69c00bf
       osx_64_cross_target_platformlinux-aarch64gcc_version15.2.0:
         CONFIG: osx_64_cross_target_platformlinux-aarch64gcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
@@ -26,8 +27,9 @@ jobs:
         free_disk_space: quick
         pagefile_size: 0
         resize_partitions: false
-        store_build_artifacts: false
+        store_build_artifacts: true
         tools_install_dir: ~/miniforge3
+        CONFIG_SHORT: osx_64_cross_target_platformlinux-aarch6_h01fa043e
       osx_64_cross_target_platformlinux-ppc64legcc_version15.2.0:
         CONFIG: osx_64_cross_target_platformlinux-ppc64legcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
@@ -36,8 +38,9 @@ jobs:
         free_disk_space: quick
         pagefile_size: 0
         resize_partitions: false
-        store_build_artifacts: false
+        store_build_artifacts: true
         tools_install_dir: ~/miniforge3
+        CONFIG_SHORT: osx_64_cross_target_platformlinux-ppc64l_hd41c0c47
       osx_64_cross_target_platformlinux-riscv64gcc_version15.2.0:
         CONFIG: osx_64_cross_target_platformlinux-riscv64gcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
@@ -46,8 +49,9 @@ jobs:
         free_disk_space: quick
         pagefile_size: 0
         resize_partitions: false
-        store_build_artifacts: false
+        store_build_artifacts: true
         tools_install_dir: ~/miniforge3
+        CONFIG_SHORT: osx_64_cross_target_platformlinux-riscv6_h7b484dd5
       osx_64_cross_target_platformosx-64gcc_version15.2.0:
         CONFIG: osx_64_cross_target_platformosx-64gcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
@@ -56,8 +60,9 @@ jobs:
         free_disk_space: quick
         pagefile_size: 0
         resize_partitions: false
-        store_build_artifacts: false
+        store_build_artifacts: true
         tools_install_dir: ~/miniforge3
+        CONFIG_SHORT: osx_64_cross_target_platformosx-64gcc_ve_h7aa4025d
       osx_64_cross_target_platformosx-arm64gcc_version15.2.0:
         CONFIG: osx_64_cross_target_platformosx-arm64gcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
@@ -66,8 +71,9 @@ jobs:
         free_disk_space: quick
         pagefile_size: 0
         resize_partitions: false
-        store_build_artifacts: false
+        store_build_artifacts: true
         tools_install_dir: ~/miniforge3
+        CONFIG_SHORT: osx_64_cross_target_platformosx-arm64gcc_hbdd4c7ae
       osx_64_cross_target_platformwin-64gcc_version15.2.0:
         CONFIG: osx_64_cross_target_platformwin-64gcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
@@ -76,8 +82,9 @@ jobs:
         free_disk_space: quick
         pagefile_size: 0
         resize_partitions: false
-        store_build_artifacts: false
+        store_build_artifacts: true
         tools_install_dir: ~/miniforge3
+        CONFIG_SHORT: osx_64_cross_target_platformwin-64gcc_ve_h8c5bd684
       osx_arm64_cross_target_platformlinux-64gcc_version15.2.0:
         CONFIG: osx_arm64_cross_target_platformlinux-64gcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
@@ -86,8 +93,9 @@ jobs:
         free_disk_space: quick
         pagefile_size: 0
         resize_partitions: false
-        store_build_artifacts: false
+        store_build_artifacts: true
         tools_install_dir: ~/miniforge3
+        CONFIG_SHORT: osx_arm64_cross_target_platformlinux-64g_hbdcc8b90
       osx_arm64_cross_target_platformlinux-aarch64gcc_version15.2.0:
         CONFIG: osx_arm64_cross_target_platformlinux-aarch64gcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
@@ -96,8 +104,9 @@ jobs:
         free_disk_space: quick
         pagefile_size: 0
         resize_partitions: false
-        store_build_artifacts: false
+        store_build_artifacts: true
         tools_install_dir: ~/miniforge3
+        CONFIG_SHORT: osx_arm64_cross_target_platformlinux-aar_ha5a7beb5
       osx_arm64_cross_target_platformlinux-ppc64legcc_version15.2.0:
         CONFIG: osx_arm64_cross_target_platformlinux-ppc64legcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
@@ -106,8 +115,9 @@ jobs:
         free_disk_space: quick
         pagefile_size: 0
         resize_partitions: false
-        store_build_artifacts: false
+        store_build_artifacts: true
         tools_install_dir: ~/miniforge3
+        CONFIG_SHORT: osx_arm64_cross_target_platformlinux-ppc_hee4c3b72
       osx_arm64_cross_target_platformlinux-riscv64gcc_version15.2.0:
         CONFIG: osx_arm64_cross_target_platformlinux-riscv64gcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
@@ -116,8 +126,9 @@ jobs:
         free_disk_space: quick
         pagefile_size: 0
         resize_partitions: false
-        store_build_artifacts: false
+        store_build_artifacts: true
         tools_install_dir: ~/miniforge3
+        CONFIG_SHORT: osx_arm64_cross_target_platformlinux-ris_h51e37fe2
       osx_arm64_cross_target_platformosx-64gcc_version15.2.0:
         CONFIG: osx_arm64_cross_target_platformosx-64gcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
@@ -126,8 +137,9 @@ jobs:
         free_disk_space: quick
         pagefile_size: 0
         resize_partitions: false
-        store_build_artifacts: false
+        store_build_artifacts: true
         tools_install_dir: ~/miniforge3
+        CONFIG_SHORT: osx_arm64_cross_target_platformosx-64gcc_h3236d2f1
       osx_arm64_cross_target_platformosx-arm64gcc_version15.2.0:
         CONFIG: osx_arm64_cross_target_platformosx-arm64gcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
@@ -136,8 +148,9 @@ jobs:
         free_disk_space: quick
         pagefile_size: 0
         resize_partitions: false
-        store_build_artifacts: false
+        store_build_artifacts: true
         tools_install_dir: ~/miniforge3
+        CONFIG_SHORT: osx_arm64_cross_target_platformosx-arm64_h98b054c0
       osx_arm64_cross_target_platformwin-64gcc_version15.2.0:
         CONFIG: osx_arm64_cross_target_platformwin-64gcc_version15.2.0
         UPLOAD_PACKAGES: 'True'
@@ -146,8 +159,9 @@ jobs:
         free_disk_space: quick
         pagefile_size: 0
         resize_partitions: false
-        store_build_artifacts: false
+        store_build_artifacts: true
         tools_install_dir: ~/miniforge3
+        CONFIG_SHORT: osx_arm64_cross_target_platformwin-64gcc_hfbbc1a05
   timeoutInMinutes: 360
   variables: {}
 
@@ -179,3 +193,34 @@ jobs:
       BINSTAR_TOKEN: $(BINSTAR_TOKEN)
       FEEDSTOCK_TOKEN: $(FEEDSTOCK_TOKEN)
       STAGING_BINSTAR_TOKEN: $(STAGING_BINSTAR_TOKEN)
+
+  - script: |
+      export ARTIFACT_STAGING_DIR="$(Build.ArtifactStagingDirectory)"
+      # Archive everything in CONDA_BLD_PATH except environments
+      export BLD_ARTIFACT_PREFIX=conda_artifacts
+      export CI=azure
+      export CI_RUN_ID=$(build.BuildNumber).$(system.JobAttempt)
+      export CONDA_BLD_PATH=$(build_workspace_dir)
+      export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+      export MINIFORGE_HOME=$(tools_install_dir)
+      if [[ "$AGENT_JOBSTATUS" == "Failed" ]]; then
+        # Archive the CONDA_BLD_PATH environments only when the job fails
+        export ENV_ARTIFACT_PREFIX=conda_envs
+      fi
+      ./.scripts/create_conda_build_artifacts.sh
+    displayName: Prepare conda build artifacts
+    condition: and(succeededOrFailed(), eq(variables.store_build_artifacts, true))
+
+  - task: PublishPipelineArtifact@1
+    displayName: Store conda build artifacts
+    condition: not(eq(variables.BLD_ARTIFACT_PATH, ''))
+    inputs:
+      targetPath: $(BLD_ARTIFACT_PATH)
+      artifactName: $(BLD_ARTIFACT_NAME)
+
+  - task: PublishPipelineArtifact@1
+    displayName: Store conda build environment artifacts
+    condition: not(eq(variables.ENV_ARTIFACT_PATH, ''))
+    inputs:
+      targetPath: $(ENV_ARTIFACT_PATH)
+      artifactName: $(ENV_ARTIFACT_NAME)
