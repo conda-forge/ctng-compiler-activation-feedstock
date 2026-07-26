@@ -607,8 +607,8 @@ jobs:
             resize_partitions: False
             runs_on: ['ubuntu-latest']
             tools_install_dir: ~/miniforge3
-          - CONFIG: linux_riscv64_cross_target_platformlinux-64gcc_version13.4.0
-            CONFIG_SHORT: linux_riscv64_cross_target_platformlinux_h24ca755b
+          - CONFIG: linux_riscv64_cross_stdlibNonecross_target_platformosx-64gcc_version15.2.0
+            CONFIG_SHORT: linux_riscv64_cross_stdlibNonecross_targ_h79ce348c
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma10
             STORE_BUILD_ARTIFACTS: True
             UPLOAD_PACKAGES: True
@@ -620,8 +620,8 @@ jobs:
             resize_partitions: False
             runs_on: ['ubuntu-latest']
             tools_install_dir: ~/miniforge3
-          - CONFIG: linux_riscv64_cross_target_platformlinux-64gcc_version14.3.0
-            CONFIG_SHORT: linux_riscv64_cross_target_platformlinux_h5dceb940
+          - CONFIG: linux_riscv64_cross_stdlibNonecross_target_platformosx-arm64gcc_version15.2.0
+            CONFIG_SHORT: linux_riscv64_cross_stdlibNonecross_targ_h73ead102
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma10
             STORE_BUILD_ARTIFACTS: True
             UPLOAD_PACKAGES: True
@@ -633,8 +633,8 @@ jobs:
             resize_partitions: False
             runs_on: ['ubuntu-latest']
             tools_install_dir: ~/miniforge3
-          - CONFIG: linux_riscv64_cross_target_platformlinux-64gcc_version15.2.0
-            CONFIG_SHORT: linux_riscv64_cross_target_platformlinux_h83edcf43
+          - CONFIG: linux_riscv64_cross_stdlibm2w64-sysrootcross_target_platformwin-64gcc_version13.4.0
+            CONFIG_SHORT: linux_riscv64_cross_stdlibm2w64-sysrootc_hbfa600a3
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma10
             STORE_BUILD_ARTIFACTS: True
             UPLOAD_PACKAGES: True
@@ -646,8 +646,8 @@ jobs:
             resize_partitions: False
             runs_on: ['ubuntu-latest']
             tools_install_dir: ~/miniforge3
-          - CONFIG: linux_riscv64_cross_target_platformlinux-aarch64gcc_version13.4.0
-            CONFIG_SHORT: linux_riscv64_cross_target_platformlinux_hd2eed7c4
+          - CONFIG: linux_riscv64_cross_stdlibm2w64-sysrootcross_target_platformwin-64gcc_version14.3.0
+            CONFIG_SHORT: linux_riscv64_cross_stdlibm2w64-sysrootc_h7e22d72b
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma10
             STORE_BUILD_ARTIFACTS: True
             UPLOAD_PACKAGES: True
@@ -659,8 +659,8 @@ jobs:
             resize_partitions: False
             runs_on: ['ubuntu-latest']
             tools_install_dir: ~/miniforge3
-          - CONFIG: linux_riscv64_cross_target_platformlinux-aarch64gcc_version14.3.0
-            CONFIG_SHORT: linux_riscv64_cross_target_platformlinux_h25f54e86
+          - CONFIG: linux_riscv64_cross_stdlibm2w64-sysrootcross_target_platformwin-64gcc_version15.2.0
+            CONFIG_SHORT: linux_riscv64_cross_stdlibm2w64-sysrootc_hdd780387
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma10
             STORE_BUILD_ARTIFACTS: True
             UPLOAD_PACKAGES: True
@@ -672,8 +672,8 @@ jobs:
             resize_partitions: False
             runs_on: ['ubuntu-latest']
             tools_install_dir: ~/miniforge3
-          - CONFIG: linux_riscv64_cross_target_platformlinux-aarch64gcc_version15.2.0
-            CONFIG_SHORT: linux_riscv64_cross_target_platformlinux_hb311ad63
+          - CONFIG: linux_riscv64_cross_stdlibsysrootcross_target_platformlinux-64gcc_version13.4.0
+            CONFIG_SHORT: linux_riscv64_cross_stdlibsysrootcross_t_h16e0c7f8
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma10
             STORE_BUILD_ARTIFACTS: True
             UPLOAD_PACKAGES: True
@@ -685,8 +685,8 @@ jobs:
             resize_partitions: False
             runs_on: ['ubuntu-latest']
             tools_install_dir: ~/miniforge3
-          - CONFIG: linux_riscv64_cross_target_platformlinux-ppc64legcc_version13.4.0
-            CONFIG_SHORT: linux_riscv64_cross_target_platformlinux_h905135f3
+          - CONFIG: linux_riscv64_cross_stdlibsysrootcross_target_platformlinux-64gcc_version14.3.0
+            CONFIG_SHORT: linux_riscv64_cross_stdlibsysrootcross_t_h9fe06e04
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma10
             STORE_BUILD_ARTIFACTS: True
             UPLOAD_PACKAGES: True
@@ -698,8 +698,8 @@ jobs:
             resize_partitions: False
             runs_on: ['ubuntu-latest']
             tools_install_dir: ~/miniforge3
-          - CONFIG: linux_riscv64_cross_target_platformlinux-ppc64legcc_version14.3.0
-            CONFIG_SHORT: linux_riscv64_cross_target_platformlinux_h14f84eec
+          - CONFIG: linux_riscv64_cross_stdlibsysrootcross_target_platformlinux-64gcc_version15.2.0
+            CONFIG_SHORT: linux_riscv64_cross_stdlibsysrootcross_t_he518ef11
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma10
             STORE_BUILD_ARTIFACTS: True
             UPLOAD_PACKAGES: True
@@ -711,8 +711,8 @@ jobs:
             resize_partitions: False
             runs_on: ['ubuntu-latest']
             tools_install_dir: ~/miniforge3
-          - CONFIG: linux_riscv64_cross_target_platformlinux-ppc64legcc_version15.2.0
-            CONFIG_SHORT: linux_riscv64_cross_target_platformlinux_h84d80f26
+          - CONFIG: linux_riscv64_cross_stdlibsysrootcross_target_platformlinux-aarch64gcc_version13.4.0
+            CONFIG_SHORT: linux_riscv64_cross_stdlibsysrootcross_t_h4f433f96
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma10
             STORE_BUILD_ARTIFACTS: True
             UPLOAD_PACKAGES: True
@@ -724,8 +724,8 @@ jobs:
             resize_partitions: False
             runs_on: ['ubuntu-latest']
             tools_install_dir: ~/miniforge3
-          - CONFIG: linux_riscv64_cross_target_platformlinux-riscv64gcc_version15.2.0
-            CONFIG_SHORT: linux_riscv64_cross_target_platformlinux_hea7f95d8
+          - CONFIG: linux_riscv64_cross_stdlibsysrootcross_target_platformlinux-aarch64gcc_version14.3.0
+            CONFIG_SHORT: linux_riscv64_cross_stdlibsysrootcross_t_hd4e4c51d
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma10
             STORE_BUILD_ARTIFACTS: True
             UPLOAD_PACKAGES: True
@@ -737,8 +737,8 @@ jobs:
             resize_partitions: False
             runs_on: ['ubuntu-latest']
             tools_install_dir: ~/miniforge3
-          - CONFIG: linux_riscv64_cross_target_platformosx-64gcc_version15.2.0
-            CONFIG_SHORT: linux_riscv64_cross_target_platformosx-6_h82c6c1bb
+          - CONFIG: linux_riscv64_cross_stdlibsysrootcross_target_platformlinux-aarch64gcc_version15.2.0
+            CONFIG_SHORT: linux_riscv64_cross_stdlibsysrootcross_t_hbf401015
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma10
             STORE_BUILD_ARTIFACTS: True
             UPLOAD_PACKAGES: True
@@ -750,8 +750,8 @@ jobs:
             resize_partitions: False
             runs_on: ['ubuntu-latest']
             tools_install_dir: ~/miniforge3
-          - CONFIG: linux_riscv64_cross_target_platformosx-arm64gcc_version15.2.0
-            CONFIG_SHORT: linux_riscv64_cross_target_platformosx-a_he60961bb
+          - CONFIG: linux_riscv64_cross_stdlibsysrootcross_target_platformlinux-ppc64legcc_version13.4.0
+            CONFIG_SHORT: linux_riscv64_cross_stdlibsysrootcross_t_h73fa14b2
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma10
             STORE_BUILD_ARTIFACTS: True
             UPLOAD_PACKAGES: True
@@ -763,8 +763,8 @@ jobs:
             resize_partitions: False
             runs_on: ['ubuntu-latest']
             tools_install_dir: ~/miniforge3
-          - CONFIG: linux_riscv64_cross_target_platformwin-64gcc_version13.4.0
-            CONFIG_SHORT: linux_riscv64_cross_target_platformwin-6_h06915952
+          - CONFIG: linux_riscv64_cross_stdlibsysrootcross_target_platformlinux-ppc64legcc_version14.3.0
+            CONFIG_SHORT: linux_riscv64_cross_stdlibsysrootcross_t_hba322a1d
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma10
             STORE_BUILD_ARTIFACTS: True
             UPLOAD_PACKAGES: True
@@ -776,8 +776,8 @@ jobs:
             resize_partitions: False
             runs_on: ['ubuntu-latest']
             tools_install_dir: ~/miniforge3
-          - CONFIG: linux_riscv64_cross_target_platformwin-64gcc_version14.3.0
-            CONFIG_SHORT: linux_riscv64_cross_target_platformwin-6_h6e14798d
+          - CONFIG: linux_riscv64_cross_stdlibsysrootcross_target_platformlinux-ppc64legcc_version15.2.0
+            CONFIG_SHORT: linux_riscv64_cross_stdlibsysrootcross_t_h1e91f40d
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma10
             STORE_BUILD_ARTIFACTS: True
             UPLOAD_PACKAGES: True
@@ -789,8 +789,8 @@ jobs:
             resize_partitions: False
             runs_on: ['ubuntu-latest']
             tools_install_dir: ~/miniforge3
-          - CONFIG: linux_riscv64_cross_target_platformwin-64gcc_version15.2.0
-            CONFIG_SHORT: linux_riscv64_cross_target_platformwin-6_h9502e28f
+          - CONFIG: linux_riscv64_cross_stdlibsysrootcross_target_platformlinux-riscv64gcc_version15.2.0
+            CONFIG_SHORT: linux_riscv64_cross_stdlibsysrootcross_t_he1d87f09
             DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma10
             STORE_BUILD_ARTIFACTS: True
             UPLOAD_PACKAGES: True
