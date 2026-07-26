@@ -98,7 +98,7 @@ outputs:
     build:
       # only for linux; osx builds are done on clang-compiler-activation-feedstock
       # native builds are skipped as they are done on clangdev-feedstock (see https://github.com/conda-forge/clangdev-feedstock/pull/405/changes)
-      skip: default_skip or win or s390x or cross_target_platform not in ("linux-64", "linux-aarch64", "linux-ppc64le") or target_platform == cross_target_platform
+      skip: default_skip or win or s390x or riscv64 or cross_target_platform not in ("linux-64", "linux-aarch64", "linux-ppc64le") or target_platform == cross_target_platform
       script: install-clang_impl.sh
     requirements:
       build:
@@ -126,7 +126,7 @@ outputs:
       name: clang_${{ cross_target_platform }}
       version: ${{ clang_version }}
     build:
-      skip: default_skip or win or s390x or cross_target_platform not in ("linux-64", "linux-aarch64", "linux-ppc64le")
+      skip: default_skip or win or s390x or riscv64 or cross_target_platform not in ("linux-64", "linux-aarch64", "linux-ppc64le")
       script: install-clang.sh
     requirements:
       build:
@@ -240,7 +240,7 @@ outputs:
     build:
       # only for linux; osx builds are done on clang-compiler-activation-feedstock
       # native builds are skipped as they are done on clangdev-feedstock (see https://github.com/conda-forge/clangdev-feedstock/pull/405/changes)
-      skip: default_skip or win or s390x or cross_target_platform not in ("linux-64", "linux-aarch64", "linux-ppc64le") or target_platform == cross_target_platform
+      skip: default_skip or win or s390x or riscv64 or cross_target_platform not in ("linux-64", "linux-aarch64", "linux-ppc64le") or target_platform == cross_target_platform
       script: install-clangxx_impl.sh
     requirements:
       build:
@@ -270,7 +270,7 @@ outputs:
       name: clangxx_${{ cross_target_platform }}
       version: ${{ clang_version }}
     build:
-      skip: default_skip or win or s390x or cross_target_platform not in ("linux-64", "linux-aarch64", "linux-ppc64le")
+      skip: default_skip or win or s390x or riscv64 or cross_target_platform not in ("linux-64", "linux-aarch64", "linux-ppc64le")
       script: install-clang++.sh
     requirements:
       build:
