@@ -35,7 +35,7 @@ outputs:
   - package:
       name: gcc_${{ cross_target_platform }}
     build:
-      skip: default_skip
+      skip: default_skip or (riscv64 and gcc_maj_ver < 15)
       script: install-gcc.sh
     requirements:
       build:
@@ -174,7 +174,7 @@ outputs:
   - package:
       name: gxx_${{ cross_target_platform }}
     build:
-      skip: default_skip
+      skip: default_skip or (riscv64 and gcc_maj_ver < 15)
       script: install-g++.sh
     requirements:
       build:
@@ -323,7 +323,7 @@ outputs:
   - package:
       name: gfortran_${{ cross_target_platform }}
     build:
-      skip: default_skip
+      skip: default_skip or (riscv64 and gcc_maj_ver < 15)
       script: install-gfortran.sh
     requirements:
       build:
