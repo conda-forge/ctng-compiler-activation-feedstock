@@ -14,5 +14,3 @@ conda_build:
 conda_build_tool: rattler-build
 workflow_settings:
   free_disk_space: quick
-  store_build_artifacts:
-  - value: true

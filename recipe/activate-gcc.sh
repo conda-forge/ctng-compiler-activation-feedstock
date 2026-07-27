@@ -153,6 +153,8 @@ if [ "@CONDA_BUILD_CROSS_COMPILATION@" = "1" ]; then
   echo "cpu_family = '@MESON_FAMILY@'" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
   echo "endian = 'little'" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
   if [ "@MESON_SYSTEM@" = "darwin" ]; then
+    # still belongs to [host_machine] table
+    echo "subsystem = 'macos'" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
     # meson guesses whether it can run binaries in cross-compilation based on some heuristics,
     # and those can be wrong; see https://mesonbuild.com/Cross-compilation.html#properties
     echo "[properties]" >> "${CONDA_PREFIX}@LIBRARY_PREFIX@/meson_cross_file.txt"
