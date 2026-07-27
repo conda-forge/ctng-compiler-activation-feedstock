@@ -4,7 +4,7 @@ context:
   build_num: 28
   gcc_version: ${{ gcc_version | default("13.1.0") }}
   gcc_major: ${{ (gcc_version | split("."))[0] | int }}
-  default_skip: ${{ (target_platform == "win-64" and cross_target_platform != "win-64") or (cross_target_platform == "win-64" and gcc_major|int < 13) or cross_target_platform == "linux-s390x" or s390x or ((cross_target_platform in ("linux-riscv64", "osx-64", "osx-arm64") or osx) and gcc_major|int < 15) }}
+  default_skip: ${{ (target_platform == "win-64" and cross_target_platform != "win-64") or (cross_target_platform == "win-64" and gcc_major|int < 13) or cross_target_platform == "linux-s390x" or s390x or ((cross_target_platform in ("linux-riscv64", "osx-64", "osx-arm64") or osx) and gcc_major|int < 15) or (riscv64 and gcc_major|int < 15) or (riscv64 and cross_target_platform in ("osx-64", "osx-arm64")) }}
 
   # generally, the runtime version of libstdcxx needs to be at least as high
   # as the compiler; however, wherever libstdcxx changes the default ABI version
@@ -35,7 +35,7 @@ outputs:
   - package:
       name: gcc_${{ cross_target_platform }}
     build:
-      skip: default_skip or (riscv64 and gcc_maj_ver < 15)
+      skip: default_skip
       script: install-gcc.sh
     requirements:
       build:
@@ -174,7 +174,7 @@ outputs:
   - package:
       name: gxx_${{ cross_target_platform }}
     build:
-      skip: default_skip or (riscv64 and gcc_maj_ver < 15)
+      skip: default_skip
       script: install-g++.sh
     requirements:
       build:
@@ -323,7 +323,7 @@ outputs:
   - package:
       name: gfortran_${{ cross_target_platform }}
     build:
-      skip: default_skip or (riscv64 and gcc_maj_ver < 15)
+      skip: default_skip
       script: install-gfortran.sh
     requirements:
       build:
