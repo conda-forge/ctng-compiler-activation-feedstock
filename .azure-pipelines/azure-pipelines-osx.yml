@@ -13,6 +13,9 @@ jobs:
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
         build_workspace_dir: ~/miniforge3/conda-bld
+        free_disk_space: quick
+        pagefile_size: 0
+        resize_partitions: false
         store_build_artifacts: false
         tools_install_dir: ~/miniforge3
       osx_64_cross_target_platformlinux-aarch64gcc_version15.2.0:
@@ -20,6 +23,9 @@ jobs:
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
         build_workspace_dir: ~/miniforge3/conda-bld
+        free_disk_space: quick
+        pagefile_size: 0
+        resize_partitions: false
         store_build_artifacts: false
         tools_install_dir: ~/miniforge3
       osx_64_cross_target_platformlinux-ppc64legcc_version15.2.0:
@@ -27,6 +33,9 @@ jobs:
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
         build_workspace_dir: ~/miniforge3/conda-bld
+        free_disk_space: quick
+        pagefile_size: 0
+        resize_partitions: false
         store_build_artifacts: false
         tools_install_dir: ~/miniforge3
       osx_64_cross_target_platformlinux-riscv64gcc_version15.2.0:
@@ -34,6 +43,9 @@ jobs:
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
         build_workspace_dir: ~/miniforge3/conda-bld
+        free_disk_space: quick
+        pagefile_size: 0
+        resize_partitions: false
         store_build_artifacts: false
         tools_install_dir: ~/miniforge3
       osx_64_cross_target_platformosx-64gcc_version15.2.0:
@@ -41,6 +53,9 @@ jobs:
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
         build_workspace_dir: ~/miniforge3/conda-bld
+        free_disk_space: quick
+        pagefile_size: 0
+        resize_partitions: false
         store_build_artifacts: false
         tools_install_dir: ~/miniforge3
       osx_64_cross_target_platformosx-arm64gcc_version15.2.0:
@@ -48,6 +63,9 @@ jobs:
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
         build_workspace_dir: ~/miniforge3/conda-bld
+        free_disk_space: quick
+        pagefile_size: 0
+        resize_partitions: false
         store_build_artifacts: false
         tools_install_dir: ~/miniforge3
       osx_64_cross_target_platformwin-64gcc_version15.2.0:
@@ -55,6 +73,9 @@ jobs:
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
         build_workspace_dir: ~/miniforge3/conda-bld
+        free_disk_space: quick
+        pagefile_size: 0
+        resize_partitions: false
         store_build_artifacts: false
         tools_install_dir: ~/miniforge3
       osx_arm64_cross_target_platformlinux-64gcc_version15.2.0:
@@ -62,6 +83,9 @@ jobs:
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
         build_workspace_dir: ~/miniforge3/conda-bld
+        free_disk_space: quick
+        pagefile_size: 0
+        resize_partitions: false
         store_build_artifacts: false
         tools_install_dir: ~/miniforge3
       osx_arm64_cross_target_platformlinux-aarch64gcc_version15.2.0:
@@ -69,6 +93,9 @@ jobs:
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
         build_workspace_dir: ~/miniforge3/conda-bld
+        free_disk_space: quick
+        pagefile_size: 0
+        resize_partitions: false
         store_build_artifacts: false
         tools_install_dir: ~/miniforge3
       osx_arm64_cross_target_platformlinux-ppc64legcc_version15.2.0:
@@ -76,6 +103,9 @@ jobs:
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
         build_workspace_dir: ~/miniforge3/conda-bld
+        free_disk_space: quick
+        pagefile_size: 0
+        resize_partitions: false
         store_build_artifacts: false
         tools_install_dir: ~/miniforge3
       osx_arm64_cross_target_platformlinux-riscv64gcc_version15.2.0:
@@ -83,6 +113,9 @@ jobs:
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
         build_workspace_dir: ~/miniforge3/conda-bld
+        free_disk_space: quick
+        pagefile_size: 0
+        resize_partitions: false
         store_build_artifacts: false
         tools_install_dir: ~/miniforge3
       osx_arm64_cross_target_platformosx-64gcc_version15.2.0:
@@ -90,6 +123,9 @@ jobs:
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
         build_workspace_dir: ~/miniforge3/conda-bld
+        free_disk_space: quick
+        pagefile_size: 0
+        resize_partitions: false
         store_build_artifacts: false
         tools_install_dir: ~/miniforge3
       osx_arm64_cross_target_platformosx-arm64gcc_version15.2.0:
@@ -97,6 +133,9 @@ jobs:
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
         build_workspace_dir: ~/miniforge3/conda-bld
+        free_disk_space: quick
+        pagefile_size: 0
+        resize_partitions: false
         store_build_artifacts: false
         tools_install_dir: ~/miniforge3
       osx_arm64_cross_target_platformwin-64gcc_version15.2.0:
@@ -104,6 +143,9 @@ jobs:
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
         build_workspace_dir: ~/miniforge3/conda-bld
+        free_disk_space: quick
+        pagefile_size: 0
+        resize_partitions: false
         store_build_artifacts: false
         tools_install_dir: ~/miniforge3
   timeoutInMinutes: 360
@@ -112,15 +154,20 @@ jobs:
   steps:
   # TODO: Fast finish on azure pipelines?
   - script: |
-      export MINIFORGE_HOME=$(tools_install_dir)
-      export CONDA_BLD_PATH=$(build_workspace_dir)
+      .scripts/free_disk_space.sh "$(free_disk_space)"
+    env:
+      OS: macos
+    displayName: Manage disk space
+  - script: |
       export CI=azure
+      export CONDA_BLD_PATH=$(build_workspace_dir)
+      export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
+      export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
+      export MINIFORGE_HOME=$(tools_install_dir)
+      export OSX_FORCE_SDK_DOWNLOAD="1"
       export flow_run_id=azure_$(Build.BuildNumber).$(System.JobAttempt)
       export remote_url=$(Build.Repository.Uri)
       export sha=$(Build.SourceVersion)
-      export OSX_FORCE_SDK_DOWNLOAD="1"
-      export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
-      export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
       if [[ "${BUILD_REASON:-}" == "PullRequest" ]]; then
         export IS_PR_BUILD="True"
       else
