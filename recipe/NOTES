@@ -1,0 +1,7 @@
+# Rerendering
+
+1. Comment out `clang_version` and its entries in `recipe/conda_build_config.yaml`.
+2. Use a beefy machine
+3. Limit memory given. For eg: to give only 24GB, use `ulimit -v $((24*1024*1024));`
+4. Rerender
+5. Uncomment `clang_version` and its entries

@@ -94,7 +94,7 @@ outputs:
 
   - package:
       name: clang_impl_${{ cross_target_platform }}
-      version: ${{ clang_version }}
+      version: ${{ clang_version | default("0") }}
     build:
       # only for linux; osx builds are done on clang-compiler-activation-feedstock
       # native builds are skipped as they are done on clangdev-feedstock (see https://github.com/conda-forge/clangdev-feedstock/pull/405/changes)
@@ -110,8 +110,8 @@ outputs:
           then: ${{ cross_stdlib }}_${{ cross_target_platform }}
         - binutils_impl_${{ cross_target_platform }}
         - compiler-rt_${{ cross_target_platform }}
-        - compiler-rt ${{ clang_version }}.*
-        - clang ${{ clang_version }}.*
+        - compiler-rt ${{ clang_version | default("0") }}.*
+        - clang ${{ clang_version | default("0") }}.*
     tests:
       - script:
           - ${{ triplet }}-clang --version
@@ -124,7 +124,7 @@ outputs:
 
   - package:
       name: clang_${{ cross_target_platform }}
-      version: ${{ clang_version }}
+      version: ${{ clang_version | default("0") }}
     build:
       skip: default_skip or win or s390x or riscv64 or cross_target_platform not in ("linux-64", "linux-aarch64", "linux-ppc64le")
       script: install-clang.sh
@@ -135,7 +135,7 @@ outputs:
       run:
         # for activation of binutils env vars
         - binutils_${{ cross_target_platform }}
-        - clang_impl_${{ cross_target_platform }} ${{ clang_version }}.*
+        - clang_impl_${{ cross_target_platform }} ${{ clang_version | default("0") }}.*
         # need to ensure libgcc-devel_<target> matching the run-exports is used
         - libgcc-devel_${{ cross_target_platform }} ${{ gcc_version }}.*
         - if: osx and cross_target_platform in ("osx-64", "osx-arm64")
@@ -189,7 +189,7 @@ outputs:
         - if: cross_target_platform in ("osx-64", "osx-arm64")
           then:
             - cctools_${{ cross_target_platform }}
-            - libcxx-headers ${{ clang_version }}.*
+            - libcxx-headers ${{ clang_version | default("0") }}.*
           else: binutils_${{ cross_target_platform }}
         - if: cross_stdlib != "None"
           then: ${{ cross_stdlib }}_${{ cross_target_platform }}
@@ -199,7 +199,7 @@ outputs:
         strong:
           # This should be a transitive dependency, but conda-build doesn't support those
           - if: cross_target_platform in ("osx-64", "osx-arm64")
-            then: libcxx >=${{ clang_version }}
+            then: libcxx >=${{ clang_version | default("0") }}
             else: libstdcxx >=${{ min_runtime_version }}
           # Because transitive run_exports do not work:
           - libgcc >=${{ min_runtime_version }}
@@ -236,7 +236,7 @@ outputs:
 
   - package:
       name: clangxx_impl_${{ cross_target_platform }}
-      version: ${{ clang_version }}
+      version: ${{ clang_version | default("0") }}
     build:
       # only for linux; osx builds are done on clang-compiler-activation-feedstock
       # native builds are skipped as they are done on clangdev-feedstock (see https://github.com/conda-forge/clangdev-feedstock/pull/405/changes)
@@ -251,7 +251,7 @@ outputs:
         # C++ compiler on linux needs a stdlib
         - libstdcxx-devel_${{ cross_target_platform }} ${{ gcc_version }}.*
         - libgcc-devel_${{ cross_target_platform }} ${{ gcc_version }}.*
-        - clangxx ${{ clang_version }}.*
+        - clangxx ${{ clang_version | default("0") }}.*
     tests:
       - script:
           - if: linux64
@@ -268,7 +268,7 @@ outputs:
 
   - package:
       name: clangxx_${{ cross_target_platform }}
-      version: ${{ clang_version }}
+      version: ${{ clang_version | default("0") }}
     build:
       skip: default_skip or win or s390x or riscv64 or cross_target_platform not in ("linux-64", "linux-aarch64", "linux-ppc64le")
       script: install-clang++.sh
@@ -279,7 +279,7 @@ outputs:
       run:
         # for activation of gcc env vars
         - ${{ pin_subpackage("clang_" ~ cross_target_platform, exact=True) }}
-        - clangxx_impl_${{ cross_target_platform }} ${{ clang_version }}.*
+        - clangxx_impl_${{ cross_target_platform }} ${{ clang_version | default("0") }}.*
         # the dependency below is redundant, but we need to ensure different hashes
         # since the clang_{impl_,}_<target> outputs depend on a specific gcc version
         - libstdcxx-devel_${{ cross_target_platform }} ${{ gcc_version }}.*
@@ -289,7 +289,7 @@ outputs:
         strong:
           # This should be a transitive dependency, but conda-build doesn't support those
           - if: cross_target_platform in ("osx-64", "osx-arm64")
-            then: libcxx >=${{ clang_version }}
+            then: libcxx >=${{ clang_version | default("0") }}
             else: libstdcxx >=${{ min_runtime_version }}
           # Because transitive run_exports do not work:
           - libgcc >=${{ min_runtime_version }}
