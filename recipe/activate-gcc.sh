@@ -136,6 +136,11 @@ if [ "${CONDA_BUILD:-0}" = "1" ]; then
   fi
   _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_INSTALL_PREFIX=${PREFIX} -DCMAKE_INSTALL_LIBDIR=lib"
   _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_PROGRAM_PATH=${BUILD_PREFIX}@LIBRARY_PREFIX@/bin;${PREFIX}/bin"
+  if [ -f "${PREFIX}/bin/python" ]; then
+    # use conda-forge Python version even if the system Python is newer
+    # https://github.com/conda-forge/cmake-feedstock/issues/196
+    _CMAKE_ARGS="${_CMAKE_ARGS} -DCMAKE_POLICY_DEFAULT_CMP0094=NEW"
+  fi
   _MESON_ARGS="${_MESON_ARGS} --prefix=${PREFIX} -Dlibdir=lib"
 fi
 
