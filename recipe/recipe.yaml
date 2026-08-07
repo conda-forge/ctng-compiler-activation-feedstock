@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  build_num: 0
+  build_num: 1
   gcc_version: ${{ gcc_version | default("16.1.0") }}
   gcc_major: ${{ (gcc_version | split("."))[0] | int }}
   default_skip: ${{ (target_platform == "win-64" and cross_target_platform != "win-64") or cross_target_platform == "linux-s390x" or s390x or ((cross_target_platform in ("linux-riscv64", "osx-64", "osx-arm64") or osx) and gcc_major|int < 15) or (riscv64 and gcc_major|int < 15) or (riscv64 and cross_target_platform in ("osx-64", "osx-arm64")) }}
@@ -82,6 +82,10 @@ outputs:
           # see issue 63
           - echo "${CFLAGS}" | grep -q -- "-fno-merge-constants"
           - echo "${DEBUG_CFLAGS}" | grep -q -- "-fno-merge-constants"
+          - if: cross_target_platform == "linux-riscv64" and gcc_major >= 15
+            then: echo "${CFLAGS}" | grep -q -- "-std=gnu17"
+          - if: cross_target_platform == "linux-riscv64" and gcc_major >= 15
+            then: echo "${DEBUG_CFLAGS}" | grep -q -- "-std=gnu17"
           # CONDA_BUILD_SYSROOT is defined for clang++ to find correct C++ headers, see issue 8
           - test -z "${CONDA_BUILD_SYSROOT+x}" && echo "CONDA_BUILD_SYSROOT is not set" && exit 1
           - test -d ${CONDA_BUILD_SYSROOT} || exit 1

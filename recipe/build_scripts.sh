@@ -105,6 +105,14 @@ FINAL_LDFLAGS_LD="${!FINAL_LDFLAGS_LD}"
 
 MAJOR_VERSION="${PKG_VERSION%%.*}"
 
+# GCC 15 switched the default C dialect from gnu17 to gnu23. Keep the
+# linux-riscv64 bootstrap on the previous default until its dependency graph
+# has been made C23-compatible.
+if [[ "${cross_target_platform}" == "linux-riscv64" && "${MAJOR_VERSION}" -ge 15 ]]; then
+    FINAL_CFLAGS="${FINAL_CFLAGS} -std=gnu17"
+    FINAL_DEBUG_CFLAGS="${FINAL_DEBUG_CFLAGS} -std=gnu17"
+fi
+
 # See https://github.com/conda-forge/ctng-compiler-activation-feedstock/issues/42
 # -std=c++17 shouldn't be a default flag, but from gcc 11 onwards it is the default.
 # Not removing the flag for gcc 8, 9 because some package ABIs change according to
