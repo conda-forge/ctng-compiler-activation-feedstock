@@ -49,6 +49,7 @@ cross_stdlib_version:
   - None
   - None
 clang_version:
+  - 23.1
   - 22.1
   - 21.1
 

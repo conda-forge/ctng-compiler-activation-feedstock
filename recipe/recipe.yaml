@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  build_num: 1
+  build_num: 2
   gcc_version: ${{ gcc_version | default("16.2.0") }}
   gcc_major: ${{ (gcc_version | split("."))[0] | int }}
   default_skip: ${{ (target_platform == "win-64" and cross_target_platform != "win-64") or cross_target_platform == "linux-s390x" or s390x or ((cross_target_platform in ("linux-riscv64", "osx-64", "osx-arm64") or osx) and gcc_major|int < 15) or (riscv64 and gcc_major|int < 15) or (riscv64 and cross_target_platform in ("osx-64", "osx-arm64")) }}
@@ -41,6 +41,8 @@ outputs:
       build:
         - if: not (aarch64 or ppc64le)
           then: shellcheck
+        - if: win
+          then: m2-bash
       run:
         - gcc_impl_${{ target_platform }} ${{ gcc_version }}.*
         - gcc_impl_${{ cross_target_platform }} ${{ gcc_version }}.*
@@ -74,18 +76,29 @@ outputs:
           # rattler-build does not set CONDA_BUILD_SYSROOT from the variant file during tests
           - if: build_platform not in ("osx-arm64", "osx-64") and cross_target_platform in ("osx-64", "osx-arm64")
             then: export CONDA_BUILD_SYSROOT=${{ env.get("CONDA_BUILD_SYSROOT") }}
-          - ${CC} ${CFLAGS} -Wall tests/aligned_alloc.c -c -o c_aligned.o -v
+          # compilation works even for cross-builds
+          - if: unix
+            then: ${CC} ${CFLAGS} -Wall tests/aligned_alloc.c -c -o test_c.o -v
+            else: '%CC% %CFLAGS%  -Wall tests/sanity_check.c  -c -o test_c.o -v'
+          # linking & execution only for native builds
           - if: target_platform == cross_target_platform
-            then: ${CC} ${LDFLAGS} c_aligned.o -o c_aligned
-          - if: target_platform == cross_target_platform
-            then: ./c_aligned
-          # see issue 63
-          - echo "${CFLAGS}" | grep -q -- "-fno-merge-constants"
-          - echo "${DEBUG_CFLAGS}" | grep -q -- "-fno-merge-constants"
-          # CONDA_BUILD_SYSROOT is defined for clang++ to find correct C++ headers, see issue 8
-          - test -z "${CONDA_BUILD_SYSROOT+x}" && echo "CONDA_BUILD_SYSROOT is not set" && exit 1
-          - test -d ${CONDA_BUILD_SYSROOT} || exit 1
-          - echo ${FINAL_CFLAGS_linux_64}
+            then:
+              - if: unix
+                then:
+                  - ${CC} ${LDFLAGS} test_c.o -o test_c
+                  - ./test_c
+                else:
+                  - '%CC% %LDFLAGS%  test_c.o -o test_c'
+                  - test_c.exe
+          - if: unix
+            then:
+              # see issue 63
+              - echo "${CFLAGS}" | grep -q -- "-fno-merge-constants"
+              - echo "${DEBUG_CFLAGS}" | grep -q -- "-fno-merge-constants"
+              # CONDA_BUILD_SYSROOT is defined for clang++ to find correct C++ headers, see issue 8
+              - test -z "${CONDA_BUILD_SYSROOT+x}" && echo "CONDA_BUILD_SYSROOT is not set" && exit 1
+              - test -d ${CONDA_BUILD_SYSROOT} || exit 1
+              - echo ${FINAL_CFLAGS_linux_64}
     about:
       summary: GNU C Compiler (activation scripts)
       license: BSD-3-Clause
@@ -180,6 +193,8 @@ outputs:
       build:
         - if: not (aarch64 or ppc64le)
           then: shellcheck
+        - if: win
+          then: m2-bash
       run:
         - gxx_impl_${{ target_platform }} ${{ gcc_version }}.*
         - gxx_impl_${{ cross_target_platform }} ${{ gcc_version }}.*
@@ -218,16 +233,27 @@ outputs:
           # rattler-build does not set CONDA_BUILD_SYSROOT from the variant file during tests
           - if: build_platform not in ("osx-arm64", "osx-64") and cross_target_platform in ("osx-64", "osx-arm64")
             then: export CONDA_BUILD_SYSROOT=${{ env.get("CONDA_BUILD_SYSROOT") }}
-          - ${CXX} ${CXXFLAGS} -Wall tests/aligned_alloc.cpp -c -o cpp_aligned.o
+          # compilation works even for cross-builds
+          - if: unix
+            then: ${CXX} ${CXXFLAGS} -Wall tests/aligned_alloc.cpp -c -o test_cpp.o
+            else: '%CXX% %CXXFLAGS%  -Wall tests/sanity_check.cpp  -c -o test_cpp.o'
+          # linking & execution only for native builds
           - if: target_platform == cross_target_platform
-            then: ${CXX} ${LDFLAGS} cpp_aligned.o -o cpp_aligned
-          - if: target_platform == cross_target_platform
-            then: ./cpp_aligned
-          # see issue 63
-          - echo "${CXXFLAGS}" | grep -q -- "-fno-merge-constants"
-          - echo "${DEBUG_CXXFLAGS}" | grep -q -- "-fno-merge-constants"
-          - test -z "${CONDA_BUILD_SYSROOT+x}" && echo "CONDA_BUILD_SYSROOT is not set" && exit 1
-          - test -d ${CONDA_BUILD_SYSROOT} || exit 1
+            then:
+              - if: unix
+                then:
+                  - ${CXX} ${LDFLAGS} test_cpp.o -o test_cpp
+                  - ./test_cpp
+                else:
+                  - '%CXX% %LDFLAGS%  test_cpp.o -o test_cpp'
+                  - test_cpp.exe
+          - if: unix
+            then:
+              # see issue 63
+              - echo "${CXXFLAGS}" | grep -q -- "-fno-merge-constants"
+              - echo "${DEBUG_CXXFLAGS}" | grep -q -- "-fno-merge-constants"
+              - test -z "${CONDA_BUILD_SYSROOT+x}" && echo "CONDA_BUILD_SYSROOT is not set" && exit 1
+              - test -d ${CONDA_BUILD_SYSROOT} || exit 1
     about:
       summary: GNU C++ Compiler (activation scripts)
       license: BSD-3-Clause
@@ -329,6 +355,8 @@ outputs:
       build:
         - if: not (aarch64 or ppc64le)
           then: shellcheck
+        - if: win
+          then: m2-bash
       run:
         - gfortran_impl_${{ cross_target_platform }} ${{ gcc_version }}.*
         - gfortran_impl_${{ target_platform }} ${{ gcc_version }}.*
@@ -363,10 +391,14 @@ outputs:
                   then: cmake >=3.11
                 - if: x86_64 or aarch64 or ppc64le
                   then: make
+                - if: win
+                  then: m2-bash
                 - if: cross_stdlib != "None"
                   then: ${{ cross_stdlib }}_${{ cross_target_platform }} ${{ cross_stdlib_version }}.*
             script:
-              - ${FC} --version
+              - if: unix
+                then: ${FC} --version
+                else: '%FC% --version'
               - pushd tests/fortomp
               - if: target_platform == cross_target_platform and (x86_64 or aarch64 or ppc64le)
                 then: sh test_fort.sh
