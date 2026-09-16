@@ -41,6 +41,8 @@ outputs:
       build:
         - if: not (aarch64 or ppc64le)
           then: shellcheck
+        - if: win
+          then: m2-bash
       run:
         - gcc_impl_${{ target_platform }} ${{ gcc_version }}.*
         - gcc_impl_${{ cross_target_platform }} ${{ gcc_version }}.*
@@ -180,6 +182,8 @@ outputs:
       build:
         - if: not (aarch64 or ppc64le)
           then: shellcheck
+        - if: win
+          then: m2-bash
       run:
         - gxx_impl_${{ target_platform }} ${{ gcc_version }}.*
         - gxx_impl_${{ cross_target_platform }} ${{ gcc_version }}.*
@@ -329,6 +333,8 @@ outputs:
       build:
         - if: not (aarch64 or ppc64le)
           then: shellcheck
+        - if: win
+          then: m2-bash
       run:
         - gfortran_impl_${{ cross_target_platform }} ${{ gcc_version }}.*
         - gfortran_impl_${{ target_platform }} ${{ gcc_version }}.*
@@ -363,6 +369,8 @@ outputs:
                   then: cmake >=3.11
                 - if: x86_64 or aarch64 or ppc64le
                   then: make
+                - if: win
+                  then: m2-bash
                 - if: cross_stdlib != "None"
                   then: ${{ cross_stdlib }}_${{ cross_target_platform }} ${{ cross_stdlib_version }}.*
             script:
