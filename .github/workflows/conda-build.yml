@@ -791,41 +791,41 @@ jobs:
             runs_on: ['ubuntu-latest']
             tools_install_dir: ~/miniforge3
           - CONFIG: win_64_cross_stdlibm2w64-sysrootcross_target_platformwin-64gcc_version14.4.0
-            DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma10
             STORE_BUILD_ARTIFACTS: False
             UPLOAD_PACKAGES: True
-            build_workspace_dir: C:\\bld\\
+            build_platform: win-64
+            build_workspace_dir: D:\\bld\\
             docker_run_args: 
             free_disk_space: quick
-            os: ubuntu
+            os: windows
             pagefile_size: 0
             resize_partitions: False
-            runs_on: ['ubuntu-latest']
-            tools_install_dir: C:\Miniforge
+            runs_on: ['windows-2022']
+            tools_install_dir: D:\Miniforge
           - CONFIG: win_64_cross_stdlibm2w64-sysrootcross_target_platformwin-64gcc_version15.3.0
-            DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma10
             STORE_BUILD_ARTIFACTS: False
             UPLOAD_PACKAGES: True
-            build_workspace_dir: C:\\bld\\
+            build_platform: win-64
+            build_workspace_dir: D:\\bld\\
             docker_run_args: 
             free_disk_space: quick
-            os: ubuntu
+            os: windows
             pagefile_size: 0
             resize_partitions: False
-            runs_on: ['ubuntu-latest']
-            tools_install_dir: C:\Miniforge
+            runs_on: ['windows-2022']
+            tools_install_dir: D:\Miniforge
           - CONFIG: win_64_cross_stdlibm2w64-sysrootcross_target_platformwin-64gcc_version16.2.0
-            DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma10
             STORE_BUILD_ARTIFACTS: False
             UPLOAD_PACKAGES: True
-            build_workspace_dir: C:\\bld\\
+            build_platform: win-64
+            build_workspace_dir: D:\\bld\\
             docker_run_args: 
             free_disk_space: quick
-            os: ubuntu
+            os: windows
             pagefile_size: 0
             resize_partitions: False
-            runs_on: ['ubuntu-latest']
-            tools_install_dir: C:\Miniforge
+            runs_on: ['windows-2022']
+            tools_install_dir: D:\Miniforge
     steps:
 
     - name: Checkout code
