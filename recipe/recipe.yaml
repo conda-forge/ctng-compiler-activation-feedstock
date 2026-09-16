@@ -76,11 +76,17 @@ outputs:
           # rattler-build does not set CONDA_BUILD_SYSROOT from the variant file during tests
           - if: build_platform not in ("osx-arm64", "osx-64") and cross_target_platform in ("osx-64", "osx-arm64")
             then: export CONDA_BUILD_SYSROOT=${{ env.get("CONDA_BUILD_SYSROOT") }}
-          - ${CC} ${CFLAGS} -Wall tests/aligned_alloc.c -c -o c_aligned.o -v
+          # compilation works even for cross-builds
+          - if: unix
+            then: ${CC} ${CFLAGS} -Wall tests/aligned_alloc.c -c -o c_aligned.o -v
+            else: '%CC% %CFLAGS%  -Wall tests/aligned_alloc.c -c -o c_aligned.o -v'
+          # linking & execution only for native builds
           - if: target_platform == cross_target_platform
-            then: ${CC} ${LDFLAGS} c_aligned.o -o c_aligned
-          - if: target_platform == cross_target_platform
-            then: ./c_aligned
+            then:
+              - if: unix
+                then: ${CC} ${LDFLAGS} c_aligned.o -o c_aligned
+                else: '%CC% %LDFLAGS%  c_aligned.o -o c_aligned'
+              - ./c_aligned
           # see issue 63
           - echo "${CFLAGS}" | grep -q -- "-fno-merge-constants"
           - echo "${DEBUG_CFLAGS}" | grep -q -- "-fno-merge-constants"
@@ -222,11 +228,17 @@ outputs:
           # rattler-build does not set CONDA_BUILD_SYSROOT from the variant file during tests
           - if: build_platform not in ("osx-arm64", "osx-64") and cross_target_platform in ("osx-64", "osx-arm64")
             then: export CONDA_BUILD_SYSROOT=${{ env.get("CONDA_BUILD_SYSROOT") }}
-          - ${CXX} ${CXXFLAGS} -Wall tests/aligned_alloc.cpp -c -o cpp_aligned.o
+          # compilation works even for cross-builds
+          - if: unix
+            then: ${CXX} ${CXXFLAGS} -Wall tests/aligned_alloc.cpp -c -o cpp_aligned.o
+            else: '%CXX% %CXXFLAGS%  -Wall tests/aligned_alloc.cpp -c -o cpp_aligned.o'
+          # linking & execution only for native builds
           - if: target_platform == cross_target_platform
-            then: ${CXX} ${LDFLAGS} cpp_aligned.o -o cpp_aligned
-          - if: target_platform == cross_target_platform
-            then: ./cpp_aligned
+            then:
+              - if: unix
+                then: ${CXX} ${LDFLAGS} cpp_aligned.o -o cpp_aligned
+                else: '%CXX% %LDFLAGS%  cpp_aligned.o -o cpp_aligned'
+              - ./cpp_aligned
           # see issue 63
           - echo "${CXXFLAGS}" | grep -q -- "-fno-merge-constants"
           - echo "${DEBUG_CXXFLAGS}" | grep -q -- "-fno-merge-constants"
@@ -374,7 +386,9 @@ outputs:
                 - if: cross_stdlib != "None"
                   then: ${{ cross_stdlib }}_${{ cross_target_platform }} ${{ cross_stdlib_version }}.*
             script:
-              - ${FC} --version
+              - if: unix
+                then: ${FC} --version
+                else: '%FC% --version'
               - pushd tests/fortomp
               - if: target_platform == cross_target_platform and (x86_64 or aarch64 or ppc64le)
                 then: sh test_fort.sh
