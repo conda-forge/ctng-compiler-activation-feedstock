@@ -65,7 +65,7 @@ fi
 
 # shellcheck disable=SC2050 # templating will fix this error
 if [ "@CONDA_BUILD_CROSS_COMPILATION@" = "1" ] && [ "@CMAKE_SYSTEM_NAME@" = "Linux" ]; then
-  _tc_deactivation "QEMU_LD_PREFIX"
+  _tc_deactivation "QEMU_LD_PREFIX" "CMAKE_CROSSCOMPILING_EMULATOR"
 fi
 
 _tc_deactivation \

@@ -198,7 +198,8 @@ unset _MESON_ARGS
 # shellcheck disable=SC2050 # templating will fix this error
 if [ "@CONDA_BUILD_CROSS_COMPILATION@" = "1" ] && [ "@CMAKE_SYSTEM_NAME@" = "Linux" ]; then
   _tc_activation \
-     "QEMU_LD_PREFIX,${QEMU_LD_PREFIX:-${CONDA_BUILD_SYSROOT}}"
+    "QEMU_LD_PREFIX,${QEMU_LD_PREFIX:-${CONDA_BUILD_SYSROOT}}" \
+    "CMAKE_CROSSCOMPILING_EMULATOR,${CMAKE_CROSSCOMPILING_EMULATOR:-${CROSSCOMPILING_EMULATOR:-}}"
 fi
 
 # shellcheck disable=SC2050 # templating will fix this error
