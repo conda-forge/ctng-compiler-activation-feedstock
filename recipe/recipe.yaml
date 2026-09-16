@@ -84,9 +84,12 @@ outputs:
           - if: target_platform == cross_target_platform
             then:
               - if: unix
-                then: ${CC} ${LDFLAGS} test_c.o -o test_c
-                else: '%CC% %LDFLAGS%  test_c.o -o test_c'
-              - ./test_c
+                then:
+                  - ${CC} ${LDFLAGS} test_c.o -o test_c
+                  - ./test_c
+                else:
+                  - '%CC% %LDFLAGS%  test_c.o -o test_c'
+                  - test_c.exe
           - if: unix
             then:
               # see issue 63
@@ -238,9 +241,12 @@ outputs:
           - if: target_platform == cross_target_platform
             then:
               - if: unix
-                then: ${CXX} ${LDFLAGS} test_cpp.o -o test_cpp
-                else: '%CXX% %LDFLAGS%  test_cpp.o -o test_cpp'
-              - ./test_cpp
+                then:
+                  - ${CXX} ${LDFLAGS} test_cpp.o -o test_cpp
+                  - ./test_cpp
+                else:
+                  - '%CXX% %LDFLAGS%  test_cpp.o -o test_cpp'
+                  - test_cpp.exe
           - if: unix
             then:
               # see issue 63
