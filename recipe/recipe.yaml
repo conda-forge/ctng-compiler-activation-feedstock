@@ -87,13 +87,15 @@ outputs:
                 then: ${CC} ${LDFLAGS} c_aligned.o -o c_aligned
                 else: '%CC% %LDFLAGS%  c_aligned.o -o c_aligned'
               - ./c_aligned
-          # see issue 63
-          - echo "${CFLAGS}" | grep -q -- "-fno-merge-constants"
-          - echo "${DEBUG_CFLAGS}" | grep -q -- "-fno-merge-constants"
-          # CONDA_BUILD_SYSROOT is defined for clang++ to find correct C++ headers, see issue 8
-          - test -z "${CONDA_BUILD_SYSROOT+x}" && echo "CONDA_BUILD_SYSROOT is not set" && exit 1
-          - test -d ${CONDA_BUILD_SYSROOT} || exit 1
-          - echo ${FINAL_CFLAGS_linux_64}
+          - if: unix
+            then:
+              # see issue 63
+              - echo "${CFLAGS}" | grep -q -- "-fno-merge-constants"
+              - echo "${DEBUG_CFLAGS}" | grep -q -- "-fno-merge-constants"
+              # CONDA_BUILD_SYSROOT is defined for clang++ to find correct C++ headers, see issue 8
+              - test -z "${CONDA_BUILD_SYSROOT+x}" && echo "CONDA_BUILD_SYSROOT is not set" && exit 1
+              - test -d ${CONDA_BUILD_SYSROOT} || exit 1
+              - echo ${FINAL_CFLAGS_linux_64}
     about:
       summary: GNU C Compiler (activation scripts)
       license: BSD-3-Clause
@@ -239,11 +241,13 @@ outputs:
                 then: ${CXX} ${LDFLAGS} cpp_aligned.o -o cpp_aligned
                 else: '%CXX% %LDFLAGS%  cpp_aligned.o -o cpp_aligned'
               - ./cpp_aligned
-          # see issue 63
-          - echo "${CXXFLAGS}" | grep -q -- "-fno-merge-constants"
-          - echo "${DEBUG_CXXFLAGS}" | grep -q -- "-fno-merge-constants"
-          - test -z "${CONDA_BUILD_SYSROOT+x}" && echo "CONDA_BUILD_SYSROOT is not set" && exit 1
-          - test -d ${CONDA_BUILD_SYSROOT} || exit 1
+          - if: unix
+            then:
+              # see issue 63
+              - echo "${CXXFLAGS}" | grep -q -- "-fno-merge-constants"
+              - echo "${DEBUG_CXXFLAGS}" | grep -q -- "-fno-merge-constants"
+              - test -z "${CONDA_BUILD_SYSROOT+x}" && echo "CONDA_BUILD_SYSROOT is not set" && exit 1
+              - test -d ${CONDA_BUILD_SYSROOT} || exit 1
     about:
       summary: GNU C++ Compiler (activation scripts)
       license: BSD-3-Clause
