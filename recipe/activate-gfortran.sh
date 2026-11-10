@@ -71,12 +71,12 @@ if [ "${CONDA_BUILD:-0}" = "1" ]; then
 fi
 
 _tc_activation \
-  "GFORTRAN,${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/@CHOST@-gfortran" \
-  "F95,${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/@CHOST@-f95" \
-  "FC,${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/@CHOST@-gfortran" \
-  "F77,${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/@CHOST@-gfortran" \
-  "F90,${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/@CHOST@-gfortran" \
-  "FC_FOR_BUILD,${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/@CBUILD@-gfortran" \
+  "GFORTRAN,@CHOST@-gfortran" \
+  "F95,@CHOST@-f95" \
+  "FC,@CHOST@-gfortran" \
+  "F77,@CHOST@-gfortran" \
+  "F90,@CHOST@-gfortran" \
+  "FC_FOR_BUILD,@CBUILD@-gfortran" \
   "FFLAGS,${FFLAGS_USED}${FFLAGS:+ }${FFLAGS:-}" \
   "FORTRANFLAGS,${FFLAGS_USED}${FORTRANFLAGS:+ }${FORTRANFLAGS:-}" \
   "DEBUG_FFLAGS,${FFLAGS_USED} @DEBUG_FFLAGS@${FFLAGS:+ }${FFLAGS:-}" \

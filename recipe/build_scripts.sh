@@ -15,21 +15,21 @@ FINAL_CFLAGS_win_64="-ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O
 FINAL_CFLAGS_osx_64="-march=core2 -mtune=haswell -mssse3 -ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe"
 FINAL_CFLAGS_osx_arm64="-ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe"
 
-FINAL_CXXFLAGS_linux_64="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe"
-FINAL_CXXFLAGS_linux_ppc64le="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -mcpu=power8 -mtune=power8 -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O3 -pipe"
-FINAL_CXXFLAGS_linux_aarch64="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O3 -pipe"
-FINAL_CXXFLAGS_linux_s390x="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O3 -pipe"
-FINAL_CXXFLAGS_linux_riscv64="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=rv64imafdc -mabi=lp64d -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O3 -pipe"
-FINAL_CXXFLAGS_win_64="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O3 -pipe"
+FINAL_CXXFLAGS_linux_64="-fvisibility-inlines-hidden -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe"
+FINAL_CXXFLAGS_linux_ppc64le="-fvisibility-inlines-hidden -fmessage-length=0 -mcpu=power8 -mtune=power8 -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O3 -pipe"
+FINAL_CXXFLAGS_linux_aarch64="-fvisibility-inlines-hidden -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O3 -pipe"
+FINAL_CXXFLAGS_linux_s390x="-fvisibility-inlines-hidden -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O3 -pipe"
+FINAL_CXXFLAGS_linux_riscv64="-fvisibility-inlines-hidden -fmessage-length=0 -march=rv64imafdc -mabi=lp64d -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O3 -pipe"
+FINAL_CXXFLAGS_win_64="-fvisibility-inlines-hidden -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O3 -pipe"
 FINAL_CXXFLAGS_osx_64="-march=core2 -mtune=haswell -mssse3 -ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe -stdlib=libc++ -fvisibility-inlines-hidden -fmessage-length=0"
 FINAL_CXXFLAGS_osx_arm64="-ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe -stdlib=libc++ -fvisibility-inlines-hidden -fmessage-length=0"
 
-FINAL_FFLAGS_linux_64="-fopenmp -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe"
-FINAL_FFLAGS_linux_ppc64le="-fopenmp -mcpu=power8 -mtune=power8 -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O3 -pipe"
-FINAL_FFLAGS_linux_aarch64="-fopenmp -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O3 -pipe"
-FINAL_FFLAGS_linux_s390x="-fopenmp -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O3 -pipe"
-FINAL_FFLAGS_linux_riscv64="-fopenmp -march=rv64imafdc -mabi=lp64d -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O3 -pipe"
-FINAL_FFLAGS_win_64="-fopenmp -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O3 -pipe"
+FINAL_FFLAGS_linux_64="-march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe"
+FINAL_FFLAGS_linux_ppc64le="-mcpu=power8 -mtune=power8 -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O3 -pipe"
+FINAL_FFLAGS_linux_aarch64="-ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O3 -pipe"
+FINAL_FFLAGS_linux_s390x="-ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O3 -pipe"
+FINAL_FFLAGS_linux_riscv64="-march=rv64imafdc -mabi=lp64d -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O3 -pipe"
+FINAL_FFLAGS_win_64="-ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O3 -pipe"
 FINAL_FFLAGS_osx_64="-march=core2 -mtune=haswell -ftree-vectorize -fPIC -fstack-protector -O2 -pipe"
 FINAL_FFLAGS_osx_arm64="-march=armv8.3-a -ftree-vectorize -fPIC -fno-stack-protector -O2 -pipe"
 
@@ -62,21 +62,21 @@ FINAL_DEBUG_CFLAGS_win_64="-ftree-vectorize -fPIC -fstack-protector-all -fno-plt
 FINAL_DEBUG_CFLAGS_osx_64="-Og -g -Wall -Wextra"
 FINAL_DEBUG_CFLAGS_osx_arm64="-Og -g -Wall -Wextra"
 
-FINAL_DEBUG_CXXFLAGS_linux_64="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -ffunction-sections -pipe"
-FINAL_DEBUG_CXXFLAGS_linux_ppc64le="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -mcpu=power8 -mtune=power8 -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
-FINAL_DEBUG_CXXFLAGS_linux_aarch64="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
-FINAL_DEBUG_CXXFLAGS_linux_s390x="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
-FINAL_DEBUG_CXXFLAGS_linux_riscv64="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -march=rv64imafdc -mabi=lp64d -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
-FINAL_DEBUG_CXXFLAGS_win_64="-fvisibility-inlines-hidden -std=c++17 -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
+FINAL_DEBUG_CXXFLAGS_linux_64="-fvisibility-inlines-hidden -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -ffunction-sections -pipe"
+FINAL_DEBUG_CXXFLAGS_linux_ppc64le="-fvisibility-inlines-hidden -fmessage-length=0 -mcpu=power8 -mtune=power8 -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
+FINAL_DEBUG_CXXFLAGS_linux_aarch64="-fvisibility-inlines-hidden -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
+FINAL_DEBUG_CXXFLAGS_linux_s390x="-fvisibility-inlines-hidden -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
+FINAL_DEBUG_CXXFLAGS_linux_riscv64="-fvisibility-inlines-hidden -fmessage-length=0 -march=rv64imafdc -mabi=lp64d -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
+FINAL_DEBUG_CXXFLAGS_win_64="-fvisibility-inlines-hidden -fmessage-length=0 -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fvar-tracking-assignments -pipe"
 FINAL_DEBUG_CXXFLAGS_osx_64="-Og -g -Wall -Wextra"
 FINAL_DEBUG_CXXFLAGS_osx_arm64="-Og -g -Wall -Wextra"
 
-FINAL_DEBUG_FFLAGS_linux_64="-fopenmp -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fimplicit-none -fvar-tracking-assignments -ffunction-sections -pipe"
-FINAL_DEBUG_FFLAGS_linux_ppc64le="-fopenmp -mcpu=power8 -mtune=power8 -ftree-vectorize -fPIC -fstack-protector-strong -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fvar-tracking-assignments -pipe"
-FINAL_DEBUG_FFLAGS_linux_aarch64="-fopenmp -ftree-vectorize -fPIC -fstack-protector-strong -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fvar-tracking-assignments -pipe"
-FINAL_DEBUG_FFLAGS_linux_s390x="-fopenmp -ftree-vectorize -fPIC -fstack-protector-strong -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fvar-tracking-assignments -pipe"
-FINAL_DEBUG_FFLAGS_linux_riscv64="-fopenmp -march=rv64imafdc -mabi=lp64d -ftree-vectorize -fPIC -fstack-protector-strong -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fvar-tracking-assignments -pipe"
-FINAL_DEBUG_FFLAGS_win_64="-fopenmp -ftree-vectorize -fPIC -fstack-protector-strong -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fvar-tracking-assignments -pipe"
+FINAL_DEBUG_FFLAGS_linux_64="-march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-all -fno-plt -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fimplicit-none -fvar-tracking-assignments -ffunction-sections -pipe"
+FINAL_DEBUG_FFLAGS_linux_ppc64le="-mcpu=power8 -mtune=power8 -ftree-vectorize -fPIC -fstack-protector-strong -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fvar-tracking-assignments -pipe"
+FINAL_DEBUG_FFLAGS_linux_aarch64="-ftree-vectorize -fPIC -fstack-protector-strong -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fvar-tracking-assignments -pipe"
+FINAL_DEBUG_FFLAGS_linux_s390x="-ftree-vectorize -fPIC -fstack-protector-strong -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fvar-tracking-assignments -pipe"
+FINAL_DEBUG_FFLAGS_linux_riscv64="-march=rv64imafdc -mabi=lp64d -ftree-vectorize -fPIC -fstack-protector-strong -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fvar-tracking-assignments -pipe"
+FINAL_DEBUG_FFLAGS_win_64="-ftree-vectorize -fPIC -fstack-protector-strong -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fvar-tracking-assignments -pipe"
 FINAL_DEBUG_FFLAGS_osx_64="-march=core2 -mtune=haswell -ftree-vectorize -fPIC -fstack-protector -O2 -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fimplicit-none -fvar-tracking-assignments"
 FINAL_DEBUG_FFLAGS_osx_arm64="-march=armv8.3-a -ftree-vectorize -fPIC -fno-stack-protector -O2 -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fimplicit-none -fvar-tracking-assignments"
 
@@ -91,10 +91,7 @@ FINAL_DEBUG_FFLAGS=FINAL_DEBUG_FFLAGS_${cross_target_platform_u}
 FINAL_LDFLAGS=FINAL_LDFLAGS_${cross_target_platform_u}
 FINAL_LDFLAGS_LD=FINAL_LDFLAGS_LD_${cross_target_platform_u}
 
-echo "FINAL_CFLAGS_linux_64: ${FINAL_CFLAGS_linux_64}"
-
 FINAL_CFLAGS="${!FINAL_CFLAGS}"
-echo "$FINAL_CFLAGS"
 FINAL_CXXFLAGS="${!FINAL_CXXFLAGS}"
 FINAL_FFLAGS="${!FINAL_FFLAGS}"
 FINAL_DEBUG_CFLAGS="${!FINAL_DEBUG_CFLAGS}"
@@ -102,28 +99,6 @@ FINAL_DEBUG_CXXFLAGS="${!FINAL_DEBUG_CXXFLAGS}"
 FINAL_DEBUG_FFLAGS="${!FINAL_DEBUG_FFLAGS}"
 FINAL_LDFLAGS="${!FINAL_LDFLAGS}"
 FINAL_LDFLAGS_LD="${!FINAL_LDFLAGS_LD}"
-
-MAJOR_VERSION="${PKG_VERSION%%.*}"
-
-# See https://github.com/conda-forge/ctng-compiler-activation-feedstock/issues/42
-# -std=c++17 shouldn't be a default flag, but from gcc 11 onwards it is the default.
-# Not removing the flag for gcc 8, 9 because some package ABIs change according to
-# the C++ standard (like boost).
-if [[ "${MAJOR_VERSION}" != 8 && "${MAJOR_VERSION}" != 9 && "${MAJOR_VERSION}" != 10 ]]; then
-    FINAL_CXXFLAGS="$(echo $FINAL_CXXFLAGS | sed 's/-std=c++17 //g')"
-    FINAL_DEBUG_CXXFLAGS="$(echo $FINAL_DEBUG_CXXFLAGS | sed 's/-std=c++17 //g')"
-fi
-# -fopenmp shouldn't be a default flag. We are not removing it for gcc 9 as gcc 9.3
-# already had this flag, but we are removing it for gcc 10+.
-if [[ "${MAJOR_VERSION}" != 8 && "${MAJOR_VERSION}" != 9 ]]; then
-    FINAL_FFLAGS="$(echo $FINAL_FFLAGS | sed 's/-fopenmp //g')"
-    FINAL_DEBUG_FFLAGS="$(echo $FINAL_DEBUG_FFLAGS | sed 's/-fopenmp //g')"
-fi
-
-if [ -z "${FINAL_CFLAGS}" ]; then
-    echo "FINAL_CFLAGS not set.  Did you pass in a flags variant config file?"
-    exit 1
-fi
 
 if [[ "$target_platform" == "$cross_target_platform" ]]; then
   export CONDA_BUILD_CROSS_COMPILATION=""
@@ -204,26 +179,20 @@ cp deactivate-g++.sh deactivate-clang++.sh
 sed -i.bak "s| -fno-merge-constants||g" activate-clang.sh activate-clang++.sh
 
 GCC_EXTRA=" \
-\"CC,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CHOST}-cc\" \
-\"CPP,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CHOST}-cpp\" \
-\"CC_FOR_BUILD,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CBUILD}-cc\" \
-\"CPP_FOR_BUILD,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CBUILD}-cpp\" \
-\"GCC,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CHOST}-gcc\" \
-\"GCC_AR,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CHOST}-gcc-ar\" \
-\"GCC_NM,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CHOST}-gcc-nm\" \
-\"GCC_RANLIB,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CHOST}-gcc-ranlib\" \
+\"CC,${CHOST}-cc\" \
+\"CPP,${CHOST}-cpp\" \
+\"CC_FOR_BUILD,${CBUILD}-cc\" \
+\"CPP_FOR_BUILD,${CBUILD}-cpp\" \
+\"GCC,${CHOST}-gcc\" \
+\"GCC_AR,${CHOST}-gcc-ar\" \
+\"GCC_NM,${CHOST}-gcc-nm\" \
+\"GCC_RANLIB,${CHOST}-gcc-ranlib\" \
 "
 GXX_EXTRA=" \
-\"CXX,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CHOST}-c++\" \
-\"CXX_FOR_BUILD,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CBUILD}-c++\" \
-\"GXX,\${CONDA_PREFIX}${LIBRARY_PREFIX}/bin/${CHOST}-g++\" \
+\"CXX,${CHOST}-c++\" \
+\"CXX_FOR_BUILD,${CBUILD}-c++\" \
+\"GXX,${CHOST}-g++\" \
 "
-
-if [[ "${CHOST}" == *darwin* || ("${gcc_version}" != "14.3.0" && "${gcc_version}" != "13.4.0") ]]; then
-  GCC_EXTRA=${GCC_EXTRA//\${CONDA_PREFIX\}\/bin\//}
-  GXX_EXTRA=${GXX_EXTRA//\${CONDA_PREFIX\}\/bin\//}
-  find . -name "*activate-gfortran.sh" -exec sed -i.bak 's|${CONDA_PREFIX}@LIBRARY_PREFIX@/bin/||g'     "{}" \;
-fi
 
 find . -name "*activate-gcc.sh" -exec sed -i.bak "s|@C_EXTRA@|${GCC_EXTRA}|g"                           "{}" \;
 find . -name "*activate-gcc.sh" -exec sed -i.bak "s|@AR@|${CHOST}-gcc-ar|g"                             "{}" \;

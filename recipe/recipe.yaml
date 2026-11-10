@@ -43,6 +43,8 @@ outputs:
           then: shellcheck
         - if: win
           then: m2-bash
+        - if: osx
+          then: ${{ stdlib('c') }}
       run:
         - gcc_impl_${{ target_platform }} ${{ gcc_version }}.*
         - gcc_impl_${{ cross_target_platform }} ${{ gcc_version }}.*
