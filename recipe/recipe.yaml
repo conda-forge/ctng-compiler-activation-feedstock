@@ -42,7 +42,13 @@ outputs:
         - if: not (aarch64 or ppc64le)
           then: shellcheck
         - if: win
-          then: m2-bash
+          then:
+            - m2-bash
+            - m2-coreutils
+            - m2-findutils
+            - m2-sed
+        - if: osx
+          then: ${{ stdlib('c') }}
       run:
         - gcc_impl_${{ target_platform }} ${{ gcc_version }}.*
         - gcc_impl_${{ cross_target_platform }} ${{ gcc_version }}.*
@@ -194,7 +200,11 @@ outputs:
         - if: not (aarch64 or ppc64le)
           then: shellcheck
         - if: win
-          then: m2-bash
+          then:
+            - m2-bash
+            - m2-coreutils
+            - m2-findutils
+            - m2-sed
       run:
         - gxx_impl_${{ target_platform }} ${{ gcc_version }}.*
         - gxx_impl_${{ cross_target_platform }} ${{ gcc_version }}.*
@@ -356,7 +366,11 @@ outputs:
         - if: not (aarch64 or ppc64le)
           then: shellcheck
         - if: win
-          then: m2-bash
+          then:
+            - m2-bash
+            - m2-coreutils
+            - m2-findutils
+            - m2-sed
       run:
         - gfortran_impl_${{ cross_target_platform }} ${{ gcc_version }}.*
         - gfortran_impl_${{ target_platform }} ${{ gcc_version }}.*
