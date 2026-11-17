@@ -58,8 +58,13 @@ fi
 # When people are using conda-build, assume that adding rpath during build, and pointing at
 #    the host env's includes and libs is helpful default behavior
 if [ "${CONDA_BUILD:-0}" = "1" ]; then
-  CXXFLAGS_USED="@CXXFLAGS@ -fno-merge-constants -isystem ${PREFIX}@LIBRARY_PREFIX@/include -fdebug-prefix-map=${SRC_DIR}=/usr/local/src/conda/${PKG_NAME}-${PKG_VERSION} -fdebug-prefix-map=${PREFIX}=/usr/local/src/conda-prefix"
-  DEBUG_CXXFLAGS_USED="@DEBUG_CXXFLAGS@ -fno-merge-constants -isystem ${PREFIX}@LIBRARY_PREFIX@/include -fdebug-prefix-map=${SRC_DIR}=/usr/local/src/conda/${PKG_NAME}-${PKG_VERSION} -fdebug-prefix-map=${PREFIX}=/usr/local/src/conda-prefix"
+  CXXFLAGS_USED="@CXXFLAGS@ -fno-merge-constants -isystem ${PREFIX}@LIBRARY_PREFIX@/include -ffile-prefix-map=${SRC_DIR}=/usr/local/src/conda/${PKG_NAME}-${PKG_VERSION} -ffile-prefix-map=${PREFIX}=/usr/local/src/conda-prefix"
+  DEBUG_CXXFLAGS_USED="@DEBUG_CXXFLAGS@ -fno-merge-constants -isystem ${PREFIX}@LIBRARY_PREFIX@/include -ffile-prefix-map=${SRC_DIR}=/usr/local/src/conda/${PKG_NAME}-${PKG_VERSION} -ffile-prefix-map=${PREFIX}=/usr/local/src/conda-prefix"
+  # In merged build/host envs BUILD_PREFIX == PREFIX, which is already mapped above.
+  if [ -n "${BUILD_PREFIX:-}" ] && [ "${BUILD_PREFIX}" != "${PREFIX}" ]; then
+    CXXFLAGS_USED="${CXXFLAGS_USED} -ffile-prefix-map=${BUILD_PREFIX}=/usr/local/src/conda-build-prefix"
+    DEBUG_CXXFLAGS_USED="${DEBUG_CXXFLAGS_USED} -ffile-prefix-map=${BUILD_PREFIX}=/usr/local/src/conda-build-prefix"
+  fi
 else
   CXXFLAGS_USED="@CXXFLAGS@ -isystem ${CONDA_PREFIX}@LIBRARY_PREFIX@/include"
   DEBUG_CXXFLAGS_USED="@DEBUG_CXXFLAGS@ -isystem ${CONDA_PREFIX}@LIBRARY_PREFIX@/include"
